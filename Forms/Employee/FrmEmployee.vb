@@ -9,15 +9,15 @@ Public Class FrmEmployee
         ClassEmployee.LoadEmployee(DGEmployee)
     End Sub
 
-    Private Sub CbDepartment_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CbDepartment.SelectedIndexChanged
+    Private Sub CbDepartment_SelectedIndexChanged(sender As Object, e As EventArgs) 
         ClassEmployee.LoadPosition(CbDepartment, CbPosition)
     End Sub
 
-    Private Sub Guna2DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGEmployee.CellDoubleClick
+    Private Sub Guna2DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) 
         ClassEmployee.SelectEmployee(DGEmployee, TxtRFID, TxtFirstName, TxtMiddleName, TxtLastName, CbDepartment, CbPosition, cbStatus, TxtSalary)
     End Sub
 
-    Private Sub BtnSaveEmployee_Click(sender As Object, e As EventArgs) Handles BtnSaveEmployee.Click
+    Private Sub BtnSaveEmployee_Click(sender As Object, e As EventArgs) 
 
         Try
             Dim lastName As String = StrConv(TxtLastName.Text, VbStrConv.ProperCase)
@@ -78,10 +78,10 @@ Public Class FrmEmployee
             MsgBox(ex.Message)
         End Try
     End Sub
-    Private Sub TPEmployeeList_Enter(sender As Object, e As EventArgs) Handles TPEmployeeList.Enter
+    Private Sub TPEmployeeList_Enter(sender As Object, e As EventArgs) 
         ClassEmployee.LoadEmployee(DGEmployee)
     End Sub
-    Private Sub TPEmployeeProfile_Enter(sender As Object, e As EventArgs) Handles TPEmployeeProfile.Enter
+    Private Sub TPEmployeeProfile_Enter(sender As Object, e As EventArgs) 
         ClassEmployee.LoadVoluntary(DGVoluntary)
 
     End Sub
@@ -91,11 +91,11 @@ Public Class FrmEmployee
         ClassEmployee.RefreshVoluntary(DGVoluntary)
     End Sub
 
-    Private Sub DGVoluntary_DataError(sender As Object, e As DataGridViewDataErrorEventArgs) Handles DGVoluntary.DataError
+    Private Sub DGVoluntary_DataError(sender As Object, e As DataGridViewDataErrorEventArgs) 
         MessageBox.Show("Invalid amount.")
     End Sub
 
-    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) Handles Guna2Button1.Click
+    Private Sub Guna2Button1_Click(sender As Object, e As EventArgs) 
         TxtFirstName.Clear()
         TxtLastName.Clear()
         TxtMiddleName.Clear()
@@ -179,7 +179,7 @@ Public Class FrmEmployee
 
         End Try
     End Sub
-    Private Sub DataGridView1_MouseDown(sender As Object, e As MouseEventArgs) Handles DGEmployee.MouseDown
+    Private Sub DataGridView1_MouseDown(sender As Object, e As MouseEventArgs) 
         Try
             ' Check if the right mouse button is clicked
             If e.Button = MouseButtons.Right Then
