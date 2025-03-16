@@ -124,6 +124,7 @@ Partial Class FrmPayrollCalculation
         Me.Panel16 = New System.Windows.Forms.Panel()
         Me.DGAttendance = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.colDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colTimeIn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colTimeOut = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.colOvertime = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -1598,7 +1599,7 @@ Partial Class FrmPayrollCalculation
         Me.DGAttendance.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle14
         Me.DGAttendance.ColumnHeadersHeight = 40
         Me.DGAttendance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
-        Me.DGAttendance.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colDate, Me.colTimeIn, Me.colTimeOut, Me.colOvertime, Me.colOtRemarks, Me.colLate, Me.colUndertime, Me.colNightDifferential, Me.colReport, Me.colHoliday, Me.colClassification})
+        Me.DGAttendance.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colDate, Me.Column1, Me.colTimeIn, Me.colTimeOut, Me.colOvertime, Me.colOtRemarks, Me.colLate, Me.colUndertime, Me.colNightDifferential, Me.colReport, Me.colHoliday, Me.colClassification})
         DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle15.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle15.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1647,6 +1648,13 @@ Partial Class FrmPayrollCalculation
         Me.colDate.MinimumWidth = 8
         Me.colDate.Name = "colDate"
         Me.colDate.ReadOnly = True
+        '
+        'Column1
+        '
+        Me.Column1.DataPropertyName = "dayname"
+        Me.Column1.HeaderText = "Day"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
         '
         'colTimeIn
         '
@@ -1981,7 +1989,17 @@ Partial Class FrmPayrollCalculation
     Friend WithEvents voluntaryAmount As DataGridViewTextBoxColumn
     Friend WithEvents TxtTotalIncrease As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label21 As Label
+    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Panel22 As Panel
+    Friend WithEvents TxtPayrollPeriod As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents colPayrollPeriodID As DataGridViewTextBoxColumn
+    Friend WithEvents colPayrollPeriodName As DataGridViewTextBoxColumn
+    Friend WithEvents colDateFrom As DataGridViewTextBoxColumn
+    Friend WithEvents colDateTo As DataGridViewTextBoxColumn
+    Friend WithEvents colPayout As DataGridViewTextBoxColumn
+    Friend WithEvents colReleased As DataGridViewTextBoxColumn
     Friend WithEvents colDate As DataGridViewTextBoxColumn
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents colTimeIn As DataGridViewTextBoxColumn
     Friend WithEvents colTimeOut As DataGridViewTextBoxColumn
     Friend WithEvents colOvertime As DataGridViewTextBoxColumn
@@ -1992,13 +2010,4 @@ Partial Class FrmPayrollCalculation
     Friend WithEvents colReport As DataGridViewTextBoxColumn
     Friend WithEvents colHoliday As DataGridViewTextBoxColumn
     Friend WithEvents colClassification As DataGridViewTextBoxColumn
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Panel22 As Panel
-    Friend WithEvents TxtPayrollPeriod As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents colPayrollPeriodID As DataGridViewTextBoxColumn
-    Friend WithEvents colPayrollPeriodName As DataGridViewTextBoxColumn
-    Friend WithEvents colDateFrom As DataGridViewTextBoxColumn
-    Friend WithEvents colDateTo As DataGridViewTextBoxColumn
-    Friend WithEvents colPayout As DataGridViewTextBoxColumn
-    Friend WithEvents colReleased As DataGridViewTextBoxColumn
 End Class

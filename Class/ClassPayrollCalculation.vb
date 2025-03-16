@@ -247,6 +247,7 @@ Public Class ClassPayrollCalculation
                 )
                 SELECT DISTINCT
                 dr.date,
+                dayname(dr.date) as dayname,
                 att.login,
                 att.logout,
 
@@ -317,7 +318,6 @@ Public Class ClassPayrollCalculation
             RunQuery("Select salary,daily from tblsalary WHERE employeeID='" & employeeID & "'")
             Dim salary As Decimal = ds.Tables("querytable").Rows(0)(0)
             Dim daily As Decimal = ds.Tables("querytable").Rows(0)(1)
-
 
             If compensationtype = "Daily" Then
                 Dim totalpay As Decimal = 0
@@ -395,7 +395,6 @@ Public Class ClassPayrollCalculation
                     Dim dayclass As String = row.Cells("colClassification").Value
                     Dim holiday As String = row.Cells("colHoliday").Value
                     Dim recordentry As String = row.Cells("colReport").Value
-
                     'Regular Working Day
                     If dayclass = "With Duty" And holiday = "No Holiday" And recordentry = "Absent" Then
                         totalpay -= daily

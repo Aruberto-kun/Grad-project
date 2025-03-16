@@ -36,6 +36,22 @@ Public Class ClassEmployee
             MsgBox(ex.Message)
         End Try
     End Sub
+    Public Shared Sub LoadLeaveAllocation(dg As DataGridView)
+        Try
+            If employeeID = 0 Then
+                RunQuery("Select a.employeeleaveID, a.employeeID, b.leaveType, a.days from tblemployeeleave a
+                      right join tblleave b on b.leaveID = a.leaveID
+                      WHERE b.status = 'Active' and a.employeeID = '" & employeeID & "'")
+            Else
+                RunQuery("Select a.employeeleaveID, a.employeeID, b.leaveType, a.days from tblemployeeleave a
+                        right join tblleave b on b.leaveID = a.leaveID
+                        WHERE b.status = 'Active'")
+            End If
+            dg.DataSource = ds.Tables("querytable")
+        Catch ex As Exception
+
+        End Try
+    End Sub
     Public Shared Sub LoadDepartment(cb As Guna2ComboBox)
         Try
             RunQuery("Select * from tbldepartment where status = 'Active'")
@@ -115,9 +131,9 @@ Public Class ClassEmployee
         End Try
     End Sub
     Public Shared Sub NewEmployee(rfidnumber As Guna2TextBox, txtlastname As Guna2TextBox, txtfirstname As Guna2TextBox, txtmiddlename As Guna2TextBox, cbdept As Guna2ComboBox, cbpos As Guna2ComboBox, txtsalary As Guna2TextBox, cbstatus As Guna2ComboBox)
-        'Try
-        Dim employeenumber As Integer
-        If employeeID = 0 Then
+        Try
+            Dim employeenumber As Integer
+            If employeeID = 0 Then
 
             If cbstatus.Text = "Resigned" Then
                 MsgBox("Can't set the status to resigned for new employees", MsgBoxStyle.Critical)
@@ -671,6 +687,13 @@ Public Class ClassEmployee
                 End If
             End If
         End If
+        RunCommand("Insert into tblsalaryhistory (employeeID,salary) VALUES (@employeeID,@salary)")
+        With com
+            .Parameters.AddWithValue("@employeeID", employeeID)
+            .Parameters.AddWithValue("@salary", txtsalary.Text.Trim)
+            .ExecuteNonQuery()
+            .Parameters.Clear()
+        End With
 
         FrmEmployee.TCEmployee.SelectedTab = FrmEmployee.TPEmployeeList
         employeeID = 0
@@ -682,10 +705,10 @@ Public Class ClassEmployee
         cbpos.SelectedIndex = -1
         FrmEmployee.TxtSalary.Clear()
         FrmEmployee.RBDaily.Checked = True
-        'Catch ex As Exception
-        '    MsgBox(ex.Message)
-        '    Exit Sub
-        'End Try
+        Catch ex As Exception
+        MsgBox(ex.Message)
+        Exit Sub
+        End Try
     End Sub
 
     Public Shared Sub GetDailyWageOfMonthlyEmployees(id As Integer)

@@ -83,7 +83,7 @@ Public Class FrmEmployee
     End Sub
     Private Sub TPEmployeeProfile_Enter(sender As Object, e As EventArgs) Handles TPEmployeeProfile.Enter
         ClassEmployee.LoadVoluntary(DGVoluntary)
-
+        ClassEmployee.LoadLeaveAllocation(DGLeaveAllocation)
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
@@ -193,5 +193,169 @@ Public Class FrmEmployee
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub TCEmployee_SelectedIndexChanged(sender As Object, e As EventArgs) Handles TCEmployee.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub TPEmployeeList_Click(sender As Object, e As EventArgs) Handles TPEmployeeList.Click
+
+    End Sub
+
+    Private Sub DGEmployee_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGEmployee.CellContentClick
+
+    End Sub
+
+    Private Sub TPEmployeeProfile_Click(sender As Object, e As EventArgs) Handles TPEmployeeProfile.Click
+
+    End Sub
+
+    Private Sub Panel6_Paint(sender As Object, e As PaintEventArgs) Handles Panel6.Paint
+
+    End Sub
+
+    Private Sub DGVoluntary_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVoluntary.CellContentClick
+
+    End Sub
+
+    Private Sub Label11_Click(sender As Object, e As EventArgs) Handles Label11.Click
+
+    End Sub
+
+    Private Sub Panel7_Paint(sender As Object, e As PaintEventArgs) Handles Panel7.Paint
+
+    End Sub
+
+    Private Sub Panel8_Paint(sender As Object, e As PaintEventArgs) Handles Panel8.Paint
+
+    End Sub
+
+    Private Sub Panel10_Paint(sender As Object, e As PaintEventArgs) Handles Panel10.Paint
+
+    End Sub
+
+    Private Sub cbStatus_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbStatus.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub Label10_Click(sender As Object, e As EventArgs) Handles Label10.Click
+
+    End Sub
+
+    Private Sub RBMonthly_CheckedChanged(sender As Object, e As EventArgs) Handles RBMonthly.CheckedChanged
+
+    End Sub
+
+    Private Sub RBDaily_CheckedChanged(sender As Object, e As EventArgs) Handles RBDaily.CheckedChanged
+
+    End Sub
+
+    Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
+
+    End Sub
+
+    Private Sub TxtSalary_TextChanged(sender As Object, e As EventArgs) Handles TxtSalary.TextChanged
+
+    End Sub
+
+    Private Sub Label14_Click(sender As Object, e As EventArgs) Handles Label14.Click
+
+    End Sub
+
+    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
+
+    End Sub
+
+    Private Sub Panel5_Paint(sender As Object, e As PaintEventArgs) Handles Panel5.Paint
+
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
+
+    Private Sub CbPosition_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CbPosition.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub Label5_Click(sender As Object, e As EventArgs) Handles Label5.Click
+
+    End Sub
+
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+
+    End Sub
+
+    Private Sub TxtRFID_TextChanged(sender As Object, e As EventArgs) Handles TxtRFID.TextChanged
+
+    End Sub
+
+    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
+
+    End Sub
+
+    Private Sub Panel4_Paint(sender As Object, e As PaintEventArgs) Handles Panel4.Paint
+
+    End Sub
+
+    Private Sub Panel2_Paint(sender As Object, e As PaintEventArgs) Handles Panel2.Paint
+
+    End Sub
+
+    Private Sub TxtLastName_TextChanged(sender As Object, e As EventArgs) Handles TxtLastName.TextChanged
+
+    End Sub
+
+    Private Sub Label4_Click(sender As Object, e As EventArgs) Handles Label4.Click
+
+    End Sub
+
+    Private Sub TxtMiddleName_TextChanged(sender As Object, e As EventArgs) Handles TxtMiddleName.TextChanged
+
+    End Sub
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+
+    End Sub
+
+    Private Sub TxtFirstName_TextChanged(sender As Object, e As EventArgs) Handles TxtFirstName.TextChanged
+
+    End Sub
+
+    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+
+    End Sub
+
+    Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
+
+    End Sub
+
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+
+    End Sub
+
+    Private Sub Panel9_Paint(sender As Object, e As PaintEventArgs) Handles Panel9.Paint
+
+    End Sub
+
+    Private Sub ContextMenuStrip1_Opening(sender As Object, e As System.ComponentModel.CancelEventArgs) Handles ContextMenuStrip1.Opening
+
+    End Sub
+
+    Private Sub Guna2TextBox1_TextChanged(sender As Object, e As EventArgs) Handles Guna2TextBox1.TextChanged
+
+    End Sub
+
+    Private Sub Label13_Click(sender As Object, e As EventArgs) Handles Label13.Click
+
+    End Sub
+
+    Private Sub Label15_Click(sender As Object, e As EventArgs) Handles Label15.Click
+
+    End Sub
+
+    Private Sub DGLeaveAllocation_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGLeaveAllocation.CellContentClick
+
     End Sub
 End Class
