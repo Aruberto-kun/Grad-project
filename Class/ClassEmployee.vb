@@ -3,6 +3,7 @@ Imports MySql.Data.MySqlClient
 
 Public Class ClassEmployee
     Public Shared employeeID As Integer
+    Public Shared oldSalary As Integer
 
     Public Shared Sub LoadEmployee(dg As DataGridView)
         Try
@@ -12,39 +13,37 @@ Public Class ClassEmployee
                       LEFT JOIN tblsalary d on d.employeeID = a.employeeID
                       ORDER by a.employeeID")
             dg.DataSource = ds.Tables("querytable")
+
+            ' Check if the button column already exists to avoid adding it multiple times
+            If dg.Columns("btnViewSalaryHistory") Is Nothing Then
+                ' Create a new DataGridViewButtonColumn
+                Dim btnColumn As New DataGridViewButtonColumn()
+                btnColumn.HeaderText = "" ' Blank header text
+                btnColumn.Text = "View Salary History" ' Button text
+                btnColumn.Name = "btnViewSalaryHistory" ' Name of the column
+                btnColumn.UseColumnTextForButtonValue = True ' Use the same text for all buttons
+
+                ' Add the button column to the DataGridView
+                dg.Columns.Add(btnColumn)
+            End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
     Public Shared Sub LoadVoluntary(dg As DataGridView)
         Try
-            If employeeID = 0 Then
-                RunQuery("select voluntaryID, name, '0' as amount from tblvoluntary WHERE status='Active'")
-                dg.DataSource = ds.Tables("querytable")
-            Else
-                RunQuery("select b.voluntaryID, b.name, a.amount from tblempvoluntary a
-                          right join tblvoluntary b on b.voluntaryID = a.voluntaryID and a.employeeID = '" & employeeID & "'
-                          where b.status='Active'")
-                dg.DataSource = ds.Tables("querytable")
-            End If
+            RunQuery("SELECT v.voluntaryID, v.name, COALESCE(ev.amount, 0) AS amount FROM tblvoluntary v LEFT JOIN tblempvoluntary ev ON v.voluntaryID = ev.voluntaryID AND ev.employeeID = '" & employeeID & "'")
+            dg.DataSource = ds.Tables("querytable")
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
     Public Shared Sub LoadLeaveAllocation(dg As DataGridView)
         Try
-            If employeeID = 0 Then
-                RunQuery("Select a.employeeleaveID, a.employeeID, b.leaveType, a.days from tblemployeeleave a
-                      right join tblleave b on b.leaveID = a.leaveID
-                      WHERE b.status = 'Active' and a.employeeID = '" & employeeID & "'")
-            Else
-                RunQuery("Select a.employeeleaveID, a.employeeID, b.leaveType, a.days from tblemployeeleave a
-                        right join tblleave b on b.leaveID = a.leaveID
-                        WHERE b.status = 'Active'")
-            End If
+            RunQuery("Select l.leaveID, l.leaveType, coalesce(el.days,0) as days from tblleave l left join tblemployeeleave el on l.leaveID = el.leaveID and el.employeeID = '" & employeeID & "'")
             dg.DataSource = ds.Tables("querytable")
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
     End Sub
     Public Shared Sub LoadDepartment(cb As Guna2ComboBox)
@@ -96,7 +95,7 @@ Public Class ClassEmployee
         End Try
     End Sub
 
-    Public Shared Sub SelectEmployee(dg As Guna2DataGridView, txtrfid As Guna2TextBox, txtfirstname As Guna2TextBox, txtlastname As Guna2TextBox, cbdept As Guna2ComboBox, cbpos As Guna2ComboBox, cbstatus As Guna2ComboBox)
+    Public Shared Sub SelectEmployee(dg As Guna2DataGridView, txtrfid As Guna2TextBox, txtfirstname As Guna2TextBox, txtlastname As Guna2TextBox, cbdept As Guna2ComboBox, cbpos As Guna2ComboBox, txtsalary As Guna2TextBox, cbtype As Guna2ComboBox, cbstatus As Guna2ComboBox)
         Try
             If dg.SelectedRows.Count > 0 Then
                 employeeID = dg.SelectedRows(0).Cells(0).Value
@@ -104,8 +103,13 @@ Public Class ClassEmployee
                 txtfirstname.Text = dg.SelectedRows(0).Cells(4).Value
                 txtlastname.Text = dg.SelectedRows(0).Cells(5).Value
                 cbdept.Text = If(String.IsNullOrEmpty(dg.SelectedRows(0).Cells(6).Value.ToString), "", dg.SelectedRows(0).Cells(6).Value)
+                LoadPosition(FrmAddEmployee.CbDepartment, FrmAddEmployee.CbPosition)
                 cbpos.Text = If(String.IsNullOrEmpty(dg.SelectedRows(0).Cells(7).Value.ToString), "", dg.SelectedRows(0).Cells(7).Value)
-                cbstatus.Text = If(IsDBNull(dg.SelectedRows(0).Cells(10).Value), "", dg.SelectedRows(0).Cells(8).Value)
+                txtsalary.Text = dg.SelectedRows(0).Cells(8).Value
+                cbtype.Text = If(String.IsNullOrEmpty(dg.SelectedRows(0).Cells(9).Value.ToString), "", dg.SelectedRows(0).Cells(9).Value)
+                cbstatus.Text = If(IsDBNull(dg.SelectedRows(0).Cells(10).Value), "", dg.SelectedRows(0).Cells(10).Value)
+                FrmAddEmployee.Show()
+                FrmEmployee.Enabled = False
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -113,7 +117,7 @@ Public Class ClassEmployee
 
         End Try
     End Sub
-    Public Shared Sub NewEmployee(rfidnumber As Guna2TextBox, txtlastname As Guna2TextBox, txtfirstname As Guna2TextBox, cbdept As Guna2ComboBox, cbpos As Guna2ComboBox, txtsalary As Guna2TextBox, cbstatus As Guna2ComboBox)
+    Public Shared Sub NewEmployee(rfidnumber As Guna2TextBox, txtlastname As Guna2TextBox, txtfirstname As Guna2TextBox, cbdept As Guna2ComboBox, cbpos As Guna2ComboBox, txtsalary As Guna2TextBox, cbstatus As Guna2ComboBox, txtallowances As Guna2TextBox)
         Try
             Dim employeenumber As Integer
             If employeeID = 0 Then
@@ -207,6 +211,10 @@ Public Class ClassEmployee
                                     .Parameters.Clear()
                                 End With
                             Next
+
+                            SaveLeaveAllocation(empID)
+                            SaveAllowance(empID, txtallowances)
+                            SaveSalaryHistory(empID, txtsalary)
                         End If
                         MsgBox("Saved")
                     End If
@@ -263,10 +271,14 @@ Public Class ClassEmployee
                                 .Parameters.Clear()
                             End With
                         Next
+                        SaveLeaveAllocation(empID)
+                        SaveAllowance(empID, txtallowances)
+                        SaveSalaryHistory(empID, txtsalary)
                     End If
                 End If
                 MsgBox("Saved")
             Else
+                GetOldSalary()
                 Dim depID As Integer = cbdept.SelectedValue
                 Dim selectedposID As Integer = cbpos.SelectedValue
                 RunQuery("Select * from tblemployee where employeeID = '" & employeeID & "'")
@@ -341,6 +353,9 @@ Public Class ClassEmployee
                                 End With
                             Next
 
+                            SaveLeaveAllocation(employeeID)
+                            SaveAllowance(employeeID, txtallowances)
+                            SaveSalaryHistory(employeeID, txtsalary)
 
                             'Check if may schedule
                             RunQuery("Select * from tblschedule where employeeID = '" & employeeID & "'")
@@ -395,6 +410,10 @@ Public Class ClassEmployee
                                 .Parameters.Clear()
                             End With
                         Next
+
+                        SaveLeaveAllocation(employeeID)
+                        SaveAllowance(employeeID, txtallowances)
+                        SaveSalaryHistory(employeeID, txtsalary)
 
 
                         'Check if may schedule
@@ -458,6 +477,9 @@ Public Class ClassEmployee
                                         .Parameters.Clear()
                                     End With
                                 Next
+                                SaveLeaveAllocation(employeeID)
+                                SaveAllowance(employeeID, txtallowances)
+                                SaveSalaryHistory(employeeID, txtsalary)
 
                                 'Assign Department HEad
                                 RunCommand("Update tbldepartmenthead set employeeID = '" & employeeID & "' where employeeID = 0 and departmentID = '" & depID & "'")
@@ -521,6 +543,9 @@ Public Class ClassEmployee
                                             .Parameters.Clear()
                                         End With
                                     Next
+                                    SaveLeaveAllocation(employeeID)
+                                    SaveAllowance(employeeID, txtallowances)
+                                    SaveSalaryHistory(employeeID, txtsalary)
 
                                     'Create new department head
                                     RunCommand("Insert into tbldepartmenthead (departmentID,employeeID) VALUES (@departmentID,@employeeID) 
@@ -584,6 +609,9 @@ Public Class ClassEmployee
                                     .Parameters.Clear()
                                 End With
                             Next
+                            SaveLeaveAllocation(employeeID)
+                            SaveAllowance(employeeID, txtallowances)
+                            SaveSalaryHistory(employeeID, txtsalary)
 
 
                             'Check if may schedule
@@ -645,6 +673,10 @@ Public Class ClassEmployee
                             End With
                         Next
 
+                        SaveLeaveAllocation(employeeID)
+                        SaveAllowance(employeeID, txtallowances)
+                        SaveSalaryHistory(employeeID, txtsalary)
+
 
                         'Check if may schedule
                         RunQuery("Select * from tblschedule where employeeID = '" & employeeID & "'")
@@ -662,13 +694,7 @@ Public Class ClassEmployee
                     End If
                 End If
             End If
-            RunCommand("Insert into tblsalaryhistory (employeeID,salary) VALUES (@employeeID,@salary)")
-            With com
-                .Parameters.AddWithValue("@employeeID", employeeID)
-                .Parameters.AddWithValue("@salary", txtsalary.Text.Trim)
-                .ExecuteNonQuery()
-                .Parameters.Clear()
-            End With
+
 
             employeeID = 0
             rfidnumber.Clear()
@@ -677,7 +703,11 @@ Public Class ClassEmployee
             cbdept.SelectedIndex = -1
             cbpos.SelectedIndex = -1
             FrmAddEmployee.TxtSalary.Clear()
+            txtallowances.Clear()
+            FrmAddEmployee.CbAssociateStatus.SelectedIndex = -1
             FrmAddEmployee.CbCompensationType.SelectedIndex = -1
+            LoadVoluntary(FrmAddEmployee.DGVoluntary)
+            LoadLeaveAllocation(FrmAddEmployee.DGLeaveAllocation)
         Catch ex As Exception
             MsgBox(ex.Message)
             Exit Sub
@@ -728,6 +758,122 @@ Public Class ClassEmployee
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Public Shared Sub SaveLeaveAllocation(empid As Integer)
+        Try
+            For Each row As DataGridViewRow In FrmAddEmployee.DGLeaveAllocation.Rows
+                Dim leaveID As Integer = row.Cells("leaveID").Value
+                Dim days As Decimal = If(String.IsNullOrEmpty(row.Cells("days").Value.ToString), 0, row.Cells("days").Value)
+
+                RunCommand("Insert into tblemployeeleave (employeeID,leaveID,days) VALUES (@employeeID,@leaveID,@days)
+                                        ON DUPLICATE KEY UPDATE days=@days")
+                With com
+                    .Parameters.AddWithValue("@employeeID", empid)
+                    .Parameters.AddWithValue("@leaveID", leaveID)
+                    .Parameters.AddWithValue("@days", days)
+                    .ExecuteNonQuery()
+                    .Parameters.Clear()
+                End With
+            Next
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    Public Shared Sub SaveAllowance(empid As Integer, txtallowance As Guna2TextBox)
+        Try
+            RunCommand("Insert into tblempallowance (employeeID, allowance) VALUES (@employeeID,@allowance) ON DUPLICATE KEY UPDATE allowance=@allowance")
+            With com
+                .Parameters.AddWithValue("@employeeID", empid)
+                .Parameters.AddWithValue("@allowance", txtallowance.Text.Trim)
+                .ExecuteNonQuery()
+                .Parameters.Clear()
+            End With
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    Public Shared Sub GetOldSalary()
+        Try
+            If employeeID > 0 Then
+                RunQuery("Select salary from tblsalary where employeeID = '" & employeeID & "'")
+                oldSalary = ds.Tables("querytable").Rows(0)(0)
+            Else
+                oldSalary = 0
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Public Shared Sub SaveSalaryHistory(empid As Integer, txtsalary As Guna2TextBox)
+        Try
+            'If updating
+            If empid > 0 Then
+                Dim newSalary As Integer = txtsalary.Text
+                If oldSalary > newSalary Or oldSalary < newSalary Then
+                    RunCommand("Insert into tblsalaryhistory (employeeID,salary,date) VALUES (@employeeID,@salary,NOW())")
+                    With com
+                        .Parameters.AddWithValue("@employeeID", employeeID)
+                        .Parameters.AddWithValue("@salary", txtsalary.Text.Trim)
+                        .ExecuteNonQuery()
+                        .Parameters.Clear()
+                    End With
+                End If
+            Else
+                RunCommand("Insert into tblsalaryhistory (employeeID,salary,date) VALUES (@employeeID,@salary,NOW())")
+                With com
+                    .Parameters.AddWithValue("@employeeID", employeeID)
+                    .Parameters.AddWithValue("@salary", txtsalary.Text.Trim)
+                    .ExecuteNonQuery()
+                    .Parameters.Clear()
+                End With
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    Public Shared Sub LoadAllowance(txtallowance As Guna2TextBox)
+        Try
+            If employeeID <> 0 Then
+                RunQuery("Select * from tblempallowance where employeeID = '" & employeeID & "'")
+                If ds.Tables("querytable").Rows.Count > 0 Then
+                    Dim allowanceAmount As Decimal = ds.Tables("querytable").Rows(0)(2)
+                    txtallowance.Text = allowanceAmount
+                Else
+                    txtallowance.Text = "0.00"
+                End If
+            Else
+                txtallowance.Text = "0.00"
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    Public Shared Sub ViewSalaryHistory(dg As Guna2DataGridView)
+        Try
+            If employeeID > 0 Then
+                RunQuery("Select salary,date from tblsalaryhistory where employeeID = '" & employeeID & "'")
+                If ds.Tables("querytable").Rows.Count > 0 Then
+                    FrmSalaryHistory.Show()
+                    FrmEmployee.Enabled = False
+                Else
+                    MsgBox("There's no salary history available")
+                    Exit Sub
+
+                End If
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Public Shared Sub LoadSalaryHistory(dg As Guna2DataGridView)
+        Try
+            RunQuery("Select salary,date from tblsalaryhistory where employeeID= '" & employeeID & "'")
+            dg.DataSource = ds.Tables("querytable")
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
 
 
 End Class

@@ -6,74 +6,7 @@ Public Class FrmEmployee
     Private Sub FrmEmployee_Load(sender As Object, e As EventArgs) Handles Me.Load
         OpenServerConnection()
         ClassEmployee.LoadDepartment(FrmAddEmployee.CbDepartment)
-        ClassEmployee.LoadEmployee(DGEmployee)
-    End Sub
-
-    Private Sub Guna2DataGridView1_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs)
-        ClassEmployee.SelectEmployee(DgEmployee, FrmAddEmployee.TxtRfidNumber, FrmAddEmployee.TxtFirstName, FrmAddEmployee.TxtLastname, FrmAddEmployee.CbDepartment, FrmAddEmployee.CbPosition, FrmAddEmployee.CbAssociateStatus)
-    End Sub
-
-    Private Sub BtnSaveEmployee_Click(sender As Object, e As EventArgs) 
-
-        Try
-            Dim lastName As String = StrConv(FrmAddEmployee.TxtLastname.Text, VbStrConv.ProperCase)
-            Dim firstName As String = StrConv(FrmAddEmployee.TxtFirstName.Text, VbStrConv.ProperCase)
-
-            If String.IsNullOrEmpty(firstName) AndAlso
-               String.IsNullOrEmpty(lastName) AndAlso
-               String.IsNullOrEmpty(FrmAddEmployee.TxtRfidNumber.Text) AndAlso
-               String.IsNullOrEmpty(FrmAddEmployee.TxtSalary.Text) Then
-                MsgEmptyField()
-                Exit Sub
-            ElseIf FrmAddEmployee.CbDepartment.SelectedIndex = -1 OrElse FrmAddEmployee.CbPosition.SelectedIndex = -1 OrElse FrmAddEmployee.CbAssociateStatus.SelectedIndex = -1 OrElse FrmAddEmployee.CbAssociateStatus.SelectedIndex = -1 Then
-                MsgEmptyField()
-                Exit Sub
-            ElseIf Not Regex.IsMatch(FrmAddEmployee.TxtFirstName.Text, forNames) OrElse Not Regex.IsMatch(FrmAddEmployee.TxtLastName.Text, forNames) Then
-                MessageBox.Show("Invalid names.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                Exit Sub
-            ElseIf FrmAddEmployee.TxtRfidNumber.Text.Length <> 10 Then
-                MessageBox.Show("Invalid RFID.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                FrmAddEmployee.TxtRfidNumber.Focus()
-                Exit Sub
-            ElseIf Not Regex.IsMatch(FrmAddEmployee.TxtSalary.Text, forPrice) Then
-                MessageBox.Show("Invalid salary.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                Exit Sub
-            ElseIf Val(FrmAddEmployee.TxtSalary.text) > 999999 Then
-                MessageBox.Show("Invalid salary.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                Exit Sub
-            ElseIf Not Regex.IsMatch(FrmAddEmployee.TxtRfidNumber.Text, numberOnly) Then
-                MessageBox.Show("Invalid RFID", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                FrmAddEmployee.TxtRfidNumber.Focus()
-                Exit Sub
-            End If
-            For Each row As DataGridViewRow In FrmAddEmployee.DGVoluntary.Rows
-                Try
-                    Dim amount As Integer = If(String.IsNullOrEmpty(row.Cells("amount").Value.ToString), 0, row.Cells("amount").Value)
-
-                    If Not IsNumeric(amount) Then
-                        MessageBox.Show("Voluntary amount contains only.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                        Exit Sub
-                    ElseIf amount < 0 Then
-                        MessageBox.Show("Voluntary amount cannot be less than 0.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                        Exit Sub
-                    ElseIf amount.ToString.Length > 20 Then
-                        MessageBox.Show("Invalid voluntary amount.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                        Exit Sub
-                    End If
-                Catch ex As Exception
-                    MessageBox.Show("Invalid Voluntary amount.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                End Try
-            Next
-
-
-            ClassEmployee.NewEmployee(FrmAddEmployee.TxtRfidNumber, FrmAddEmployee.TxtLastname, FrmAddEmployee.TxtFirstName, FrmAddEmployee.CbDepartment, FrmAddEmployee.CbPosition, FrmAddEmployee.TxtSalary, FrmAddEmployee.CbAssociateStatus)
-            ClassEmployee.LoadEmployee(DGEmployee)
-        Catch ex As MySqlException
-            MsgBox(ex.Message)
-        End Try
-    End Sub
-    Private Sub TPEmployeeList_Enter(sender As Object, e As EventArgs)
-        ClassEmployee.LoadEmployee(DGEmployee)
+        ClassEmployee.LoadEmployee(DgEmployee)
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         ClassEmployee.RefreshDepartment(FrmAddEmployee.CbDepartment)
@@ -155,7 +88,7 @@ Public Class FrmEmployee
     End Sub
 
     Private Sub DgEmployee_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgEmployee.CellDoubleClick
-        ClassEmployee.SelectEmployee(DgEmployee, FrmAddEmployee.TxtRfidNumber, FrmAddEmployee.TxtFirstName, FrmAddEmployee.TxtLastname, FrmAddEmployee.CbDepartment, FrmAddEmployee.CbPosition, FrmAddEmployee.CbAssociateStatus)
+        ClassEmployee.SelectEmployee(DgEmployee, FrmAddEmployee.TxtRfidNumber, FrmAddEmployee.TxtFirstName, FrmAddEmployee.TxtLastname, FrmAddEmployee.CbDepartment, FrmAddEmployee.CbPosition, FrmAddEmployee.TxtSalary, FrmAddEmployee.CbCompensationType, FrmAddEmployee.CbAssociateStatus)
     End Sub
 
     Private Sub DgEmployee_MouseDown(sender As Object, e As MouseEventArgs) Handles DgEmployee.MouseDown
@@ -172,5 +105,21 @@ Public Class FrmEmployee
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub BtnAddAssociate_Click(sender As Object, e As EventArgs) Handles BtnAddAssociate.Click
+        FrmAddEmployee.Show()
+        FrmAddEmployee.BringToFront()
+        Me.Enabled = False
+    End Sub
+
+    Private Sub DgEmployee_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgEmployee.CellClick
+
+        ' Check if the clicked cell is the button column
+        If e.ColumnIndex = DgEmployee.Columns("btnViewSalaryHistory").Index AndAlso e.RowIndex >= 0 Then
+            ' Get the employeeID of the selected row
+            ClassEmployee.employeeID = CInt(DgEmployee.Rows(e.RowIndex).Cells("Column1").Value)
+            ClassEmployee.ViewSalaryHistory(FrmSalaryHistory.DGSalaryHistory)
+        End If
     End Sub
 End Class

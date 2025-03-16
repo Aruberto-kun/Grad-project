@@ -92,6 +92,6 @@ Public Class FrmLogin
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        Me.Close()
+        Application.Exit()
     End Sub
 End Class
