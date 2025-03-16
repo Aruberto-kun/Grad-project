@@ -22,17 +22,17 @@ Partial Class FrmAddEmployee
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
+        Me.BtnSave = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel11 = New System.Windows.Forms.Panel()
-        Me.BtnSaveAssociate = New Guna.UI2.WinForms.Guna2Button()
+        Me.BtnCancel = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel9 = New System.Windows.Forms.Panel()
         Me.CbAssociateStatus = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label9 = New System.Windows.Forms.Label()
@@ -54,28 +54,32 @@ Partial Class FrmAddEmployee
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.DGVoluntary = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.voluntaryID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.voluntaryStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.voluntaryName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.amount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.DgLeave = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.DGLeaveAllocation = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.leaveID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.leaveStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.leaveType = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.TxtAllowance = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.voluntaryID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.voluntaryName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.amount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.voluntaryStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel3.SuspendLayout()
         Me.Panel10.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.Panel8.SuspendLayout()
         CType(Me.DGVoluntary, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.DgLeave, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DGLeaveAllocation, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel3
         '
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel3.Controls.Add(Me.TxtAllowance)
+        Me.Panel3.Controls.Add(Me.Label1)
         Me.Panel3.Controls.Add(Me.Panel10)
         Me.Panel3.Controls.Add(Me.Panel9)
         Me.Panel3.Controls.Add(Me.CbAssociateStatus)
@@ -94,30 +98,30 @@ Partial Class FrmAddEmployee
         '
         'Panel10
         '
-        Me.Panel10.Controls.Add(Me.Guna2Button2)
+        Me.Panel10.Controls.Add(Me.BtnSave)
         Me.Panel10.Controls.Add(Me.Panel11)
-        Me.Panel10.Controls.Add(Me.BtnSaveAssociate)
+        Me.Panel10.Controls.Add(Me.BtnCancel)
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel10.Location = New System.Drawing.Point(929, 361)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(917, 47)
         Me.Panel10.TabIndex = 29
         '
-        'Guna2Button2
+        'BtnSave
         '
-        Me.Guna2Button2.BorderRadius = 5
-        Me.Guna2Button2.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button2.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.Location = New System.Drawing.Point(612, 0)
-        Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.Size = New System.Drawing.Size(150, 47)
-        Me.Guna2Button2.TabIndex = 2
-        Me.Guna2Button2.Text = "CANCEL"
+        Me.BtnSave.BorderRadius = 5
+        Me.BtnSave.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.BtnSave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.BtnSave.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.BtnSave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.BtnSave.Dock = System.Windows.Forms.DockStyle.Right
+        Me.BtnSave.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.BtnSave.ForeColor = System.Drawing.Color.White
+        Me.BtnSave.Location = New System.Drawing.Point(612, 0)
+        Me.BtnSave.Name = "BtnSave"
+        Me.BtnSave.Size = New System.Drawing.Size(150, 47)
+        Me.BtnSave.TabIndex = 2
+        Me.BtnSave.Text = "SAVE"
         '
         'Panel11
         '
@@ -127,21 +131,21 @@ Partial Class FrmAddEmployee
         Me.Panel11.Size = New System.Drawing.Size(5, 47)
         Me.Panel11.TabIndex = 1
         '
-        'BtnSaveAssociate
+        'BtnCancel
         '
-        Me.BtnSaveAssociate.BorderRadius = 5
-        Me.BtnSaveAssociate.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.BtnSaveAssociate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.BtnSaveAssociate.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.BtnSaveAssociate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.BtnSaveAssociate.Dock = System.Windows.Forms.DockStyle.Right
-        Me.BtnSaveAssociate.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BtnSaveAssociate.ForeColor = System.Drawing.Color.White
-        Me.BtnSaveAssociate.Location = New System.Drawing.Point(767, 0)
-        Me.BtnSaveAssociate.Name = "BtnSaveAssociate"
-        Me.BtnSaveAssociate.Size = New System.Drawing.Size(150, 47)
-        Me.BtnSaveAssociate.TabIndex = 0
-        Me.BtnSaveAssociate.Text = "SAVE"
+        Me.BtnCancel.BorderRadius = 5
+        Me.BtnCancel.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.BtnCancel.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.BtnCancel.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.BtnCancel.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.BtnCancel.Dock = System.Windows.Forms.DockStyle.Right
+        Me.BtnCancel.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.BtnCancel.ForeColor = System.Drawing.Color.White
+        Me.BtnCancel.Location = New System.Drawing.Point(767, 0)
+        Me.BtnCancel.Name = "BtnCancel"
+        Me.BtnCancel.Size = New System.Drawing.Size(150, 47)
+        Me.BtnCancel.TabIndex = 0
+        Me.BtnCancel.Text = "CANCEL"
         '
         'Panel9
         '
@@ -445,27 +449,27 @@ Partial Class FrmAddEmployee
         '
         Me.DGVoluntary.AllowUserToAddRows = False
         Me.DGVoluntary.AllowUserToDeleteRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.DGVoluntary.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        Me.DGVoluntary.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.DGVoluntary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(231, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(231, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVoluntary.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(231, Byte), Integer))
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(231, Byte), Integer))
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVoluntary.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.DGVoluntary.ColumnHeadersHeight = 40
-        Me.DGVoluntary.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.voluntaryID, Me.voluntaryStatus, Me.voluntaryName, Me.amount})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGVoluntary.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DGVoluntary.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.voluntaryID, Me.voluntaryName, Me.amount, Me.voluntaryStatus})
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGVoluntary.DefaultCellStyle = DataGridViewCellStyle9
         Me.DGVoluntary.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGVoluntary.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DGVoluntary.Location = New System.Drawing.Point(0, 44)
@@ -498,40 +502,6 @@ Partial Class FrmAddEmployee
         Me.DGVoluntary.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DGVoluntary.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
-        'voluntaryID
-        '
-        Me.voluntaryID.DataPropertyName = "voluntaryID"
-        Me.voluntaryID.HeaderText = "Voluntary ID"
-        Me.voluntaryID.MinimumWidth = 6
-        Me.voluntaryID.Name = "voluntaryID"
-        Me.voluntaryID.ReadOnly = True
-        Me.voluntaryID.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        '
-        'voluntaryStatus
-        '
-        Me.voluntaryStatus.DataPropertyName = "status"
-        Me.voluntaryStatus.HeaderText = "Status"
-        Me.voluntaryStatus.Name = "voluntaryStatus"
-        Me.voluntaryStatus.ReadOnly = True
-        Me.voluntaryStatus.Visible = False
-        '
-        'voluntaryName
-        '
-        Me.voluntaryName.DataPropertyName = "voluntaryName"
-        Me.voluntaryName.HeaderText = "Name"
-        Me.voluntaryName.MinimumWidth = 8
-        Me.voluntaryName.Name = "voluntaryName"
-        Me.voluntaryName.ReadOnly = True
-        Me.voluntaryName.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        '
-        'amount
-        '
-        Me.amount.HeaderText = "Amount"
-        Me.amount.MaxInputLength = 6
-        Me.amount.MinimumWidth = 8
-        Me.amount.Name = "amount"
-        Me.amount.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        '
         'Label7
         '
         Me.Label7.Dock = System.Windows.Forms.DockStyle.Top
@@ -551,62 +521,62 @@ Partial Class FrmAddEmployee
         Me.Panel7.Size = New System.Drawing.Size(5, 483)
         Me.Panel7.TabIndex = 27
         '
-        'DgLeave
+        'DGLeaveAllocation
         '
-        Me.DgLeave.AllowUserToAddRows = False
-        Me.DgLeave.AllowUserToDeleteRows = False
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        Me.DgLeave.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
-        Me.DgLeave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(231, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(231, Byte), Integer))
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgLeave.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
-        Me.DgLeave.ColumnHeadersHeight = 40
-        Me.DgLeave.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.leaveID, Me.leaveStatus, Me.leaveType})
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgLeave.DefaultCellStyle = DataGridViewCellStyle6
-        Me.DgLeave.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DgLeave.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DgLeave.Location = New System.Drawing.Point(929, 459)
-        Me.DgLeave.Margin = New System.Windows.Forms.Padding(2)
-        Me.DgLeave.Name = "DgLeave"
-        Me.DgLeave.RowHeadersVisible = False
-        Me.DgLeave.RowHeadersWidth = 51
-        Me.DgLeave.RowTemplate.Height = 24
-        Me.DgLeave.Size = New System.Drawing.Size(919, 439)
-        Me.DgLeave.TabIndex = 29
-        Me.DgLeave.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
-        Me.DgLeave.ThemeStyle.AlternatingRowsStyle.Font = Nothing
-        Me.DgLeave.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
-        Me.DgLeave.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
-        Me.DgLeave.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
-        Me.DgLeave.ThemeStyle.BackColor = System.Drawing.Color.White
-        Me.DgLeave.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DgLeave.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DgLeave.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.DgLeave.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DgLeave.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.DgLeave.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.DgLeave.ThemeStyle.HeaderStyle.Height = 40
-        Me.DgLeave.ThemeStyle.ReadOnly = False
-        Me.DgLeave.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
-        Me.DgLeave.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.DgLeave.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DgLeave.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.DgLeave.ThemeStyle.RowsStyle.Height = 24
-        Me.DgLeave.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DgLeave.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.DGLeaveAllocation.AllowUserToAddRows = False
+        Me.DGLeaveAllocation.AllowUserToDeleteRows = False
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.White
+        Me.DGLeaveAllocation.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle10
+        Me.DGLeaveAllocation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(231, Byte), Integer))
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(231, Byte), Integer))
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGLeaveAllocation.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
+        Me.DGLeaveAllocation.ColumnHeadersHeight = 40
+        Me.DGLeaveAllocation.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.leaveID, Me.leaveStatus, Me.leaveType})
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle12.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGLeaveAllocation.DefaultCellStyle = DataGridViewCellStyle12
+        Me.DGLeaveAllocation.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DGLeaveAllocation.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DGLeaveAllocation.Location = New System.Drawing.Point(929, 459)
+        Me.DGLeaveAllocation.Margin = New System.Windows.Forms.Padding(2)
+        Me.DGLeaveAllocation.Name = "DGLeaveAllocation"
+        Me.DGLeaveAllocation.RowHeadersVisible = False
+        Me.DGLeaveAllocation.RowHeadersWidth = 51
+        Me.DGLeaveAllocation.RowTemplate.Height = 24
+        Me.DGLeaveAllocation.Size = New System.Drawing.Size(919, 439)
+        Me.DGLeaveAllocation.TabIndex = 29
+        Me.DGLeaveAllocation.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.DGLeaveAllocation.ThemeStyle.AlternatingRowsStyle.Font = Nothing
+        Me.DGLeaveAllocation.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
+        Me.DGLeaveAllocation.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
+        Me.DGLeaveAllocation.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
+        Me.DGLeaveAllocation.ThemeStyle.BackColor = System.Drawing.Color.White
+        Me.DGLeaveAllocation.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DGLeaveAllocation.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DGLeaveAllocation.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.DGLeaveAllocation.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DGLeaveAllocation.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.DGLeaveAllocation.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.DGLeaveAllocation.ThemeStyle.HeaderStyle.Height = 40
+        Me.DGLeaveAllocation.ThemeStyle.ReadOnly = False
+        Me.DGLeaveAllocation.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.DGLeaveAllocation.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.DGLeaveAllocation.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DGLeaveAllocation.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.DGLeaveAllocation.ThemeStyle.RowsStyle.Height = 24
+        Me.DGLeaveAllocation.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DGLeaveAllocation.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
         'leaveID
         '
@@ -637,13 +607,81 @@ Partial Class FrmAddEmployee
         Me.Label10.Text = "Manage Leave"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
+        'TxtAllowance
+        '
+        Me.TxtAllowance.BorderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.TxtAllowance.BorderRadius = 5
+        Me.TxtAllowance.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtAllowance.DefaultText = ""
+        Me.TxtAllowance.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.TxtAllowance.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.TxtAllowance.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtAllowance.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtAllowance.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TxtAllowance.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.TxtAllowance.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TxtAllowance.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.TxtAllowance.Location = New System.Drawing.Point(929, 288)
+        Me.TxtAllowance.MaxLength = 45
+        Me.TxtAllowance.Name = "TxtAllowance"
+        Me.TxtAllowance.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtAllowance.PlaceholderText = ""
+        Me.TxtAllowance.SelectedText = ""
+        Me.TxtAllowance.Size = New System.Drawing.Size(917, 36)
+        Me.TxtAllowance.TabIndex = 31
+        '
+        'Label1
+        '
+        Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label1.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(929, 243)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(917, 45)
+        Me.Label1.TabIndex = 30
+        Me.Label1.Text = "Allowance(Non-Taxable):"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'voluntaryID
+        '
+        Me.voluntaryID.DataPropertyName = "voluntaryID"
+        Me.voluntaryID.HeaderText = "Voluntary ID"
+        Me.voluntaryID.MinimumWidth = 6
+        Me.voluntaryID.Name = "voluntaryID"
+        Me.voluntaryID.ReadOnly = True
+        Me.voluntaryID.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
+        'voluntaryName
+        '
+        Me.voluntaryName.DataPropertyName = "voluntaryName"
+        Me.voluntaryName.HeaderText = "Voluntary Contribution Name"
+        Me.voluntaryName.MinimumWidth = 8
+        Me.voluntaryName.Name = "voluntaryName"
+        Me.voluntaryName.ReadOnly = True
+        Me.voluntaryName.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
+        'amount
+        '
+        Me.amount.HeaderText = "Amount"
+        Me.amount.MaxInputLength = 6
+        Me.amount.MinimumWidth = 8
+        Me.amount.Name = "amount"
+        Me.amount.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
+        'voluntaryStatus
+        '
+        Me.voluntaryStatus.DataPropertyName = "status"
+        Me.voluntaryStatus.HeaderText = "Status"
+        Me.voluntaryStatus.Name = "voluntaryStatus"
+        Me.voluntaryStatus.ReadOnly = True
+        Me.voluntaryStatus.Visible = False
+        '
         'FrmAddEmployee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1848, 898)
         Me.ControlBox = False
-        Me.Controls.Add(Me.DgLeave)
+        Me.Controls.Add(Me.DGLeaveAllocation)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Panel7)
         Me.Controls.Add(Me.Panel8)
@@ -656,16 +694,16 @@ Partial Class FrmAddEmployee
         Me.Panel4.ResumeLayout(False)
         Me.Panel8.ResumeLayout(False)
         CType(Me.DGVoluntary, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.DgLeave, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DGLeaveAllocation, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel10 As Panel
-    Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents BtnSave As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Panel11 As Panel
-    Friend WithEvents BtnSaveAssociate As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents BtnCancel As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Panel9 As Panel
     Friend WithEvents CbAssociateStatus As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label9 As Label
@@ -687,15 +725,17 @@ Partial Class FrmAddEmployee
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel8 As Panel
     Friend WithEvents DGVoluntary As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents voluntaryID As DataGridViewTextBoxColumn
-    Friend WithEvents voluntaryStatus As DataGridViewTextBoxColumn
-    Friend WithEvents voluntaryName As DataGridViewTextBoxColumn
-    Friend WithEvents amount As DataGridViewTextBoxColumn
     Friend WithEvents Label7 As Label
     Friend WithEvents Panel7 As Panel
-    Friend WithEvents DgLeave As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents DGLeaveAllocation As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents leaveID As DataGridViewTextBoxColumn
     Friend WithEvents leaveStatus As DataGridViewTextBoxColumn
     Friend WithEvents leaveType As DataGridViewTextBoxColumn
     Friend WithEvents Label10 As Label
+    Friend WithEvents TxtAllowance As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label1 As Label
+    Friend WithEvents voluntaryID As DataGridViewTextBoxColumn
+    Friend WithEvents voluntaryName As DataGridViewTextBoxColumn
+    Friend WithEvents amount As DataGridViewTextBoxColumn
+    Friend WithEvents voluntaryStatus As DataGridViewTextBoxColumn
 End Class

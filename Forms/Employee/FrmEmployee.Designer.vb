@@ -39,17 +39,19 @@ Partial Class FrmEmployee
         Me.BtnAddAssociate = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel61 = New System.Windows.Forms.Panel()
-        Me.status = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.positionName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.departmentName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.fullName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel62 = New System.Windows.Forms.Panel()
-        Me.employeeNumber = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.employeeID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Panel57 = New System.Windows.Forms.Panel()
-        Me.rfidNumber = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DgEmployee = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.Panel57.SuspendLayout()
         CType(Me.DgEmployee, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -194,34 +196,6 @@ Partial Class FrmEmployee
         Me.Panel61.Size = New System.Drawing.Size(1382, 4)
         Me.Panel61.TabIndex = 1
         '
-        'status
-        '
-        Me.status.DataPropertyName = "status"
-        Me.status.HeaderText = "Status"
-        Me.status.Name = "status"
-        Me.status.ReadOnly = True
-        '
-        'positionName
-        '
-        Me.positionName.DataPropertyName = "positionName"
-        Me.positionName.HeaderText = "Position"
-        Me.positionName.Name = "positionName"
-        Me.positionName.ReadOnly = True
-        '
-        'departmentName
-        '
-        Me.departmentName.DataPropertyName = "departmentName"
-        Me.departmentName.HeaderText = "Department"
-        Me.departmentName.Name = "departmentName"
-        Me.departmentName.ReadOnly = True
-        '
-        'fullName
-        '
-        Me.fullName.DataPropertyName = "fullName"
-        Me.fullName.HeaderText = "Full Name"
-        Me.fullName.Name = "fullName"
-        Me.fullName.ReadOnly = True
-        '
         'Panel62
         '
         Me.Panel62.Dock = System.Windows.Forms.DockStyle.Right
@@ -229,20 +203,6 @@ Partial Class FrmEmployee
         Me.Panel62.Name = "Panel62"
         Me.Panel62.Size = New System.Drawing.Size(4, 49)
         Me.Panel62.TabIndex = 0
-        '
-        'employeeNumber
-        '
-        Me.employeeNumber.DataPropertyName = "employeeNumber"
-        Me.employeeNumber.HeaderText = "Employee No."
-        Me.employeeNumber.Name = "employeeNumber"
-        Me.employeeNumber.ReadOnly = True
-        '
-        'employeeID
-        '
-        Me.employeeID.DataPropertyName = "employeeID"
-        Me.employeeID.HeaderText = "Employee ID"
-        Me.employeeID.Name = "employeeID"
-        Me.employeeID.ReadOnly = True
         '
         'Panel4
         '
@@ -269,13 +229,6 @@ Partial Class FrmEmployee
         Me.Panel57.Size = New System.Drawing.Size(1386, 49)
         Me.Panel57.TabIndex = 9
         '
-        'rfidNumber
-        '
-        Me.rfidNumber.DataPropertyName = "rfidNumber"
-        Me.rfidNumber.HeaderText = "RFID"
-        Me.rfidNumber.Name = "rfidNumber"
-        Me.rfidNumber.ReadOnly = True
-        '
         'DgEmployee
         '
         Me.DgEmployee.AllowUserToAddRows = False
@@ -294,7 +247,7 @@ Partial Class FrmEmployee
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DgEmployee.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DgEmployee.ColumnHeadersHeight = 40
-        Me.DgEmployee.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.employeeID, Me.employeeNumber, Me.rfidNumber, Me.fullName, Me.departmentName, Me.positionName, Me.status})
+        Me.DgEmployee.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column9})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -305,11 +258,11 @@ Partial Class FrmEmployee
         Me.DgEmployee.DefaultCellStyle = DataGridViewCellStyle3
         Me.DgEmployee.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgEmployee.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DgEmployee.Location = New System.Drawing.Point(0, 0)
+        Me.DgEmployee.Location = New System.Drawing.Point(5, 49)
         Me.DgEmployee.Name = "DgEmployee"
         Me.DgEmployee.ReadOnly = True
         Me.DgEmployee.RowHeadersVisible = False
-        Me.DgEmployee.Size = New System.Drawing.Size(1386, 974)
+        Me.DgEmployee.Size = New System.Drawing.Size(1376, 920)
         Me.DgEmployee.TabIndex = 10
         Me.DgEmployee.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DgEmployee.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -333,17 +286,83 @@ Partial Class FrmEmployee
         Me.DgEmployee.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgEmployee.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
+        'Column1
+        '
+        Me.Column1.DataPropertyName = "employeeID"
+        Me.Column1.HeaderText = "Employee ID"
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        Me.Column1.Visible = False
+        '
+        'Column2
+        '
+        Me.Column2.DataPropertyName = "employeeNumber"
+        Me.Column2.HeaderText = "Employee Number"
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.DataPropertyName = "rfidnumber"
+        Me.Column3.HeaderText = "RFID Number"
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
+        'Column4
+        '
+        Me.Column4.DataPropertyName = "fullname"
+        Me.Column4.HeaderText = "Full Name"
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'Column5
+        '
+        Me.Column5.DataPropertyName = "firstname"
+        Me.Column5.HeaderText = "First Name"
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
+        Me.Column5.Visible = False
+        '
+        'Column6
+        '
+        Me.Column6.DataPropertyName = "lastname"
+        Me.Column6.HeaderText = "Last Name"
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Visible = False
+        '
+        'Column7
+        '
+        Me.Column7.DataPropertyName = "departmentName"
+        Me.Column7.HeaderText = "Department Name"
+        Me.Column7.Name = "Column7"
+        Me.Column7.ReadOnly = True
+        '
+        'Column8
+        '
+        Me.Column8.DataPropertyName = "positionName"
+        Me.Column8.HeaderText = "Position"
+        Me.Column8.Name = "Column8"
+        Me.Column8.ReadOnly = True
+        '
+        'Column9
+        '
+        Me.Column9.DataPropertyName = "status"
+        Me.Column9.HeaderText = "Status"
+        Me.Column9.Name = "Column9"
+        Me.Column9.ReadOnly = True
+        '
         'FrmEmployee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1386, 974)
         Me.ControlBox = False
+        Me.Controls.Add(Me.DgEmployee)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel57)
-        Me.Controls.Add(Me.DgEmployee)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FrmEmployee"
@@ -366,15 +385,17 @@ Partial Class FrmEmployee
     Friend WithEvents BtnAddAssociate As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel61 As Panel
-    Friend WithEvents status As DataGridViewTextBoxColumn
-    Friend WithEvents positionName As DataGridViewTextBoxColumn
-    Friend WithEvents departmentName As DataGridViewTextBoxColumn
-    Friend WithEvents fullName As DataGridViewTextBoxColumn
     Friend WithEvents Panel62 As Panel
-    Friend WithEvents employeeNumber As DataGridViewTextBoxColumn
-    Friend WithEvents employeeID As DataGridViewTextBoxColumn
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Panel57 As Panel
-    Friend WithEvents rfidNumber As DataGridViewTextBoxColumn
     Friend WithEvents DgEmployee As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
+    Friend WithEvents Column6 As DataGridViewTextBoxColumn
+    Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents Column8 As DataGridViewTextBoxColumn
+    Friend WithEvents Column9 As DataGridViewTextBoxColumn
 End Class
