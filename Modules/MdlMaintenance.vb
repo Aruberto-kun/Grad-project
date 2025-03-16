@@ -26,4 +26,23 @@ Module MdlMaintenance
 
 #End Region
 
+#Region "Department"
+
+    Public Sub NewDepartment(department As String)
+        Dim command As New MySqlCommand("INSERT INTO tblDepartment (departmentName, status) VALUES (@departmentName, 'Active')", connection)
+        command.Parameters.AddWithValue("@departmentName", department)
+        command.ExecuteNonQuery()
+        MessageBox.Show("Department added successfully.")
+    End Sub
+
+    Public Function DisplayDepartment() As DataTable
+        Dim command As New MySqlCommand("SELECT * FROM tblDepartment", connection)
+        Dim adapter As New MySqlDataAdapter(command)
+        Dim datatable As New DataTable
+        adapter.Fill(datatable)
+        Return datatable
+    End Function
+
+#End Region
+
 End Module

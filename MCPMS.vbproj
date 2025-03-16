@@ -113,6 +113,12 @@
     <Compile Include="Forms\Department\FrmDepartmentControls.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Employee\FrmAddEmployee.Designer.vb">
+      <DependentUpon>FrmAddEmployee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Employee\FrmAddEmployee.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Employee\FrmEmployee.Designer.vb">
       <DependentUpon>FrmEmployee.vb</DependentUpon>
     </Compile>
@@ -253,6 +259,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Department\FrmDepartmentControls.resx">
       <DependentUpon>FrmDepartmentControls.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Employee\FrmAddEmployee.resx">
+      <DependentUpon>FrmAddEmployee.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Employee\FrmEmployee.resx">
       <DependentUpon>FrmEmployee.vb</DependentUpon>
