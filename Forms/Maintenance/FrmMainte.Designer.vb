@@ -83,8 +83,23 @@ Partial Class FrmMainte
         Me.Panel38 = New System.Windows.Forms.Panel()
         Me.Panel6 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.BtnSaveDepartment = New Guna.UI2.WinForms.Guna2Button()
         Me.TxtDepartment = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
+        Me.tabPosition = New System.Windows.Forms.TabPage()
+        Me.DgPosition = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.positionID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.positionName = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.departmentPosition = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.positionStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel41 = New System.Windows.Forms.Panel()
+        Me.Panel11 = New System.Windows.Forms.Panel()
+        Me.Panel10 = New System.Windows.Forms.Panel()
+        Me.BtnSavePosition = New Guna.UI2.WinForms.Guna2Button()
+        Me.TxtPosition = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.CbDepartment = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.tabLeave = New System.Windows.Forms.TabPage()
         Me.dgLeave = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.leaveID = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -96,24 +111,6 @@ Partial Class FrmMainte
         Me.TxtLeave = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.BtnSaveLeave = New Guna.UI2.WinForms.Guna2Button()
-        Me.Panel9 = New System.Windows.Forms.Panel()
-        Me.BtnDeleteLeave = New Guna.UI2.WinForms.Guna2Button()
-        Me.tabPosition = New System.Windows.Forms.TabPage()
-        Me.DgPosition = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.positionID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.positionName = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.departmentPosition = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.positionStatus = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Panel41 = New System.Windows.Forms.Panel()
-        Me.Panel11 = New System.Windows.Forms.Panel()
-        Me.Panel10 = New System.Windows.Forms.Panel()
-        Me.TxtPosition = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.CbDepartment = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.BtnSavePosition = New Guna.UI2.WinForms.Guna2Button()
-        Me.Panel12 = New System.Windows.Forms.Panel()
-        Me.BtnDeletePosition = New Guna.UI2.WinForms.Guna2Button()
         Me.tabIncentives = New System.Windows.Forms.TabPage()
         Me.DgIncentives = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.incentiveID = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -125,8 +122,6 @@ Partial Class FrmMainte
         Me.TxtIncentives = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.BtnSaveIncentives = New Guna.UI2.WinForms.Guna2Button()
-        Me.Panel21 = New System.Windows.Forms.Panel()
-        Me.BtnDeleteIncentive = New Guna.UI2.WinForms.Guna2Button()
         Me.tabHoliday = New System.Windows.Forms.TabPage()
         Me.dgHoliday = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.holidayID = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -143,8 +138,6 @@ Partial Class FrmMainte
         Me.TxtHoliday = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.BtnSaveHoliday = New Guna.UI2.WinForms.Guna2Button()
-        Me.Panel24 = New System.Windows.Forms.Panel()
-        Me.BtnDeleteHoliday = New Guna.UI2.WinForms.Guna2Button()
         Me.tabRate = New System.Windows.Forms.TabPage()
         Me.dgRates = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.rateID = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -167,9 +160,15 @@ Partial Class FrmMainte
         Me.taxMaxSalary = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.taxFixedAmount = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.taxPercentage = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Panel52 = New System.Windows.Forms.Panel()
+        Me.CbTaxClassification = New Guna.UI2.WinForms.Guna2ComboBox()
+        Me.Panel55 = New System.Windows.Forms.Panel()
+        Me.Panel56 = New System.Windows.Forms.Panel()
         Me.Panel49 = New System.Windows.Forms.Panel()
-        Me.Panel26 = New System.Windows.Forms.Panel()
-        Me.Panel28 = New System.Windows.Forms.Panel()
+        Me.Panel36 = New System.Windows.Forms.Panel()
+        Me.Panel7 = New System.Windows.Forms.Panel()
         Me.TxtTaxPercentage = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.TxtTaxFixedAmount = New Guna.UI2.WinForms.Guna2TextBox()
@@ -179,7 +178,7 @@ Partial Class FrmMainte
         Me.TxtTaxMinSalary = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.BtnSaveTax = New Guna.UI2.WinForms.Guna2Button()
-        Me.Panel29 = New System.Windows.Forms.Panel()
+        Me.Panel9 = New System.Windows.Forms.Panel()
         Me.BtnDeleteTax = New Guna.UI2.WinForms.Guna2Button()
         Me.tabSSS = New System.Windows.Forms.TabPage()
         Me.dgSSS = New Guna.UI2.WinForms.Guna2DataGridView()
@@ -187,14 +186,11 @@ Partial Class FrmMainte
         Me.sssMinSalary = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.sssMaxSalary = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.sssEE = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.sssWisp = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.sssTotal = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.sssER = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel50 = New System.Windows.Forms.Panel()
-        Me.Panel30 = New System.Windows.Forms.Panel()
-        Me.Panel32 = New System.Windows.Forms.Panel()
-        Me.TxtSSSTotal = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label21 = New System.Windows.Forms.Label()
-        Me.TxtSSSWISP = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Panel42 = New System.Windows.Forms.Panel()
+        Me.Panel12 = New System.Windows.Forms.Panel()
+        Me.TxtSSSER = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.TxtSSSEE = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
@@ -203,28 +199,28 @@ Partial Class FrmMainte
         Me.TxtSSSMinSalary = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.BtnSaveSSS = New Guna.UI2.WinForms.Guna2Button()
-        Me.Panel31 = New System.Windows.Forms.Panel()
+        Me.Panel13 = New System.Windows.Forms.Panel()
         Me.BtnDeleteSSS = New Guna.UI2.WinForms.Guna2Button()
         Me.tabPagibig = New System.Windows.Forms.TabPage()
         Me.dgPagibig = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.pagibigID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pagibigRate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.pagibigDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Panel33 = New System.Windows.Forms.Panel()
+        Me.Panel14 = New System.Windows.Forms.Panel()
         Me.TxtPagibigRate = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label26 = New System.Windows.Forms.Label()
         Me.BtnSavePagibig = New Guna.UI2.WinForms.Guna2Button()
-        Me.Panel35 = New System.Windows.Forms.Panel()
+        Me.Panel46 = New System.Windows.Forms.Panel()
         Me.tabPhilHealth = New System.Windows.Forms.TabPage()
         Me.dgPhilhealth = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.philhealthID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.philHealthRate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.philHealthDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Panel34 = New System.Windows.Forms.Panel()
+        Me.Panel47 = New System.Windows.Forms.Panel()
         Me.txtPhilhealthRate = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label22 = New System.Windows.Forms.Label()
         Me.BtnSavePhilhealth = New Guna.UI2.WinForms.Guna2Button()
-        Me.Panel36 = New System.Windows.Forms.Panel()
+        Me.Panel15 = New System.Windows.Forms.Panel()
         Me.tabVoluntary = New System.Windows.Forms.TabPage()
         Me.DgVoluntary = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.voluntaryID = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -236,11 +232,8 @@ Partial Class FrmMainte
         Me.TxtVoluntary = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.BtnSaveVoluntary = New Guna.UI2.WinForms.Guna2Button()
-        Me.Panel45 = New System.Windows.Forms.Panel()
-        Me.BtnDeleteVoluntary = New Guna.UI2.WinForms.Guna2Button()
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.BtnSaveDepartment = New Guna.UI2.WinForms.Guna2Button()
         Me.Guna2TabControl1.SuspendLayout()
         Me.tabUser.SuspendLayout()
         CType(Me.DgUser, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -250,14 +243,14 @@ Partial Class FrmMainte
         CType(Me.DgDepartment, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel6.SuspendLayout()
         Me.Panel4.SuspendLayout()
-        Me.tabLeave.SuspendLayout()
-        CType(Me.dgLeave, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel8.SuspendLayout()
-        Me.Panel5.SuspendLayout()
         Me.tabPosition.SuspendLayout()
         CType(Me.DgPosition, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel11.SuspendLayout()
         Me.Panel10.SuspendLayout()
+        Me.tabLeave.SuspendLayout()
+        CType(Me.dgLeave, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel8.SuspendLayout()
+        Me.Panel5.SuspendLayout()
         Me.tabIncentives.SuspendLayout()
         CType(Me.DgIncentives, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel17.SuspendLayout()
@@ -274,18 +267,20 @@ Partial Class FrmMainte
         Me.Guna2TabControl2.SuspendLayout()
         Me.tabTax.SuspendLayout()
         CType(Me.dgTax, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel26.SuspendLayout()
-        Me.Panel28.SuspendLayout()
+        Me.Panel1.SuspendLayout()
+        Me.Panel52.SuspendLayout()
+        Me.Panel36.SuspendLayout()
+        Me.Panel7.SuspendLayout()
         Me.tabSSS.SuspendLayout()
         CType(Me.dgSSS, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel30.SuspendLayout()
-        Me.Panel32.SuspendLayout()
+        Me.Panel42.SuspendLayout()
+        Me.Panel12.SuspendLayout()
         Me.tabPagibig.SuspendLayout()
         CType(Me.dgPagibig, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel33.SuspendLayout()
+        Me.Panel14.SuspendLayout()
         Me.tabPhilHealth.SuspendLayout()
         CType(Me.dgPhilhealth, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel34.SuspendLayout()
+        Me.Panel47.SuspendLayout()
         Me.tabVoluntary.SuspendLayout()
         CType(Me.DgVoluntary, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
@@ -298,8 +293,8 @@ Partial Class FrmMainte
         Me.Guna2TabControl1.Alignment = System.Windows.Forms.TabAlignment.Left
         Me.Guna2TabControl1.Controls.Add(Me.tabUser)
         Me.Guna2TabControl1.Controls.Add(Me.tabDepartment)
-        Me.Guna2TabControl1.Controls.Add(Me.tabLeave)
         Me.Guna2TabControl1.Controls.Add(Me.tabPosition)
+        Me.Guna2TabControl1.Controls.Add(Me.tabLeave)
         Me.Guna2TabControl1.Controls.Add(Me.tabIncentives)
         Me.Guna2TabControl1.Controls.Add(Me.tabHoliday)
         Me.Guna2TabControl1.Controls.Add(Me.tabRate)
@@ -723,6 +718,23 @@ Partial Class FrmMainte
         Me.Panel4.Size = New System.Drawing.Size(210, 704)
         Me.Panel4.TabIndex = 7
         '
+        'BtnSaveDepartment
+        '
+        Me.BtnSaveDepartment.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.BtnSaveDepartment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.BtnSaveDepartment.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.BtnSaveDepartment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.BtnSaveDepartment.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.BtnSaveDepartment.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnSaveDepartment.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.BtnSaveDepartment.ForeColor = System.Drawing.Color.White
+        Me.BtnSaveDepartment.Location = New System.Drawing.Point(0, 663)
+        Me.BtnSaveDepartment.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnSaveDepartment.Name = "BtnSaveDepartment"
+        Me.BtnSaveDepartment.Size = New System.Drawing.Size(210, 41)
+        Me.BtnSaveDepartment.TabIndex = 8
+        Me.BtnSaveDepartment.Text = "SAVE"
+        '
         'TxtDepartment
         '
         Me.TxtDepartment.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
@@ -762,219 +774,6 @@ Partial Class FrmMainte
         Me.Label1.Text = "Department Name:"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'tabLeave
-        '
-        Me.tabLeave.Controls.Add(Me.dgLeave)
-        Me.tabLeave.Controls.Add(Me.Panel40)
-        Me.tabLeave.Controls.Add(Me.Panel8)
-        Me.tabLeave.Location = New System.Drawing.Point(184, 4)
-        Me.tabLeave.Margin = New System.Windows.Forms.Padding(2)
-        Me.tabLeave.Name = "tabLeave"
-        Me.tabLeave.Padding = New System.Windows.Forms.Padding(2)
-        Me.tabLeave.Size = New System.Drawing.Size(1257, 708)
-        Me.tabLeave.TabIndex = 1
-        Me.tabLeave.Text = "Leave"
-        Me.tabLeave.UseVisualStyleBackColor = True
-        '
-        'dgLeave
-        '
-        Me.dgLeave.AllowUserToAddRows = False
-        Me.dgLeave.AllowUserToDeleteRows = False
-        Me.dgLeave.AllowUserToResizeColumns = False
-        Me.dgLeave.AllowUserToResizeRows = False
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
-        Me.dgLeave.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
-        Me.dgLeave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(231, Byte), Integer))
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(231, Byte), Integer))
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.dgLeave.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
-        Me.dgLeave.ColumnHeadersHeight = 40
-        Me.dgLeave.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.leaveID, Me.leaveName, Me.leaveStatus})
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.dgLeave.DefaultCellStyle = DataGridViewCellStyle9
-        Me.dgLeave.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.dgLeave.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgLeave.Location = New System.Drawing.Point(249, 2)
-        Me.dgLeave.Margin = New System.Windows.Forms.Padding(2)
-        Me.dgLeave.Name = "dgLeave"
-        Me.dgLeave.ReadOnly = True
-        Me.dgLeave.RowHeadersVisible = False
-        Me.dgLeave.RowHeadersWidth = 51
-        Me.dgLeave.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.dgLeave.RowTemplate.Height = 24
-        Me.dgLeave.Size = New System.Drawing.Size(1006, 704)
-        Me.dgLeave.TabIndex = 10
-        Me.dgLeave.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
-        Me.dgLeave.ThemeStyle.AlternatingRowsStyle.Font = Nothing
-        Me.dgLeave.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
-        Me.dgLeave.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
-        Me.dgLeave.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
-        Me.dgLeave.ThemeStyle.BackColor = System.Drawing.Color.White
-        Me.dgLeave.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgLeave.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgLeave.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.dgLeave.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgLeave.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.dgLeave.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.dgLeave.ThemeStyle.HeaderStyle.Height = 40
-        Me.dgLeave.ThemeStyle.ReadOnly = True
-        Me.dgLeave.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
-        Me.dgLeave.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.dgLeave.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.dgLeave.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.dgLeave.ThemeStyle.RowsStyle.Height = 24
-        Me.dgLeave.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgLeave.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        '
-        'leaveID
-        '
-        Me.leaveID.DataPropertyName = "leaveID"
-        Me.leaveID.HeaderText = "Leave ID"
-        Me.leaveID.MinimumWidth = 6
-        Me.leaveID.Name = "leaveID"
-        Me.leaveID.ReadOnly = True
-        Me.leaveID.Visible = False
-        '
-        'leaveName
-        '
-        Me.leaveName.DataPropertyName = "leaveType"
-        Me.leaveName.HeaderText = "Leave"
-        Me.leaveName.MinimumWidth = 6
-        Me.leaveName.Name = "leaveName"
-        Me.leaveName.ReadOnly = True
-        '
-        'leaveStatus
-        '
-        Me.leaveStatus.DataPropertyName = "status"
-        Me.leaveStatus.HeaderText = "Status"
-        Me.leaveStatus.MinimumWidth = 6
-        Me.leaveStatus.Name = "leaveStatus"
-        Me.leaveStatus.ReadOnly = True
-        Me.leaveStatus.Visible = False
-        '
-        'Panel40
-        '
-        Me.Panel40.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel40.Location = New System.Drawing.Point(244, 2)
-        Me.Panel40.Name = "Panel40"
-        Me.Panel40.Size = New System.Drawing.Size(5, 704)
-        Me.Panel40.TabIndex = 9
-        '
-        'Panel8
-        '
-        Me.Panel8.Controls.Add(Me.Panel5)
-        Me.Panel8.Controls.Add(Me.BtnSaveLeave)
-        Me.Panel8.Controls.Add(Me.Panel9)
-        Me.Panel8.Controls.Add(Me.BtnDeleteLeave)
-        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel8.Location = New System.Drawing.Point(2, 2)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(242, 704)
-        Me.Panel8.TabIndex = 8
-        '
-        'Panel5
-        '
-        Me.Panel5.Controls.Add(Me.TxtLeave)
-        Me.Panel5.Controls.Add(Me.Label2)
-        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel5.Location = New System.Drawing.Point(0, 0)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(242, 617)
-        Me.Panel5.TabIndex = 7
-        '
-        'TxtLeave
-        '
-        Me.TxtLeave.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtLeave.BorderRadius = 5
-        Me.TxtLeave.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TxtLeave.DefaultText = ""
-        Me.TxtLeave.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.TxtLeave.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.TxtLeave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtLeave.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtLeave.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TxtLeave.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtLeave.FocusedState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtLeave.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtLeave.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtLeave.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtLeave.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtLeave.Location = New System.Drawing.Point(0, 42)
-        Me.TxtLeave.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TxtLeave.MaxLength = 40
-        Me.TxtLeave.Name = "TxtLeave"
-        Me.TxtLeave.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.TxtLeave.PlaceholderText = ""
-        Me.TxtLeave.SelectedText = ""
-        Me.TxtLeave.Size = New System.Drawing.Size(242, 37)
-        Me.TxtLeave.TabIndex = 8
-        '
-        'Label2
-        '
-        Me.Label2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(0, 0)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(242, 42)
-        Me.Label2.TabIndex = 6
-        Me.Label2.Text = "Type of Leave: "
-        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'BtnSaveLeave
-        '
-        Me.BtnSaveLeave.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.BtnSaveLeave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.BtnSaveLeave.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.BtnSaveLeave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.BtnSaveLeave.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BtnSaveLeave.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnSaveLeave.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BtnSaveLeave.ForeColor = System.Drawing.Color.White
-        Me.BtnSaveLeave.Location = New System.Drawing.Point(0, 617)
-        Me.BtnSaveLeave.Margin = New System.Windows.Forms.Padding(2)
-        Me.BtnSaveLeave.Name = "BtnSaveLeave"
-        Me.BtnSaveLeave.Size = New System.Drawing.Size(242, 41)
-        Me.BtnSaveLeave.TabIndex = 6
-        Me.BtnSaveLeave.Text = "SAVE"
-        '
-        'Panel9
-        '
-        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel9.Location = New System.Drawing.Point(0, 658)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(242, 5)
-        Me.Panel9.TabIndex = 4
-        '
-        'BtnDeleteLeave
-        '
-        Me.BtnDeleteLeave.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.BtnDeleteLeave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.BtnDeleteLeave.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.BtnDeleteLeave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.BtnDeleteLeave.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BtnDeleteLeave.FillColor = System.Drawing.Color.FromArgb(CType(CType(194, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(22, Byte), Integer))
-        Me.BtnDeleteLeave.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BtnDeleteLeave.ForeColor = System.Drawing.Color.White
-        Me.BtnDeleteLeave.Location = New System.Drawing.Point(0, 663)
-        Me.BtnDeleteLeave.Margin = New System.Windows.Forms.Padding(2)
-        Me.BtnDeleteLeave.Name = "BtnDeleteLeave"
-        Me.BtnDeleteLeave.Size = New System.Drawing.Size(242, 41)
-        Me.BtnDeleteLeave.TabIndex = 3
-        Me.BtnDeleteLeave.Text = "DELETE"
-        '
         'tabPosition
         '
         Me.tabPosition.Controls.Add(Me.DgPosition)
@@ -994,27 +793,27 @@ Partial Class FrmMainte
         Me.DgPosition.AllowUserToDeleteRows = False
         Me.DgPosition.AllowUserToResizeColumns = False
         Me.DgPosition.AllowUserToResizeRows = False
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.White
-        Me.DgPosition.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
+        Me.DgPosition.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.DgPosition.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(231, Byte), Integer))
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(231, Byte), Integer))
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgPosition.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(231, Byte), Integer))
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(231, Byte), Integer))
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgPosition.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.DgPosition.ColumnHeadersHeight = 40
         Me.DgPosition.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.positionID, Me.positionName, Me.departmentPosition, Me.positionStatus})
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgPosition.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgPosition.DefaultCellStyle = DataGridViewCellStyle9
         Me.DgPosition.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgPosition.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgPosition.Location = New System.Drawing.Point(265, 0)
@@ -1094,9 +893,6 @@ Partial Class FrmMainte
         'Panel11
         '
         Me.Panel11.Controls.Add(Me.Panel10)
-        Me.Panel11.Controls.Add(Me.BtnSavePosition)
-        Me.Panel11.Controls.Add(Me.Panel12)
-        Me.Panel11.Controls.Add(Me.BtnDeletePosition)
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel11.Location = New System.Drawing.Point(0, 0)
         Me.Panel11.Name = "Panel11"
@@ -1105,6 +901,7 @@ Partial Class FrmMainte
         '
         'Panel10
         '
+        Me.Panel10.Controls.Add(Me.BtnSavePosition)
         Me.Panel10.Controls.Add(Me.TxtPosition)
         Me.Panel10.Controls.Add(Me.Label3)
         Me.Panel10.Controls.Add(Me.CbDepartment)
@@ -1113,8 +910,25 @@ Partial Class FrmMainte
         Me.Panel10.Location = New System.Drawing.Point(0, 0)
         Me.Panel10.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(260, 621)
+        Me.Panel10.Size = New System.Drawing.Size(260, 708)
         Me.Panel10.TabIndex = 7
+        '
+        'BtnSavePosition
+        '
+        Me.BtnSavePosition.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.BtnSavePosition.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.BtnSavePosition.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.BtnSavePosition.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.BtnSavePosition.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.BtnSavePosition.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnSavePosition.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.BtnSavePosition.ForeColor = System.Drawing.Color.White
+        Me.BtnSavePosition.Location = New System.Drawing.Point(0, 667)
+        Me.BtnSavePosition.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnSavePosition.Name = "BtnSavePosition"
+        Me.BtnSavePosition.Size = New System.Drawing.Size(260, 41)
+        Me.BtnSavePosition.TabIndex = 15
+        Me.BtnSavePosition.Text = "SAVE"
         '
         'TxtPosition
         '
@@ -1189,47 +1003,191 @@ Partial Class FrmMainte
         Me.Label4.Text = "Department:"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'BtnSavePosition
+        'tabLeave
         '
-        Me.BtnSavePosition.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.BtnSavePosition.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.BtnSavePosition.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.BtnSavePosition.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.BtnSavePosition.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BtnSavePosition.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnSavePosition.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BtnSavePosition.ForeColor = System.Drawing.Color.White
-        Me.BtnSavePosition.Location = New System.Drawing.Point(0, 621)
-        Me.BtnSavePosition.Margin = New System.Windows.Forms.Padding(2)
-        Me.BtnSavePosition.Name = "BtnSavePosition"
-        Me.BtnSavePosition.Size = New System.Drawing.Size(260, 41)
-        Me.BtnSavePosition.TabIndex = 6
-        Me.BtnSavePosition.Text = "SAVE"
+        Me.tabLeave.Controls.Add(Me.dgLeave)
+        Me.tabLeave.Controls.Add(Me.Panel40)
+        Me.tabLeave.Controls.Add(Me.Panel8)
+        Me.tabLeave.Location = New System.Drawing.Point(184, 4)
+        Me.tabLeave.Margin = New System.Windows.Forms.Padding(2)
+        Me.tabLeave.Name = "tabLeave"
+        Me.tabLeave.Padding = New System.Windows.Forms.Padding(2)
+        Me.tabLeave.Size = New System.Drawing.Size(1257, 708)
+        Me.tabLeave.TabIndex = 1
+        Me.tabLeave.Text = "Leave"
+        Me.tabLeave.UseVisualStyleBackColor = True
         '
-        'Panel12
+        'dgLeave
         '
-        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel12.Location = New System.Drawing.Point(0, 662)
-        Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(260, 5)
-        Me.Panel12.TabIndex = 4
+        Me.dgLeave.AllowUserToAddRows = False
+        Me.dgLeave.AllowUserToDeleteRows = False
+        Me.dgLeave.AllowUserToResizeColumns = False
+        Me.dgLeave.AllowUserToResizeRows = False
+        DataGridViewCellStyle10.BackColor = System.Drawing.Color.White
+        Me.dgLeave.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle10
+        Me.dgLeave.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(231, Byte), Integer))
+        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(231, Byte), Integer))
+        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.dgLeave.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle11
+        Me.dgLeave.ColumnHeadersHeight = 40
+        Me.dgLeave.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.leaveID, Me.leaveName, Me.leaveStatus})
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle12.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.dgLeave.DefaultCellStyle = DataGridViewCellStyle12
+        Me.dgLeave.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.dgLeave.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgLeave.Location = New System.Drawing.Point(249, 2)
+        Me.dgLeave.Margin = New System.Windows.Forms.Padding(2)
+        Me.dgLeave.Name = "dgLeave"
+        Me.dgLeave.ReadOnly = True
+        Me.dgLeave.RowHeadersVisible = False
+        Me.dgLeave.RowHeadersWidth = 51
+        Me.dgLeave.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.dgLeave.RowTemplate.Height = 24
+        Me.dgLeave.Size = New System.Drawing.Size(1006, 704)
+        Me.dgLeave.TabIndex = 10
+        Me.dgLeave.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.dgLeave.ThemeStyle.AlternatingRowsStyle.Font = Nothing
+        Me.dgLeave.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
+        Me.dgLeave.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
+        Me.dgLeave.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
+        Me.dgLeave.ThemeStyle.BackColor = System.Drawing.Color.White
+        Me.dgLeave.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgLeave.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgLeave.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.dgLeave.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgLeave.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.dgLeave.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.dgLeave.ThemeStyle.HeaderStyle.Height = 40
+        Me.dgLeave.ThemeStyle.ReadOnly = True
+        Me.dgLeave.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.dgLeave.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.dgLeave.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.dgLeave.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.dgLeave.ThemeStyle.RowsStyle.Height = 24
+        Me.dgLeave.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.dgLeave.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
-        'BtnDeletePosition
+        'leaveID
         '
-        Me.BtnDeletePosition.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.BtnDeletePosition.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.BtnDeletePosition.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.BtnDeletePosition.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.BtnDeletePosition.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BtnDeletePosition.FillColor = System.Drawing.Color.FromArgb(CType(CType(194, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(22, Byte), Integer))
-        Me.BtnDeletePosition.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BtnDeletePosition.ForeColor = System.Drawing.Color.White
-        Me.BtnDeletePosition.Location = New System.Drawing.Point(0, 667)
-        Me.BtnDeletePosition.Margin = New System.Windows.Forms.Padding(2)
-        Me.BtnDeletePosition.Name = "BtnDeletePosition"
-        Me.BtnDeletePosition.Size = New System.Drawing.Size(260, 41)
-        Me.BtnDeletePosition.TabIndex = 3
-        Me.BtnDeletePosition.Text = "DELETE"
+        Me.leaveID.DataPropertyName = "leaveID"
+        Me.leaveID.HeaderText = "Leave ID"
+        Me.leaveID.MinimumWidth = 6
+        Me.leaveID.Name = "leaveID"
+        Me.leaveID.ReadOnly = True
+        Me.leaveID.Visible = False
+        '
+        'leaveName
+        '
+        Me.leaveName.DataPropertyName = "leaveType"
+        Me.leaveName.HeaderText = "Leave"
+        Me.leaveName.MinimumWidth = 6
+        Me.leaveName.Name = "leaveName"
+        Me.leaveName.ReadOnly = True
+        '
+        'leaveStatus
+        '
+        Me.leaveStatus.DataPropertyName = "status"
+        Me.leaveStatus.HeaderText = "Status"
+        Me.leaveStatus.MinimumWidth = 6
+        Me.leaveStatus.Name = "leaveStatus"
+        Me.leaveStatus.ReadOnly = True
+        Me.leaveStatus.Visible = False
+        '
+        'Panel40
+        '
+        Me.Panel40.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel40.Location = New System.Drawing.Point(244, 2)
+        Me.Panel40.Name = "Panel40"
+        Me.Panel40.Size = New System.Drawing.Size(5, 704)
+        Me.Panel40.TabIndex = 9
+        '
+        'Panel8
+        '
+        Me.Panel8.Controls.Add(Me.Panel5)
+        Me.Panel8.Controls.Add(Me.BtnSaveLeave)
+        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel8.Location = New System.Drawing.Point(2, 2)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(242, 704)
+        Me.Panel8.TabIndex = 8
+        '
+        'Panel5
+        '
+        Me.Panel5.Controls.Add(Me.TxtLeave)
+        Me.Panel5.Controls.Add(Me.Label2)
+        Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel5.Location = New System.Drawing.Point(0, 0)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel5.Name = "Panel5"
+        Me.Panel5.Size = New System.Drawing.Size(242, 663)
+        Me.Panel5.TabIndex = 7
+        '
+        'TxtLeave
+        '
+        Me.TxtLeave.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TxtLeave.BorderRadius = 5
+        Me.TxtLeave.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtLeave.DefaultText = ""
+        Me.TxtLeave.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.TxtLeave.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.TxtLeave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtLeave.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtLeave.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TxtLeave.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TxtLeave.FocusedState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TxtLeave.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TxtLeave.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TxtLeave.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TxtLeave.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TxtLeave.Location = New System.Drawing.Point(0, 42)
+        Me.TxtLeave.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.TxtLeave.MaxLength = 40
+        Me.TxtLeave.Name = "TxtLeave"
+        Me.TxtLeave.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtLeave.PlaceholderText = ""
+        Me.TxtLeave.SelectedText = ""
+        Me.TxtLeave.Size = New System.Drawing.Size(242, 37)
+        Me.TxtLeave.TabIndex = 8
+        '
+        'Label2
+        '
+        Me.Label2.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label2.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(0, 0)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(242, 42)
+        Me.Label2.TabIndex = 6
+        Me.Label2.Text = "Type of Leave: "
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'BtnSaveLeave
+        '
+        Me.BtnSaveLeave.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.BtnSaveLeave.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.BtnSaveLeave.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.BtnSaveLeave.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.BtnSaveLeave.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.BtnSaveLeave.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnSaveLeave.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.BtnSaveLeave.ForeColor = System.Drawing.Color.White
+        Me.BtnSaveLeave.Location = New System.Drawing.Point(0, 663)
+        Me.BtnSaveLeave.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnSaveLeave.Name = "BtnSaveLeave"
+        Me.BtnSaveLeave.Size = New System.Drawing.Size(242, 41)
+        Me.BtnSaveLeave.TabIndex = 6
+        Me.BtnSaveLeave.Text = "SAVE"
         '
         'tabIncentives
         '
@@ -1343,8 +1301,6 @@ Partial Class FrmMainte
         '
         Me.Panel17.Controls.Add(Me.Panel20)
         Me.Panel17.Controls.Add(Me.BtnSaveIncentives)
-        Me.Panel17.Controls.Add(Me.Panel21)
-        Me.Panel17.Controls.Add(Me.BtnDeleteIncentive)
         Me.Panel17.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel17.Location = New System.Drawing.Point(0, 0)
         Me.Panel17.Margin = New System.Windows.Forms.Padding(2)
@@ -1360,7 +1316,7 @@ Partial Class FrmMainte
         Me.Panel20.Location = New System.Drawing.Point(0, 0)
         Me.Panel20.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel20.Name = "Panel20"
-        Me.Panel20.Size = New System.Drawing.Size(260, 621)
+        Me.Panel20.Size = New System.Drawing.Size(260, 667)
         Me.Panel20.TabIndex = 6
         '
         'TxtIncentives
@@ -1412,37 +1368,12 @@ Partial Class FrmMainte
         Me.BtnSaveIncentives.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnSaveIncentives.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSaveIncentives.ForeColor = System.Drawing.Color.White
-        Me.BtnSaveIncentives.Location = New System.Drawing.Point(0, 621)
+        Me.BtnSaveIncentives.Location = New System.Drawing.Point(0, 667)
         Me.BtnSaveIncentives.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnSaveIncentives.Name = "BtnSaveIncentives"
         Me.BtnSaveIncentives.Size = New System.Drawing.Size(260, 41)
         Me.BtnSaveIncentives.TabIndex = 5
         Me.BtnSaveIncentives.Text = "SAVE"
-        '
-        'Panel21
-        '
-        Me.Panel21.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel21.Location = New System.Drawing.Point(0, 662)
-        Me.Panel21.Name = "Panel21"
-        Me.Panel21.Size = New System.Drawing.Size(260, 5)
-        Me.Panel21.TabIndex = 5
-        '
-        'BtnDeleteIncentive
-        '
-        Me.BtnDeleteIncentive.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.BtnDeleteIncentive.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.BtnDeleteIncentive.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.BtnDeleteIncentive.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.BtnDeleteIncentive.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BtnDeleteIncentive.FillColor = System.Drawing.Color.FromArgb(CType(CType(194, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(22, Byte), Integer))
-        Me.BtnDeleteIncentive.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BtnDeleteIncentive.ForeColor = System.Drawing.Color.White
-        Me.BtnDeleteIncentive.Location = New System.Drawing.Point(0, 667)
-        Me.BtnDeleteIncentive.Margin = New System.Windows.Forms.Padding(2)
-        Me.BtnDeleteIncentive.Name = "BtnDeleteIncentive"
-        Me.BtnDeleteIncentive.Size = New System.Drawing.Size(260, 41)
-        Me.BtnDeleteIncentive.TabIndex = 3
-        Me.BtnDeleteIncentive.Text = "DELETE"
         '
         'tabHoliday
         '
@@ -1562,8 +1493,6 @@ Partial Class FrmMainte
         '
         Me.Panel22.Controls.Add(Me.Panel23)
         Me.Panel22.Controls.Add(Me.BtnSaveHoliday)
-        Me.Panel22.Controls.Add(Me.Panel24)
-        Me.Panel22.Controls.Add(Me.BtnDeleteHoliday)
         Me.Panel22.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel22.Location = New System.Drawing.Point(0, 0)
         Me.Panel22.Margin = New System.Windows.Forms.Padding(2)
@@ -1583,7 +1512,7 @@ Partial Class FrmMainte
         Me.Panel23.Location = New System.Drawing.Point(0, 0)
         Me.Panel23.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel23.Name = "Panel23"
-        Me.Panel23.Size = New System.Drawing.Size(260, 621)
+        Me.Panel23.Size = New System.Drawing.Size(260, 667)
         Me.Panel23.TabIndex = 6
         '
         'CbClassification
@@ -1699,37 +1628,12 @@ Partial Class FrmMainte
         Me.BtnSaveHoliday.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnSaveHoliday.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSaveHoliday.ForeColor = System.Drawing.Color.White
-        Me.BtnSaveHoliday.Location = New System.Drawing.Point(0, 621)
+        Me.BtnSaveHoliday.Location = New System.Drawing.Point(0, 667)
         Me.BtnSaveHoliday.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnSaveHoliday.Name = "BtnSaveHoliday"
         Me.BtnSaveHoliday.Size = New System.Drawing.Size(260, 41)
         Me.BtnSaveHoliday.TabIndex = 5
         Me.BtnSaveHoliday.Text = "SAVE"
-        '
-        'Panel24
-        '
-        Me.Panel24.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel24.Location = New System.Drawing.Point(0, 662)
-        Me.Panel24.Name = "Panel24"
-        Me.Panel24.Size = New System.Drawing.Size(260, 5)
-        Me.Panel24.TabIndex = 5
-        '
-        'BtnDeleteHoliday
-        '
-        Me.BtnDeleteHoliday.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.BtnDeleteHoliday.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.BtnDeleteHoliday.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.BtnDeleteHoliday.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.BtnDeleteHoliday.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BtnDeleteHoliday.FillColor = System.Drawing.Color.FromArgb(CType(CType(194, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(22, Byte), Integer))
-        Me.BtnDeleteHoliday.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BtnDeleteHoliday.ForeColor = System.Drawing.Color.White
-        Me.BtnDeleteHoliday.Location = New System.Drawing.Point(0, 667)
-        Me.BtnDeleteHoliday.Margin = New System.Windows.Forms.Padding(2)
-        Me.BtnDeleteHoliday.Name = "BtnDeleteHoliday"
-        Me.BtnDeleteHoliday.Size = New System.Drawing.Size(260, 41)
-        Me.BtnDeleteHoliday.TabIndex = 3
-        Me.BtnDeleteHoliday.Text = "DELETE"
         '
         'tabRate
         '
@@ -1998,15 +1902,16 @@ Partial Class FrmMainte
         Me.Guna2TabControl2.TabButtonSelectedState.ForeColor = System.Drawing.Color.White
         Me.Guna2TabControl2.TabButtonSelectedState.InnerColor = System.Drawing.Color.FromArgb(CType(CType(76, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.Guna2TabControl2.TabButtonSize = New System.Drawing.Size(180, 40)
-        Me.Guna2TabControl2.TabIndex = 1
+        Me.Guna2TabControl2.TabIndex = 3
         Me.Guna2TabControl2.TabMenuBackColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
         Me.Guna2TabControl2.TabMenuOrientation = Guna.UI2.WinForms.TabMenuOrientation.HorizontalTop
         '
         'tabTax
         '
         Me.tabTax.Controls.Add(Me.dgTax)
+        Me.tabTax.Controls.Add(Me.Panel1)
         Me.tabTax.Controls.Add(Me.Panel49)
-        Me.tabTax.Controls.Add(Me.Panel26)
+        Me.tabTax.Controls.Add(Me.Panel36)
         Me.tabTax.Location = New System.Drawing.Point(4, 44)
         Me.tabTax.Margin = New System.Windows.Forms.Padding(2)
         Me.tabTax.Name = "tabTax"
@@ -2044,7 +1949,7 @@ Partial Class FrmMainte
         Me.dgTax.DefaultCellStyle = DataGridViewCellStyle24
         Me.dgTax.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgTax.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgTax.Location = New System.Drawing.Point(265, 0)
+        Me.dgTax.Location = New System.Drawing.Point(265, 45)
         Me.dgTax.Margin = New System.Windows.Forms.Padding(2)
         Me.dgTax.Name = "dgTax"
         Me.dgTax.ReadOnly = True
@@ -2052,7 +1957,7 @@ Partial Class FrmMainte
         Me.dgTax.RowHeadersWidth = 51
         Me.dgTax.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dgTax.RowTemplate.Height = 24
-        Me.dgTax.Size = New System.Drawing.Size(984, 660)
+        Me.dgTax.Size = New System.Drawing.Size(984, 615)
         Me.dgTax.TabIndex = 7
         Me.dgTax.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgTax.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -2117,6 +2022,77 @@ Partial Class FrmMainte
         Me.taxPercentage.Name = "taxPercentage"
         Me.taxPercentage.ReadOnly = True
         '
+        'Panel1
+        '
+        Me.Panel1.Controls.Add(Me.Label5)
+        Me.Panel1.Controls.Add(Me.Panel52)
+        Me.Panel1.Controls.Add(Me.Panel55)
+        Me.Panel1.Controls.Add(Me.Panel56)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel1.Location = New System.Drawing.Point(265, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(984, 45)
+        Me.Panel1.TabIndex = 8
+        '
+        'Label5
+        '
+        Me.Label5.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Label5.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(655, 0)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(156, 41)
+        Me.Label5.TabIndex = 5
+        Me.Label5.Text = "Tax Classification:"
+        Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'Panel52
+        '
+        Me.Panel52.Controls.Add(Me.CbTaxClassification)
+        Me.Panel52.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel52.Location = New System.Drawing.Point(811, 0)
+        Me.Panel52.Name = "Panel52"
+        Me.Panel52.Size = New System.Drawing.Size(169, 41)
+        Me.Panel52.TabIndex = 4
+        '
+        'CbTaxClassification
+        '
+        Me.CbTaxClassification.BackColor = System.Drawing.Color.Transparent
+        Me.CbTaxClassification.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
+        Me.CbTaxClassification.BorderRadius = 5
+        Me.CbTaxClassification.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.CbTaxClassification.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.CbTaxClassification.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CbTaxClassification.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
+        Me.CbTaxClassification.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
+        Me.CbTaxClassification.FocusedState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
+        Me.CbTaxClassification.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CbTaxClassification.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
+        Me.CbTaxClassification.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
+        Me.CbTaxClassification.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
+        Me.CbTaxClassification.ItemHeight = 33
+        Me.CbTaxClassification.Items.AddRange(New Object() {"Daily", "Monthly"})
+        Me.CbTaxClassification.ItemsAppearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
+        Me.CbTaxClassification.Location = New System.Drawing.Point(0, 2)
+        Me.CbTaxClassification.Name = "CbTaxClassification"
+        Me.CbTaxClassification.Size = New System.Drawing.Size(169, 39)
+        Me.CbTaxClassification.TabIndex = 6
+        '
+        'Panel55
+        '
+        Me.Panel55.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel55.Location = New System.Drawing.Point(0, 41)
+        Me.Panel55.Name = "Panel55"
+        Me.Panel55.Size = New System.Drawing.Size(980, 4)
+        Me.Panel55.TabIndex = 1
+        '
+        'Panel56
+        '
+        Me.Panel56.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel56.Location = New System.Drawing.Point(980, 0)
+        Me.Panel56.Name = "Panel56"
+        Me.Panel56.Size = New System.Drawing.Size(4, 45)
+        Me.Panel56.TabIndex = 0
+        '
         'Panel49
         '
         Me.Panel49.Dock = System.Windows.Forms.DockStyle.Left
@@ -2125,34 +2101,34 @@ Partial Class FrmMainte
         Me.Panel49.Size = New System.Drawing.Size(5, 660)
         Me.Panel49.TabIndex = 6
         '
-        'Panel26
+        'Panel36
         '
-        Me.Panel26.Controls.Add(Me.Panel28)
-        Me.Panel26.Controls.Add(Me.BtnSaveTax)
-        Me.Panel26.Controls.Add(Me.Panel29)
-        Me.Panel26.Controls.Add(Me.BtnDeleteTax)
-        Me.Panel26.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel26.Location = New System.Drawing.Point(0, 0)
-        Me.Panel26.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel26.Name = "Panel26"
-        Me.Panel26.Size = New System.Drawing.Size(260, 660)
-        Me.Panel26.TabIndex = 2
+        Me.Panel36.Controls.Add(Me.Panel7)
+        Me.Panel36.Controls.Add(Me.BtnSaveTax)
+        Me.Panel36.Controls.Add(Me.Panel9)
+        Me.Panel36.Controls.Add(Me.BtnDeleteTax)
+        Me.Panel36.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel36.Location = New System.Drawing.Point(0, 0)
+        Me.Panel36.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel36.Name = "Panel36"
+        Me.Panel36.Size = New System.Drawing.Size(260, 660)
+        Me.Panel36.TabIndex = 2
         '
-        'Panel28
+        'Panel7
         '
-        Me.Panel28.Controls.Add(Me.TxtTaxPercentage)
-        Me.Panel28.Controls.Add(Me.Label16)
-        Me.Panel28.Controls.Add(Me.TxtTaxFixedAmount)
-        Me.Panel28.Controls.Add(Me.Label15)
-        Me.Panel28.Controls.Add(Me.TxtTaxMaxSalary)
-        Me.Panel28.Controls.Add(Me.Label14)
-        Me.Panel28.Controls.Add(Me.TxtTaxMinSalary)
-        Me.Panel28.Controls.Add(Me.Label13)
-        Me.Panel28.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel28.Location = New System.Drawing.Point(0, 0)
-        Me.Panel28.Name = "Panel28"
-        Me.Panel28.Size = New System.Drawing.Size(260, 573)
-        Me.Panel28.TabIndex = 6
+        Me.Panel7.Controls.Add(Me.TxtTaxPercentage)
+        Me.Panel7.Controls.Add(Me.Label16)
+        Me.Panel7.Controls.Add(Me.TxtTaxFixedAmount)
+        Me.Panel7.Controls.Add(Me.Label15)
+        Me.Panel7.Controls.Add(Me.TxtTaxMaxSalary)
+        Me.Panel7.Controls.Add(Me.Label14)
+        Me.Panel7.Controls.Add(Me.TxtTaxMinSalary)
+        Me.Panel7.Controls.Add(Me.Label13)
+        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel7.Location = New System.Drawing.Point(0, 0)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(260, 573)
+        Me.Panel7.TabIndex = 6
         '
         'TxtTaxPercentage
         '
@@ -2328,13 +2304,13 @@ Partial Class FrmMainte
         Me.BtnSaveTax.TabIndex = 5
         Me.BtnSaveTax.Text = "SAVE"
         '
-        'Panel29
+        'Panel9
         '
-        Me.Panel29.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel29.Location = New System.Drawing.Point(0, 614)
-        Me.Panel29.Name = "Panel29"
-        Me.Panel29.Size = New System.Drawing.Size(260, 5)
-        Me.Panel29.TabIndex = 4
+        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel9.Location = New System.Drawing.Point(0, 614)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(260, 5)
+        Me.Panel9.TabIndex = 4
         '
         'BtnDeleteTax
         '
@@ -2357,7 +2333,7 @@ Partial Class FrmMainte
         '
         Me.tabSSS.Controls.Add(Me.dgSSS)
         Me.tabSSS.Controls.Add(Me.Panel50)
-        Me.tabSSS.Controls.Add(Me.Panel30)
+        Me.tabSSS.Controls.Add(Me.Panel42)
         Me.tabSSS.Location = New System.Drawing.Point(4, 44)
         Me.tabSSS.Margin = New System.Windows.Forms.Padding(2)
         Me.tabSSS.Name = "tabSSS"
@@ -2384,7 +2360,7 @@ Partial Class FrmMainte
         DataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.dgSSS.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle26
         Me.dgSSS.ColumnHeadersHeight = 40
-        Me.dgSSS.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.sssID, Me.sssMinSalary, Me.sssMaxSalary, Me.sssEE, Me.sssWisp, Me.sssTotal})
+        Me.dgSSS.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.sssID, Me.sssMinSalary, Me.sssMaxSalary, Me.sssEE, Me.sssER})
         DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle27.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle27.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -2460,21 +2436,13 @@ Partial Class FrmMainte
         Me.sssEE.Name = "sssEE"
         Me.sssEE.ReadOnly = True
         '
-        'sssWisp
+        'sssER
         '
-        Me.sssWisp.DataPropertyName = "wisp"
-        Me.sssWisp.HeaderText = "WISP"
-        Me.sssWisp.MinimumWidth = 6
-        Me.sssWisp.Name = "sssWisp"
-        Me.sssWisp.ReadOnly = True
-        '
-        'sssTotal
-        '
-        Me.sssTotal.DataPropertyName = "total"
-        Me.sssTotal.HeaderText = "Total"
-        Me.sssTotal.MinimumWidth = 6
-        Me.sssTotal.Name = "sssTotal"
-        Me.sssTotal.ReadOnly = True
+        Me.sssER.DataPropertyName = "er"
+        Me.sssER.HeaderText = "ER"
+        Me.sssER.MinimumWidth = 6
+        Me.sssER.Name = "sssER"
+        Me.sssER.ReadOnly = True
         '
         'Panel50
         '
@@ -2484,103 +2452,61 @@ Partial Class FrmMainte
         Me.Panel50.Size = New System.Drawing.Size(5, 660)
         Me.Panel50.TabIndex = 7
         '
-        'Panel30
+        'Panel42
         '
-        Me.Panel30.Controls.Add(Me.Panel32)
-        Me.Panel30.Controls.Add(Me.BtnSaveSSS)
-        Me.Panel30.Controls.Add(Me.Panel31)
-        Me.Panel30.Controls.Add(Me.BtnDeleteSSS)
-        Me.Panel30.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel30.Location = New System.Drawing.Point(0, 0)
-        Me.Panel30.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel30.Name = "Panel30"
-        Me.Panel30.Size = New System.Drawing.Size(260, 660)
-        Me.Panel30.TabIndex = 3
+        Me.Panel42.Controls.Add(Me.Panel12)
+        Me.Panel42.Controls.Add(Me.BtnSaveSSS)
+        Me.Panel42.Controls.Add(Me.Panel13)
+        Me.Panel42.Controls.Add(Me.BtnDeleteSSS)
+        Me.Panel42.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel42.Location = New System.Drawing.Point(0, 0)
+        Me.Panel42.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel42.Name = "Panel42"
+        Me.Panel42.Size = New System.Drawing.Size(260, 660)
+        Me.Panel42.TabIndex = 3
         '
-        'Panel32
+        'Panel12
         '
-        Me.Panel32.Controls.Add(Me.TxtSSSTotal)
-        Me.Panel32.Controls.Add(Me.Label21)
-        Me.Panel32.Controls.Add(Me.TxtSSSWISP)
-        Me.Panel32.Controls.Add(Me.Label17)
-        Me.Panel32.Controls.Add(Me.TxtSSSEE)
-        Me.Panel32.Controls.Add(Me.Label18)
-        Me.Panel32.Controls.Add(Me.TxtSSSMaxSalary)
-        Me.Panel32.Controls.Add(Me.Label19)
-        Me.Panel32.Controls.Add(Me.TxtSSSMinSalary)
-        Me.Panel32.Controls.Add(Me.Label20)
-        Me.Panel32.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel32.Location = New System.Drawing.Point(0, 0)
-        Me.Panel32.Name = "Panel32"
-        Me.Panel32.Size = New System.Drawing.Size(260, 574)
-        Me.Panel32.TabIndex = 7
+        Me.Panel12.Controls.Add(Me.TxtSSSER)
+        Me.Panel12.Controls.Add(Me.Label17)
+        Me.Panel12.Controls.Add(Me.TxtSSSEE)
+        Me.Panel12.Controls.Add(Me.Label18)
+        Me.Panel12.Controls.Add(Me.TxtSSSMaxSalary)
+        Me.Panel12.Controls.Add(Me.Label19)
+        Me.Panel12.Controls.Add(Me.TxtSSSMinSalary)
+        Me.Panel12.Controls.Add(Me.Label20)
+        Me.Panel12.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel12.Location = New System.Drawing.Point(0, 0)
+        Me.Panel12.Name = "Panel12"
+        Me.Panel12.Size = New System.Drawing.Size(260, 574)
+        Me.Panel12.TabIndex = 7
         '
-        'TxtSSSTotal
+        'TxtSSSER
         '
-        Me.TxtSSSTotal.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtSSSTotal.BorderRadius = 5
-        Me.TxtSSSTotal.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TxtSSSTotal.DefaultText = ""
-        Me.TxtSSSTotal.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.TxtSSSTotal.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.TxtSSSTotal.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtSSSTotal.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtSSSTotal.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TxtSSSTotal.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtSSSTotal.FocusedState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtSSSTotal.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtSSSTotal.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtSSSTotal.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtSSSTotal.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtSSSTotal.Location = New System.Drawing.Point(0, 358)
-        Me.TxtSSSTotal.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TxtSSSTotal.MaxLength = 50
-        Me.TxtSSSTotal.Name = "TxtSSSTotal"
-        Me.TxtSSSTotal.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.TxtSSSTotal.PlaceholderText = ""
-        Me.TxtSSSTotal.ReadOnly = True
-        Me.TxtSSSTotal.SelectedText = ""
-        Me.TxtSSSTotal.Size = New System.Drawing.Size(260, 37)
-        Me.TxtSSSTotal.TabIndex = 15
-        '
-        'Label21
-        '
-        Me.Label21.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label21.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label21.Location = New System.Drawing.Point(0, 316)
-        Me.Label21.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(260, 42)
-        Me.Label21.TabIndex = 15
-        Me.Label21.Text = "Total:"
-        Me.Label21.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'TxtSSSWISP
-        '
-        Me.TxtSSSWISP.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtSSSWISP.BorderRadius = 5
-        Me.TxtSSSWISP.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TxtSSSWISP.DefaultText = ""
-        Me.TxtSSSWISP.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.TxtSSSWISP.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.TxtSSSWISP.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtSSSWISP.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtSSSWISP.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TxtSSSWISP.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtSSSWISP.FocusedState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtSSSWISP.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtSSSWISP.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtSSSWISP.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtSSSWISP.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtSSSWISP.Location = New System.Drawing.Point(0, 279)
-        Me.TxtSSSWISP.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TxtSSSWISP.MaxLength = 10
-        Me.TxtSSSWISP.Name = "TxtSSSWISP"
-        Me.TxtSSSWISP.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.TxtSSSWISP.PlaceholderText = ""
-        Me.TxtSSSWISP.SelectedText = ""
-        Me.TxtSSSWISP.Size = New System.Drawing.Size(260, 37)
-        Me.TxtSSSWISP.TabIndex = 14
+        Me.TxtSSSER.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TxtSSSER.BorderRadius = 5
+        Me.TxtSSSER.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtSSSER.DefaultText = ""
+        Me.TxtSSSER.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.TxtSSSER.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.TxtSSSER.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtSSSER.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtSSSER.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TxtSSSER.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TxtSSSER.FocusedState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TxtSSSER.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TxtSSSER.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TxtSSSER.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TxtSSSER.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.TxtSSSER.Location = New System.Drawing.Point(0, 279)
+        Me.TxtSSSER.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
+        Me.TxtSSSER.MaxLength = 10
+        Me.TxtSSSER.Name = "TxtSSSER"
+        Me.TxtSSSER.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtSSSER.PlaceholderText = ""
+        Me.TxtSSSER.SelectedText = ""
+        Me.TxtSSSER.Size = New System.Drawing.Size(260, 37)
+        Me.TxtSSSER.TabIndex = 14
         '
         'Label17
         '
@@ -2591,7 +2517,7 @@ Partial Class FrmMainte
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(260, 42)
         Me.Label17.TabIndex = 13
-        Me.Label17.Text = "WISP:"
+        Me.Label17.Text = "ER:"
         Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'TxtSSSEE
@@ -2729,14 +2655,14 @@ Partial Class FrmMainte
         Me.BtnSaveSSS.TabIndex = 5
         Me.BtnSaveSSS.Text = "SAVE"
         '
-        'Panel31
+        'Panel13
         '
-        Me.Panel31.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel31.Location = New System.Drawing.Point(0, 615)
-        Me.Panel31.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel31.Name = "Panel31"
-        Me.Panel31.Size = New System.Drawing.Size(260, 4)
-        Me.Panel31.TabIndex = 4
+        Me.Panel13.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel13.Location = New System.Drawing.Point(0, 615)
+        Me.Panel13.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel13.Name = "Panel13"
+        Me.Panel13.Size = New System.Drawing.Size(260, 4)
+        Me.Panel13.TabIndex = 4
         '
         'BtnDeleteSSS
         '
@@ -2758,7 +2684,7 @@ Partial Class FrmMainte
         'tabPagibig
         '
         Me.tabPagibig.Controls.Add(Me.dgPagibig)
-        Me.tabPagibig.Controls.Add(Me.Panel33)
+        Me.tabPagibig.Controls.Add(Me.Panel14)
         Me.tabPagibig.Location = New System.Drawing.Point(4, 44)
         Me.tabPagibig.Margin = New System.Windows.Forms.Padding(2)
         Me.tabPagibig.Name = "tabPagibig"
@@ -2852,18 +2778,18 @@ Partial Class FrmMainte
         Me.pagibigDate.Name = "pagibigDate"
         Me.pagibigDate.ReadOnly = True
         '
-        'Panel33
+        'Panel14
         '
-        Me.Panel33.Controls.Add(Me.TxtPagibigRate)
-        Me.Panel33.Controls.Add(Me.Label26)
-        Me.Panel33.Controls.Add(Me.BtnSavePagibig)
-        Me.Panel33.Controls.Add(Me.Panel35)
-        Me.Panel33.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel33.Location = New System.Drawing.Point(0, 0)
-        Me.Panel33.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel33.Name = "Panel33"
-        Me.Panel33.Size = New System.Drawing.Size(225, 660)
-        Me.Panel33.TabIndex = 4
+        Me.Panel14.Controls.Add(Me.TxtPagibigRate)
+        Me.Panel14.Controls.Add(Me.Label26)
+        Me.Panel14.Controls.Add(Me.BtnSavePagibig)
+        Me.Panel14.Controls.Add(Me.Panel46)
+        Me.Panel14.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel14.Location = New System.Drawing.Point(0, 0)
+        Me.Panel14.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel14.Name = "Panel14"
+        Me.Panel14.Size = New System.Drawing.Size(225, 660)
+        Me.Panel14.TabIndex = 4
         '
         'TxtPagibigRate
         '
@@ -2921,19 +2847,19 @@ Partial Class FrmMainte
         Me.BtnSavePagibig.TabIndex = 5
         Me.BtnSavePagibig.Text = "SAVE"
         '
-        'Panel35
+        'Panel46
         '
-        Me.Panel35.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel35.Location = New System.Drawing.Point(221, 0)
-        Me.Panel35.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel35.Name = "Panel35"
-        Me.Panel35.Size = New System.Drawing.Size(4, 660)
-        Me.Panel35.TabIndex = 1
+        Me.Panel46.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel46.Location = New System.Drawing.Point(221, 0)
+        Me.Panel46.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel46.Name = "Panel46"
+        Me.Panel46.Size = New System.Drawing.Size(4, 660)
+        Me.Panel46.TabIndex = 1
         '
         'tabPhilHealth
         '
         Me.tabPhilHealth.Controls.Add(Me.dgPhilhealth)
-        Me.tabPhilHealth.Controls.Add(Me.Panel34)
+        Me.tabPhilHealth.Controls.Add(Me.Panel47)
         Me.tabPhilHealth.Location = New System.Drawing.Point(4, 44)
         Me.tabPhilHealth.Margin = New System.Windows.Forms.Padding(2)
         Me.tabPhilHealth.Name = "tabPhilHealth"
@@ -3024,18 +2950,18 @@ Partial Class FrmMainte
         Me.philHealthDate.Name = "philHealthDate"
         Me.philHealthDate.ReadOnly = True
         '
-        'Panel34
+        'Panel47
         '
-        Me.Panel34.Controls.Add(Me.txtPhilhealthRate)
-        Me.Panel34.Controls.Add(Me.Label22)
-        Me.Panel34.Controls.Add(Me.BtnSavePhilhealth)
-        Me.Panel34.Controls.Add(Me.Panel36)
-        Me.Panel34.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel34.Location = New System.Drawing.Point(0, 0)
-        Me.Panel34.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel34.Name = "Panel34"
-        Me.Panel34.Size = New System.Drawing.Size(225, 660)
-        Me.Panel34.TabIndex = 5
+        Me.Panel47.Controls.Add(Me.txtPhilhealthRate)
+        Me.Panel47.Controls.Add(Me.Label22)
+        Me.Panel47.Controls.Add(Me.BtnSavePhilhealth)
+        Me.Panel47.Controls.Add(Me.Panel15)
+        Me.Panel47.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel47.Location = New System.Drawing.Point(0, 0)
+        Me.Panel47.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel47.Name = "Panel47"
+        Me.Panel47.Size = New System.Drawing.Size(225, 660)
+        Me.Panel47.TabIndex = 5
         '
         'txtPhilhealthRate
         '
@@ -3093,14 +3019,14 @@ Partial Class FrmMainte
         Me.BtnSavePhilhealth.TabIndex = 5
         Me.BtnSavePhilhealth.Text = "SAVE"
         '
-        'Panel36
+        'Panel15
         '
-        Me.Panel36.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel36.Location = New System.Drawing.Point(221, 0)
-        Me.Panel36.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel36.Name = "Panel36"
-        Me.Panel36.Size = New System.Drawing.Size(4, 660)
-        Me.Panel36.TabIndex = 1
+        Me.Panel15.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel15.Location = New System.Drawing.Point(221, 0)
+        Me.Panel15.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel15.Name = "Panel15"
+        Me.Panel15.Size = New System.Drawing.Size(4, 660)
+        Me.Panel15.TabIndex = 1
         '
         'tabVoluntary
         '
@@ -3214,8 +3140,6 @@ Partial Class FrmMainte
         '
         Me.Panel2.Controls.Add(Me.Panel3)
         Me.Panel2.Controls.Add(Me.BtnSaveVoluntary)
-        Me.Panel2.Controls.Add(Me.Panel45)
-        Me.Panel2.Controls.Add(Me.BtnDeleteVoluntary)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
@@ -3231,7 +3155,7 @@ Partial Class FrmMainte
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(260, 621)
+        Me.Panel3.Size = New System.Drawing.Size(260, 667)
         Me.Panel3.TabIndex = 6
         '
         'TxtVoluntary
@@ -3283,37 +3207,12 @@ Partial Class FrmMainte
         Me.BtnSaveVoluntary.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnSaveVoluntary.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSaveVoluntary.ForeColor = System.Drawing.Color.White
-        Me.BtnSaveVoluntary.Location = New System.Drawing.Point(0, 621)
+        Me.BtnSaveVoluntary.Location = New System.Drawing.Point(0, 667)
         Me.BtnSaveVoluntary.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnSaveVoluntary.Name = "BtnSaveVoluntary"
         Me.BtnSaveVoluntary.Size = New System.Drawing.Size(260, 41)
         Me.BtnSaveVoluntary.TabIndex = 5
         Me.BtnSaveVoluntary.Text = "SAVE"
-        '
-        'Panel45
-        '
-        Me.Panel45.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel45.Location = New System.Drawing.Point(0, 662)
-        Me.Panel45.Name = "Panel45"
-        Me.Panel45.Size = New System.Drawing.Size(260, 5)
-        Me.Panel45.TabIndex = 5
-        '
-        'BtnDeleteVoluntary
-        '
-        Me.BtnDeleteVoluntary.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.BtnDeleteVoluntary.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.BtnDeleteVoluntary.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.BtnDeleteVoluntary.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.BtnDeleteVoluntary.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BtnDeleteVoluntary.FillColor = System.Drawing.Color.FromArgb(CType(CType(194, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(22, Byte), Integer))
-        Me.BtnDeleteVoluntary.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BtnDeleteVoluntary.ForeColor = System.Drawing.Color.White
-        Me.BtnDeleteVoluntary.Location = New System.Drawing.Point(0, 667)
-        Me.BtnDeleteVoluntary.Margin = New System.Windows.Forms.Padding(2)
-        Me.BtnDeleteVoluntary.Name = "BtnDeleteVoluntary"
-        Me.BtnDeleteVoluntary.Size = New System.Drawing.Size(260, 41)
-        Me.BtnDeleteVoluntary.TabIndex = 3
-        Me.BtnDeleteVoluntary.Text = "DELETE"
         '
         'ContextMenuStrip1
         '
@@ -3327,23 +3226,6 @@ Partial Class FrmMainte
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(130, 22)
         Me.ToolStripMenuItem1.Text = "Reset Password"
-        '
-        'BtnSaveDepartment
-        '
-        Me.BtnSaveDepartment.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.BtnSaveDepartment.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.BtnSaveDepartment.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.BtnSaveDepartment.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.BtnSaveDepartment.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BtnSaveDepartment.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnSaveDepartment.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BtnSaveDepartment.ForeColor = System.Drawing.Color.White
-        Me.BtnSaveDepartment.Location = New System.Drawing.Point(0, 663)
-        Me.BtnSaveDepartment.Margin = New System.Windows.Forms.Padding(2)
-        Me.BtnSaveDepartment.Name = "BtnSaveDepartment"
-        Me.BtnSaveDepartment.Size = New System.Drawing.Size(210, 41)
-        Me.BtnSaveDepartment.TabIndex = 8
-        Me.BtnSaveDepartment.Text = "SAVE"
         '
         'FrmMainte
         '
@@ -3364,14 +3246,14 @@ Partial Class FrmMainte
         CType(Me.DgDepartment, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel6.ResumeLayout(False)
         Me.Panel4.ResumeLayout(False)
-        Me.tabLeave.ResumeLayout(False)
-        CType(Me.dgLeave, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel8.ResumeLayout(False)
-        Me.Panel5.ResumeLayout(False)
         Me.tabPosition.ResumeLayout(False)
         CType(Me.DgPosition, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel11.ResumeLayout(False)
         Me.Panel10.ResumeLayout(False)
+        Me.tabLeave.ResumeLayout(False)
+        CType(Me.dgLeave, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel8.ResumeLayout(False)
+        Me.Panel5.ResumeLayout(False)
         Me.tabIncentives.ResumeLayout(False)
         CType(Me.DgIncentives, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel17.ResumeLayout(False)
@@ -3388,18 +3270,20 @@ Partial Class FrmMainte
         Me.Guna2TabControl2.ResumeLayout(False)
         Me.tabTax.ResumeLayout(False)
         CType(Me.dgTax, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel26.ResumeLayout(False)
-        Me.Panel28.ResumeLayout(False)
+        Me.Panel1.ResumeLayout(False)
+        Me.Panel52.ResumeLayout(False)
+        Me.Panel36.ResumeLayout(False)
+        Me.Panel7.ResumeLayout(False)
         Me.tabSSS.ResumeLayout(False)
         CType(Me.dgSSS, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel30.ResumeLayout(False)
-        Me.Panel32.ResumeLayout(False)
+        Me.Panel42.ResumeLayout(False)
+        Me.Panel12.ResumeLayout(False)
         Me.tabPagibig.ResumeLayout(False)
         CType(Me.dgPagibig, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel33.ResumeLayout(False)
+        Me.Panel14.ResumeLayout(False)
         Me.tabPhilHealth.ResumeLayout(False)
         CType(Me.dgPhilhealth, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel34.ResumeLayout(False)
+        Me.Panel47.ResumeLayout(False)
         Me.tabVoluntary.ResumeLayout(False)
         CType(Me.DgVoluntary, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
@@ -3412,65 +3296,26 @@ Partial Class FrmMainte
     Friend WithEvents Guna2TabControl1 As Guna.UI2.WinForms.Guna2TabControl
     Friend WithEvents tabDepartment As TabPage
     Friend WithEvents tabLeave As TabPage
-    Friend WithEvents BtnDeleteLeave As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents tabPosition As TabPage
-    Friend WithEvents BtnDeletePosition As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents tabIncentives As TabPage
     Friend WithEvents Panel17 As Panel
     Friend WithEvents TxtIncentives As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label8 As Label
     Friend WithEvents BtnSaveIncentives As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents BtnDeleteIncentive As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents tabHoliday As TabPage
     Friend WithEvents tabRate As TabPage
     Friend WithEvents Panel25 As Panel
     Friend WithEvents BtnSaveRate As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents tabContri As TabPage
-    Friend WithEvents Guna2TabControl2 As Guna.UI2.WinForms.Guna2TabControl
-    Friend WithEvents tabTax As TabPage
-    Friend WithEvents Panel26 As Panel
-    Friend WithEvents TxtTaxPercentage As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label13 As Label
-    Friend WithEvents BtnSaveTax As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents BtnDeleteTax As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents tabSSS As TabPage
-    Friend WithEvents Panel30 As Panel
-    Friend WithEvents TxtSSSTotal As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label20 As Label
-    Friend WithEvents BtnSaveSSS As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Panel31 As Panel
-    Friend WithEvents BtnDeleteSSS As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents tabPagibig As TabPage
-    Friend WithEvents dgPagibig As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents pagibigID As DataGridViewTextBoxColumn
-    Friend WithEvents pagibigRate As DataGridViewTextBoxColumn
-    Friend WithEvents pagibigDate As DataGridViewTextBoxColumn
-    Friend WithEvents Panel33 As Panel
-    Friend WithEvents TxtPagibigRate As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label26 As Label
-    Friend WithEvents BtnSavePagibig As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Panel35 As Panel
-    Friend WithEvents tabPhilHealth As TabPage
-    Friend WithEvents dgPhilhealth As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents philhealthID As DataGridViewTextBoxColumn
-    Friend WithEvents philHealthRate As DataGridViewTextBoxColumn
-    Friend WithEvents philHealthDate As DataGridViewTextBoxColumn
-    Friend WithEvents Panel34 As Panel
-    Friend WithEvents txtPhilhealthRate As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label22 As Label
-    Friend WithEvents BtnSavePhilhealth As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Panel36 As Panel
     Friend WithEvents tabVoluntary As TabPage
     Friend WithEvents Panel2 As Panel
     Friend WithEvents TxtVoluntary As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents BtnSaveVoluntary As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents BtnDeleteVoluntary As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Panel22 As Panel
     Friend WithEvents CbClassification As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label24 As Label
     Friend WithEvents BtnSaveHoliday As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents BtnDeleteHoliday As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents tabUser As TabPage
     Friend WithEvents Panel37 As Panel
     Friend WithEvents TxtFirstname As Guna.UI2.WinForms.Guna2TextBox
@@ -3494,7 +3339,6 @@ Partial Class FrmMainte
     Friend WithEvents TxtLeave As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents BtnSaveLeave As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Panel9 As Panel
     Friend WithEvents Panel11 As Panel
     Friend WithEvents DgPosition As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents positionID As DataGridViewTextBoxColumn
@@ -3502,18 +3346,12 @@ Partial Class FrmMainte
     Friend WithEvents departmentPosition As DataGridViewTextBoxColumn
     Friend WithEvents positionStatus As DataGridViewTextBoxColumn
     Friend WithEvents Panel41 As Panel
-    Friend WithEvents Panel10 As Panel
-    Friend WithEvents CbDepartment As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents Label4 As Label
-    Friend WithEvents BtnSavePosition As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Panel12 As Panel
     Friend WithEvents DgIncentives As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents incentiveID As DataGridViewTextBoxColumn
     Friend WithEvents incentiveName As DataGridViewTextBoxColumn
     Friend WithEvents incentiveStatus As DataGridViewTextBoxColumn
     Friend WithEvents Panel43 As Panel
     Friend WithEvents Panel20 As Panel
-    Friend WithEvents Panel21 As Panel
     Friend WithEvents dgHoliday As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents holidayID As DataGridViewTextBoxColumn
     Friend WithEvents holidayName As DataGridViewTextBoxColumn
@@ -3525,16 +3363,12 @@ Partial Class FrmMainte
     Friend WithEvents DtHoliday As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents Label32 As Label
     Friend WithEvents TxtHoliday As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Panel24 As Panel
     Friend WithEvents DgVoluntary As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents voluntaryID As DataGridViewTextBoxColumn
     Friend WithEvents voluntaryName As DataGridViewTextBoxColumn
     Friend WithEvents voluntaryStatus As DataGridViewTextBoxColumn
     Friend WithEvents Panel19 As Panel
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents Panel45 As Panel
-    Friend WithEvents TxtPosition As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label3 As Label
     Friend WithEvents Panel27 As Panel
     Friend WithEvents TxtRateClassification As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label12 As Label
@@ -3545,38 +3379,6 @@ Partial Class FrmMainte
     Friend WithEvents rateClassification As DataGridViewTextBoxColumn
     Friend WithEvents rate As DataGridViewTextBoxColumn
     Friend WithEvents Panel48 As Panel
-    Friend WithEvents dgTax As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents taxID As DataGridViewTextBoxColumn
-    Friend WithEvents taxMinSalary As DataGridViewTextBoxColumn
-    Friend WithEvents taxMaxSalary As DataGridViewTextBoxColumn
-    Friend WithEvents taxFixedAmount As DataGridViewTextBoxColumn
-    Friend WithEvents taxPercentage As DataGridViewTextBoxColumn
-    Friend WithEvents Panel49 As Panel
-    Friend WithEvents Panel28 As Panel
-    Friend WithEvents Label16 As Label
-    Friend WithEvents TxtTaxFixedAmount As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label15 As Label
-    Friend WithEvents TxtTaxMaxSalary As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label14 As Label
-    Friend WithEvents TxtTaxMinSalary As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Panel29 As Panel
-    Friend WithEvents Panel32 As Panel
-    Friend WithEvents Label21 As Label
-    Friend WithEvents TxtSSSWISP As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label17 As Label
-    Friend WithEvents TxtSSSEE As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label18 As Label
-    Friend WithEvents TxtSSSMaxSalary As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label19 As Label
-    Friend WithEvents TxtSSSMinSalary As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents dgSSS As Guna.UI2.WinForms.Guna2DataGridView
-    Friend WithEvents sssID As DataGridViewTextBoxColumn
-    Friend WithEvents sssMinSalary As DataGridViewTextBoxColumn
-    Friend WithEvents sssMaxSalary As DataGridViewTextBoxColumn
-    Friend WithEvents sssEE As DataGridViewTextBoxColumn
-    Friend WithEvents sssWisp As DataGridViewTextBoxColumn
-    Friend WithEvents sssTotal As DataGridViewTextBoxColumn
-    Friend WithEvents Panel50 As Panel
     Friend WithEvents DgUser As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents Panel51 As Panel
     Friend WithEvents Panel39 As Panel
@@ -3591,4 +3393,79 @@ Partial Class FrmMainte
     Friend WithEvents fullName As DataGridViewTextBoxColumn
     Friend WithEvents logged As DataGridViewTextBoxColumn
     Friend WithEvents BtnSaveDepartment As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Panel10 As Panel
+    Friend WithEvents TxtPosition As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label3 As Label
+    Friend WithEvents CbDepartment As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents BtnSavePosition As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Guna2TabControl2 As Guna.UI2.WinForms.Guna2TabControl
+    Friend WithEvents tabTax As TabPage
+    Friend WithEvents dgTax As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents taxID As DataGridViewTextBoxColumn
+    Friend WithEvents taxMinSalary As DataGridViewTextBoxColumn
+    Friend WithEvents taxMaxSalary As DataGridViewTextBoxColumn
+    Friend WithEvents taxFixedAmount As DataGridViewTextBoxColumn
+    Friend WithEvents taxPercentage As DataGridViewTextBoxColumn
+    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Panel52 As Panel
+    Friend WithEvents CbTaxClassification As Guna.UI2.WinForms.Guna2ComboBox
+    Friend WithEvents Panel55 As Panel
+    Friend WithEvents Panel56 As Panel
+    Friend WithEvents Panel49 As Panel
+    Friend WithEvents Panel36 As Panel
+    Friend WithEvents Panel7 As Panel
+    Friend WithEvents TxtTaxPercentage As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label16 As Label
+    Friend WithEvents TxtTaxFixedAmount As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label15 As Label
+    Friend WithEvents TxtTaxMaxSalary As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label14 As Label
+    Friend WithEvents TxtTaxMinSalary As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label13 As Label
+    Friend WithEvents BtnSaveTax As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Panel9 As Panel
+    Friend WithEvents BtnDeleteTax As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents tabSSS As TabPage
+    Friend WithEvents dgSSS As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents sssID As DataGridViewTextBoxColumn
+    Friend WithEvents sssMinSalary As DataGridViewTextBoxColumn
+    Friend WithEvents sssMaxSalary As DataGridViewTextBoxColumn
+    Friend WithEvents sssEE As DataGridViewTextBoxColumn
+    Friend WithEvents sssER As DataGridViewTextBoxColumn
+    Friend WithEvents Panel50 As Panel
+    Friend WithEvents Panel42 As Panel
+    Friend WithEvents Panel12 As Panel
+    Friend WithEvents TxtSSSER As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label17 As Label
+    Friend WithEvents TxtSSSEE As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label18 As Label
+    Friend WithEvents TxtSSSMaxSalary As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label19 As Label
+    Friend WithEvents TxtSSSMinSalary As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label20 As Label
+    Friend WithEvents BtnSaveSSS As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Panel13 As Panel
+    Friend WithEvents BtnDeleteSSS As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents tabPagibig As TabPage
+    Friend WithEvents dgPagibig As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents pagibigID As DataGridViewTextBoxColumn
+    Friend WithEvents pagibigRate As DataGridViewTextBoxColumn
+    Friend WithEvents pagibigDate As DataGridViewTextBoxColumn
+    Friend WithEvents Panel14 As Panel
+    Friend WithEvents TxtPagibigRate As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label26 As Label
+    Friend WithEvents BtnSavePagibig As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Panel46 As Panel
+    Friend WithEvents tabPhilHealth As TabPage
+    Friend WithEvents dgPhilhealth As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents philhealthID As DataGridViewTextBoxColumn
+    Friend WithEvents philHealthRate As DataGridViewTextBoxColumn
+    Friend WithEvents philHealthDate As DataGridViewTextBoxColumn
+    Friend WithEvents Panel47 As Panel
+    Friend WithEvents txtPhilhealthRate As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents Label22 As Label
+    Friend WithEvents BtnSavePhilhealth As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents Panel15 As Panel
 End Class
