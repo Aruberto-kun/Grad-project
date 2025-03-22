@@ -1,9 +1,36 @@
-﻿Imports System.Text.RegularExpressions
-Imports MySql.Data.MySqlClient
+﻿Public Class FrmMainte
+    Private Sub FrmMainte_Load(sender As Object, e As EventArgs) Handles Me.Load
+        DgUser.DataSource = DisplayUsers()
+        DgDepartment.DataSource = DisplayDepartment()
+        DgPosition.DataSource = DisplayPosition()
+        dgLeave.DataSource = DisplayLeave()
+        DgIncentives.DataSource = DisplayIncentive()
+        dgHoliday.DataSource = DisplayHoliday()
+        dgSSS.DataSource = DisplaySSS()
+        dgPhilhealth.DataSource = DisplayPhilhealth()
+        dgPagibig.DataSource = DisplayPagIbig()
+        DgVoluntary.DataSource = DisplayVoluntary()
+        dgRates.DataSource = DisplayRates()
 
-Public Class FrmMainte
+        CbDepartment.DataSource = DisplayDepartment()
+        CbDepartment.DisplayMember = "departmentName"
+        CbDepartment.ValueMember = "departmentID"
+
+        CbClassification.SelectedIndex = 0
 
 
+        CbTaxClassification.SelectedIndex = 0
+
+        If CbTaxClassification.SelectedIndex = 0 Then
+            Dim maxSalaryOne As Decimal = TaxGetMaxSalary("tblTaxMonthly", "taxMonthlyID")
+            TxtTaxMinSalary.Text = maxSalaryOne
+            dgTax.DataSource = DisplayTaxDaily()
+        Else
+            Dim maxSalaryOne As Decimal = TaxGetMaxSalary("tblTaxMonthly", "taxMonthlyID")
+            TxtTaxMinSalary.Text = maxSalaryOne
+            dgTax.DataSource = DisplayTaxMonthly()
+        End If
+    End Sub
 
     Private Sub BtnSaveUser_Click(sender As Object, e As EventArgs) Handles BtnSaveUser.Click
         If String.IsNullOrEmpty(TxtFirstname.Text) OrElse String.IsNullOrEmpty(TxtLastname.Text) OrElse String.IsNullOrEmpty(TxtUsername.Text) Then
@@ -11,16 +38,27 @@ Public Class FrmMainte
             Exit Sub
         Else
             NewUser(TxtFirstname.Text, TxtLastname.Text, TxtUsername.Text)
-            DgUser.DataSource = DisplayUsers()
             TxtFirstname.Clear()
             TxtLastname.Clear()
             TxtUsername.Clear()
+            DgUser.DataSource = DisplayUsers()
         End If
     End Sub
 
+    Private Sub BtnSaveDepartment_Click(sender As Object, e As EventArgs) Handles BtnSaveDepartment.Click
+        If String.IsNullOrEmpty(TxtDepartment.Text) Then
+            MsgEmptyField()
+            Exit Sub
+        Else
+            NewDepartment(TxtDepartment.Text)
+            DgDepartment.DataSource = DisplayDepartment()
+            TxtDepartment.Clear()
+            CbDepartment.DataSource = DisplayDepartment()
+            CbDepartment.DisplayMember = "departmentName"
+            CbDepartment.ValueMember = "departmentID"
+        End If
+    End Sub
 
-<<<<<<< Updated upstream
-=======
     Private Sub BtnSavePosition_Click(sender As Object, e As EventArgs) Handles BtnSavePosition.Click
         If String.IsNullOrEmpty(TxtPosition.Text) OrElse String.IsNullOrEmpty(CbDepartment.Text) Then
             MsgEmptyField()
@@ -260,7 +298,8 @@ Public Class FrmMainte
             MessageBox.Show(ex.Message)
         End Try
     End Sub
+
+
 #End Region
->>>>>>> Stashed changes
 
 End Class

@@ -179,6 +179,42 @@
     <Compile Include="Forms\Maintenance\FrmSignUpPayroll.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Maintenance\MiniForm\FrmDepartmentInfo.Designer.vb">
+      <DependentUpon>FrmDepartmentInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Maintenance\MiniForm\FrmDepartmentInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Maintenance\MiniForm\FrmHoliday.Designer.vb">
+      <DependentUpon>FrmHoliday.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Maintenance\MiniForm\FrmHoliday.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Maintenance\MiniForm\FrmIncentiveInfo.Designer.vb">
+      <DependentUpon>FrmIncentiveInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Maintenance\MiniForm\FrmIncentiveInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Maintenance\MiniForm\FrmLeaveInfo.Designer.vb">
+      <DependentUpon>FrmLeaveInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Maintenance\MiniForm\FrmLeaveInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Maintenance\MiniForm\FrmPositionInfo.Designer.vb">
+      <DependentUpon>FrmPositionInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Maintenance\MiniForm\FrmPositionInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Maintenance\MiniForm\FrmRateInfo.Designer.vb">
+      <DependentUpon>FrmRateInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Maintenance\MiniForm\FrmRateInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Payroll Calculation\FrmPayrollCalculation.Designer.vb">
       <DependentUpon>FrmPayrollCalculation.vb</DependentUpon>
     </Compile>
@@ -299,6 +335,24 @@
     <EmbeddedResource Include="Forms\Maintenance\FrmSignUpPayroll.resx">
       <DependentUpon>FrmSignUpPayroll.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Maintenance\MiniForm\FrmDepartmentInfo.resx">
+      <DependentUpon>FrmDepartmentInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Maintenance\MiniForm\FrmHoliday.resx">
+      <DependentUpon>FrmHoliday.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Maintenance\MiniForm\FrmIncentiveInfo.resx">
+      <DependentUpon>FrmIncentiveInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Maintenance\MiniForm\FrmLeaveInfo.resx">
+      <DependentUpon>FrmLeaveInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Maintenance\MiniForm\FrmPositionInfo.resx">
+      <DependentUpon>FrmPositionInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Maintenance\MiniForm\FrmRateInfo.resx">
+      <DependentUpon>FrmRateInfo.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Payroll Calculation\FrmPayrollCalculation.resx">
       <DependentUpon>FrmPayrollCalculation.vb</DependentUpon>
     </EmbeddedResource>
@@ -361,8 +415,6 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forms\Maintenance\MiniForm\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
