@@ -29,11 +29,9 @@ Public Class ClassAssociates
 
     Public Shared Sub LoadLeaveType(cb As Guna2ComboBox)
         Try
-            RunQuery("Select positionID from tblemployee where employeeID = '" & employeeID & "'")
-            Dim posID As Integer = ds.Tables("querytable").Rows(0)(0)
             RunQuery("Select a.leaveID, a.leaveType from tblleave a
-                      JOIN tbljobleave b on b.leaveID = a.leaveID
-                      WHERE b.positionID = '" & posID & "' and
+                      JOIN tblemployeeleave b on b.leaveID = a.leaveID
+                      WHERE b.employeeID = '" & employeeID & "' and
                       a.status = 'Active'")
             cb.ValueMember = "leaveID"
             cb.DisplayMember = "leaveType"
@@ -48,17 +46,15 @@ Public Class ClassAssociates
             RunQuery("Select positionID from tblemployee where employeeID = '" & employeeID & "'")
             Dim positionID As Integer = ds.Tables("querytable").Rows(0)(0)
             RunQuery("SELECT 
-                      a.leaveID, 
-                      a.leaveType, 
-                      b.days, 
-                      b.days - IFNULL(SUM(CASE WHEN c.noofdays IS NOT NULL THEN c.noofdays ELSE 0 END), 0) AS remainingleave 
-                      FROM tblleave a
-                      LEFT JOIN tbljobleave b ON b.leaveID = a.leaveID
-                      LEFT JOIN tblfiledleave c ON c.leaveID = a.leaveID 
-                      AND c.employeeID = '" & employeeID & "'  -- Example employeeID
-                      AND c.status = 'Approve'
-                      WHERE b.positionID = '" & positionID & "'  -- Example positionID AND a.status = 'Active'
-                      GROUP BY a.leaveID, a.leaveType, b.days;")
+                    el.leaveID,
+                    l.leaveType,
+                    el.days,
+                    (el.days - IFNULL(SUM(fl.noofdays), 0)) AS remaining_leave
+                    FROM tblemployeeleave el
+                    JOIN tblleave l ON el.leaveID = l.leaveID
+                    LEFT JOIN tblfiledleave fl ON el.employeeID = fl.employeeID AND el.leaveID = fl.leaveID
+                    WHERE el.employeeID = '" & employeeID & "'
+                    GROUP BY el.leaveID, l.leaveType, el.days")
             dg.DataSource = ds.Tables("querytable")
         Catch ex As Exception
 

@@ -308,7 +308,22 @@ Module MdlMaintenance
 
 #Region "Tax"
 
+    Public Function GetMaxSalary(cb As Guna2ComboBox) As Decimal
+        Try
+            Dim maxsal As Decimal
+            If cb.Text = "Daily" Then
+                RunQuery("Select * from tblTaxDaily order by maxSalary DESC limit 1")
+                maxsal = ds.Tables("querytable").Rows(0)(2) + 0.01
+            Else
+                RunQuery("Select * from tblTaxMonthly order by maxSalary DESC limit 1")
+                maxsal = ds.Tables("querytable").Rows(0)(2) + 0.01
+            End If
+            Return maxsal
 
+        Catch ex As Exception
+            Return 0
+        End Try
+    End Function
 #Region "INSERT AND UPDATE"
 
     Public Sub NewTaxDaily(minimumSalary As Decimal, maximumSalary As Decimal, fixedAmount As Decimal, percentage As Integer)
@@ -385,26 +400,6 @@ Module MdlMaintenance
         Dim datatable As New DataTable
         adapter.Fill(datatable)
         Return datatable
-    End Function
-
-
-    Public Function TaxGetMaxSalary(tableName As String, column As String) As Decimal
-        Try
-            Dim max As Decimal = 0
-            RunQuery($"Select maxSalary from {tableName} order by {column} DESC LIMIT 1")
-            If ds.Tables("querytable").Rows.Count > 0 Then
-                Dim result = ds.Tables("querytable").Rows(0)(0)
-                If Not IsDBNull(result) Then
-                    max = Convert.ToDecimal(result) + 0.01
-                End If
-            Else
-                max = 0
-            End If
-            Return max
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-            Return 0
-        End Try
     End Function
 
 #End Region

@@ -22,11 +22,11 @@
         CbTaxClassification.SelectedIndex = 0
 
         If CbTaxClassification.SelectedIndex = 0 Then
-            Dim maxSalaryOne As Decimal = TaxGetMaxSalary("tblTaxMonthly", "taxMonthlyID")
+            Dim maxSalaryOne As Decimal = GetMaxSalary(CbTaxClassification)
             TxtTaxMinSalary.Text = maxSalaryOne
             dgTax.DataSource = DisplayTaxDaily()
         Else
-            Dim maxSalaryOne As Decimal = TaxGetMaxSalary("tblTaxMonthly", "taxMonthlyID")
+            Dim maxSalaryOne As Decimal = GetMaxSalary(CbTaxClassification)
             TxtTaxMinSalary.Text = maxSalaryOne
             dgTax.DataSource = DisplayTaxMonthly()
         End If
@@ -140,9 +140,11 @@
     Private Sub CbTaxClassification_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CbTaxClassification.SelectedIndexChanged
         If CbTaxClassification.SelectedIndex = 0 Then
             dgTax.DataSource = DisplayTaxDaily()
+            TxtTaxMinSalary.Text = GetMaxSalary(CbTaxClassification)
             Exit Sub
         ElseIf CbTaxClassification.SelectedIndex = 1 Then
             dgTax.DataSource = DisplayTaxMonthly()
+            TxtTaxMinSalary.Text = GetMaxSalary(CbTaxClassification)
         End If
     End Sub
 
@@ -162,7 +164,7 @@
                 NewTaxDaily(minSalary, maxSalary, fixedAmount, taxPercentage)
                 CbTaxClassification.SelectedIndex = 0
                 dgTax.DataSource = DisplayTaxDaily()
-                Dim maxSalaryOne As Decimal = TaxGetMaxSalary("tblTaxDaily", "taxDailyID")
+                Dim maxSalaryOne As Decimal = GetMaxSalary(CbTaxClassification)
                 TxtTaxMinSalary.Text = maxSalaryOne
                 TxtTaxMaxSalary.Clear()
                 TxtTaxFixedAmount.Clear()
@@ -182,7 +184,7 @@
                 NewTaxMonthly(minSalary, maxSalary, fixedAmount, taxPercentage)
                 CbTaxClassification.SelectedIndex = 1
                 dgTax.DataSource = DisplayTaxMonthly()
-                Dim maxSalaryOne As Decimal = TaxGetMaxSalary("tblTaxMonthly", "taxMonthlyID")
+                Dim maxSalaryOne As Decimal = GetMaxSalary(CbTaxClassification)
                 TxtTaxMinSalary.Text = maxSalaryOne
                 TxtTaxMaxSalary.Clear()
                 TxtTaxFixedAmount.Clear()
@@ -196,7 +198,7 @@
             DeleteTaxDaily()
             CbTaxClassification.SelectedIndex = 0
             dgTax.DataSource = DisplayTaxDaily()
-            Dim maxSalaryOne As Decimal = TaxGetMaxSalary("tblTaxDaily", "taxDailyID")
+            Dim maxSalaryOne As Decimal = GetMaxSalary(CbTaxClassification)
             TxtTaxMinSalary.Text = maxSalaryOne
             TxtTaxMaxSalary.Clear()
             TxtTaxFixedAmount.Clear()
@@ -206,7 +208,7 @@
             DeleteTaxMonthly()
             CbTaxClassification.SelectedIndex = 1
             dgTax.DataSource = DisplayTaxMonthly()
-            Dim maxSalaryOne As Decimal = TaxGetMaxSalary("tblTaxMonthly", "taxMonthlyID")
+            Dim maxSalaryOne As Decimal = GetMaxSalary(CbTaxClassification)
             TxtTaxMinSalary.Text = maxSalaryOne
             TxtTaxMaxSalary.Clear()
             TxtTaxFixedAmount.Clear()

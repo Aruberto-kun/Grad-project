@@ -36,12 +36,9 @@ Public Class FrmAssociate
             If DGLeaveCount.SelectedRows.Count > 0 Then
                 For Each row As DataGridViewRow In DGLeaveCount.Rows
                     If CBLeaveType.Text = row.Cells("manageTypeOfLeave").Value Then
-                        MsgBox(row.Cells("manageTypeOfLeave").Value)
                         remainingLeavee = row.Cells("remainingLeave").Value
-                        MsgBox(remainingLeavee)
                         Dim dtDiff As TimeSpan = DTPLeaveTo.Value.AddDays(1) - DTPLeaveFrom.Value
                         difference = dtDiff.Days
-                        MsgBox(dtDiff.Days)
                     End If
                 Next
             End If

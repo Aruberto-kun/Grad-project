@@ -164,7 +164,7 @@ Partial Class FrmAssociate
         Me.Panel7.Location = New System.Drawing.Point(0, 0)
         Me.Panel7.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(1598, 167)
+        Me.Panel7.Size = New System.Drawing.Size(1554, 167)
         Me.Panel7.TabIndex = 2
         '
         'Guna2Button4
@@ -191,7 +191,7 @@ Partial Class FrmAssociate
         Me.LblPosition.Location = New System.Drawing.Point(170, 85)
         Me.LblPosition.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LblPosition.Name = "LblPosition"
-        Me.LblPosition.Size = New System.Drawing.Size(1205, 27)
+        Me.LblPosition.Size = New System.Drawing.Size(1161, 27)
         Me.LblPosition.TabIndex = 3
         Me.LblPosition.Text = " Admin"
         '
@@ -203,7 +203,7 @@ Partial Class FrmAssociate
         Me.LblName.Location = New System.Drawing.Point(170, 0)
         Me.LblName.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LblName.Name = "LblName"
-        Me.LblName.Size = New System.Drawing.Size(1205, 85)
+        Me.LblName.Size = New System.Drawing.Size(1161, 85)
         Me.LblName.TabIndex = 2
         Me.LblName.Text = "Villena, Clifford T."
         Me.LblName.TextAlign = System.Drawing.ContentAlignment.BottomLeft
@@ -213,7 +213,7 @@ Partial Class FrmAssociate
         Me.Panel8.Controls.Add(Me.DisplayDate)
         Me.Panel8.Controls.Add(Me.DisplayTime)
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel8.Location = New System.Drawing.Point(1375, 0)
+        Me.Panel8.Location = New System.Drawing.Point(1331, 0)
         Me.Panel8.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(223, 167)
@@ -322,7 +322,7 @@ Partial Class FrmAssociate
         Me.TCAssociate.Margin = New System.Windows.Forms.Padding(2)
         Me.TCAssociate.Name = "TCAssociate"
         Me.TCAssociate.SelectedIndex = 0
-        Me.TCAssociate.Size = New System.Drawing.Size(1598, 631)
+        Me.TCAssociate.Size = New System.Drawing.Size(1554, 631)
         Me.TCAssociate.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty
         Me.TCAssociate.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(227, Byte), Integer))
         Me.TCAssociate.TabButtonHoverState.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!)
@@ -352,7 +352,7 @@ Partial Class FrmAssociate
         Me.TPSchedAndAttendancec.Margin = New System.Windows.Forms.Padding(2)
         Me.TPSchedAndAttendancec.Name = "TPSchedAndAttendancec"
         Me.TPSchedAndAttendancec.Padding = New System.Windows.Forms.Padding(2)
-        Me.TPSchedAndAttendancec.Size = New System.Drawing.Size(1340, 623)
+        Me.TPSchedAndAttendancec.Size = New System.Drawing.Size(1296, 623)
         Me.TPSchedAndAttendancec.TabIndex = 0
         Me.TPSchedAndAttendancec.Text = "Schedule and Attendance"
         Me.TPSchedAndAttendancec.UseVisualStyleBackColor = True
@@ -394,7 +394,7 @@ Partial Class FrmAssociate
         Me.DGAttendance.RowHeadersWidth = 51
         Me.DGAttendance.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.DGAttendance.RowTemplate.Height = 24
-        Me.DGAttendance.Size = New System.Drawing.Size(1336, 242)
+        Me.DGAttendance.Size = New System.Drawing.Size(1292, 242)
         Me.DGAttendance.TabIndex = 12
         Me.DGAttendance.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DGAttendance.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -458,7 +458,7 @@ Partial Class FrmAssociate
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(2, 342)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(1336, 37)
+        Me.Label4.Size = New System.Drawing.Size(1292, 37)
         Me.Label4.TabIndex = 11
         Me.Label4.Text = "Attendance"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -500,7 +500,7 @@ Partial Class FrmAssociate
         Me.DGSchedule.RowHeadersWidth = 51
         Me.DGSchedule.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.DGSchedule.RowTemplate.Height = 24
-        Me.DGSchedule.Size = New System.Drawing.Size(1336, 300)
+        Me.DGSchedule.Size = New System.Drawing.Size(1292, 300)
         Me.DGSchedule.TabIndex = 10
         Me.DGSchedule.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DGSchedule.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -563,7 +563,7 @@ Partial Class FrmAssociate
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(2, 2)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(1336, 40)
+        Me.Label3.Size = New System.Drawing.Size(1292, 40)
         Me.Label3.TabIndex = 9
         Me.Label3.Text = "Schedule"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -576,7 +576,7 @@ Partial Class FrmAssociate
         Me.TPLeave.Margin = New System.Windows.Forms.Padding(2)
         Me.TPLeave.Name = "TPLeave"
         Me.TPLeave.Padding = New System.Windows.Forms.Padding(2)
-        Me.TPLeave.Size = New System.Drawing.Size(1340, 623)
+        Me.TPLeave.Size = New System.Drawing.Size(1296, 623)
         Me.TPLeave.TabIndex = 1
         Me.TPLeave.Text = "Leave Filing"
         Me.TPLeave.UseVisualStyleBackColor = True
@@ -591,7 +591,7 @@ Partial Class FrmAssociate
         Me.Panel1.Location = New System.Drawing.Point(252, 2)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1086, 619)
+        Me.Panel1.Size = New System.Drawing.Size(1042, 619)
         Me.Panel1.TabIndex = 31
         '
         'DGLeaveFiled
@@ -627,7 +627,7 @@ Partial Class FrmAssociate
         Me.DGLeaveFiled.RowHeadersVisible = False
         Me.DGLeaveFiled.RowHeadersWidth = 51
         Me.DGLeaveFiled.RowTemplate.Height = 24
-        Me.DGLeaveFiled.Size = New System.Drawing.Size(1086, 315)
+        Me.DGLeaveFiled.Size = New System.Drawing.Size(1042, 315)
         Me.DGLeaveFiled.TabIndex = 26
         Me.DGLeaveFiled.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DGLeaveFiled.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -693,7 +693,7 @@ Partial Class FrmAssociate
         Me.Label6.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(0, 269)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(1086, 35)
+        Me.Label6.Size = New System.Drawing.Size(1042, 35)
         Me.Label6.TabIndex = 27
         Me.Label6.Text = "Filed Leave:"
         '
@@ -731,7 +731,7 @@ Partial Class FrmAssociate
         Me.DGLeaveCount.RowHeadersVisible = False
         Me.DGLeaveCount.RowHeadersWidth = 51
         Me.DGLeaveCount.RowTemplate.Height = 24
-        Me.DGLeaveCount.Size = New System.Drawing.Size(1086, 234)
+        Me.DGLeaveCount.Size = New System.Drawing.Size(1042, 234)
         Me.DGLeaveCount.TabIndex = 26
         Me.DGLeaveCount.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DGLeaveCount.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -793,7 +793,7 @@ Partial Class FrmAssociate
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.Location = New System.Drawing.Point(0, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(1086, 35)
+        Me.Label5.Size = New System.Drawing.Size(1042, 35)
         Me.Label5.TabIndex = 23
         Me.Label5.Text = "Remaining Leave:"
         '
@@ -1442,7 +1442,7 @@ Partial Class FrmAssociate
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1598, 798)
+        Me.ClientSize = New System.Drawing.Size(1554, 798)
         Me.ControlBox = False
         Me.Controls.Add(Me.TCAssociate)
         Me.Controls.Add(Me.Panel7)
