@@ -10,6 +10,7 @@
         dgPhilhealth.DataSource = DisplayPhilhealth()
         dgPagibig.DataSource = DisplayPagIbig()
         DgVoluntary.DataSource = DisplayVoluntary()
+        dgRates.DataSource = DisplayRates()
 
         CbDepartment.DataSource = DisplayDepartment()
         CbDepartment.DisplayMember = "departmentName"
@@ -108,6 +109,32 @@
         End If
     End Sub
 
+    Private Sub BtnVoluntary_Click(sender As Object, e As EventArgs) Handles BtnSaveVoluntary.Click
+        If String.IsNullOrEmpty(TxtVoluntary.Text) Then
+            MsgEmptyField()
+            Exit Sub
+        Else
+            NewVoluntary(TxtVoluntary.Text)
+            DgVoluntary.DataSource = DisplayVoluntary()
+            TxtVoluntary.Clear()
+        End If
+    End Sub
+
+    Private Sub DgDepartment_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgDepartment.CellDoubleClick
+        SelectDepartment(DgDepartment)
+    End Sub
+
+    Private Sub DgLeave_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgLeave.CellDoubleClick
+        SelectLeave(dgLeave)
+    End Sub
+
+    Private Sub DgIncentives_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgIncentives.CellDoubleClick
+        SelectIncentives(DgIncentives)
+    End Sub
+
+    Private Sub DgRates_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgRates.CellDoubleClick
+        SelectRates(dgRates)
+    End Sub
 
 #Region "Tax"
     Private Sub CbTaxClassification_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CbTaxClassification.SelectedIndexChanged
@@ -272,16 +299,7 @@
         End Try
     End Sub
 
+
 #End Region
 
-    Private Sub BtnVoluntary_Click(sender As Object, e As EventArgs) Handles BtnSaveVoluntary.Click
-        If String.IsNullOrEmpty(TxtVoluntary.Text) Then
-            MsgEmptyField()
-            Exit Sub
-        Else
-            NewVoluntary(TxtVoluntary.Text)
-            DgVoluntary.DataSource = DisplayVoluntary()
-            TxtVoluntary.Clear()
-        End If
-    End Sub
 End Class

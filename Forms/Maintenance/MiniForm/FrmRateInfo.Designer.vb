@@ -26,8 +26,6 @@ Partial Class FrmRateInfo
         Me.Label3 = New System.Windows.Forms.Label()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.BtnUpdate = New Guna.UI2.WinForms.Guna2Button()
-        Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.BtnDelete = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.TxtRateClassification = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
@@ -93,36 +91,11 @@ Partial Class FrmRateInfo
         Me.BtnUpdate.FillColor = System.Drawing.Color.FromArgb(CType(CType(142, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(173, Byte), Integer))
         Me.BtnUpdate.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnUpdate.ForeColor = System.Drawing.Color.White
-        Me.BtnUpdate.Location = New System.Drawing.Point(3, 195)
+        Me.BtnUpdate.Location = New System.Drawing.Point(3, 250)
         Me.BtnUpdate.Name = "BtnUpdate"
         Me.BtnUpdate.Size = New System.Drawing.Size(450, 50)
         Me.BtnUpdate.TabIndex = 35
         Me.BtnUpdate.Text = "SAVE"
-        '
-        'Panel4
-        '
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel4.Location = New System.Drawing.Point(3, 245)
-        Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(450, 5)
-        Me.Panel4.TabIndex = 34
-        '
-        'BtnDelete
-        '
-        Me.BtnDelete.BorderRadius = 5
-        Me.BtnDelete.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.BtnDelete.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.BtnDelete.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.BtnDelete.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.BtnDelete.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BtnDelete.FillColor = System.Drawing.Color.FromArgb(CType(CType(142, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(173, Byte), Integer))
-        Me.BtnDelete.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BtnDelete.ForeColor = System.Drawing.Color.White
-        Me.BtnDelete.Location = New System.Drawing.Point(3, 250)
-        Me.BtnDelete.Name = "BtnDelete"
-        Me.BtnDelete.Size = New System.Drawing.Size(450, 50)
-        Me.BtnDelete.TabIndex = 33
-        Me.BtnDelete.Text = "DELETE"
         '
         'Panel3
         '
@@ -203,8 +176,6 @@ Partial Class FrmRateInfo
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.BtnUpdate)
-        Me.Controls.Add(Me.Panel4)
-        Me.Controls.Add(Me.BtnDelete)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.TxtRateClassification)
         Me.Controls.Add(Me.Panel2)
@@ -223,8 +194,6 @@ Partial Class FrmRateInfo
     Friend WithEvents Label3 As Label
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents BtnUpdate As Guna.UI2.WinForms.Guna2Button
-    Friend WithEvents Panel4 As Panel
-    Friend WithEvents BtnDelete As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents TxtRateClassification As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Panel2 As Panel

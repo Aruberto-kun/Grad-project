@@ -27,7 +27,7 @@ Partial Class FrmIncentiveInfo
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.BtnDelete = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.TxtHolidayName = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.TxtIncentiveName = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -97,28 +97,28 @@ Partial Class FrmIncentiveInfo
         Me.Panel3.Size = New System.Drawing.Size(456, 5)
         Me.Panel3.TabIndex = 34
         '
-        'TxtHolidayName
+        'TxtIncentiveName
         '
-        Me.TxtHolidayName.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.TxtHolidayName.BorderRadius = 5
-        Me.TxtHolidayName.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TxtHolidayName.DefaultText = ""
-        Me.TxtHolidayName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.TxtHolidayName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.TxtHolidayName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtHolidayName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtHolidayName.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TxtHolidayName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.TxtHolidayName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtHolidayName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.TxtHolidayName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.TxtHolidayName.Location = New System.Drawing.Point(3, 73)
-        Me.TxtHolidayName.Name = "TxtHolidayName"
-        Me.TxtHolidayName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.TxtHolidayName.PlaceholderText = ""
-        Me.TxtHolidayName.SelectedText = ""
-        Me.TxtHolidayName.Size = New System.Drawing.Size(456, 42)
-        Me.TxtHolidayName.TabIndex = 33
+        Me.TxtIncentiveName.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
+        Me.TxtIncentiveName.BorderRadius = 5
+        Me.TxtIncentiveName.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtIncentiveName.DefaultText = ""
+        Me.TxtIncentiveName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.TxtIncentiveName.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.TxtIncentiveName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtIncentiveName.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtIncentiveName.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TxtIncentiveName.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
+        Me.TxtIncentiveName.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TxtIncentiveName.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
+        Me.TxtIncentiveName.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
+        Me.TxtIncentiveName.Location = New System.Drawing.Point(3, 73)
+        Me.TxtIncentiveName.Name = "TxtIncentiveName"
+        Me.TxtIncentiveName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TxtIncentiveName.PlaceholderText = ""
+        Me.TxtIncentiveName.SelectedText = ""
+        Me.TxtIncentiveName.Size = New System.Drawing.Size(456, 42)
+        Me.TxtIncentiveName.TabIndex = 33
         '
         'Panel2
         '
@@ -168,7 +168,7 @@ Partial Class FrmIncentiveInfo
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.BtnDelete)
         Me.Controls.Add(Me.Panel3)
-        Me.Controls.Add(Me.TxtHolidayName)
+        Me.Controls.Add(Me.TxtIncentiveName)
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label2)
@@ -185,7 +185,7 @@ Partial Class FrmIncentiveInfo
     Friend WithEvents Panel4 As Panel
     Friend WithEvents BtnDelete As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents TxtHolidayName As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents TxtIncentiveName As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label2 As Label

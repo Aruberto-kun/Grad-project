@@ -36,6 +36,8 @@ Module MdlMaintenance
 
 #Region "Department"
 
+    Public departmentID As Integer = 0
+
     Public Sub NewDepartment(department As String)
         Try
             Dim command As New MySqlCommand("INSERT INTO tblDepartment (departmentName, status) VALUES (@departmentName, 'Active')", connection)
@@ -49,7 +51,7 @@ Module MdlMaintenance
 
     Public Function DisplayDepartment() As DataTable
         Try
-            Dim command As New MySqlCommand("SELECT * FROM tblDepartment", connection)
+            Dim command As New MySqlCommand("SELECT * FROM tblDepartment WHERE status = 'Active'", connection)
             Dim adapter As New MySqlDataAdapter(command)
             Dim datatable As New DataTable
             adapter.Fill(datatable)
@@ -58,6 +60,33 @@ Module MdlMaintenance
             Return Nothing
         End Try
     End Function
+
+    Public Sub SelectDepartment(dg As DataGridView)
+        Try
+            If dg.SelectedRows.Count > 0 Then
+                departmentID = dg.SelectedRows(0).Cells(0).Value
+                FrmDepartmentInfo.TxtDepartment.Text = dg.SelectedRows(0).Cells("departmentName").Value
+                FrmDepartmentInfo.ShowDialog()
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Public Sub UpdateDepartment(departmentID As Integer, departmentName As String)
+        Dim command As New MySqlCommand("UPDATE tblDepartment SET departmentName = @departmentName WHERE departmentID = @departmentID", connection)
+        command.Parameters.AddWithValue("@departmentName", departmentName)
+        command.Parameters.AddWithValue("@departmentID", departmentID)
+        command.ExecuteNonQuery()
+        MessageBox.Show("Department updated successfully.")
+    End Sub
+
+    Public Sub DeleteDepartment(departmentID As Integer)
+        Dim command As New MySqlCommand("UPDATE tblDepartment SET status = 'Inactive' WHERE departmentID = @departmentID", connection)
+        command.Parameters.AddWithValue("@departmentID", departmentID)
+        command.ExecuteNonQuery()
+        MessageBox.Show("Department deleted successfully.")
+    End Sub
 
 #End Region
 
@@ -92,6 +121,8 @@ Module MdlMaintenance
 
 #Region "Leave"
 
+    Public leaveID As Integer = 0
+
     Public Sub NewLeave(leaveType As String)
         Try
             Dim command As New MySqlCommand("INSERT INTO tblLeave (leaveType, status) VALUES (@leaveType, 'Active')", connection)
@@ -105,7 +136,7 @@ Module MdlMaintenance
 
     Public Function DisplayLeave() As DataTable
         Try
-            Dim command As New MySqlCommand("SELECT * FROM tblLeave", connection)
+            Dim command As New MySqlCommand("SELECT * FROM tblLeave WHERE status = 'Active'", connection)
             Dim adapter As New MySqlDataAdapter(command)
             Dim datatable As New DataTable
             adapter.Fill(datatable)
@@ -116,9 +147,37 @@ Module MdlMaintenance
         End Try
     End Function
 
+    Public Sub SelectLeave(dg As DataGridView)
+        Try
+            If dg.SelectedRows.Count > 0 Then
+                leaveID = dg.SelectedRows(0).Cells(0).Value
+                FrmLeaveInfo.TxtLeave.Text = dg.SelectedRows(0).Cells("leaveName").Value
+                FrmLeaveInfo.ShowDialog()
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Public Sub UpdateLeave(leaveID As Integer, leaveName As String)
+        Dim command As New MySqlCommand("UPDATE tblLeave SET leaveType = @leaveName WHERE leaveID = @leaveID", connection)
+        command.Parameters.AddWithValue("@leaveName", leaveName)
+        command.Parameters.AddWithValue("@leaveID", leaveID)
+        command.ExecuteNonQuery()
+        MessageBox.Show("Leave updated successfully.")
+    End Sub
+
+    Public Sub DeleteLeave(leaveID As Integer)
+        Dim command As New MySqlCommand("UPDATE tblLeave SET status = 'Inactive' WHERE leaveID = @leaveID", connection)
+        command.Parameters.AddWithValue("@leaveID", leaveID)
+        command.ExecuteNonQuery()
+        MessageBox.Show("Leave deleted successfully.")
+    End Sub
 #End Region
 
 #Region "Incentives"
+
+    Public incentiveID As Integer = 0
 
     Public Sub NewIncentives(incentiveName As String)
         Try
@@ -133,7 +192,7 @@ Module MdlMaintenance
 
     Public Function DisplayIncentive() As DataTable
         Try
-            Dim command As New MySqlCommand("SELECT * FROM tblIncentives", connection)
+            Dim command As New MySqlCommand("SELECT * FROM tblIncentives WHERE status = 'Active'", connection)
             Dim adapter As New MySqlDataAdapter(command)
             Dim datatable As New DataTable
             adapter.Fill(datatable)
@@ -144,6 +203,32 @@ Module MdlMaintenance
         End Try
     End Function
 
+    Public Sub SelectIncentives(dg As DataGridView)
+        Try
+            If dg.SelectedRows.Count > 0 Then
+                incentiveID = dg.SelectedRows(0).Cells(0).Value
+                FrmIncentiveInfo.TxtIncentiveName.Text = dg.SelectedRows(0).Cells("incentiveName").Value
+                FrmIncentiveInfo.ShowDialog()
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Public Sub UpdateIncentive(incentiveID As Integer, incentiveName As String)
+        Dim command As New MySqlCommand("UPDATE tblIncentives SET incentiveName = @incentiveName WHERE incentiveID = @incentiveID", connection)
+        command.Parameters.AddWithValue("@incentiveName", incentiveName)
+        command.Parameters.AddWithValue("@incentiveID", incentiveID)
+        command.ExecuteNonQuery()
+        MessageBox.Show("Incentive updated successfully.")
+    End Sub
+
+    Public Sub DeleteIncentive(incentiveID As Integer)
+        Dim command As New MySqlCommand("UPDATE tblIncentives SET status = 'Inactive' WHERE incentiveID = @departmentID", connection)
+        command.Parameters.AddWithValue("@departmentID", incentiveID)
+        command.ExecuteNonQuery()
+        MessageBox.Show("Incentive deleted successfully.")
+    End Sub
 #End Region
 
 #Region "Holiday"
@@ -177,6 +262,8 @@ Module MdlMaintenance
 
 #Region "Rates"
 
+
+    Public rateID As Integer = 0
     Public Sub UpdateRate(rate As Integer, rateID As Integer)
         Try
             Dim command As New MySqlCommand("UPDATE tblRates SET rate = @rate WHERE rateID = @rateID", connection)
@@ -201,6 +288,19 @@ Module MdlMaintenance
             Return Nothing
         End Try
     End Function
+
+    Public Sub SelectRates(dg As DataGridView)
+        Try
+            If dg.SelectedRows.Count > 0 Then
+                rateID = dg.SelectedRows(0).Cells(0).Value
+                FrmRateInfo.TxtRateClassification.Text = dg.SelectedRows(0).Cells("rateClassification").Value
+                FrmRateInfo.TxtRates.Text = dg.SelectedRows(0).Cells("rate").Value
+                FrmRateInfo.ShowDialog()
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
 
 #End Region
 
@@ -460,6 +560,8 @@ Module MdlMaintenance
 #End Region
 
 #Region "Voluntary"
+
+    Public voluntaryID As Integer = 0
 
     Public Sub NewVoluntary(voluntaryName As String)
         Try
