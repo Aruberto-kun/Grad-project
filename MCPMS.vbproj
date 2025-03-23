@@ -215,6 +215,12 @@
     <Compile Include="Forms\Maintenance\MiniForm\FrmRateInfo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Maintenance\MiniForm\FrmVoluntaryInfo.Designer.vb">
+      <DependentUpon>FrmVoluntaryInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Maintenance\MiniForm\FrmVoluntaryInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Payroll Calculation\FrmPayrollCalculation.Designer.vb">
       <DependentUpon>FrmPayrollCalculation.vb</DependentUpon>
     </Compile>
@@ -352,6 +358,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Maintenance\MiniForm\FrmRateInfo.resx">
       <DependentUpon>FrmRateInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Maintenance\MiniForm\FrmVoluntaryInfo.resx">
+      <DependentUpon>FrmVoluntaryInfo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Payroll Calculation\FrmPayrollCalculation.resx">
       <DependentUpon>FrmPayrollCalculation.vb</DependentUpon>

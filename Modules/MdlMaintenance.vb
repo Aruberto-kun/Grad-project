@@ -15,8 +15,11 @@ Module MdlMaintenance
             command.Parameters.AddWithValue("@userName", userName)
             command.ExecuteNonQuery()
             MessageBox.Show("User added successfully.")
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
+        Catch ex As MySqlException
+            If ex.Number = 1062 Then
+                MessageBox.Show("User name already exist.", "Duplicate entry", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Exit Sub
+            End If
         End Try
     End Sub
 
@@ -40,12 +43,29 @@ Module MdlMaintenance
 
     Public Sub NewDepartment(department As String)
         Try
-            Dim command As New MySqlCommand("INSERT INTO tblDepartment (departmentName, status) VALUES (@departmentName, 'Active')", connection)
-            command.Parameters.AddWithValue("@departmentName", department)
-            command.ExecuteNonQuery()
-            MessageBox.Show("Department added successfully.")
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            Dim checkCommand As New MySqlCommand("SELECT departmentID FROM tblDepartment WHERE departmentName = @departmentName AND status = 'Inactive'", connection)
+            checkCommand.Parameters.AddWithValue("@departmentName", department)
+            Dim reader As MySqlDataReader = checkCommand.ExecuteReader()
+
+            If reader.HasRows Then
+                reader.Read()
+                Dim existingDepartmentID As Integer = reader("departmentID")
+                reader.Close()
+
+                Dim commandID As New MySqlCommand("UPDATE tblDepartment SET status = 'Active' WHERE departmentID = @departmentID", connection)
+                commandID.Parameters.AddWithValue("@departmentID", existingDepartmentID)
+                commandID.ExecuteNonQuery()
+                MessageBox.Show("Department has been reactivated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                Dim command As New MySqlCommand("INSERT INTO tblDepartment (departmentName, status) VALUES (@departmentName, 'Active')", connection)
+                command.Parameters.AddWithValue("@departmentName", department)
+                command.ExecuteNonQuery()
+                MessageBox.Show("Department added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        Catch ex As MySqlException
+            If ex.Number = 1062 Then
+                MessageBox.Show("Department already exist.", "Duplicate entry", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
         End Try
     End Sub
 
@@ -92,30 +112,85 @@ Module MdlMaintenance
 
 #Region "Position"
 
+    Public positionID As Integer = 0
+
     Public Sub NewPosition(departmentID As Integer, positionName As String)
         Try
-            Dim command As New MySqlCommand("INSERT INTO tblPosition (departmentID, positionName, status) VALUES (@departmentID, @positionName, 'Active')", connection)
-            command.Parameters.AddWithValue("@departmentID", departmentID)
-            command.Parameters.AddWithValue("@positionName", positionName)
-            command.ExecuteNonQuery()
-            MessageBox.Show("Position added successfully.")
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            Dim checkCommand As New MySqlCommand("SELECT positionID FROM tblPosition WHERE positionName = @positionName AND departmentID = @departmentID AND status = 'Inactive'", connection)
+            checkCommand.Parameters.AddWithValue("@positionName", positionName)
+            checkCommand.Parameters.AddWithValue("@departmentID", departmentID)
+
+            Dim reader As MySqlDataReader = checkCommand.ExecuteReader()
+
+            If reader.HasRows Then
+                reader.Read()
+                Dim existingPositionID As Integer = reader("positionID")
+                reader.Close()
+
+                Dim commandID As New MySqlCommand("UPDATE tblPosition SET status = 'Active' WHERE positionID = @positionID", connection)
+                commandID.Parameters.AddWithValue("@positionID", existingPositionID)
+                commandID.ExecuteNonQuery()
+                MessageBox.Show("Position has been reactivated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                Dim command As New MySqlCommand("INSERT INTO tblPosition (positionName, departmentID, status) VALUES (@positionName, @departmentID, 'Active')", connection)
+                command.Parameters.AddWithValue("@positionName", positionName)
+                command.Parameters.AddWithValue("@departmentID", departmentID)
+                command.ExecuteNonQuery()
+                MessageBox.Show("Position added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        Catch ex As MySqlException
+            If ex.Number = 1062 Then
+                MessageBox.Show("Position in this department already existed.", "Duplicate entry", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
         End Try
     End Sub
 
     Public Function DisplayPosition() As DataTable
         Try
-            Dim command As New MySqlCommand("SELECT p.positionID, p.positionName, d.departmentName, p.status FROM tblPosition p JOIN tblDepartment d ON p.departmentID = d.departmentID", connection)
+            Dim command As New MySqlCommand("SELECT p.positionID, p.positionName, d.departmentName, p.status FROM tblPosition p JOIN tblDepartment d ON p.departmentID = d.departmentID WHERE p.status = 'Active'", connection)
             Dim adapter As New MySqlDataAdapter(command)
             Dim datatable As New DataTable
             adapter.Fill(datatable)
             Return datatable
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
-            Return Nothing
+        Catch ex As MySqlException
+            MsgBox(ex.Message)
         End Try
     End Function
+
+    Public Sub SelectPosition(dg As DataGridView)
+        Try
+            If dg.SelectedRows.Count > 0 Then
+                positionID = dg.SelectedRows(0).Cells(0).Value
+                FrmPositionInfo.TxtPosition.Text = dg.SelectedRows(0).Cells("positionName").Value
+                If FrmPositionInfo.TxtPosition.Text = "Department Head" Then
+                    FrmPositionInfo.BtnUpdate.Enabled = False
+                    FrmPositionInfo.BtnDelete.Enabled = False
+                Else
+                    FrmPositionInfo.BtnDelete.Enabled = True
+                    FrmPositionInfo.BtnUpdate.Enabled = True
+                End If
+                FrmPositionInfo.TxtDepartment.Text = dg.SelectedRows(0).Cells("departmentPosition").Value
+                FrmPositionInfo.ShowDialog()
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Public Sub UpdatePosition(positionID As Integer, positionName As String)
+        Dim command As New MySqlCommand("UPDATE tblPosition SET positionName = @positionName WHERE positionID = @positionID", connection)
+        command.Parameters.AddWithValue("@positionName", positionName)
+        command.Parameters.AddWithValue("@positionID", positionID)
+        command.ExecuteNonQuery()
+        MessageBox.Show("Position updated successfully.")
+    End Sub
+
+    Public Sub DeletePosition(positionID As Integer)
+        Dim command As New MySqlCommand("UPDATE tblPosition SET status = 'Inactive' WHERE positionID = @positionID", connection)
+        command.Parameters.AddWithValue("@positionID", positionID)
+        command.ExecuteNonQuery()
+        MessageBox.Show("Update deleted successfully.")
+    End Sub
 
 #End Region
 
@@ -125,12 +200,29 @@ Module MdlMaintenance
 
     Public Sub NewLeave(leaveType As String)
         Try
-            Dim command As New MySqlCommand("INSERT INTO tblLeave (leaveType, status) VALUES (@leaveType, 'Active')", connection)
-            command.Parameters.AddWithValue("@leaveType", leaveType)
-            command.ExecuteNonQuery()
-            MessageBox.Show("Leave type added successfully.")
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            Dim checkCommand As New MySqlCommand("SELECT leaveID FROM tblLeave WHERE leaveType = @leaveType AND status = 'Inactive'", connection)
+            checkCommand.Parameters.AddWithValue("@leaveType", leaveType)
+            Dim reader As MySqlDataReader = checkCommand.ExecuteReader()
+
+            If reader.HasRows Then
+                reader.Read()
+                Dim existingLeaveID As Integer = reader("leaveID")
+                reader.Close()
+
+                Dim commandID As New MySqlCommand("UPDATE tblLeave SET status = 'Active' WHERE leaveID = @leaveID", connection)
+                commandID.Parameters.AddWithValue("@leaveID", existingLeaveID)
+                commandID.ExecuteNonQuery()
+                MessageBox.Show("Leave has been reactivated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                Dim command As New MySqlCommand("INSERT INTO tblLeave (leaveType, status) VALUES (@leaveType, 'Active')", connection)
+                command.Parameters.AddWithValue("@leaveType", leaveType)
+                command.ExecuteNonQuery()
+                MessageBox.Show("Leave added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        Catch ex As MySqlException
+            If ex.Number = 1062 Then
+                MessageBox.Show("Type of leave already exist.", "Duplicate entry", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
         End Try
     End Sub
 
@@ -181,12 +273,29 @@ Module MdlMaintenance
 
     Public Sub NewIncentives(incentiveName As String)
         Try
-            Dim command As New MySqlCommand("INSERT INTO tblIncentives (incentiveName, status) VALUES (@incentiveName, 'Active')", connection)
-            command.Parameters.AddWithValue("@incentiveName", incentiveName)
-            command.ExecuteNonQuery()
-            MessageBox.Show("Incentive added successfully.")
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            Dim checkCommand As New MySqlCommand("SELECT incentiveID FROM tblIncentives WHERE incentiveName = @incentiveName AND status = 'Inactive'", connection)
+            checkCommand.Parameters.AddWithValue("@incentiveName", incentiveName)
+            Dim reader As MySqlDataReader = checkCommand.ExecuteReader()
+
+            If reader.HasRows Then
+                reader.Read()
+                Dim existingIncentiveID As Integer = reader("incentiveID")
+                reader.Close()
+
+                Dim commandID As New MySqlCommand("UPDATE tblIncentives SET status = 'Active' WHERE incentiveID = @incentiveID", connection)
+                commandID.Parameters.AddWithValue("@incentiveID", existingIncentiveID)
+                commandID.ExecuteNonQuery()
+                MessageBox.Show("Incentive has been reactivated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                Dim command As New MySqlCommand("INSERT INTO tblIncentive (incentiveName, status) VALUES (@incentiveName, 'Active')", connection)
+                command.Parameters.AddWithValue("@incentiveName", incentiveName)
+                command.ExecuteNonQuery()
+                MessageBox.Show("Incentive added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        Catch ex As MySqlException
+            If ex.Number = 1062 Then
+                MessageBox.Show("Type of incentive already exist.", "Duplicate entry", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
         End Try
     End Sub
 
@@ -233,6 +342,8 @@ Module MdlMaintenance
 
 #Region "Holiday"
 
+    Public holidayID As Integer = 0
+
     Public Sub NewHoliday(holidayDate As Date, holidayName As String, classification As String)
         Try
             Dim command As New MySqlCommand("INSERT INTO tblHoliday (date, classification, holidayName) VALUES (@date, @classification, @holidayName)", connection)
@@ -241,8 +352,10 @@ Module MdlMaintenance
             command.Parameters.AddWithValue("@holidayName", holidayName)
             command.ExecuteNonQuery()
             MessageBox.Show("Holiday added successfully.")
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
+        Catch ex As MySqlException
+            If ex.Number = 1062 Then
+                MessageBox.Show("Holiday already exist.", "Duplicate entry.", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
         End Try
     End Sub
 
@@ -258,6 +371,38 @@ Module MdlMaintenance
             Return Nothing
         End Try
     End Function
+
+    Public Sub Selectholiday(dg As DataGridView)
+        Try
+            If dg.SelectedRows.Count > 0 Then
+                holidayID = dg.SelectedRows(0).Cells(0).Value
+                FrmHoliday.TxtHolidayName.Text = dg.SelectedRows(0).Cells("holidayName").Value
+                FrmHoliday.CbClassification.Text = dg.SelectedRows(0).Cells("classification").Value
+                FrmHoliday.DtHoliday.Value = dg.SelectedRows(0).Cells("holidayDate").Value
+                FrmHoliday.ShowDialog()
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Public Sub UpdateHoliday(holidayID As Integer, holidayDate As Date, holidayName As String, classification As String)
+        Dim command As New MySqlCommand("UPDATE tblHoliday SET date = @holidayDate, holidayName = @holidayName, classification = @classification WHERE holidayID = @holidayID", connection)
+        command.Parameters.AddWithValue("@holidayID", holidayID)
+        command.Parameters.AddWithValue("@holidayDate", holidayDate)
+        command.Parameters.AddWithValue("@holidayName", holidayName)
+        command.Parameters.AddWithValue("@classification", classification)
+        command.ExecuteNonQuery()
+        MessageBox.Show("Holiday updated successfully.")
+    End Sub
+
+    Public Sub DeleteHoliday(holidayID As Integer)
+        Dim command As New MySqlCommand("DELETE FROM tblHoliday WHERE holidayID = @holidayID", connection)
+        command.Parameters.AddWithValue("@holidayID", holidayID)
+        command.ExecuteNonQuery()
+        MessageBox.Show("Holiday deleted successfully.")
+    End Sub
+
 #End Region
 
 #Region "Rates"
@@ -360,10 +505,11 @@ Module MdlMaintenance
                 MessageBox.Show("This tax cannot deleted.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Exit Sub
             End If
-            Dim command As New MySqlCommand("DELETE FROM tblTaxDaily ORDER BY taxID DESC LIMIT 1", connection)
+            Dim command As New MySqlCommand("DELETE FROM tblTaxDaily ORDER BY taxDailyID DESC LIMIT 1", connection)
             command.ExecuteNonQuery()
             MessageBox.Show("Tax deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Catch ex As Exception
+
         End Try
     End Sub
 
@@ -375,10 +521,11 @@ Module MdlMaintenance
                 MessageBox.Show("This tax cannot deleted.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Exit Sub
             End If
-            Dim command As New MySqlCommand("DELETE FROM tblTaxMonthly ORDER BY taxID DESC LIMIT 1", connection)
+            Dim command As New MySqlCommand("DELETE FROM tblTaxMonthly ORDER BY taxMonthlyID DESC LIMIT 1", connection)
             command.ExecuteNonQuery()
             MessageBox.Show("Tax deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
         Catch ex As Exception
+
         End Try
     End Sub
 
@@ -560,18 +707,35 @@ Module MdlMaintenance
 
     Public Sub NewVoluntary(voluntaryName As String)
         Try
-            Dim command As New MySqlCommand("INSERT INTO tblVoluntary (name, status) VALUES (@voluntaryName, 'Active')", connection)
-            command.Parameters.AddWithValue("@voluntaryName", voluntaryName)
-            command.ExecuteNonQuery()
-            MessageBox.Show("Voluntary added successfully.")
-        Catch ex As Exception
-            MessageBox.Show(ex.Message)
+            Dim checkCommand As New MySqlCommand("SELECT voluntaryID FROM tblVoluntary WHERE name = @voluntaryName AND status = 'Inactive'", connection)
+            checkCommand.Parameters.AddWithValue("@voluntaryName", voluntaryName)
+            Dim reader As MySqlDataReader = checkCommand.ExecuteReader()
+
+            If reader.HasRows Then
+                reader.Read()
+                Dim existingVoluntaryID As Integer = reader("voluntaryID")
+                reader.Close()
+
+                Dim commandID As New MySqlCommand("UPDATE tblVoluntary SET status = 'Active' WHERE voluntaryID = @voluntaryID", connection)
+                commandID.Parameters.AddWithValue("@voluntaryID", existingVoluntaryID)
+                commandID.ExecuteNonQuery()
+                MessageBox.Show("Voluntary has been reactivated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                Dim command As New MySqlCommand("INSERT INTO tblVoluntary (name, status) VALUES (@voluntaryName, 'Active')", connection)
+                command.Parameters.AddWithValue("@voluntaryName", voluntaryName)
+                command.ExecuteNonQuery()
+                MessageBox.Show("Voluntary added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            End If
+        Catch ex As MySqlException
+            If ex.Number = 1062 Then
+                MessageBox.Show("Type of voluntary already exist.", "Duplicate entry.", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
         End Try
     End Sub
 
     Public Function DisplayVoluntary() As DataTable
         Try
-            Dim command As New MySqlCommand("SELECT * FROM tblVoluntary", connection)
+            Dim command As New MySqlCommand("SELECT * FROM tblVoluntary WHERE status = 'Active'", connection)
             Dim adapter As New MySqlDataAdapter(command)
             Dim datatable As New DataTable
             adapter.Fill(datatable)
@@ -582,5 +746,34 @@ Module MdlMaintenance
         End Try
     End Function
 
+    Public Sub SelectVoluntary(dg As DataGridView)
+        Try
+            If dg.SelectedRows.Count > 0 Then
+                voluntaryID = dg.SelectedRows(0).Cells(0).Value
+                FrmVoluntaryInfo.TxtVoluntary.Text = dg.SelectedRows(0).Cells("voluntaryName").Value
+                FrmVoluntaryInfo.ShowDialog()
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Public Sub UpdateVoluntary(voluntaryID As Integer, voluntaryName As String)
+        Dim command As New MySqlCommand("UPDATE tblVoluntary SET voluntaryName = @voluntaryName WHERE voluntaryID = @voluntaryID", connection)
+        command.Parameters.AddWithValue("@voluntaryID", voluntaryID)
+        command.Parameters.AddWithValue("@voluntaryName", voluntaryName)
+        command.ExecuteNonQuery()
+        MessageBox.Show("Voluntary updated successfully.")
+    End Sub
+
+    Public Sub DeleteVoluntary(voluntaryID As Integer)
+        Dim command As New MySqlCommand("UPDATE tblVoluntary SET status = 'Inactive' WHERE voluntaryID = @voluntaryID", connection)
+        command.Parameters.AddWithValue("@voluntaryID", voluntaryID)
+        command.ExecuteNonQuery()
+        MessageBox.Show("Update deleted successfully.")
+    End Sub
+
 #End Region
+
+
 End Module
