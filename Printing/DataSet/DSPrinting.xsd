@@ -73,6 +73,23 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="DT_PayrollSummary" msprop:Generator_TableClassName="DT_PayrollSummaryDataTable" msprop:Generator_TableVarName="tableDT_PayrollSummary" msprop:Generator_RowChangedName="DT_PayrollSummaryRowChanged" msprop:Generator_TablePropName="DT_PayrollSummary" msprop:Generator_RowDeletingName="DT_PayrollSummaryRowDeleting" msprop:Generator_RowChangingName="DT_PayrollSummaryRowChanging" msprop:Generator_RowEvHandlerName="DT_PayrollSummaryRowChangeEventHandler" msprop:Generator_RowDeletedName="DT_PayrollSummaryRowDeleted" msprop:Generator_RowClassName="DT_PayrollSummaryRow" msprop:Generator_UserTableName="DT_PayrollSummary" msprop:Generator_RowEvArgName="DT_PayrollSummaryRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="payrollperiodID" msprop:Generator_ColumnVarNameInTable="columnpayrollperiodID" msprop:Generator_ColumnPropNameInRow="payrollperiodID" msprop:Generator_ColumnPropNameInTable="payrollperiodIDColumn" msprop:Generator_UserColumnName="payrollperiodID" type="xs:long" minOccurs="0" />
+              <xs:element name="payrollperiodname" msprop:Generator_ColumnVarNameInTable="columnpayrollperiodname" msprop:Generator_ColumnPropNameInRow="payrollperiodname" msprop:Generator_ColumnPropNameInTable="payrollperiodnameColumn" msprop:Generator_UserColumnName="payrollperiodname" type="xs:string" minOccurs="0" />
+              <xs:element name="datefrom" msprop:Generator_ColumnVarNameInTable="columndatefrom" msprop:Generator_ColumnPropNameInRow="datefrom" msprop:Generator_ColumnPropNameInTable="datefromColumn" msprop:Generator_UserColumnName="datefrom" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="dateto" msprop:Generator_ColumnVarNameInTable="columndateto" msprop:Generator_ColumnPropNameInRow="dateto" msprop:Generator_ColumnPropNameInTable="datetoColumn" msprop:Generator_UserColumnName="dateto" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="payout" msprop:Generator_ColumnVarNameInTable="columnpayout" msprop:Generator_ColumnPropNameInRow="payout" msprop:Generator_ColumnPropNameInTable="payoutColumn" msprop:Generator_UserColumnName="payout" type="xs:string" minOccurs="0" />
+              <xs:element name="employeenumber" msprop:Generator_ColumnVarNameInTable="columnemployeenumber" msprop:Generator_ColumnPropNameInRow="employeenumber" msprop:Generator_ColumnPropNameInTable="employeenumberColumn" msprop:Generator_UserColumnName="employeenumber" type="xs:long" minOccurs="0" />
+              <xs:element name="fullname" msprop:Generator_ColumnVarNameInTable="columnfullname" msprop:Generator_ColumnPropNameInRow="fullname" msprop:Generator_ColumnPropNameInTable="fullnameColumn" msprop:Generator_UserColumnName="fullname" type="xs:string" minOccurs="0" />
+              <xs:element name="departmentName" msprop:Generator_ColumnVarNameInTable="columndepartmentName" msprop:Generator_ColumnPropNameInRow="departmentName" msprop:Generator_ColumnPropNameInTable="departmentNameColumn" msprop:Generator_UserColumnName="departmentName" type="xs:string" minOccurs="0" />
+              <xs:element name="positionName" msprop:Generator_ColumnVarNameInTable="columnpositionName" msprop:Generator_ColumnPropNameInRow="positionName" msprop:Generator_ColumnPropNameInTable="positionNameColumn" msprop:Generator_UserColumnName="positionName" type="xs:string" minOccurs="0" />
+              <xs:element name="netpay" msprop:Generator_ColumnVarNameInTable="columnnetpay" msprop:Generator_ColumnPropNameInRow="netpay" msprop:Generator_ColumnPropNameInTable="netpayColumn" msprop:Generator_UserColumnName="netpay" type="xs:long" minOccurs="0" />
+              <xs:element name="total" msprop:Generator_ColumnVarNameInTable="columntotal" msprop:Generator_ColumnPropNameInRow="total" msprop:Generator_ColumnPropNameInTable="totalColumn" msprop:Generator_UserColumnName="total" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
   </xs:element>

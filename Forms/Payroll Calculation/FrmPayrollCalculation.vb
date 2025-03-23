@@ -1,4 +1,6 @@
-﻿Public Class FrmPayrollCalculation
+﻿Imports MySql.Data.MySqlClient
+Imports Guna.UI2.WinForms
+Public Class FrmPayrollCalculation
     Private Sub TPPayrollCalculation_Enter(sender As Object, e As EventArgs) Handles TPPayrollCalculation.Enter
         FrmPayrollPeriod.Show()
     End Sub
@@ -142,9 +144,48 @@
                         ClassPayrollCalculation.LoadPayrollPeriod(DGPayrollPeriod)
                     End If
                 End If
+
+                If e.ColumnIndex = DGPayrollPeriod.Columns("btnPrintTotal").Index AndAlso e.RowIndex >= 0 Then
+                    Dim payrollperiodID As String = DGPayrollPeriod.Rows(e.RowIndex).Cells("colPayrollPeriodID").Value.ToString()
+                    Dim isreleased As String = DGPayrollPeriod.Rows(e.RowIndex).Cells("colReleased").Value.ToString
+                    If isreleased <> "Released" Then
+                        MsgBox("Payroll period not yet released.")
+                        Exit Sub
+                    End If
+
+                    dt = New DataTable("DT_PayrollSummary")
+                    dt.Clear()
+                    adp = New MySqlDataAdapter("SELECT 
+                                                p.payrollperiodID,
+                                                pp.payrollperiodname,
+                                                pp.datefrom,
+                                                pp.dateto,
+                                                pp.payout,
+                                                e.employeeNumber,
+                                                CONCAT(e.firstname, ' ', e.lastname) AS fullname,
+                                                d.departmentName,
+                                                pos.positionName,
+                                                p.netpay,
+                                                SUM(p.netpay) OVER () AS total
+                                                FROM tblpayroll p
+                                                JOIN tblpayrollperiod pp ON p.payrollperiodID = pp.payrollperiodID
+                                                JOIN tblemployee e ON p.employeeID = e.employeeID
+                                                JOIN tbldepartment d ON e.departmentID = d.departmentID
+                                                LEFT JOIN tblposition pos ON e.positionID = pos.positionID
+                                                WHERE p.payrollperiodID = '" & payrollperiodID & "'
+                                                ORDER BY e.employeeNumber;
+                                                ", conn)
+                    adp.Fill(dt)
+
+                    Dim crystal As New CRPayrollTotal
+                    crystal.SetDataSource(dt)
+                    FrmPrinting.CRVPrinting.ReportSource = crystal
+                    FrmPrinting.ShowDialog()
+                End If
             End If
         Catch ex As Exception
-
+            MsgBox(ex.Message)
+            Exit Sub
         End Try
     End Sub
 End Class
