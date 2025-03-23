@@ -15,7 +15,7 @@
         ClassPayrollCalculation.EmployeeCompensationType(CbEmployees)
         ClassPayrollCalculation.EmployeeStatus(CbEmployees)
         ClassPayrollCalculation.LoadIncentive(DGIncentive)
-        ClassPayrollCalculation.LoadAllowance(DGAllowance, CbEmployees)
+        ClassPayrollCalculation.LoadAllowance(TxtAllowance, CbEmployees)
         ClassPayrollCalculation.LoadVoluntary(DGVoluntary, CbEmployees)
     End Sub
 
@@ -56,7 +56,7 @@
 
         ClassPayrollCalculation.GetGrossPay(CbEmployees, DGAttendance, TxtGrossPay)
         ClassPayrollCalculation.GetOvertime(CbEmployees, DGAttendance, TxtOvertime)
-        ClassPayrollCalculation.GetAllowance(DGAllowance, TxtAllowance)
+        'ClassPayrollCalculation.GetAllowance(DGAllowance, TxtAllowance)
         ClassPayrollCalculation.GetIncentives(DGIncentive, TxtIncentives)
         ClassPayrollCalculation.GetLate(DGAttendance, TxtLate, CbEmployees)
         ClassPayrollCalculation.GetUndertime(DGAttendance, TxtUndertime, CbEmployees)

@@ -193,24 +193,19 @@ Public Class ClassPayrollCalculation
 
         End Try
     End Sub
-    Public Shared Sub LoadAllowance(dg As Guna2DataGridView, cbEmp As Guna2ComboBox)
+    Public Shared Sub LoadAllowance(txt As Guna2TextBox, cbEmp As Guna2ComboBox)
         Try
             Dim employeeID As Integer = cbEmp.SelectedValue
             If employeeID = 0 Then
                 Exit Sub
             End If
-            RunQuery("Select positionID from tblemployee WHERE employeeID = '" & employeeID & "'")
-            Dim positionID As Integer = ds.Tables("querytable").Rows(0)(0)
-
-            RunQuery("Select a.allowanceID, b.allowanceName, a.amount from tbljoballowance a
-                  LEFT JOIN tblallowance b on b.allowanceID = a.allowanceID
-                  WHERE positionID = '" & positionID & "'")
-            If isPayout = "Yes" Then
-                dg.DataSource = ds.Tables("querytable")
+            RunQuery("Select * from tblempallowance where employeeID = '" & employeeID & "'")
+            If ds.Tables("querytable").Rows.Count > 0 Then
+                txt.Text = ds.Tables("querytable").Rows(0)("allowance")
             Else
-                ds.Tables("querytable").Rows.Clear()
-                dg.DataSource = ds.Tables("querytable")
+                txt.Text = "0"
             End If
+
         Catch ex As Exception
 
         End Try
@@ -521,24 +516,24 @@ Public Class ClassPayrollCalculation
             MsgBox(ex.Message)
         End Try
     End Sub
-    Public Shared Sub GetAllowance(dg As Guna2DataGridView, txtallowance As Guna2TextBox)
-        Try
-            If isPayout = "Yes" Then
-                Dim totalallowance As Decimal
-                For Each row As DataGridViewRow In dg.Rows
-                    Dim allowanceamount As Decimal = row.Cells("allowanceAmount").Value
-                    totalallowance += allowanceamount
-                Next
-                txtallowance.Clear()
-                txtallowance.Text = totalallowance
-            Else
-                txtallowance.Text = "0"
-            End If
+    'Public Shared Sub GetAllowance(dg As Guna2DataGridView, txtallowance As Guna2TextBox)
+    '    Try
+    '        If isPayout = "Yes" Then
+    '            Dim totalallowance As Decimal
+    '            For Each row As DataGridViewRow In dg.Rows
+    '                Dim allowanceamount As Decimal = row.Cells("allowanceAmount").Value
+    '                totalallowance += allowanceamount
+    '            Next
+    '            txtallowance.Clear()
+    '            txtallowance.Text = totalallowance
+    '        Else
+    '            txtallowance.Text = "0"
+    '        End If
 
-        Catch ex As Exception
+    '    Catch ex As Exception
 
-        End Try
-    End Sub
+    '    End Try
+    'End Sub
     Public Shared Sub GetIncentives(dg As Guna2DataGridView, txtincentives As Guna2TextBox)
         Try
             Dim totalincentive As Decimal
@@ -704,17 +699,33 @@ Public Class ClassPayrollCalculation
     Public Shared Sub GetTax(grosspay As Guna2TextBox, txttax As Guna2TextBox, txtsss As Guna2TextBox, txtphilhealth As Guna2TextBox, txtpagibig As Guna2TextBox)
         Try
             Dim taxableamount As Decimal = Val(grosspay.Text) - (Val(txtsss.Text) + Val(txtphilhealth.Text) + Val(txtpagibig.Text))
-            RunQuery("Select * from tbltax WHERE minSalary <= '" & taxableamount & "' and maxSalary >= '" & taxableamount & "'")
-            If ds.Tables("querytable").Rows.Count > 0 Then
-                Dim minSalary As Decimal = ds.Tables("querytable").Rows(0)(1)
-                Dim fixedamount As Decimal = ds.Tables("querytable").Rows(0)(3)
-                Dim percent As Integer = ds.Tables("querytable").Rows(0)(4) / 100
+            If compensationtype = "Daily" Then
+                RunQuery("Select * from tbltaxdaily WHERE minSalary <= '" & taxableamount & "' and maxSalary >= '" & taxableamount & "'")
+                If ds.Tables("querytable").Rows.Count > 0 Then
+                    Dim minSalary As Decimal = ds.Tables("querytable").Rows(0)(1)
+                    Dim fixedamount As Decimal = ds.Tables("querytable").Rows(0)(3)
+                    Dim percent As Integer = ds.Tables("querytable").Rows(0)(4) / 100
 
-                Dim taxpercent As Decimal = (taxableamount - minSalary) * percent
-                Dim total = fixedamount + taxpercent
+                    Dim taxpercent As Decimal = (taxableamount - minSalary) * percent
+                    Dim total = fixedamount + taxpercent
 
-                txttax.Clear()
-                txttax.Text = Val(total)
+                    txttax.Clear()
+                    txttax.Text = Val(total)
+                End If
+            Else
+                RunQuery("Select * from tbltaxmonthly WHERE minSalary <= '" & taxableamount & "' and maxSalary >= '" & taxableamount & "'")
+                If ds.Tables("querytable").Rows.Count > 0 Then
+                    Dim minSalary As Decimal = ds.Tables("querytable").Rows(0)(1)
+                    Dim fixedamount As Decimal = ds.Tables("querytable").Rows(0)(3)
+                    Dim percent As Decimal = ds.Tables("querytable").Rows(0)(4) / 100
+
+                    Dim taxpercent As Decimal = (taxableamount - minSalary) * percent
+
+                    Dim total = fixedamount + taxpercent
+
+                    txttax.Clear()
+                    txttax.Text = Val(total)
+                End If
             End If
         Catch ex As Exception
             MsgBox(ex.Message)

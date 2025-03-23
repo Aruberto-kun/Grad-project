@@ -87,10 +87,10 @@ Partial Class FrmDepartmentControls
         Me.TCDepartment.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TCDepartment.ItemSize = New System.Drawing.Size(180, 40)
         Me.TCDepartment.Location = New System.Drawing.Point(0, 0)
-        Me.TCDepartment.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TCDepartment.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TCDepartment.Name = "TCDepartment"
         Me.TCDepartment.SelectedIndex = 0
-        Me.TCDepartment.Size = New System.Drawing.Size(1564, 810)
+        Me.TCDepartment.Size = New System.Drawing.Size(1166, 658)
         Me.TCDepartment.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty
         Me.TCDepartment.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(227, Byte), Integer))
         Me.TCDepartment.TabButtonHoverState.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!)
@@ -114,10 +114,10 @@ Partial Class FrmDepartmentControls
         '
         Me.TPDepartmentList.Controls.Add(Me.DGDepartment)
         Me.TPDepartmentList.Location = New System.Drawing.Point(184, 4)
-        Me.TPDepartmentList.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TPDepartmentList.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TPDepartmentList.Name = "TPDepartmentList"
-        Me.TPDepartmentList.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TPDepartmentList.Size = New System.Drawing.Size(1376, 802)
+        Me.TPDepartmentList.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TPDepartmentList.Size = New System.Drawing.Size(978, 650)
         Me.TPDepartmentList.TabIndex = 0
         Me.TPDepartmentList.Text = "Department List"
         Me.TPDepartmentList.UseVisualStyleBackColor = True
@@ -150,14 +150,14 @@ Partial Class FrmDepartmentControls
         Me.DGDepartment.DefaultCellStyle = DataGridViewCellStyle3
         Me.DGDepartment.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGDepartment.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DGDepartment.Location = New System.Drawing.Point(3, 2)
-        Me.DGDepartment.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DGDepartment.Location = New System.Drawing.Point(2, 2)
+        Me.DGDepartment.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DGDepartment.Name = "DGDepartment"
         Me.DGDepartment.ReadOnly = True
         Me.DGDepartment.RowHeadersVisible = False
         Me.DGDepartment.RowHeadersWidth = 62
         Me.DGDepartment.RowTemplate.Height = 28
-        Me.DGDepartment.Size = New System.Drawing.Size(1370, 798)
+        Me.DGDepartment.Size = New System.Drawing.Size(974, 646)
         Me.DGDepartment.TabIndex = 0
         Me.DGDepartment.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DGDepartment.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -233,10 +233,10 @@ Partial Class FrmDepartmentControls
         Me.TPDepartmentProfile.Controls.Add(Me.Label4)
         Me.TPDepartmentProfile.Controls.Add(Me.Label1)
         Me.TPDepartmentProfile.Location = New System.Drawing.Point(184, 4)
-        Me.TPDepartmentProfile.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.TPDepartmentProfile.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TPDepartmentProfile.Name = "TPDepartmentProfile"
-        Me.TPDepartmentProfile.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.TPDepartmentProfile.Size = New System.Drawing.Size(1376, 802)
+        Me.TPDepartmentProfile.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TPDepartmentProfile.Size = New System.Drawing.Size(985, 650)
         Me.TPDepartmentProfile.TabIndex = 1
         Me.TPDepartmentProfile.Text = "Department Profile"
         Me.TPDepartmentProfile.UseVisualStyleBackColor = True
@@ -244,19 +244,17 @@ Partial Class FrmDepartmentControls
         'Panel2
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(3, 196)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel2.Location = New System.Drawing.Point(2, 174)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1370, 6)
+        Me.Panel2.Size = New System.Drawing.Size(981, 5)
         Me.Panel2.TabIndex = 17
         '
         'Panel1
         '
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel1.Location = New System.Drawing.Point(3, 744)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Panel1.Location = New System.Drawing.Point(2, 602)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1370, 6)
+        Me.Panel1.Size = New System.Drawing.Size(981, 5)
         Me.Panel1.TabIndex = 15
         '
         'BtnSave
@@ -269,10 +267,10 @@ Partial Class FrmDepartmentControls
         Me.BtnSave.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnSave.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSave.ForeColor = System.Drawing.Color.White
-        Me.BtnSave.Location = New System.Drawing.Point(3, 750)
-        Me.BtnSave.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnSave.Location = New System.Drawing.Point(2, 607)
+        Me.BtnSave.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BtnSave.Name = "BtnSave"
-        Me.BtnSave.Size = New System.Drawing.Size(1370, 50)
+        Me.BtnSave.Size = New System.Drawing.Size(981, 41)
         Me.BtnSave.TabIndex = 14
         Me.BtnSave.Text = "SAVE"
         '
@@ -291,19 +289,20 @@ Partial Class FrmDepartmentControls
         Me.CbDepartmentHead.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CbDepartmentHead.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CbDepartmentHead.ItemHeight = 30
-        Me.CbDepartmentHead.Location = New System.Drawing.Point(3, 160)
-        Me.CbDepartmentHead.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.CbDepartmentHead.Location = New System.Drawing.Point(2, 138)
+        Me.CbDepartmentHead.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.CbDepartmentHead.Name = "CbDepartmentHead"
-        Me.CbDepartmentHead.Size = New System.Drawing.Size(1370, 36)
+        Me.CbDepartmentHead.Size = New System.Drawing.Size(981, 36)
         Me.CbDepartmentHead.TabIndex = 13
         '
         'Label2
         '
         Me.Label2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(3, 121)
+        Me.Label2.Location = New System.Drawing.Point(2, 106)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(1370, 39)
+        Me.Label2.Size = New System.Drawing.Size(981, 32)
         Me.Label2.TabIndex = 12
         Me.Label2.Text = "Department Head Name"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -323,19 +322,20 @@ Partial Class FrmDepartmentControls
         Me.CbDepartment.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CbDepartment.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CbDepartment.ItemHeight = 30
-        Me.CbDepartment.Location = New System.Drawing.Point(3, 85)
-        Me.CbDepartment.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.CbDepartment.Location = New System.Drawing.Point(2, 70)
+        Me.CbDepartment.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.CbDepartment.Name = "CbDepartment"
-        Me.CbDepartment.Size = New System.Drawing.Size(1370, 36)
+        Me.CbDepartment.Size = New System.Drawing.Size(981, 36)
         Me.CbDepartment.TabIndex = 11
         '
         'Label4
         '
         Me.Label4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(3, 46)
+        Me.Label4.Location = New System.Drawing.Point(2, 38)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(1370, 39)
+        Me.Label4.Size = New System.Drawing.Size(981, 32)
         Me.Label4.TabIndex = 10
         Me.Label4.Text = "Department:"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -344,9 +344,10 @@ Partial Class FrmDepartmentControls
         '
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label1.Font = New System.Drawing.Font("Segoe UI Semibold", 13.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(3, 2)
+        Me.Label1.Location = New System.Drawing.Point(2, 2)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(1370, 44)
+        Me.Label1.Size = New System.Drawing.Size(981, 36)
         Me.Label1.TabIndex = 8
         Me.Label1.Text = "Department Profile"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -355,9 +356,10 @@ Partial Class FrmDepartmentControls
         '
         Me.TPLeaveFiling.Controls.Add(Me.DGFiledLeave)
         Me.TPLeaveFiling.Location = New System.Drawing.Point(184, 4)
+        Me.TPLeaveFiling.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TPLeaveFiling.Name = "TPLeaveFiling"
-        Me.TPLeaveFiling.Padding = New System.Windows.Forms.Padding(3)
-        Me.TPLeaveFiling.Size = New System.Drawing.Size(1376, 802)
+        Me.TPLeaveFiling.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TPLeaveFiling.Size = New System.Drawing.Size(985, 650)
         Me.TPLeaveFiling.TabIndex = 2
         Me.TPLeaveFiling.Text = "Leave Filing"
         Me.TPLeaveFiling.UseVisualStyleBackColor = True
@@ -389,14 +391,14 @@ Partial Class FrmDepartmentControls
         Me.DGFiledLeave.DefaultCellStyle = DataGridViewCellStyle6
         Me.DGFiledLeave.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGFiledLeave.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DGFiledLeave.Location = New System.Drawing.Point(3, 3)
-        Me.DGFiledLeave.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DGFiledLeave.Location = New System.Drawing.Point(2, 2)
+        Me.DGFiledLeave.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DGFiledLeave.Name = "DGFiledLeave"
         Me.DGFiledLeave.ReadOnly = True
         Me.DGFiledLeave.RowHeadersVisible = False
         Me.DGFiledLeave.RowHeadersWidth = 62
         Me.DGFiledLeave.RowTemplate.Height = 28
-        Me.DGFiledLeave.Size = New System.Drawing.Size(1370, 796)
+        Me.DGFiledLeave.Size = New System.Drawing.Size(981, 646)
         Me.DGFiledLeave.TabIndex = 4
         Me.DGFiledLeave.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DGFiledLeave.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -424,9 +426,10 @@ Partial Class FrmDepartmentControls
         '
         Me.TPFTIOFiling.Controls.Add(Me.DGFiledFTIO)
         Me.TPFTIOFiling.Location = New System.Drawing.Point(184, 4)
+        Me.TPFTIOFiling.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TPFTIOFiling.Name = "TPFTIOFiling"
-        Me.TPFTIOFiling.Padding = New System.Windows.Forms.Padding(3)
-        Me.TPFTIOFiling.Size = New System.Drawing.Size(1376, 802)
+        Me.TPFTIOFiling.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TPFTIOFiling.Size = New System.Drawing.Size(978, 650)
         Me.TPFTIOFiling.TabIndex = 3
         Me.TPFTIOFiling.Text = "FTIO Filing"
         Me.TPFTIOFiling.UseVisualStyleBackColor = True
@@ -458,14 +461,14 @@ Partial Class FrmDepartmentControls
         Me.DGFiledFTIO.DefaultCellStyle = DataGridViewCellStyle9
         Me.DGFiledFTIO.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGFiledFTIO.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DGFiledFTIO.Location = New System.Drawing.Point(3, 3)
-        Me.DGFiledFTIO.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DGFiledFTIO.Location = New System.Drawing.Point(2, 2)
+        Me.DGFiledFTIO.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DGFiledFTIO.Name = "DGFiledFTIO"
         Me.DGFiledFTIO.ReadOnly = True
         Me.DGFiledFTIO.RowHeadersVisible = False
         Me.DGFiledFTIO.RowHeadersWidth = 62
         Me.DGFiledFTIO.RowTemplate.Height = 28
-        Me.DGFiledFTIO.Size = New System.Drawing.Size(1370, 796)
+        Me.DGFiledFTIO.Size = New System.Drawing.Size(974, 646)
         Me.DGFiledFTIO.TabIndex = 3
         Me.DGFiledFTIO.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DGFiledFTIO.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -493,9 +496,10 @@ Partial Class FrmDepartmentControls
         '
         Me.TPOvertimeFiling.Controls.Add(Me.DGOvertime)
         Me.TPOvertimeFiling.Location = New System.Drawing.Point(184, 4)
+        Me.TPOvertimeFiling.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TPOvertimeFiling.Name = "TPOvertimeFiling"
-        Me.TPOvertimeFiling.Padding = New System.Windows.Forms.Padding(3)
-        Me.TPOvertimeFiling.Size = New System.Drawing.Size(1376, 802)
+        Me.TPOvertimeFiling.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TPOvertimeFiling.Size = New System.Drawing.Size(978, 650)
         Me.TPOvertimeFiling.TabIndex = 4
         Me.TPOvertimeFiling.Text = "Overtime Filing"
         Me.TPOvertimeFiling.UseVisualStyleBackColor = True
@@ -528,14 +532,14 @@ Partial Class FrmDepartmentControls
         Me.DGOvertime.DefaultCellStyle = DataGridViewCellStyle12
         Me.DGOvertime.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGOvertime.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DGOvertime.Location = New System.Drawing.Point(3, 3)
-        Me.DGOvertime.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DGOvertime.Location = New System.Drawing.Point(2, 2)
+        Me.DGOvertime.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DGOvertime.Name = "DGOvertime"
         Me.DGOvertime.ReadOnly = True
         Me.DGOvertime.RowHeadersVisible = False
         Me.DGOvertime.RowHeadersWidth = 62
         Me.DGOvertime.RowTemplate.Height = 28
-        Me.DGOvertime.Size = New System.Drawing.Size(1370, 796)
+        Me.DGOvertime.Size = New System.Drawing.Size(974, 646)
         Me.DGOvertime.TabIndex = 2
         Me.DGOvertime.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DGOvertime.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -619,13 +623,13 @@ Partial Class FrmDepartmentControls
         '
         'FrmDepartmentControls
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1564, 810)
+        Me.ClientSize = New System.Drawing.Size(1166, 658)
         Me.ControlBox = False
         Me.Controls.Add(Me.TCDepartment)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "FrmDepartmentControls"
         Me.TCDepartment.ResumeLayout(False)
         Me.TPDepartmentList.ResumeLayout(False)
