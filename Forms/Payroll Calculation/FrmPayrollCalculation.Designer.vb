@@ -199,7 +199,7 @@ Partial Class FrmPayrollCalculation
         Me.TPPayrollPeriod.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TPPayrollPeriod.Name = "TPPayrollPeriod"
         Me.TPPayrollPeriod.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.TPPayrollPeriod.Size = New System.Drawing.Size(978, 709)
+        Me.TPPayrollPeriod.Size = New System.Drawing.Size(1366, 874)
         Me.TPPayrollPeriod.TabIndex = 1
         Me.TPPayrollPeriod.Text = "Payroll Period"
         Me.TPPayrollPeriod.UseVisualStyleBackColor = True
@@ -238,7 +238,7 @@ Partial Class FrmPayrollCalculation
         Me.DGPayrollPeriod.RowHeadersWidth = 62
         Me.DGPayrollPeriod.RowTemplate.Height = 28
         Me.DGPayrollPeriod.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
-        Me.DGPayrollPeriod.Size = New System.Drawing.Size(974, 307)
+        Me.DGPayrollPeriod.Size = New System.Drawing.Size(1362, 472)
         Me.DGPayrollPeriod.TabIndex = 9
         Me.DGPayrollPeriod.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DGPayrollPeriod.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -317,7 +317,7 @@ Partial Class FrmPayrollCalculation
         Me.Panel1.Location = New System.Drawing.Point(2, 38)
         Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(974, 321)
+        Me.Panel1.Size = New System.Drawing.Size(1362, 321)
         Me.Panel1.TabIndex = 8
         '
         'Panel2
@@ -478,7 +478,7 @@ Partial Class FrmPayrollCalculation
         Me.Label1.Location = New System.Drawing.Point(2, 2)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(974, 36)
+        Me.Label1.Size = New System.Drawing.Size(1362, 36)
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "Personal Information"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -493,10 +493,10 @@ Partial Class FrmPayrollCalculation
         Me.BtnSave.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnSave.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSave.ForeColor = System.Drawing.Color.White
-        Me.BtnSave.Location = New System.Drawing.Point(2, 666)
+        Me.BtnSave.Location = New System.Drawing.Point(2, 831)
         Me.BtnSave.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BtnSave.Name = "BtnSave"
-        Me.BtnSave.Size = New System.Drawing.Size(974, 41)
+        Me.BtnSave.Size = New System.Drawing.Size(1362, 41)
         Me.BtnSave.TabIndex = 6
         Me.BtnSave.Text = "SAVE"
         '

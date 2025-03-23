@@ -253,6 +253,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Printing\CR\CRPayrollTotal.vb">
+      <DependentUpon>CRPayrollTotal.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
     <Compile Include="Printing\CR\CRAttendance.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -373,6 +379,10 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Printing\CR\CRPayrollTotal.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRPayrollTotal.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Printing\CR\CRAttendance.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

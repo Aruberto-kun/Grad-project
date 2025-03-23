@@ -57,6 +57,15 @@ Public Class ClassPayrollCalculation
                         btnColumn.UseColumnTextForButtonValue = True
                         dg.Columns.Add(btnColumn)
                     End If
+
+                    If dg.Columns("btnPrintTotal") Is Nothing Then
+                        Dim btnColumn As New DataGridViewButtonColumn()
+                        btnColumn.Name = "btnPrintTotal"
+                        btnColumn.HeaderText = "Print Payroll Summary"
+                        btnColumn.Text = "Print"
+                        btnColumn.UseColumnTextForButtonValue = True
+                        dg.Columns.Add(btnColumn)
+                    End If
                 End If
             End If
         Catch ex As Exception
