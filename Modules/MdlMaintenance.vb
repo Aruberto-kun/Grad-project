@@ -95,11 +95,17 @@ Module MdlMaintenance
     End Sub
 
     Public Sub UpdateDepartment(departmentID As Integer, departmentName As String)
-        Dim command As New MySqlCommand("UPDATE tblDepartment SET departmentName = @departmentName WHERE departmentID = @departmentID", connection)
-        command.Parameters.AddWithValue("@departmentName", departmentName)
-        command.Parameters.AddWithValue("@departmentID", departmentID)
-        command.ExecuteNonQuery()
-        MessageBox.Show("Department updated successfully.")
+        Try
+            Dim command As New MySqlCommand("UPDATE tblDepartment SET departmentName = @departmentName WHERE departmentID = @departmentID", connection)
+            command.Parameters.AddWithValue("@departmentName", departmentName)
+            command.Parameters.AddWithValue("@departmentID", departmentID)
+            command.ExecuteNonQuery()
+            MessageBox.Show("Department updated successfully.")
+        Catch ex As MySqlException
+            If ex.Number = 1062 Then
+                MessageBox.Show("Department name already exist.", "Duplicate entry", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+        End Try
     End Sub
 
     Public Sub DeleteDepartment(departmentID As Integer)
@@ -191,11 +197,17 @@ Module MdlMaintenance
     End Sub
 
     Public Sub UpdatePosition(positionID As Integer, positionName As String)
-        Dim command As New MySqlCommand("UPDATE tblPosition SET positionName = @positionName WHERE positionID = @positionID", connection)
-        command.Parameters.AddWithValue("@positionName", positionName)
-        command.Parameters.AddWithValue("@positionID", positionID)
-        command.ExecuteNonQuery()
-        MessageBox.Show("Position updated successfully.")
+        Try
+            Dim command As New MySqlCommand("UPDATE tblPosition SET positionName = @positionName WHERE positionID = @positionID", connection)
+            command.Parameters.AddWithValue("@positionName", positionName)
+            command.Parameters.AddWithValue("@positionID", positionID)
+            command.ExecuteNonQuery()
+            MessageBox.Show("Position updated successfully.")
+        Catch ex As MySqlException
+            If ex.Number = 1062 Then
+                MessageBox.Show("Position already exist.", "Duplicate entry", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+        End Try
     End Sub
 
     Public Sub DeletePosition(positionID As Integer)
@@ -275,11 +287,17 @@ Module MdlMaintenance
     End Sub
 
     Public Sub UpdateLeave(leaveID As Integer, leaveName As String)
-        Dim command As New MySqlCommand("UPDATE tblLeave SET leaveType = @leaveName WHERE leaveID = @leaveID", connection)
-        command.Parameters.AddWithValue("@leaveName", leaveName)
-        command.Parameters.AddWithValue("@leaveID", leaveID)
-        command.ExecuteNonQuery()
-        MessageBox.Show("Leave updated successfully.")
+        Try
+            Dim command As New MySqlCommand("UPDATE tblLeave SET leaveType = @leaveName WHERE leaveID = @leaveID", connection)
+            command.Parameters.AddWithValue("@leaveName", leaveName)
+            command.Parameters.AddWithValue("@leaveID", leaveID)
+            command.ExecuteNonQuery()
+            MessageBox.Show("Leave updated successfully.")
+        Catch ex As MySqlException
+            If ex.Number = 1062 Then
+                MessageBox.Show("Type of leave already exist.", "Duplicate entry", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+        End Try
     End Sub
 
     Public Sub DeleteLeave(leaveID As Integer)
@@ -349,11 +367,17 @@ Module MdlMaintenance
     End Sub
 
     Public Sub UpdateIncentive(incentiveID As Integer, incentiveName As String)
-        Dim command As New MySqlCommand("UPDATE tblIncentives SET incentiveName = @incentiveName WHERE incentiveID = @incentiveID", connection)
-        command.Parameters.AddWithValue("@incentiveName", incentiveName)
-        command.Parameters.AddWithValue("@incentiveID", incentiveID)
-        command.ExecuteNonQuery()
-        MessageBox.Show("Incentive updated successfully.")
+        Try
+            Dim command As New MySqlCommand("UPDATE tblIncentives SET incentiveName = @incentiveName WHERE incentiveID = @incentiveID", connection)
+            command.Parameters.AddWithValue("@incentiveName", incentiveName)
+            command.Parameters.AddWithValue("@incentiveID", incentiveID)
+            command.ExecuteNonQuery()
+            MessageBox.Show("Incentive updated successfully.")
+        Catch ex As MySqlException
+            If ex.Number = 1062 Then
+                MessageBox.Show("Type of incentive already exist.", "Duplicate entry", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+        End Try
     End Sub
 
     Public Sub DeleteIncentive(incentiveID As Integer)
@@ -411,13 +435,19 @@ Module MdlMaintenance
     End Sub
 
     Public Sub UpdateHoliday(holidayID As Integer, holidayDate As Date, holidayName As String, classification As String)
-        Dim command As New MySqlCommand("UPDATE tblHoliday SET date = @holidayDate, holidayName = @holidayName, classification = @classification WHERE holidayID = @holidayID", connection)
-        command.Parameters.AddWithValue("@holidayID", holidayID)
-        command.Parameters.AddWithValue("@holidayDate", holidayDate)
-        command.Parameters.AddWithValue("@holidayName", holidayName)
-        command.Parameters.AddWithValue("@classification", classification)
-        command.ExecuteNonQuery()
-        MessageBox.Show("Holiday updated successfully.")
+        Try
+            Dim command As New MySqlCommand("UPDATE tblHoliday SET date = @holidayDate, holidayName = @holidayName, classification = @classification WHERE holidayID = @holidayID", connection)
+            command.Parameters.AddWithValue("@holidayID", holidayID)
+            command.Parameters.AddWithValue("@holidayDate", holidayDate)
+            command.Parameters.AddWithValue("@holidayName", holidayName)
+            command.Parameters.AddWithValue("@classification", classification)
+            command.ExecuteNonQuery()
+            MessageBox.Show("Holiday updated successfully.")
+        Catch ex As MySqlException
+            If ex.Number = 1062 Then
+                MessageBox.Show("Holiday already exist.", "Duplicate entry", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+        End Try
     End Sub
 
     Public Sub DeleteHoliday(holidayID As Integer)
@@ -784,11 +814,17 @@ Module MdlMaintenance
     End Sub
 
     Public Sub UpdateVoluntary(voluntaryID As Integer, voluntaryName As String)
-        Dim command As New MySqlCommand("UPDATE tblVoluntary SET voluntaryName = @voluntaryName WHERE voluntaryID = @voluntaryID", connection)
-        command.Parameters.AddWithValue("@voluntaryID", voluntaryID)
-        command.Parameters.AddWithValue("@voluntaryName", voluntaryName)
-        command.ExecuteNonQuery()
-        MessageBox.Show("Voluntary updated successfully.")
+        Try
+            Dim command As New MySqlCommand("UPDATE tblVoluntary SET voluntaryName = @voluntaryName WHERE voluntaryID = @voluntaryID", connection)
+            command.Parameters.AddWithValue("@voluntaryID", voluntaryID)
+            command.Parameters.AddWithValue("@voluntaryName", voluntaryName)
+            command.ExecuteNonQuery()
+            MessageBox.Show("Voluntary updated successfully.")
+        Catch ex As MySqlException
+            If ex.Number = 1062 Then
+                MessageBox.Show("Voluntary already exist.", "Duplicate entry", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+        End Try
     End Sub
 
     Public Sub DeleteVoluntary(voluntaryID As Integer)
