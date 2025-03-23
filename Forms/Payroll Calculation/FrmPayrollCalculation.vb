@@ -122,23 +122,25 @@
 
     Private Sub DgPayrollPeriod_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGPayrollPeriod.CellContentClick
         Try
-            ' Check if the clicked cell is in the button column
-            If e.ColumnIndex = DGPayrollPeriod.Columns("btnRelease").Index AndAlso e.RowIndex >= 0 Then
-                Dim payrollperiodID As String = DGPayrollPeriod.Rows(e.RowIndex).Cells("colPayrollPeriodID").Value.ToString()
-                Dim isreleased As String = DGPayrollPeriod.Rows(e.RowIndex).Cells("colReleased").Value.ToString
+            If FrmMain.LblPos.Text.Trim = "Admin" Then
+                ' Check if the clicked cell is in the button column
+                If e.ColumnIndex = DGPayrollPeriod.Columns("btnRelease").Index AndAlso e.RowIndex >= 0 Then
+                    Dim payrollperiodID As String = DGPayrollPeriod.Rows(e.RowIndex).Cells("colPayrollPeriodID").Value.ToString()
+                    Dim isreleased As String = DGPayrollPeriod.Rows(e.RowIndex).Cells("colReleased").Value.ToString
 
-                If isreleased = "Released" Then
-                    MsgBox("Pay Slip already released")
-                    Exit Sub
-                End If
+                    If isreleased = "Released" Then
+                        MsgBox("Pay Slip already released")
+                        Exit Sub
+                    End If
 
-                If MsgBox("Are you sure you want to release the Pay Slip?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-                    RunCommand("Update tblpayrollperiod SET released='Released' WHERE payrollperiodID = '" & payrollperiodID & "'")
-                    With com
-                        .ExecuteNonQuery()
-                    End With
-                    MsgBox("Pay Slip for the selected period is now released")
-                    ClassPayrollCalculation.LoadPayrollPeriod(DGPayrollPeriod)
+                    If MsgBox("Are you sure you want to release the Pay Slip?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                        RunCommand("Update tblpayrollperiod SET released='Released' WHERE payrollperiodID = '" & payrollperiodID & "'")
+                        With com
+                            .ExecuteNonQuery()
+                        End With
+                        MsgBox("Pay Slip for the selected period is now released")
+                        ClassPayrollCalculation.LoadPayrollPeriod(DGPayrollPeriod)
+                    End If
                 End If
             End If
         Catch ex As Exception

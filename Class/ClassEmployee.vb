@@ -98,16 +98,16 @@ Public Class ClassEmployee
     Public Shared Sub SelectEmployee(dg As Guna2DataGridView, txtrfid As Guna2TextBox, txtfirstname As Guna2TextBox, txtlastname As Guna2TextBox, cbdept As Guna2ComboBox, cbpos As Guna2ComboBox, txtsalary As Guna2TextBox, cbtype As Guna2ComboBox, cbstatus As Guna2ComboBox)
         Try
             If dg.SelectedRows.Count > 0 Then
-                employeeID = dg.SelectedRows(0).Cells(0).Value
-                txtrfid.Text = dg.SelectedRows(0).Cells(2).Value
-                txtfirstname.Text = dg.SelectedRows(0).Cells(4).Value
-                txtlastname.Text = dg.SelectedRows(0).Cells(5).Value
-                cbdept.Text = If(String.IsNullOrEmpty(dg.SelectedRows(0).Cells(6).Value.ToString), "", dg.SelectedRows(0).Cells(6).Value)
+                employeeID = dg.SelectedRows(0).Cells(1).Value
+                txtrfid.Text = dg.SelectedRows(0).Cells(3).Value
+                txtfirstname.Text = dg.SelectedRows(0).Cells(5).Value
+                txtlastname.Text = dg.SelectedRows(0).Cells(6).Value
+                cbdept.Text = If(String.IsNullOrEmpty(dg.SelectedRows(0).Cells(7).Value.ToString), "", dg.SelectedRows(0).Cells(7).Value)
                 LoadPosition(FrmAddEmployee.CbDepartment, FrmAddEmployee.CbPosition)
-                cbpos.Text = If(String.IsNullOrEmpty(dg.SelectedRows(0).Cells(7).Value.ToString), "", dg.SelectedRows(0).Cells(7).Value)
-                txtsalary.Text = dg.SelectedRows(0).Cells(8).Value
-                cbtype.Text = If(String.IsNullOrEmpty(dg.SelectedRows(0).Cells(9).Value.ToString), "", dg.SelectedRows(0).Cells(9).Value)
-                cbstatus.Text = If(IsDBNull(dg.SelectedRows(0).Cells(10).Value), "", dg.SelectedRows(0).Cells(10).Value)
+                cbpos.Text = If(String.IsNullOrEmpty(dg.SelectedRows(0).Cells(8).Value.ToString), "", dg.SelectedRows(0).Cells(8).Value)
+                txtsalary.Text = dg.SelectedRows(0).Cells(9).Value
+                cbtype.Text = If(String.IsNullOrEmpty(dg.SelectedRows(0).Cells(10).Value.ToString), "", dg.SelectedRows(0).Cells(10).Value)
+                cbstatus.Text = If(IsDBNull(dg.SelectedRows(0).Cells(11).Value), "", dg.SelectedRows(0).Cells(11).Value)
                 FrmAddEmployee.Show()
                 FrmEmployee.Enabled = False
             End If

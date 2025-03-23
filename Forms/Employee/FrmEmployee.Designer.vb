@@ -65,39 +65,43 @@ Partial Class FrmEmployee
         '
         'ContextMenuStrip1
         '
+        Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(156, 26)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(180, 28)
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(155, 22)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(179, 24)
         Me.ToolStripMenuItem1.Text = "Reset Password"
         '
         'Panel5
         '
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel5.Location = New System.Drawing.Point(5, 969)
+        Me.Panel5.Location = New System.Drawing.Point(7, 1094)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1376, 5)
+        Me.Panel5.Size = New System.Drawing.Size(1834, 6)
         Me.Panel5.TabIndex = 13
         '
         'Panel3
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel3.Location = New System.Drawing.Point(1381, 49)
+        Me.Panel3.Location = New System.Drawing.Point(1841, 60)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(5, 925)
+        Me.Panel3.Size = New System.Drawing.Size(7, 1040)
         Me.Panel3.TabIndex = 11
         '
         'Label4
         '
         Me.Label4.Dock = System.Windows.Forms.DockStyle.Right
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(505, 4)
+        Me.Label4.Location = New System.Drawing.Point(675, 5)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(156, 41)
+        Me.Label4.Size = New System.Drawing.Size(208, 50)
         Me.Label4.TabIndex = 9
         Me.Label4.Text = "Status:"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -120,17 +124,19 @@ Partial Class FrmEmployee
         Me.CbEmployeeStatus.ItemHeight = 33
         Me.CbEmployeeStatus.Items.AddRange(New Object() {"All", "Probationary", "Regular", "Resigned"})
         Me.CbEmployeeStatus.ItemsAppearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.CbEmployeeStatus.Location = New System.Drawing.Point(661, 4)
+        Me.CbEmployeeStatus.Location = New System.Drawing.Point(883, 5)
+        Me.CbEmployeeStatus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.CbEmployeeStatus.Name = "CbEmployeeStatus"
-        Me.CbEmployeeStatus.Size = New System.Drawing.Size(169, 39)
+        Me.CbEmployeeStatus.Size = New System.Drawing.Size(224, 39)
         Me.CbEmployeeStatus.TabIndex = 10
         '
         'Panel9
         '
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel9.Location = New System.Drawing.Point(830, 4)
+        Me.Panel9.Location = New System.Drawing.Point(1107, 5)
+        Me.Panel9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(4, 41)
+        Me.Panel9.Size = New System.Drawing.Size(5, 50)
         Me.Panel9.TabIndex = 8
         '
         'TxtSearchEmployees
@@ -150,20 +156,22 @@ Partial Class FrmEmployee
         Me.TxtSearchEmployees.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
         Me.TxtSearchEmployees.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
         Me.TxtSearchEmployees.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.TxtSearchEmployees.Location = New System.Drawing.Point(834, 4)
+        Me.TxtSearchEmployees.Location = New System.Drawing.Point(1112, 5)
+        Me.TxtSearchEmployees.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
         Me.TxtSearchEmployees.Name = "TxtSearchEmployees"
         Me.TxtSearchEmployees.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtSearchEmployees.PlaceholderText = "Search Employees"
         Me.TxtSearchEmployees.SelectedText = ""
-        Me.TxtSearchEmployees.Size = New System.Drawing.Size(324, 41)
+        Me.TxtSearchEmployees.Size = New System.Drawing.Size(432, 50)
         Me.TxtSearchEmployees.TabIndex = 7
         '
         'Panel2
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel2.Location = New System.Drawing.Point(1158, 4)
+        Me.Panel2.Location = New System.Drawing.Point(1544, 5)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(5, 41)
+        Me.Panel2.Size = New System.Drawing.Size(7, 50)
         Me.Panel2.TabIndex = 6
         '
         'BtnAddAssociate
@@ -176,9 +184,10 @@ Partial Class FrmEmployee
         Me.BtnAddAssociate.Dock = System.Windows.Forms.DockStyle.Right
         Me.BtnAddAssociate.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnAddAssociate.ForeColor = System.Drawing.Color.White
-        Me.BtnAddAssociate.Location = New System.Drawing.Point(1163, 4)
+        Me.BtnAddAssociate.Location = New System.Drawing.Point(1551, 5)
+        Me.BtnAddAssociate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.BtnAddAssociate.Name = "BtnAddAssociate"
-        Me.BtnAddAssociate.Size = New System.Drawing.Size(219, 41)
+        Me.BtnAddAssociate.Size = New System.Drawing.Size(292, 50)
         Me.BtnAddAssociate.TabIndex = 5
         Me.BtnAddAssociate.Text = "NEW ASSOCIATE"
         '
@@ -186,32 +195,36 @@ Partial Class FrmEmployee
         '
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1382, 4)
+        Me.Panel1.Size = New System.Drawing.Size(1843, 5)
         Me.Panel1.TabIndex = 2
         '
         'Panel61
         '
         Me.Panel61.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel61.Location = New System.Drawing.Point(0, 45)
+        Me.Panel61.Location = New System.Drawing.Point(0, 55)
+        Me.Panel61.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel61.Name = "Panel61"
-        Me.Panel61.Size = New System.Drawing.Size(1382, 4)
+        Me.Panel61.Size = New System.Drawing.Size(1843, 5)
         Me.Panel61.TabIndex = 1
         '
         'Panel62
         '
         Me.Panel62.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel62.Location = New System.Drawing.Point(1382, 0)
+        Me.Panel62.Location = New System.Drawing.Point(1843, 0)
+        Me.Panel62.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel62.Name = "Panel62"
-        Me.Panel62.Size = New System.Drawing.Size(4, 49)
+        Me.Panel62.Size = New System.Drawing.Size(5, 60)
         Me.Panel62.TabIndex = 0
         '
         'Panel4
         '
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel4.Location = New System.Drawing.Point(0, 49)
+        Me.Panel4.Location = New System.Drawing.Point(0, 60)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(5, 925)
+        Me.Panel4.Size = New System.Drawing.Size(7, 1040)
         Me.Panel4.TabIndex = 12
         '
         'Panel57
@@ -227,8 +240,9 @@ Partial Class FrmEmployee
         Me.Panel57.Controls.Add(Me.Panel62)
         Me.Panel57.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel57.Location = New System.Drawing.Point(0, 0)
+        Me.Panel57.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel57.Name = "Panel57"
-        Me.Panel57.Size = New System.Drawing.Size(1386, 49)
+        Me.Panel57.Size = New System.Drawing.Size(1848, 60)
         Me.Panel57.TabIndex = 9
         '
         'DgEmployee
@@ -260,11 +274,13 @@ Partial Class FrmEmployee
         Me.DgEmployee.DefaultCellStyle = DataGridViewCellStyle3
         Me.DgEmployee.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgEmployee.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DgEmployee.Location = New System.Drawing.Point(5, 49)
+        Me.DgEmployee.Location = New System.Drawing.Point(7, 60)
+        Me.DgEmployee.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.DgEmployee.Name = "DgEmployee"
         Me.DgEmployee.ReadOnly = True
         Me.DgEmployee.RowHeadersVisible = False
-        Me.DgEmployee.Size = New System.Drawing.Size(1376, 920)
+        Me.DgEmployee.RowHeadersWidth = 51
+        Me.DgEmployee.Size = New System.Drawing.Size(1834, 1034)
         Me.DgEmployee.TabIndex = 10
         Me.DgEmployee.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DgEmployee.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -292,6 +308,7 @@ Partial Class FrmEmployee
         '
         Me.Column1.DataPropertyName = "employeeID"
         Me.Column1.HeaderText = "Employee ID"
+        Me.Column1.MinimumWidth = 6
         Me.Column1.Name = "Column1"
         Me.Column1.ReadOnly = True
         Me.Column1.Visible = False
@@ -300,6 +317,7 @@ Partial Class FrmEmployee
         '
         Me.Column2.DataPropertyName = "employeeNumber"
         Me.Column2.HeaderText = "Employee Number"
+        Me.Column2.MinimumWidth = 6
         Me.Column2.Name = "Column2"
         Me.Column2.ReadOnly = True
         '
@@ -307,6 +325,7 @@ Partial Class FrmEmployee
         '
         Me.Column3.DataPropertyName = "rfidnumber"
         Me.Column3.HeaderText = "RFID Number"
+        Me.Column3.MinimumWidth = 6
         Me.Column3.Name = "Column3"
         Me.Column3.ReadOnly = True
         '
@@ -314,6 +333,7 @@ Partial Class FrmEmployee
         '
         Me.Column4.DataPropertyName = "fullname"
         Me.Column4.HeaderText = "Full Name"
+        Me.Column4.MinimumWidth = 6
         Me.Column4.Name = "Column4"
         Me.Column4.ReadOnly = True
         '
@@ -321,6 +341,7 @@ Partial Class FrmEmployee
         '
         Me.Column5.DataPropertyName = "firstname"
         Me.Column5.HeaderText = "First Name"
+        Me.Column5.MinimumWidth = 6
         Me.Column5.Name = "Column5"
         Me.Column5.ReadOnly = True
         Me.Column5.Visible = False
@@ -329,6 +350,7 @@ Partial Class FrmEmployee
         '
         Me.Column6.DataPropertyName = "lastname"
         Me.Column6.HeaderText = "Last Name"
+        Me.Column6.MinimumWidth = 6
         Me.Column6.Name = "Column6"
         Me.Column6.ReadOnly = True
         Me.Column6.Visible = False
@@ -337,6 +359,7 @@ Partial Class FrmEmployee
         '
         Me.Column7.DataPropertyName = "departmentName"
         Me.Column7.HeaderText = "Department Name"
+        Me.Column7.MinimumWidth = 6
         Me.Column7.Name = "Column7"
         Me.Column7.ReadOnly = True
         '
@@ -344,6 +367,7 @@ Partial Class FrmEmployee
         '
         Me.Column8.DataPropertyName = "positionName"
         Me.Column8.HeaderText = "Position"
+        Me.Column8.MinimumWidth = 6
         Me.Column8.Name = "Column8"
         Me.Column8.ReadOnly = True
         '
@@ -351,6 +375,7 @@ Partial Class FrmEmployee
         '
         Me.Column10.DataPropertyName = "salary"
         Me.Column10.HeaderText = "Salary"
+        Me.Column10.MinimumWidth = 6
         Me.Column10.Name = "Column10"
         Me.Column10.ReadOnly = True
         '
@@ -358,6 +383,7 @@ Partial Class FrmEmployee
         '
         Me.Column11.DataPropertyName = "type"
         Me.Column11.HeaderText = "Compensation Type"
+        Me.Column11.MinimumWidth = 6
         Me.Column11.Name = "Column11"
         Me.Column11.ReadOnly = True
         '
@@ -365,14 +391,15 @@ Partial Class FrmEmployee
         '
         Me.Column9.DataPropertyName = "status"
         Me.Column9.HeaderText = "Status"
+        Me.Column9.MinimumWidth = 6
         Me.Column9.Name = "Column9"
         Me.Column9.ReadOnly = True
         '
         'FrmEmployee
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1386, 974)
+        Me.ClientSize = New System.Drawing.Size(1848, 1100)
         Me.ControlBox = False
         Me.Controls.Add(Me.DgEmployee)
         Me.Controls.Add(Me.Panel5)
@@ -380,7 +407,7 @@ Partial Class FrmEmployee
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel57)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(2)
+        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Name = "FrmEmployee"
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.Panel57.ResumeLayout(False)

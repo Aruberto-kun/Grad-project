@@ -142,11 +142,7 @@ Public Class FrmAssociate
         End If
 
     End Sub
-
-
     Private Sub FrmAssociate_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         ClassLogin.SetToLoggedOutEmployees(ClassAssociates.employeeID)
     End Sub
-
-
 End Class

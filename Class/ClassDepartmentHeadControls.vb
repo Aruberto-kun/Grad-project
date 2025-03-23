@@ -1,4 +1,5 @@
 ﻿Imports Guna.UI2.WinForms
+Imports MySql.Data.MySqlClient
 Public Class ClassDepartmentHeadControls
     Public Shared departmentID As Integer
     Public Shared employeeID As Integer
@@ -240,10 +241,11 @@ Public Class ClassDepartmentHeadControls
     Public Shared Sub LoadFiledLeave(dg As Guna2DataGridView)
         Try
             dg.Rows.Clear()
-            RunQuery("select a.filedleaveID 'Filed Leave ID', CONCAT(b.firstname,' ',b.middlename,' ',b.lastname) 'Full Name', a.leavefrom 'From',a.leaveto 'To',c.leaveType 'Type',a.leavereason 'Reason' from tblfiledleave a
+            RunQuery("select a.filedleaveID 'Filed Leave ID', CONCAT(b.firstname,' ',b.lastname) 'Full Name', 
+                       a.leavefrom 'From',a.leaveto 'To',c.leaveType 'Type',a.leavereason 'Reason' from tblfiledleave a
                       join tblemployee b on b.employeeID = a.employeeID
                       join tblleave c on c.leaveID = a.leaveID
-                      where a.status = 'Pending'")
+                      where a.status = 'Pending' and a.employeeID not in (Select employeeID from tbldepartmenthead)")
 
             If ds.Tables("querytable").Rows.Count > 0 Then
                 ' Bind the data to the DataGridView
@@ -275,7 +277,7 @@ Public Class ClassDepartmentHeadControls
     End Sub
     Public Shared Sub RefreshLeave(dg As Guna2DataGridView)
         Try
-            RunQuery("select a.filedleaveID 'Filed Leave ID', CONCAT(b.firstname,' ',b.middlename,' ',b.lastname) 'Full Name', a.leavefrom 'From',a.leaveto 'To',c.leaveType 'Type',a.leavereason 'Reason' from tblfiledleave a
+            RunQuery("select a.filedleaveID 'Filed Leave ID', CONCAT(b.firstname,' ',b.lastname) 'Full Name', a.leavefrom 'From',a.leaveto 'To',c.leaveType 'Type',a.leavereason 'Reason' from tblfiledleave a
                       join tblemployee b on b.employeeID = a.employeeID
                       join tblleave c on c.leaveID = a.leaveID
                       where a.status = 'Pending'")
@@ -354,10 +356,10 @@ Public Class ClassDepartmentHeadControls
 
     Public Shared Sub LoadFiledFTIO(dg As Guna2DataGridView)
         Try
-            RunQuery("Select a.ftioID 'FTIO ID', concat(b.firstname,' ',b.middlename,' ',b.lastname) 'Full Name',a.date 'Date',a.time 'Time',a.classification 'Classification', a.reason 'Reason',a.status 'Status'
-            From tblfiledftio a
+            RunQuery("Select a.ftioID 'FTIO ID', concat(b.firstname,' ',b.lastname) 'Full Name',a.date 'Date',a.time 'Time',a.classification 'Classification', a.reason 'Reason',a.status 'Status'
+                      From tblfiledftio a
                       join tblemployee b on b.employeeID = a.employeeID
-                      where a.status='Pending';")
+                      where a.status='Pending' and a.employeeID not in (Select employeeID from tbldepartmenthead)")
             If ds.Tables("querytable").Rows.Count > 0 Then
                 ' Bind the data to the DataGridView
                 dg.DataSource = ds.Tables("querytable")
@@ -387,7 +389,7 @@ Public Class ClassDepartmentHeadControls
     End Sub
     Public Shared Sub RefreshFTIO(dg As Guna2DataGridView)
         Try
-            RunQuery("Select a.ftioID 'FTIO ID', concat(b.firstname,' ',b.middlename,' ',b.lastname) 'Full Name',a.date 'Date',a.time 'Time',a.classification 'Classification', a.reason 'Reason',a.status 'Status'
+            RunQuery("Select a.ftioID 'FTIO ID', concat(b.firstname,' ',b.lastname) 'Full Name',a.date 'Date',a.time 'Time',a.classification 'Classification', a.reason 'Reason',a.status 'Status'
             From tblfiledftio a
                       join tblemployee b on b.employeeID = a.employeeID
                       where a.status='Pending';")
@@ -461,24 +463,26 @@ Public Class ClassDepartmentHeadControls
     Public Shared Sub LoadOvertime(dg As Guna2DataGridView)
         Try
             RunQuery("SELECT 
-                      a.attendanceID AS 'Attendance ID',
-                      a.employeeID as 'Employee ID',
-                      CONCAT(b.firstname, ' ', b.middlename, ' ', b.lastname) AS 'Full Name',
-                      a.date AS 'Attendance Date',
-                      a.login AS 'Login',
-                      a.logout AS 'Logout',
-                      CASE
-                      WHEN a.logout > CONCAT(a.date, ' ', c.timeout)
-                      THEN FLOOR(TIME_TO_SEC(TIMEDIFF(a.logout, CONCAT(a.date, ' ', c.timeout))) / 3600)  -- Overtime in hours
-                      ELSE 0
-                      END AS 'Overtime'
-                      FROM tblattendance a
-                      LEFT JOIN tblemployee b ON b.employeeID = a.employeeID
-                      LEFT JOIN tbltimeschedule c ON c.employeeID = a.employeeID
-                      WHERE b.departmentID = '" & departmentID & "' AND a.attendanceID NOT IN (SELECT attendanceID FROM tblovertime)
-                      GROUP BY a.attendanceID, b.firstname, b.middlename, b.lastname, a.date, a.login, a.logout, c.timeout
-                      HAVING FLOOR(TIME_TO_SEC(TIMEDIFF(a.logout, CONCAT(a.date, ' ', c.timeout))) / 3600) > 0
-                      ORDER BY a.attendanceID")
+                  a.attendanceID AS 'Attendance ID',
+                  a.employeeID AS 'Employee ID',
+                  CONCAT(b.firstname, ' ', b.lastname) AS 'Full Name',
+                  a.date AS 'Attendance Date',
+                  a.login AS 'Login',
+                  a.logout AS 'Logout',
+                  CASE
+                  WHEN a.logout > CONCAT(a.date, ' ', c.timeout)
+                  THEN FLOOR(TIME_TO_SEC(TIMEDIFF(a.logout, CONCAT(a.date, ' ', c.timeout))) / 3600)
+                  ELSE 0
+                  END AS 'Overtime'
+                  FROM tblattendance a
+                  LEFT JOIN tblemployee b ON b.employeeID = a.employeeID
+                  LEFT JOIN tbltimeschedule c ON c.employeeID = a.employeeID
+                  WHERE b.departmentID = '" & departmentID & "' 
+                  AND a.attendanceID NOT IN (SELECT attendanceID FROM tblovertime)
+                  AND a.employeeID NOT IN (SELECT employeeID FROM tbldepartmenthead)
+                  GROUP BY a.attendanceID, b.firstname, b.middlename, b.lastname, a.date, a.login, a.logout, c.timeout
+                  HAVING FLOOR(TIME_TO_SEC(TIMEDIFF(a.logout, CONCAT(a.date, ' ', c.timeout))) / 3600) > 0
+                  ORDER BY a.attendanceID")
 
             If ds.Tables("querytable").Rows.Count > 0 Then
                 ' Bind the data to the DataGridView
@@ -493,7 +497,6 @@ Public Class ClassDepartmentHeadControls
                     dg.Columns.Add(approveButtonColumn)
                 End If
 
-
                 ' Add Decline button column
                 If dg.Columns("Decline") Is Nothing Then
                     Dim declineButtonColumn As New DataGridViewButtonColumn()
@@ -505,9 +508,11 @@ Public Class ClassDepartmentHeadControls
 
             End If
         Catch ex As Exception
-
+            ' Handle the error
+            MessageBox.Show("Error: " & ex.Message)
         End Try
     End Sub
+
     Public Shared Sub RefreshOvertime(dg As Guna2DataGridView)
         Try
             RunQuery("SELECT 
@@ -644,8 +649,12 @@ Public Class ClassDepartmentHeadControls
                     dg.Columns.Add(btnColumn)
                 End If
             End If
+        Catch ex As MySqlException
+            MsgBox(ex.Message)
+            Exit Sub
         Catch ex As Exception
-
+            MsgBox(ex.Message)
+            Exit Sub
         End Try
     End Sub
     Public Shared Sub RefreshSalaryAndPayslip(dg As Guna2DataGridView)
@@ -672,11 +681,9 @@ Public Class ClassDepartmentHeadControls
     End Sub
     Public Shared Sub LoadLeaveType(cb As Guna2ComboBox)
         Try
-            RunQuery("Select positionID from tblemployee where employeeID = '" & employeeID & "'")
-            Dim posID As Integer = ds.Tables("querytable").Rows(0)(0)
             RunQuery("Select a.leaveID, a.leaveType from tblleave a
-                      JOIN tbljobleave b on b.leaveID = a.leaveID
-                      WHERE b.positionID = '" & posID & "' and
+                      JOIN tblemployeeleave b on b.leaveID = a.leaveID
+                      WHERE b.employeeID = '" & employeeID & "' and
                       a.status = 'Active'")
             cb.ValueMember = "leaveID"
             cb.DisplayMember = "leaveType"
@@ -688,20 +695,16 @@ Public Class ClassDepartmentHeadControls
     End Sub
     Public Shared Sub LeaveCount(dg As Guna2DataGridView)
         Try
-            RunQuery("Select positionID from tblemployee where employeeID = '" & employeeID & "'")
-            Dim positionID As Integer = ds.Tables("querytable").Rows(0)(0)
             RunQuery("SELECT 
-                      a.leaveID, 
-                      a.leaveType, 
-                      b.days, 
-                      b.days - IFNULL(SUM(CASE WHEN c.noofdays IS NOT NULL THEN c.noofdays ELSE 0 END), 0) AS remainingleave 
-                      FROM tblleave a
-                      LEFT JOIN tbljobleave b ON b.leaveID = a.leaveID
-                      LEFT JOIN tblfiledleave c ON c.leaveID = a.leaveID 
-                      AND c.employeeID = '" & employeeID & "'  -- Example employeeID
-                      AND c.status = 'Approve'
-                      WHERE b.positionID = '" & positionID & "'  -- Example positionID AND a.status = 'Active'
-                      GROUP BY a.leaveID, a.leaveType, b.days;")
+                    el.leaveID,
+                    l.leaveType,
+                    el.days,
+                    (el.days - IFNULL(SUM(CASE WHEN fl.status = 'Approve' THEN fl.noofdays ELSE 0 END), 0)) AS remainingleave
+                    FROM tblemployeeleave el
+                    JOIN tblleave l ON el.leaveID = l.leaveID
+                    LEFT JOIN tblfiledleave fl ON el.employeeID = fl.employeeID AND el.leaveID = fl.leaveID
+                    WHERE el.employeeID = '" & employeeID & "'
+                    GROUP BY el.leaveID, l.leaveType, el.days")
             dg.DataSource = ds.Tables("querytable")
         Catch ex As Exception
 

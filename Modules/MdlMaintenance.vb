@@ -328,7 +328,7 @@ Module MdlMaintenance
 
     Public Sub NewTaxDaily(minimumSalary As Decimal, maximumSalary As Decimal, fixedAmount As Decimal, percentage As Integer)
         Dim command As New MySqlCommand("INSERT INTO tblTaxDaily (minSalary, maxSalary, fixedAmount, percentage) 
-                                         VALUES (@minSalary, @maxSalary, @fixedAmount, @percentage)", connection)
+                                             VALUES (@minSalary, @maxSalary, @fixedAmount, @percentage)", connection)
         With command.Parameters
             .AddWithValue("@minSalary", minimumSalary)
             .AddWithValue("@maxSalary", maximumSalary)
@@ -341,7 +341,7 @@ Module MdlMaintenance
 
     Public Sub NewTaxMonthly(minimumSalary As Decimal, maximumSalary As Decimal, fixedAmount As Decimal, percentage As Integer)
         Dim command As New MySqlCommand("INSERT INTO tblTaxMonthly (minSalary, maxSalary, fixedAmount, percentage) 
-                                          VALUES (@minSalary, @maxSalary, @fixedAmount, @percentage)", connection)
+                                              VALUES (@minSalary, @maxSalary, @fixedAmount, @percentage)", connection)
         With command.Parameters
             .AddWithValue("@minSalary", minimumSalary)
             .AddWithValue("@maxSalary", maximumSalary)
@@ -412,7 +412,7 @@ Module MdlMaintenance
     Public Sub NewSSS(minSalary As Decimal, maxSalary As Decimal, EE As Decimal, er As Decimal)
         Try
             Dim command As New MySqlCommand("INSERT INTO tblSSS (minSalary, maxSalary, ee, er) 
-                                         VALUES (@minSalary, @maxSalary, @ee, @er)", connection)
+                                             VALUES (@minSalary, @maxSalary, @ee, @er)", connection)
             With command.Parameters
                 .AddWithValue("@minSalary", minSalary)
                 .AddWithValue("@maxSalary", maxSalary)

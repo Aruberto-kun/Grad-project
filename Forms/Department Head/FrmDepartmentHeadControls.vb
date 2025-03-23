@@ -1,5 +1,6 @@
 ﻿Imports System.ComponentModel
 Imports System.Text.RegularExpressions
+Imports MySql.Data.MySqlClient
 
 Public Class FrmDepartmentHeadControls
     Private Sub FrmDepartmentHeadControls_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -141,9 +142,9 @@ Public Class FrmDepartmentHeadControls
 
                     If MsgBox("Are you sure you want to approve the FTIO filed?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                         ClassDepartmentHeadControls.ApproveFTIO(FTIOID)
+                        ClassDepartmentHeadControls.LoadFiledFTIO(DGFiledFTIO)
                         Dim name As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Full Name").Value.ToString
                         Auditing($"{LblName.Text} approved {name}'s FTIO.")
-                        DGFiledFTIO.Rows.RemoveAt(e.RowIndex)
                     End If
 
                 ElseIf e.ColumnIndex = DGFiledFTIO.Columns("Decline").Index Then
@@ -151,9 +152,9 @@ Public Class FrmDepartmentHeadControls
                     Dim FTIOID As Integer = Convert.ToInt32(DGFiledFTIO.Rows(e.RowIndex).Cells("FTIO ID").Value)
                     If MsgBox("Are you sure you want to decline the FTIO filed?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                         ClassDepartmentHeadControls.DeclineFTIO(FTIOID)
+                        ClassDepartmentHeadControls.LoadFiledFTIO(DGFiledFTIO)
                         Dim name As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Full Name").Value.ToString
                         Auditing($"{LblName.Text} declined {name}'s FTIO.")
-                        DGFiledFTIO.Rows.RemoveAt(e.RowIndex)
                     End If
 
                 End If
@@ -178,7 +179,6 @@ Public Class FrmDepartmentHeadControls
                         ClassDepartmentHeadControls.LoadOvertime(DGOvertime)
                         Dim name As String = DGOvertime.Rows(e.RowIndex).Cells("FullName").Value.ToString
                         Auditing($"{LblName.Text} approved {name}'s overtime.")
-                        DGOvertime.Rows.RemoveAt(e.RowIndex)
                     End If
 
                 ElseIf e.ColumnIndex = DGOvertime.Columns("Decline").Index Then
@@ -190,7 +190,6 @@ Public Class FrmDepartmentHeadControls
                         ClassDepartmentHeadControls.LoadOvertime(DGOvertime)
                         Dim name As String = DGOvertime.Rows(e.RowIndex).Cells("FullName").Value.ToString
                         Auditing($"{LblName.Text} declined {name}'s overtime.")
-                        DGOvertime.Rows.RemoveAt(e.RowIndex)
                     End If
 
                 End If
@@ -307,5 +306,38 @@ Public Class FrmDepartmentHeadControls
         ClassDepartmentHeadControls.LoadFiledLeave(DGLeaveFiled)
         ClassDepartmentHeadControls.LoadMyFiledLeave(DGLeaveFiled)
     End Sub
+    Private Sub TPSalaryAndPayslip_Enter(sender As Object, e As EventArgs) Handles TPSalaryAndPayslip.Enter
+        ClassDepartmentHeadControls.LoadSalaryAndPaySlip(DGSalaryAndPaySlip)
+    End Sub
 
+    Private Sub DGSalaryAndPaySlip_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGSalaryAndPaySlip.CellContentClick
+        Try
+            ' Check if the clicked cell is in the button column
+            If e.ColumnIndex = DGSalaryAndPaySlip.Columns("btnViewAndPrint").Index AndAlso e.RowIndex >= 0 Then
+                Dim payrollID As String = DGSalaryAndPaySlip.Rows(e.RowIndex).Cells("colPayrollPeriodID").Value.ToString()
+                dt = New DataTable("DT_Department")
+                dt.Clear()
+
+                adp = New MySqlDataAdapter("Select CONCAT(pp.datefrom,' to ',pp.dateto) as payrollperiod, e.employeeNumber, CONCAT(e.firstname,' ',e.middlename,' ',e.lastname) as name,
+                                        p.overtime,p.allowance,p.incentives,p.nightdifferential,p.late,p.undertime,p.voluntary,p.sss,p.philhealth,p.pagibig,p.tax,p.totalincrease,
+                                        p.totaldeduc,p.grosspay, (p.totalincrease + p.grosspay) as totalearning, p.netpay from tblpayrollperiod pp
+                                        LEFT JOIN tblpayroll p on p.payrollperiodID = pp.payrollperiodID
+                                        LEFT JOIn tblemployee e on e.employeeID = p.employeeID
+                                        WHERE p.payrollID = '" & payrollID & "'", conn)
+                adp.Fill(dt)
+
+
+                Dim crystal As New CRPaySlip
+                crystal.SetDataSource(dt)
+                FrmPrinting.CRVPrinting.ReportSource = crystal
+                FrmPrinting.Show()
+                FrmMain.Enabled = False
+            End If
+
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Exit Sub
+        End Try
+    End Sub
 End Class

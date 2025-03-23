@@ -49,7 +49,7 @@ Public Class ClassAssociates
                     el.leaveID,
                     l.leaveType,
                     el.days,
-                    (el.days - IFNULL(SUM(fl.noofdays), 0)) AS remaining_leave
+                    (el.days - IFNULL(SUM(CASE WHEN fl.status = 'Approve' THEN fl.noofdays ELSE 0 END), 0)) AS remainingleave
                     FROM tblemployeeleave el
                     JOIN tblleave l ON el.leaveID = l.leaveID
                     LEFT JOIN tblfiledleave fl ON el.employeeID = fl.employeeID AND el.leaveID = fl.leaveID
@@ -174,8 +174,12 @@ Public Class ClassAssociates
                     dg.Columns.Add(btnColumn)
                 End If
             End If
+        Catch ex As MySqlException
+            MsgBox(ex.Message)
+            Exit Sub
         Catch ex As Exception
-
+            MsgBox(ex.Message)
+            Exit Sub
         End Try
     End Sub
 End Class
