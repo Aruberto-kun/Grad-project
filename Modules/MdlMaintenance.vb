@@ -57,6 +57,7 @@ Module MdlMaintenance
                 commandID.ExecuteNonQuery()
                 MessageBox.Show("Department has been reactivated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
+                reader.Close()
                 Dim command As New MySqlCommand("INSERT INTO tblDepartment (departmentName, status) VALUES (@departmentName, 'Active')", connection)
                 command.Parameters.AddWithValue("@departmentName", department)
                 command.ExecuteNonQuery()
@@ -102,10 +103,20 @@ Module MdlMaintenance
     End Sub
 
     Public Sub DeleteDepartment(departmentID As Integer)
-        Dim command As New MySqlCommand("UPDATE tblDepartment SET status = 'Inactive' WHERE departmentID = @departmentID", connection)
-        command.Parameters.AddWithValue("@departmentID", departmentID)
-        command.ExecuteNonQuery()
-        MessageBox.Show("Department deleted successfully.")
+
+        Dim commandOne As New MySqlCommand("SELECT COUNT(*) FROM tblEmployee WHERE departmentID = @departmentID", connection)
+        commandOne.Parameters.AddWithValue("@departmentID", departmentID)
+        Dim count As Integer = Convert.ToInt32(commandOne.ExecuteScalar())
+
+        If count > 0 Then
+            MessageBox.Show("Selected department cannot be deleted.", "Invalid deletion", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        Else
+            Dim command As New MySqlCommand("UPDATE tblDepartment SET status = 'Inactive' WHERE departmentID = @departmentID", connection)
+            command.Parameters.AddWithValue("@departmentID", departmentID)
+            command.ExecuteNonQuery()
+            MessageBox.Show("Department deleted successfully.")
+        End If
     End Sub
 
 #End Region
@@ -132,6 +143,7 @@ Module MdlMaintenance
                 commandID.ExecuteNonQuery()
                 MessageBox.Show("Position has been reactivated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
+                reader.Close()
                 Dim command As New MySqlCommand("INSERT INTO tblPosition (positionName, departmentID, status) VALUES (@positionName, @departmentID, 'Active')", connection)
                 command.Parameters.AddWithValue("@positionName", positionName)
                 command.Parameters.AddWithValue("@departmentID", departmentID)
@@ -154,6 +166,7 @@ Module MdlMaintenance
             Return datatable
         Catch ex As MySqlException
             MsgBox(ex.Message)
+            Return Nothing
         End Try
     End Function
 
@@ -186,10 +199,19 @@ Module MdlMaintenance
     End Sub
 
     Public Sub DeletePosition(positionID As Integer)
-        Dim command As New MySqlCommand("UPDATE tblPosition SET status = 'Inactive' WHERE positionID = @positionID", connection)
-        command.Parameters.AddWithValue("@positionID", positionID)
-        command.ExecuteNonQuery()
-        MessageBox.Show("Update deleted successfully.")
+        Dim commandOne As New MySqlCommand("SELECT COUNT(*) FROM tblEmployee WHERE positionID = @positionID", connection)
+        commandOne.Parameters.AddWithValue("@positionID", positionID)
+        Dim count As Integer = Convert.ToInt32(commandOne.ExecuteScalar())
+
+        If count > 0 Then
+            MessageBox.Show("Selected position cannot be deleted.", "Invalid deletion", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
+        Else
+            Dim command As New MySqlCommand("UPDATE tblPosition SET status = 'Inactive' WHERE positionID = @positionID", connection)
+            command.Parameters.AddWithValue("@positionID", positionID)
+            command.ExecuteNonQuery()
+            MessageBox.Show("Position deleted successfully.")
+        End If
     End Sub
 
 #End Region
@@ -214,6 +236,7 @@ Module MdlMaintenance
                 commandID.ExecuteNonQuery()
                 MessageBox.Show("Leave has been reactivated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
+                reader.Close()
                 Dim command As New MySqlCommand("INSERT INTO tblLeave (leaveType, status) VALUES (@leaveType, 'Active')", connection)
                 command.Parameters.AddWithValue("@leaveType", leaveType)
                 command.ExecuteNonQuery()
@@ -287,6 +310,7 @@ Module MdlMaintenance
                 commandID.ExecuteNonQuery()
                 MessageBox.Show("Incentive has been reactivated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
+                reader.Close()
                 Dim command As New MySqlCommand("INSERT INTO tblIncentive (incentiveName, status) VALUES (@incentiveName, 'Active')", connection)
                 command.Parameters.AddWithValue("@incentiveName", incentiveName)
                 command.ExecuteNonQuery()
@@ -721,6 +745,7 @@ Module MdlMaintenance
                 commandID.ExecuteNonQuery()
                 MessageBox.Show("Voluntary has been reactivated successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Else
+                reader.Close()
                 Dim command As New MySqlCommand("INSERT INTO tblVoluntary (name, status) VALUES (@voluntaryName, 'Active')", connection)
                 command.Parameters.AddWithValue("@voluntaryName", voluntaryName)
                 command.ExecuteNonQuery()
@@ -774,6 +799,5 @@ Module MdlMaintenance
     End Sub
 
 #End Region
-
 
 End Module
