@@ -143,14 +143,6 @@ Partial Class FrmMainte
         Me.rateID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.rateClassification = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.rate = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Panel48 = New System.Windows.Forms.Panel()
-        Me.Panel25 = New System.Windows.Forms.Panel()
-        Me.Panel27 = New System.Windows.Forms.Panel()
-        Me.TxtRateClassification = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.TxtRates = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.BtnSaveRate = New Guna.UI2.WinForms.Guna2Button()
         Me.tabContri = New System.Windows.Forms.TabPage()
         Me.Guna2TabControl2 = New Guna.UI2.WinForms.Guna2TabControl()
         Me.tabTax = New System.Windows.Forms.TabPage()
@@ -261,8 +253,6 @@ Partial Class FrmMainte
         Me.Panel23.SuspendLayout()
         Me.tabRate.SuspendLayout()
         CType(Me.dgRates, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel25.SuspendLayout()
-        Me.Panel27.SuspendLayout()
         Me.tabContri.SuspendLayout()
         Me.Guna2TabControl2.SuspendLayout()
         Me.tabTax.SuspendLayout()
@@ -1638,8 +1628,6 @@ Partial Class FrmMainte
         'tabRate
         '
         Me.tabRate.Controls.Add(Me.dgRates)
-        Me.tabRate.Controls.Add(Me.Panel48)
-        Me.tabRate.Controls.Add(Me.Panel25)
         Me.tabRate.Location = New System.Drawing.Point(184, 4)
         Me.tabRate.Margin = New System.Windows.Forms.Padding(2)
         Me.tabRate.Name = "tabRate"
@@ -1677,7 +1665,7 @@ Partial Class FrmMainte
         Me.dgRates.DefaultCellStyle = DataGridViewCellStyle21
         Me.dgRates.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgRates.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgRates.Location = New System.Drawing.Point(265, 0)
+        Me.dgRates.Location = New System.Drawing.Point(0, 0)
         Me.dgRates.Margin = New System.Windows.Forms.Padding(2)
         Me.dgRates.Name = "dgRates"
         Me.dgRates.ReadOnly = True
@@ -1685,7 +1673,7 @@ Partial Class FrmMainte
         Me.dgRates.RowHeadersWidth = 51
         Me.dgRates.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dgRates.RowTemplate.Height = 24
-        Me.dgRates.Size = New System.Drawing.Size(992, 708)
+        Me.dgRates.Size = New System.Drawing.Size(1257, 708)
         Me.dgRates.TabIndex = 8
         Me.dgRates.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgRates.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -1733,134 +1721,6 @@ Partial Class FrmMainte
         Me.rate.MinimumWidth = 6
         Me.rate.Name = "rate"
         Me.rate.ReadOnly = True
-        '
-        'Panel48
-        '
-        Me.Panel48.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel48.Location = New System.Drawing.Point(260, 0)
-        Me.Panel48.Name = "Panel48"
-        Me.Panel48.Size = New System.Drawing.Size(5, 708)
-        Me.Panel48.TabIndex = 7
-        '
-        'Panel25
-        '
-        Me.Panel25.Controls.Add(Me.Panel27)
-        Me.Panel25.Controls.Add(Me.BtnSaveRate)
-        Me.Panel25.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel25.Location = New System.Drawing.Point(0, 0)
-        Me.Panel25.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel25.Name = "Panel25"
-        Me.Panel25.Size = New System.Drawing.Size(260, 708)
-        Me.Panel25.TabIndex = 5
-        '
-        'Panel27
-        '
-        Me.Panel27.Controls.Add(Me.TxtRateClassification)
-        Me.Panel27.Controls.Add(Me.Label12)
-        Me.Panel27.Controls.Add(Me.TxtRates)
-        Me.Panel27.Controls.Add(Me.Label11)
-        Me.Panel27.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel27.Location = New System.Drawing.Point(0, 0)
-        Me.Panel27.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel27.Name = "Panel27"
-        Me.Panel27.Size = New System.Drawing.Size(260, 667)
-        Me.Panel27.TabIndex = 6
-        '
-        'TxtRateClassification
-        '
-        Me.TxtRateClassification.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtRateClassification.BorderRadius = 5
-        Me.TxtRateClassification.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TxtRateClassification.DefaultText = ""
-        Me.TxtRateClassification.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.TxtRateClassification.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.TxtRateClassification.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtRateClassification.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtRateClassification.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TxtRateClassification.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtRateClassification.FocusedState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtRateClassification.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtRateClassification.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtRateClassification.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtRateClassification.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtRateClassification.Location = New System.Drawing.Point(0, 121)
-        Me.TxtRateClassification.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TxtRateClassification.MaxLength = 40
-        Me.TxtRateClassification.Name = "TxtRateClassification"
-        Me.TxtRateClassification.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.TxtRateClassification.PlaceholderText = ""
-        Me.TxtRateClassification.ReadOnly = True
-        Me.TxtRateClassification.SelectedText = ""
-        Me.TxtRateClassification.Size = New System.Drawing.Size(260, 37)
-        Me.TxtRateClassification.TabIndex = 11
-        '
-        'Label12
-        '
-        Me.Label12.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label12.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(0, 79)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(260, 42)
-        Me.Label12.TabIndex = 10
-        Me.Label12.Text = "Classification:"
-        Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'TxtRates
-        '
-        Me.TxtRates.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtRates.BorderRadius = 5
-        Me.TxtRates.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TxtRates.DefaultText = ""
-        Me.TxtRates.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.TxtRates.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.TxtRates.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtRates.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtRates.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TxtRates.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtRates.FocusedState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtRates.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtRates.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtRates.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtRates.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtRates.Location = New System.Drawing.Point(0, 42)
-        Me.TxtRates.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
-        Me.TxtRates.MaxLength = 40
-        Me.TxtRates.Name = "TxtRates"
-        Me.TxtRates.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.TxtRates.PlaceholderText = ""
-        Me.TxtRates.SelectedText = ""
-        Me.TxtRates.Size = New System.Drawing.Size(260, 37)
-        Me.TxtRates.TabIndex = 7
-        '
-        'Label11
-        '
-        Me.Label11.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(0, 0)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(260, 42)
-        Me.Label11.TabIndex = 6
-        Me.Label11.Text = "Rates (%):"
-        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'BtnSaveRate
-        '
-        Me.BtnSaveRate.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.BtnSaveRate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.BtnSaveRate.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.BtnSaveRate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.BtnSaveRate.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BtnSaveRate.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnSaveRate.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BtnSaveRate.ForeColor = System.Drawing.Color.White
-        Me.BtnSaveRate.Location = New System.Drawing.Point(0, 667)
-        Me.BtnSaveRate.Margin = New System.Windows.Forms.Padding(2)
-        Me.BtnSaveRate.Name = "BtnSaveRate"
-        Me.BtnSaveRate.Size = New System.Drawing.Size(260, 41)
-        Me.BtnSaveRate.TabIndex = 5
-        Me.BtnSaveRate.Text = "SAVE"
         '
         'tabContri
         '
@@ -3264,8 +3124,6 @@ Partial Class FrmMainte
         Me.Panel23.ResumeLayout(False)
         Me.tabRate.ResumeLayout(False)
         CType(Me.dgRates, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel25.ResumeLayout(False)
-        Me.Panel27.ResumeLayout(False)
         Me.tabContri.ResumeLayout(False)
         Me.Guna2TabControl2.ResumeLayout(False)
         Me.tabTax.ResumeLayout(False)
@@ -3304,8 +3162,6 @@ Partial Class FrmMainte
     Friend WithEvents BtnSaveIncentives As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents tabHoliday As TabPage
     Friend WithEvents tabRate As TabPage
-    Friend WithEvents Panel25 As Panel
-    Friend WithEvents BtnSaveRate As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents tabContri As TabPage
     Friend WithEvents tabVoluntary As TabPage
     Friend WithEvents Panel2 As Panel
@@ -3369,16 +3225,10 @@ Partial Class FrmMainte
     Friend WithEvents voluntaryStatus As DataGridViewTextBoxColumn
     Friend WithEvents Panel19 As Panel
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents Panel27 As Panel
-    Friend WithEvents TxtRateClassification As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label12 As Label
-    Friend WithEvents TxtRates As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label11 As Label
     Friend WithEvents dgRates As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents rateID As DataGridViewTextBoxColumn
     Friend WithEvents rateClassification As DataGridViewTextBoxColumn
     Friend WithEvents rate As DataGridViewTextBoxColumn
-    Friend WithEvents Panel48 As Panel
     Friend WithEvents DgUser As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents Panel51 As Panel
     Friend WithEvents Panel39 As Panel

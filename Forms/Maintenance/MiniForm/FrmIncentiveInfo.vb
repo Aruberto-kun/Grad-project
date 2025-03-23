@@ -15,4 +15,8 @@
         Me.Close()
         FrmMainte.DgIncentives.DataSource = DisplayIncentive()
     End Sub
+
+    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
+        Me.Close()
+    End Sub
 End Class
