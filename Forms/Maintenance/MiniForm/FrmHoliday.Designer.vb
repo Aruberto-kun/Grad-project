@@ -24,7 +24,7 @@ Partial Class FrmHoliday
     Private Sub InitializeComponent()
         Me.DtHoliday = New Guna.UI2.WinForms.Guna2DateTimePicker()
         Me.Label32 = New System.Windows.Forms.Label()
-        Me.TxtClassification = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.CbClassification = New Guna.UI2.WinForms.Guna2ComboBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.BtnUpdate = New Guna.UI2.WinForms.Guna2Button()
@@ -46,49 +46,49 @@ Partial Class FrmHoliday
         Me.DtHoliday.Dock = System.Windows.Forms.DockStyle.Top
         Me.DtHoliday.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.DtHoliday.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DtHoliday.Location = New System.Drawing.Point(3, 222)
+        Me.DtHoliday.Location = New System.Drawing.Point(3, 216)
         Me.DtHoliday.Margin = New System.Windows.Forms.Padding(2)
         Me.DtHoliday.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.DtHoliday.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.DtHoliday.Name = "DtHoliday"
         Me.DtHoliday.Size = New System.Drawing.Size(456, 37)
-        Me.DtHoliday.TabIndex = 42
+        Me.DtHoliday.TabIndex = 59
         Me.DtHoliday.Value = New Date(2024, 11, 2, 16, 21, 31, 190)
         '
         'Label32
         '
         Me.Label32.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label32.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label32.Location = New System.Drawing.Point(3, 180)
+        Me.Label32.Location = New System.Drawing.Point(3, 174)
         Me.Label32.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(456, 42)
-        Me.Label32.TabIndex = 41
+        Me.Label32.TabIndex = 58
         Me.Label32.Text = "Date:"
         Me.Label32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'TxtClassification
+        'CbClassification
         '
-        Me.TxtClassification.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.TxtClassification.BorderRadius = 5
-        Me.TxtClassification.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TxtClassification.DefaultText = ""
-        Me.TxtClassification.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.TxtClassification.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.TxtClassification.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtClassification.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtClassification.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TxtClassification.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.TxtClassification.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtClassification.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.TxtClassification.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.TxtClassification.Location = New System.Drawing.Point(3, 138)
-        Me.TxtClassification.Name = "TxtClassification"
-        Me.TxtClassification.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.TxtClassification.PlaceholderText = ""
-        Me.TxtClassification.SelectedText = ""
-        Me.TxtClassification.Size = New System.Drawing.Size(456, 42)
-        Me.TxtClassification.TabIndex = 40
+        Me.CbClassification.BackColor = System.Drawing.Color.Transparent
+        Me.CbClassification.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.CbClassification.BorderRadius = 5
+        Me.CbClassification.Dock = System.Windows.Forms.DockStyle.Top
+        Me.CbClassification.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
+        Me.CbClassification.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CbClassification.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.CbClassification.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.CbClassification.FocusedState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.CbClassification.Font = New System.Drawing.Font("Segoe UI", 10.0!)
+        Me.CbClassification.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.CbClassification.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.CbClassification.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.CbClassification.ItemHeight = 30
+        Me.CbClassification.Items.AddRange(New Object() {"Double Holiday", "Special Holiday", "Regular Holiday"})
+        Me.CbClassification.Location = New System.Drawing.Point(3, 138)
+        Me.CbClassification.Margin = New System.Windows.Forms.Padding(2)
+        Me.CbClassification.Name = "CbClassification"
+        Me.CbClassification.Size = New System.Drawing.Size(456, 36)
+        Me.CbClassification.TabIndex = 57
         '
         'Label3
         '
@@ -97,8 +97,8 @@ Partial Class FrmHoliday
         Me.Label3.Location = New System.Drawing.Point(3, 115)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(456, 23)
-        Me.Label3.TabIndex = 39
-        Me.Label3.Text = "Holiday Name: "
+        Me.Label3.TabIndex = 56
+        Me.Label3.Text = "Classification:"
         '
         'LinkLabel1
         '
@@ -108,7 +108,7 @@ Partial Class FrmHoliday
         Me.LinkLabel1.Location = New System.Drawing.Point(417, 3)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(38, 13)
-        Me.LinkLabel1.TabIndex = 38
+        Me.LinkLabel1.TabIndex = 55
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "[close]"
         Me.LinkLabel1.VisitedLinkColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
@@ -127,7 +127,7 @@ Partial Class FrmHoliday
         Me.BtnUpdate.Location = New System.Drawing.Point(3, 268)
         Me.BtnUpdate.Name = "BtnUpdate"
         Me.BtnUpdate.Size = New System.Drawing.Size(456, 50)
-        Me.BtnUpdate.TabIndex = 37
+        Me.BtnUpdate.TabIndex = 54
         Me.BtnUpdate.Text = "SAVE"
         '
         'Panel4
@@ -136,7 +136,7 @@ Partial Class FrmHoliday
         Me.Panel4.Location = New System.Drawing.Point(3, 318)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(456, 5)
-        Me.Panel4.TabIndex = 36
+        Me.Panel4.TabIndex = 53
         '
         'BtnDelete
         '
@@ -152,7 +152,7 @@ Partial Class FrmHoliday
         Me.BtnDelete.Location = New System.Drawing.Point(3, 323)
         Me.BtnDelete.Name = "BtnDelete"
         Me.BtnDelete.Size = New System.Drawing.Size(456, 50)
-        Me.BtnDelete.TabIndex = 35
+        Me.BtnDelete.TabIndex = 52
         Me.BtnDelete.Text = "DELETE"
         '
         'Panel3
@@ -161,7 +161,7 @@ Partial Class FrmHoliday
         Me.Panel3.Location = New System.Drawing.Point(3, 373)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(456, 5)
-        Me.Panel3.TabIndex = 34
+        Me.Panel3.TabIndex = 51
         '
         'TxtHolidayName
         '
@@ -184,7 +184,7 @@ Partial Class FrmHoliday
         Me.TxtHolidayName.PlaceholderText = ""
         Me.TxtHolidayName.SelectedText = ""
         Me.TxtHolidayName.Size = New System.Drawing.Size(456, 42)
-        Me.TxtHolidayName.TabIndex = 33
+        Me.TxtHolidayName.TabIndex = 50
         '
         'Panel2
         '
@@ -192,7 +192,7 @@ Partial Class FrmHoliday
         Me.Panel2.Location = New System.Drawing.Point(459, 73)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(3, 305)
-        Me.Panel2.TabIndex = 32
+        Me.Panel2.TabIndex = 49
         '
         'Panel1
         '
@@ -200,7 +200,7 @@ Partial Class FrmHoliday
         Me.Panel1.Location = New System.Drawing.Point(0, 73)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(3, 305)
-        Me.Panel1.TabIndex = 31
+        Me.Panel1.TabIndex = 48
         '
         'Label2
         '
@@ -209,7 +209,7 @@ Partial Class FrmHoliday
         Me.Label2.Location = New System.Drawing.Point(0, 50)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(462, 23)
-        Me.Label2.TabIndex = 30
+        Me.Label2.TabIndex = 47
         Me.Label2.Text = "Holiday Name: "
         '
         'Label1
@@ -219,7 +219,7 @@ Partial Class FrmHoliday
         Me.Label1.Location = New System.Drawing.Point(0, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(462, 50)
-        Me.Label1.TabIndex = 29
+        Me.Label1.TabIndex = 46
         Me.Label1.Text = "Holiday Information"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
@@ -231,7 +231,7 @@ Partial Class FrmHoliday
         Me.ControlBox = False
         Me.Controls.Add(Me.DtHoliday)
         Me.Controls.Add(Me.Label32)
-        Me.Controls.Add(Me.TxtClassification)
+        Me.Controls.Add(Me.CbClassification)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.LinkLabel1)
         Me.Controls.Add(Me.BtnUpdate)
@@ -253,7 +253,7 @@ Partial Class FrmHoliday
 
     Friend WithEvents DtHoliday As Guna.UI2.WinForms.Guna2DateTimePicker
     Friend WithEvents Label32 As Label
-    Friend WithEvents TxtClassification As Guna.UI2.WinForms.Guna2TextBox
+    Friend WithEvents CbClassification As Guna.UI2.WinForms.Guna2ComboBox
     Friend WithEvents Label3 As Label
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents BtnUpdate As Guna.UI2.WinForms.Guna2Button

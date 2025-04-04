@@ -1,4 +1,6 @@
-﻿Public Class FrmMainte
+﻿Imports System.Text.RegularExpressions
+
+Public Class FrmMainte
     Private Sub FrmMainte_Load(sender As Object, e As EventArgs) Handles Me.Load
         DgUser.DataSource = DisplayUsers()
         DgDepartment.DataSource = DisplayDepartment()
@@ -36,6 +38,18 @@
         If String.IsNullOrEmpty(TxtFirstname.Text) OrElse String.IsNullOrEmpty(TxtLastname.Text) OrElse String.IsNullOrEmpty(TxtUsername.Text) Then
             MsgEmptyField()
             Exit Sub
+        ElseIf Not Regex.IsMatch(TxtFirstname.Text, forNames) Then
+            MessageBox.Show("Invalid first name.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            TxtFirstname.Clear()
+            Exit Sub
+        ElseIf Not Regex.IsMatch(TxtLastname.Text, forNames) Then
+            MessageBox.Show("Invalid last name.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            TxtLastname.Clear()
+            Exit Sub
+        ElseIf Not Regex.IsMatch(TxtUsername.Text, antiSpace) Then
+            MessageBox.Show("Invalid user name.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            TxtUsername.Clear()
+            Exit Sub
         Else
             NewUser(TxtFirstname.Text, TxtLastname.Text, TxtUsername.Text)
             TxtFirstname.Clear()
@@ -49,9 +63,14 @@
         If String.IsNullOrEmpty(TxtDepartment.Text) Then
             MsgEmptyField()
             Exit Sub
+        ElseIf Not Regex.IsMatch(TxtDepartment.Text, forNames) Then
+            MessageBox.Show("Invalid department name.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            TxtDepartment.Clear()
+            Exit Sub
         Else
             NewDepartment(TxtDepartment.Text)
             DgDepartment.DataSource = DisplayDepartment()
+            DgPosition.DataSource = DisplayPosition()
             TxtDepartment.Clear()
             CbDepartment.DataSource = DisplayDepartment()
             CbDepartment.DisplayMember = "departmentName"
@@ -62,6 +81,14 @@
     Private Sub BtnSavePosition_Click(sender As Object, e As EventArgs) Handles BtnSavePosition.Click
         If String.IsNullOrEmpty(TxtPosition.Text) OrElse String.IsNullOrEmpty(CbDepartment.Text) Then
             MsgEmptyField()
+            Exit Sub
+        ElseIf Not Regex.IsMatch(TxtPosition.Text, forNames) Then
+            MessageBox.Show("Invalid position name.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            TxtPosition.Clear()
+            Exit Sub
+        ElseIf TxtPosition.Text.Trim().Equals("Head department", StringComparison.OrdinalIgnoreCase) Then
+            MessageBox.Show("Position already exist.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            TxtPosition.Clear()
             Exit Sub
         Else
             If CbDepartment.SelectedValue IsNot Nothing AndAlso Not String.IsNullOrEmpty(TxtPosition.Text) Then
@@ -80,6 +107,10 @@
         If String.IsNullOrEmpty(TxtLeave.Text) Then
             MsgEmptyField()
             Exit Sub
+        ElseIf Not Regex.IsMatch(TxtLeave.Text, forNames) Then
+            MessageBox.Show("Invalid type of leave.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            TxtLeave.Clear()
+            Exit Sub
         Else
             NewLeave(TxtLeave.Text)
             dgLeave.DataSource = DisplayLeave()
@@ -90,6 +121,10 @@
     Private Sub BtnSaveIncentives_Click(sender As Object, e As EventArgs) Handles BtnSaveIncentives.Click
         If String.IsNullOrEmpty(TxtIncentives.Text) Then
             MsgEmptyField()
+            Exit Sub
+        ElseIf Not Regex.IsMatch(TxtIncentives.Text, forNames) Then
+            MessageBox.Show("Invalid type of incentives.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            TxtIncentives.Clear()
             Exit Sub
         Else
             NewIncentives(TxtIncentives.Text)
@@ -102,6 +137,9 @@
         If String.IsNullOrEmpty(TxtHoliday.Text) Then
             MsgEmptyField()
             Exit Sub
+        ElseIf Not Regex.IsMatch(TxtHoliday.Text, forNames) Then
+            MessageBox.Show("Invalid holiday name.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Exit Sub
         Else
             NewHoliday(DtHoliday.Value, TxtHoliday.Text, CbClassification.SelectedItem.ToString)
             dgHoliday.DataSource = DisplayHoliday()
@@ -112,6 +150,9 @@
     Private Sub BtnVoluntary_Click(sender As Object, e As EventArgs) Handles BtnSaveVoluntary.Click
         If String.IsNullOrEmpty(TxtVoluntary.Text) Then
             MsgEmptyField()
+            Exit Sub
+        ElseIf Not Regex.IsMatch(TxtVoluntary.Text, forNames) Then
+            MessageBox.Show("Invalid type of voluntary.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Exit Sub
         Else
             NewVoluntary(TxtVoluntary.Text)
@@ -124,6 +165,10 @@
         SelectDepartment(DgDepartment)
     End Sub
 
+    Private Sub DgPosition_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgPosition.CellDoubleClick
+        SelectPosition(DgPosition)
+    End Sub
+
     Private Sub DgLeave_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgLeave.CellDoubleClick
         SelectLeave(dgLeave)
     End Sub
@@ -132,8 +177,16 @@
         SelectIncentives(DgIncentives)
     End Sub
 
+    Private Sub DgHoliday_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgHoliday.CellDoubleClick
+        Selectholiday(dgHoliday)
+    End Sub
+
     Private Sub DgRates_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgRates.CellDoubleClick
         SelectRates(dgRates)
+    End Sub
+
+    Private Sub DgVoluntary_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgVoluntary.CellDoubleClick
+        SelectVoluntary(DgVoluntary)
     End Sub
 
 #Region "Tax"
@@ -149,12 +202,47 @@
     End Sub
 
     Private Sub BtnSaveTax_Click(sender As Object, e As EventArgs) Handles BtnSaveTax.Click
-
         If CbTaxClassification.SelectedIndex = 0 Then
             If String.IsNullOrEmpty(TxtTaxFixedAmount.Text) OrElse
                 String.IsNullOrEmpty(TxtTaxMaxSalary.Text) OrElse
                 String.IsNullOrEmpty(TxtTaxPercentage.Text) Then
                 MsgEmptyField()
+                Exit Sub
+            ElseIf Not Regex.IsMatch(TxtTaxMaxSalary.Text, numberOnly) Then
+                MessageBox.Show("Invalid amount of max salary.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtTaxMaxSalary.Clear()
+                Exit Sub
+            ElseIf Not Regex.IsMatch(TxtTaxMinSalary.Text, numberOnly) Then
+                MessageBox.Show("Invalid amount of min salary.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtTaxMinSalary.Clear()
+                Exit Sub
+            ElseIf Not Regex.IsMatch(TxtTaxFixedAmount.Text, numberOnly) Then
+                MessageBox.Show("Invalid amount fixed amount.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtTaxFixedAmount.Clear()
+                Exit Sub
+            ElseIf Not Regex.IsMatch(TxtTaxPercentage.Text, numberOnly) Then
+                MessageBox.Show("Invalid value of percentage.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtTaxPercentage.Clear()
+                Exit Sub
+            ElseIf Val(TxtTaxMaxSalary.Text <= 0) Then
+                MessageBox.Show("Invalid amount of maximum salary", "Invalid amount", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Exit Sub
+                TxtTaxMaxSalary.Clear()
+            ElseIf Val(TxtTaxFixedAmount.Text <= 0) Then
+                MessageBox.Show("Invalid fixed amount", "Invalid amount", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtTaxFixedAmount.Clear()
+                Exit Sub
+            ElseIf Val(TxtTaxFixedAmount.Text > 10000) Then
+                MessageBox.Show("Invalid fixed amount. Please enter a value of 10,000 or below.", "Invalid amount", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtTaxFixedAmount.Clear()
+                Exit Sub
+            ElseIf Val(TxtTaxPercentage.Text <= 0) Then
+                MessageBox.Show("Invalid percentage", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtTaxPercentage.Clear()
+                Exit Sub
+            ElseIf Val(TxtTaxPercentage.Text > 50) Then
+                MessageBox.Show("Invalid percentage. Please enter a value of 50% or below.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtTaxPercentage.Clear()
                 Exit Sub
             Else
                 Dim maxSalary As Decimal = Val(TxtTaxMaxSalary.Text)
@@ -175,6 +263,42 @@
             String.IsNullOrEmpty(TxtTaxMaxSalary.Text) OrElse
             String.IsNullOrEmpty(TxtTaxPercentage.Text) Then
                 MsgEmptyField()
+                Exit Sub
+            ElseIf Not Regex.IsMatch(TxtTaxMaxSalary.Text, numberOnly) Then
+                MessageBox.Show("Invalid amount of max salary.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtTaxMaxSalary.Clear()
+                Exit Sub
+            ElseIf Not Regex.IsMatch(TxtTaxMinSalary.Text, numberOnly) Then
+                MessageBox.Show("Invalid amount of min salary.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtTaxMinSalary.Clear()
+                Exit Sub
+            ElseIf Not Regex.IsMatch(TxtTaxFixedAmount.Text, numberOnly) Then
+                MessageBox.Show("Invalid amount fixed amount.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtTaxFixedAmount.Clear()
+                Exit Sub
+            ElseIf Not Regex.IsMatch(TxtTaxPercentage.Text, numberOnly) Then
+                MessageBox.Show("Invalid value of percentage.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtTaxPercentage.Clear()
+                Exit Sub
+            ElseIf Val(TxtTaxMaxSalary.Text <= 0) Then
+                MessageBox.Show("Invalid amount of maximum salary", "Invalid amount", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Exit Sub
+                TxtTaxMaxSalary.Clear()
+            ElseIf Val(TxtTaxFixedAmount.Text <= 0) Then
+                MessageBox.Show("Invalid fixed amount", "Invalid amount", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtTaxFixedAmount.Clear()
+                Exit Sub
+            ElseIf Val(TxtTaxFixedAmount.Text > 300000) Then
+                MessageBox.Show("Invalid fixed amount. Please enter a value of 300,000 or below.", "Invalid amount", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtTaxFixedAmount.Clear()
+                Exit Sub
+            ElseIf Val(TxtTaxPercentage.Text <= 0) Then
+                MessageBox.Show("Invalid percentage", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtTaxPercentage.Clear()
+                Exit Sub
+            ElseIf Val(TxtTaxPercentage.Text > 50) Then
+                MessageBox.Show("Invalid percentage. Please enter a value of 50% or below.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtTaxPercentage.Clear()
                 Exit Sub
             Else
                 Dim maxSalary As Decimal = Val(TxtTaxMaxSalary.Text)
@@ -226,9 +350,37 @@
                     String.IsNullOrEmpty(TxtSSSER.Text) Then
                 MsgEmptyField()
                 Exit Sub
-            ElseIf Val(TxtSSSEE.Text > 10000) Then
-                MessageBox.Show("Invalid amount of EE")
+            ElseIf Not Regex.IsMatch(TxtSSSMaxSalary.Text, numberOnly) Then
+                MessageBox.Show("Invalid amount of max salary.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtSSSMaxSalary.Clear()
                 Exit Sub
+            ElseIf Not Regex.IsMatch(TxtSSSEE.Text, numberOnly) Then
+                MessageBox.Show("Invalid amount of EE.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtSSSEE.Clear()
+                Exit Sub
+            ElseIf Not Regex.IsMatch(TxtSSSER.Text, numberOnly) Then
+                MessageBox.Show("Invalid amount of ER.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtSSSER.Clear()
+                Exit Sub
+            ElseIf Val(TxtSSSEE.Text > 3000) Then
+                MessageBox.Show("Invalid amount of EE. Please enter a value of 3,000 or below.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtSSSEE.Clear()
+                Exit Sub
+            ElseIf Val(TxtSSSER.Text > 5000) Then
+                MessageBox.Show("Invalid amount of ER. Please enter a value of 5,000 or below.", "Invalid amount", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtSSSER.Clear()
+                Exit Sub
+            ElseIf Val(TxtSSSMaxSalary.Text <= 0) Then
+                MessageBox.Show("Invalid amount of maximum salary", "Invalid amount", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtSSSMaxSalary.Clear()
+                Exit Sub
+            ElseIf Val(TxtSSSEE.Text <= 0) Then
+                MessageBox.Show("Invalid amount of EE.", "Invalid amount", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Exit Sub
+            ElseIf Val(TxtSSSER.Text <= 0) Then
+                MessageBox.Show("Invalid amount of ER.", "Invalid amount", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Exit Sub
+
             Else
                 Dim minSalary As Decimal
                 If String.IsNullOrEmpty(TxtSSSMinSalary.Text) Then
@@ -270,6 +422,18 @@
             If String.IsNullOrEmpty(TxtPagibigRate.Text) Then
                 MessageBox.Show("Please fill in the necessary fields.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Exit Sub
+            ElseIf Not Regex.IsMatch(TxtPagibigRate.Text, numberOnly) Then
+                MessageBox.Show("Invalid PAG-IBIG rate.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtPagibigRate.Clear()
+                Exit Sub
+            ElseIf Val(TxtPagibigRate.Text <= 0) Then
+                MessageBox.Show("Invalid PAG-IBIG rate.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtPagibigRate.Clear()
+                Exit Sub
+            ElseIf Val(TxtPagibigRate.Text > 1000) Then
+                MessageBox.Show("Invalid PAG-IBIG rate. Please enter a value of 1,000 or below.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtPagibigRate.Clear()
+                Exit Sub
             Else
                 NewPagibig(TxtPagibigRate.Text)
                 dgPagibig.DataSource = DisplayPagIbig()
@@ -289,7 +453,18 @@
             If String.IsNullOrEmpty(txtPhilhealthRate.Text) Then
                 MsgEmptyField()
                 Exit Sub
-
+            ElseIf Not Regex.IsMatch(txtPhilhealthRate.Text, numberOnly) Then
+                MessageBox.Show("Invalid PhilHealth rate.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                txtPhilhealthRate.Clear()
+                Exit Sub
+            ElseIf Val(txtPhilhealthRate.Text <= 0) Then
+                MessageBox.Show("Invalid PhilHealth rate.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                txtPhilhealthRate.Clear()
+                Exit Sub
+            ElseIf Val(txtPhilhealthRate.Text > 15) Then
+                MessageBox.Show("Invalid PhilHealth rate. Please enter a value of 15% or below.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                txtPhilhealthRate.Clear()
+                Exit Sub
             Else
                 NewPhilhealth(Convert.ToInt32(txtPhilhealthRate.Text))
                 dgPhilhealth.DataSource = DisplayPhilhealth()
@@ -301,7 +476,5 @@
         End Try
     End Sub
 
-
 #End Region
-
 End Class

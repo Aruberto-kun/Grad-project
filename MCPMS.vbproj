@@ -131,6 +131,12 @@
     <Compile Include="Forms\Employee\FrmSalaryHistory.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Employee\FrmUpdateEmployee.Designer.vb">
+      <DependentUpon>FrmUpdateEmployee.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Employee\FrmUpdateEmployee.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Maintenance\FrmAttendance.Designer.vb">
       <DependentUpon>FrmAttendance.vb</DependentUpon>
     </Compile>
@@ -213,6 +219,12 @@
       <DependentUpon>FrmRateInfo.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Maintenance\MiniForm\FrmRateInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Maintenance\MiniForm\FrmVoluntaryInfo.Designer.vb">
+      <DependentUpon>FrmVoluntaryInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Maintenance\MiniForm\FrmVoluntaryInfo.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Payroll Calculation\FrmPayrollCalculation.Designer.vb">
@@ -317,6 +329,9 @@
     <EmbeddedResource Include="Forms\Employee\FrmSalaryHistory.resx">
       <DependentUpon>FrmSalaryHistory.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Employee\FrmUpdateEmployee.resx">
+      <DependentUpon>FrmUpdateEmployee.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Maintenance\FrmAttendance.resx">
       <DependentUpon>FrmAttendance.vb</DependentUpon>
     </EmbeddedResource>
@@ -358,6 +373,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Maintenance\MiniForm\FrmRateInfo.resx">
       <DependentUpon>FrmRateInfo.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Maintenance\MiniForm\FrmVoluntaryInfo.resx">
+      <DependentUpon>FrmVoluntaryInfo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Payroll Calculation\FrmPayrollCalculation.resx">
       <DependentUpon>FrmPayrollCalculation.vb</DependentUpon>

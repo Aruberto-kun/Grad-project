@@ -4,6 +4,7 @@ Module MdlFunctions
 
     Public letterOnly As String = "^[A-Za-z]+(?: [A-Za-z]+)*$"
     Public numberOnly As String = "^[0-9]+(\.[0-9]{1,2})?$"
+    Public forNumbers As String = "^[0-9]+$"
     Public noSpace As String = "^\S*$"
     Public antiSpace As String = "^[^ ]+$"
     Public forNames As String = "^[a-zA-ZÑñ](?!.*[-']{2})[a-zA-ZÑñ,'-]*( [a-zA-ZÑñ](?!.*[-']{2})[a-zA-ZÑñ,'-]*)*$"

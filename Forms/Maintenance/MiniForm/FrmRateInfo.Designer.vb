@@ -91,7 +91,7 @@ Partial Class FrmRateInfo
         Me.BtnUpdate.FillColor = System.Drawing.Color.FromArgb(CType(CType(142, Byte), Integer), CType(CType(68, Byte), Integer), CType(CType(173, Byte), Integer))
         Me.BtnUpdate.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnUpdate.ForeColor = System.Drawing.Color.White
-        Me.BtnUpdate.Location = New System.Drawing.Point(3, 250)
+        Me.BtnUpdate.Location = New System.Drawing.Point(3, 187)
         Me.BtnUpdate.Name = "BtnUpdate"
         Me.BtnUpdate.Size = New System.Drawing.Size(450, 50)
         Me.BtnUpdate.TabIndex = 35
@@ -100,7 +100,7 @@ Partial Class FrmRateInfo
         'Panel3
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel3.Location = New System.Drawing.Point(3, 300)
+        Me.Panel3.Location = New System.Drawing.Point(3, 237)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(450, 5)
         Me.Panel3.TabIndex = 32
@@ -134,7 +134,7 @@ Partial Class FrmRateInfo
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel2.Location = New System.Drawing.Point(453, 73)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(3, 232)
+        Me.Panel2.Size = New System.Drawing.Size(3, 169)
         Me.Panel2.TabIndex = 30
         '
         'Panel1
@@ -142,7 +142,7 @@ Partial Class FrmRateInfo
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel1.Location = New System.Drawing.Point(0, 73)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(3, 232)
+        Me.Panel1.Size = New System.Drawing.Size(3, 169)
         Me.Panel1.TabIndex = 29
         '
         'Label2
@@ -170,7 +170,7 @@ Partial Class FrmRateInfo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(456, 305)
+        Me.ClientSize = New System.Drawing.Size(456, 242)
         Me.ControlBox = False
         Me.Controls.Add(Me.TxtRates)
         Me.Controls.Add(Me.Label3)

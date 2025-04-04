@@ -1,24 +1,24 @@
 ﻿Imports System.Text.RegularExpressions
 
-Public Class FrmIncentiveInfo
+Public Class FrmVoluntaryInfo
     Private Sub BtnUpdate_Click(sender As Object, e As EventArgs) Handles BtnUpdate.Click
-        If String.IsNullOrEmpty(TxtIncentiveName.Text) Then
+        If String.IsNullOrEmpty(TxtVoluntary.Text) Then
             MsgEmptyField()
             Exit Sub
-        ElseIf Not Regex.IsMatch(TxtIncentiveName.Text, forNames) Then
-            MessageBox.Show("Invalid incentive name.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        ElseIf Not Regex.IsMatch(TxtVoluntary.Text, forNames) Then
+            MessageBox.Show("Invalid type of voluntary.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             Exit Sub
         Else
-            UpdateIncentive(MdlMaintenance.incentiveID, TxtIncentiveName.Text)
+            UpdateVoluntary(MdlMaintenance.voluntaryID, TxtVoluntary.Text)
             Me.Close()
-            FrmMainte.DgIncentives.DataSource = DisplayIncentive()
+            FrmMainte.DgVoluntary.DataSource = DisplayVoluntary()
         End If
     End Sub
 
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
-        DeleteIncentive(MdlMaintenance.incentiveID)
+        DeleteVoluntary(MdlMaintenance.voluntaryID)
         Me.Close()
-        FrmMainte.DgIncentives.DataSource = DisplayIncentive()
+        FrmMainte.DgVoluntary.DataSource = DisplayVoluntary()
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked

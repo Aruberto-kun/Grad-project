@@ -1,4 +1,6 @@
-﻿Public Class FrmDepartmentInfo
+﻿Imports System.Text.RegularExpressions
+
+Public Class FrmDepartmentInfo
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         Me.Close()
     End Sub
@@ -7,10 +9,18 @@
         If String.IsNullOrEmpty(TxtDepartment.Text) Then
             MsgEmptyField()
             Exit Sub
+        ElseIf Not Regex.IsMatch(TxtDepartment.Text, forNames) Then
+            MessageBox.Show("Invalid department name.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            TxtDepartment.Clear()
+            Exit Sub
         Else
             UpdateDepartment(MdlMaintenance.departmentID, TxtDepartment.Text)
             Me.Close()
             FrmMainte.DgDepartment.DataSource = DisplayDepartment()
+            FrmMainte.DgPosition.DataSource = DisplayPosition()
+            FrmMainte.CbDepartment.DataSource = DisplayDepartment()
+            FrmMainte.CbDepartment.DisplayMember = "departmentName"
+            FrmMainte.CbDepartment.ValueMember = "departmentID"
         End If
     End Sub
 
@@ -18,5 +28,9 @@
         DeleteDepartment(MdlMaintenance.departmentID)
         Me.Close()
         FrmMainte.DgDepartment.DataSource = DisplayDepartment()
+        FrmMainte.DgPosition.DataSource = DisplayPosition()
+        FrmMainte.CbDepartment.DataSource = DisplayDepartment()
+        FrmMainte.CbDepartment.DisplayMember = "departmentName"
+        FrmMainte.CbDepartment.ValueMember = "departmentID"
     End Sub
 End Class
