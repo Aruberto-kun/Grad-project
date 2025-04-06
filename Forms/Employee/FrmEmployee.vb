@@ -109,7 +109,11 @@ Public Class FrmEmployee
 
     Private Sub BtnAddAssociate_Click(sender As Object, e As EventArgs) Handles BtnAddAssociate.Click
         FrmAddEmployee.ShowDialog()
-        FrmAddEmployee.BringToFront()
+        FrmAddEmployee.TxtFirstName.Clear()
+        FrmAddEmployee.TxtLastname.Clear()
+        FrmAddEmployee.TxtSalary.Clear()
+        FrmAddEmployee.TxtRfidNumber.Clear()
+        FrmAddEmployee.TxtAllowance.Clear()
     End Sub
 
     Private Sub DgEmployee_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgEmployee.CellClick

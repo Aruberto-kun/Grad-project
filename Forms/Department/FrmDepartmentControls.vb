@@ -20,6 +20,7 @@
             Exit Sub
         End If
         ClassDepartment.SaveDepartmentHead(DGDepartment)
+        ClassEmployee.LoadEmployee(FrmEmployee.DgEmployee)
     End Sub
 
     Private Sub CbDepartment_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CbDepartment.SelectedIndexChanged
