@@ -31,7 +31,7 @@
             Exit Sub
         End If
         ClassPayrollCalculation.UsePayrollPeriod(CbPayrollPeriod, FrmPayrollCalculation.TxtPayrollPeriod, TxtFrom, TxtTo, TxtPayout)
-        ClassPayrollCalculation.LoadEmployees(FrmPayrollCalculation.CbEmployees)
+        'ClassPayrollCalculation.LoadEmployees(FrmPayrollCalculation.CbEmployees)
         Me.Close()
     End Sub
 End Class

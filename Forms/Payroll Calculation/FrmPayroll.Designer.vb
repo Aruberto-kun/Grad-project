@@ -22,22 +22,19 @@ Partial Class FrmPayroll
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle28 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle29 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle30 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle31 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle34 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle35 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle36 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.TxtPayrollPeriod = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
         Me.DGAttendance = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.colDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -57,12 +54,12 @@ Partial Class FrmPayroll
         Me.voluntaryID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.voluntaryName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.voluntaryAmount = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Panel8 = New System.Windows.Forms.Panel()
+        Me.Panel7 = New System.Windows.Forms.Panel()
         Me.DGIncentive = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.incentiveID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.incentiveName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.incentiveAmount = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.Panel9 = New System.Windows.Forms.Panel()
         Me.Panel14 = New System.Windows.Forms.Panel()
         Me.Guna2GroupBox2 = New Guna.UI2.WinForms.Guna2GroupBox()
         Me.TxtNetPay = New Guna.UI2.WinForms.Guna2TextBox()
@@ -92,7 +89,7 @@ Partial Class FrmPayroll
         Me.TxtLate = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Panel11 = New System.Windows.Forms.Panel()
-        Me.Panel9 = New System.Windows.Forms.Panel()
+        Me.Panel16 = New System.Windows.Forms.Panel()
         Me.TxtTotalIncrease = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label21 = New System.Windows.Forms.Label()
         Me.TxtNightDifferential = New Guna.UI2.WinForms.Guna2TextBox()
@@ -103,152 +100,91 @@ Partial Class FrmPayroll
         Me.Label13 = New System.Windows.Forms.Label()
         Me.TxtOvertime = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
-        Me.Panel16 = New System.Windows.Forms.Panel()
+        Me.Panel8 = New System.Windows.Forms.Panel()
         Me.Guna2Button2 = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel20 = New System.Windows.Forms.Panel()
         Me.Guna2Button3 = New Guna.UI2.WinForms.Guna2Button()
-        Me.Panel1.SuspendLayout()
         CType(Me.DGAttendance, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel6.SuspendLayout()
         CType(Me.DGVoluntary, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DGIncentive, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel7.SuspendLayout()
+        Me.Panel9.SuspendLayout()
         Me.Panel14.SuspendLayout()
         Me.Guna2GroupBox2.SuspendLayout()
         Me.Guna2GroupBox1.SuspendLayout()
         Me.Panel13.SuspendLayout()
         Me.Panel10.SuspendLayout()
-        Me.Panel9.SuspendLayout()
+        Me.Panel16.SuspendLayout()
         Me.SuspendLayout()
         '
         'Panel1
         '
-        Me.Panel1.Controls.Add(Me.Label7)
-        Me.Panel1.Controls.Add(Me.TxtPayrollPeriod)
-        Me.Panel1.Controls.Add(Me.Panel4)
-        Me.Panel1.Controls.Add(Me.Guna2Button1)
-        Me.Panel1.Controls.Add(Me.Panel3)
-        Me.Panel1.Controls.Add(Me.Panel2)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.Panel1.Location = New System.Drawing.Point(1789, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1794, 57)
+        Me.Panel1.Size = New System.Drawing.Size(5, 998)
         Me.Panel1.TabIndex = 0
         '
         'Panel2
         '
-        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel2.Location = New System.Drawing.Point(1789, 0)
+        Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(5, 57)
-        Me.Panel2.TabIndex = 0
+        Me.Panel2.Size = New System.Drawing.Size(5, 998)
+        Me.Panel2.TabIndex = 1
         '
         'Panel3
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel3.Location = New System.Drawing.Point(0, 0)
+        Me.Panel3.Location = New System.Drawing.Point(5, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(1789, 5)
-        Me.Panel3.TabIndex = 27
-        '
-        'Guna2Button1
-        '
-        Me.Guna2Button1.BorderRadius = 5
-        Me.Guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.Guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.Guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.Guna2Button1.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Guna2Button1.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.Guna2Button1.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.Guna2Button1.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button1.Location = New System.Drawing.Point(1518, 5)
-        Me.Guna2Button1.Name = "Guna2Button1"
-        Me.Guna2Button1.Size = New System.Drawing.Size(271, 52)
-        Me.Guna2Button1.TabIndex = 28
-        Me.Guna2Button1.Text = "Change Payroll Period"
+        Me.Panel3.Size = New System.Drawing.Size(1784, 5)
+        Me.Panel3.TabIndex = 2
         '
         'Panel4
         '
-        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel4.Location = New System.Drawing.Point(1513, 5)
+        Me.Panel4.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel4.Location = New System.Drawing.Point(5, 993)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(5, 52)
-        Me.Panel4.TabIndex = 29
-        '
-        'TxtPayrollPeriod
-        '
-        Me.TxtPayrollPeriod.BorderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
-        Me.TxtPayrollPeriod.BorderRadius = 5
-        Me.TxtPayrollPeriod.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TxtPayrollPeriod.DefaultText = ""
-        Me.TxtPayrollPeriod.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.TxtPayrollPeriod.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.TxtPayrollPeriod.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtPayrollPeriod.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtPayrollPeriod.Dock = System.Windows.Forms.DockStyle.Right
-        Me.TxtPayrollPeriod.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
-        Me.TxtPayrollPeriod.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtPayrollPeriod.ForeColor = System.Drawing.Color.Black
-        Me.TxtPayrollPeriod.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
-        Me.TxtPayrollPeriod.Location = New System.Drawing.Point(1242, 5)
-        Me.TxtPayrollPeriod.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.TxtPayrollPeriod.Name = "TxtPayrollPeriod"
-        Me.TxtPayrollPeriod.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.TxtPayrollPeriod.PlaceholderText = ""
-        Me.TxtPayrollPeriod.ReadOnly = True
-        Me.TxtPayrollPeriod.SelectedText = ""
-        Me.TxtPayrollPeriod.Size = New System.Drawing.Size(271, 52)
-        Me.TxtPayrollPeriod.TabIndex = 30
-        '
-        'Label7
-        '
-        Me.Label7.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Label7.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(1105, 5)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(137, 52)
-        Me.Label7.TabIndex = 31
-        Me.Label7.Text = "Payroll Period:"
-        Me.Label7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Panel4.Size = New System.Drawing.Size(1784, 5)
+        Me.Panel4.TabIndex = 3
         '
         'DGAttendance
         '
         Me.DGAttendance.AllowUserToAddRows = False
         Me.DGAttendance.AllowUserToDeleteRows = False
-        DataGridViewCellStyle28.BackColor = System.Drawing.Color.White
-        Me.DGAttendance.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle28
+        DataGridViewCellStyle19.BackColor = System.Drawing.Color.White
+        Me.DGAttendance.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle19
         Me.DGAttendance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        DataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle29.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle29.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle29.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle29.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle29.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle29.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGAttendance.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle29
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle20.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle20.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle20.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGAttendance.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle20
         Me.DGAttendance.ColumnHeadersHeight = 40
         Me.DGAttendance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.DGAttendance.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colDate, Me.Column1, Me.colTimeIn, Me.colTimeOut, Me.colOvertime, Me.colOtRemarks, Me.colLate, Me.colUndertime, Me.colNightDifferential, Me.colReport, Me.colHoliday, Me.colClassification})
-        DataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle30.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle30.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle30.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle30.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle30.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle30.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGAttendance.DefaultCellStyle = DataGridViewCellStyle30
+        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle21.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle21.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle21.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle21.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGAttendance.DefaultCellStyle = DataGridViewCellStyle21
         Me.DGAttendance.Dock = System.Windows.Forms.DockStyle.Top
         Me.DGAttendance.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DGAttendance.Location = New System.Drawing.Point(0, 57)
+        Me.DGAttendance.Location = New System.Drawing.Point(5, 5)
         Me.DGAttendance.Margin = New System.Windows.Forms.Padding(2)
         Me.DGAttendance.Name = "DGAttendance"
         Me.DGAttendance.ReadOnly = True
         Me.DGAttendance.RowHeadersVisible = False
         Me.DGAttendance.RowHeadersWidth = 62
         Me.DGAttendance.RowTemplate.Height = 28
-        Me.DGAttendance.Size = New System.Drawing.Size(1794, 228)
+        Me.DGAttendance.Size = New System.Drawing.Size(1784, 220)
         Me.DGAttendance.TabIndex = 17
         Me.DGAttendance.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DGAttendance.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -371,59 +307,58 @@ Partial Class FrmPayroll
         'Panel5
         '
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel5.Location = New System.Drawing.Point(0, 285)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel5.Location = New System.Drawing.Point(5, 225)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1794, 8)
+        Me.Panel5.Size = New System.Drawing.Size(1784, 5)
         Me.Panel5.TabIndex = 18
         '
         'Panel6
         '
         Me.Panel6.Controls.Add(Me.DGVoluntary)
-        Me.Panel6.Controls.Add(Me.Panel8)
+        Me.Panel6.Controls.Add(Me.Panel7)
         Me.Panel6.Controls.Add(Me.DGIncentive)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel6.Location = New System.Drawing.Point(0, 293)
+        Me.Panel6.Location = New System.Drawing.Point(5, 230)
         Me.Panel6.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(1794, 200)
+        Me.Panel6.Size = New System.Drawing.Size(1784, 200)
         Me.Panel6.TabIndex = 78
         '
         'DGVoluntary
         '
         Me.DGVoluntary.AllowUserToAddRows = False
         Me.DGVoluntary.AllowUserToDeleteRows = False
-        DataGridViewCellStyle31.BackColor = System.Drawing.Color.White
-        Me.DGVoluntary.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle31
+        DataGridViewCellStyle22.BackColor = System.Drawing.Color.White
+        Me.DGVoluntary.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle22
         Me.DGVoluntary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        DataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle32.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle32.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle32.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle32.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle32.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle32.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGVoluntary.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle32
+        DataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle23.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle23.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle23.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle23.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle23.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle23.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGVoluntary.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle23
         Me.DGVoluntary.ColumnHeadersHeight = 30
         Me.DGVoluntary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.DGVoluntary.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.voluntaryID, Me.voluntaryName, Me.voluntaryAmount})
-        DataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle33.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle33.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle33.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle33.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle33.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle33.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGVoluntary.DefaultCellStyle = DataGridViewCellStyle33
+        DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle24.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle24.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle24.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle24.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle24.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle24.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGVoluntary.DefaultCellStyle = DataGridViewCellStyle24
         Me.DGVoluntary.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGVoluntary.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DGVoluntary.Location = New System.Drawing.Point(877, 0)
+        Me.DGVoluntary.Location = New System.Drawing.Point(873, 0)
         Me.DGVoluntary.Margin = New System.Windows.Forms.Padding(2)
         Me.DGVoluntary.Name = "DGVoluntary"
         Me.DGVoluntary.RowHeadersVisible = False
         Me.DGVoluntary.RowHeadersWidth = 62
         Me.DGVoluntary.RowTemplate.Height = 28
-        Me.DGVoluntary.Size = New System.Drawing.Size(917, 200)
+        Me.DGVoluntary.Size = New System.Drawing.Size(911, 200)
         Me.DGVoluntary.TabIndex = 22
         Me.DGVoluntary.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DGVoluntary.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -472,41 +407,41 @@ Partial Class FrmPayroll
         Me.voluntaryAmount.Name = "voluntaryAmount"
         Me.voluntaryAmount.ReadOnly = True
         '
-        'Panel8
+        'Panel7
         '
-        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel8.Location = New System.Drawing.Point(873, 0)
-        Me.Panel8.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(4, 200)
-        Me.Panel8.TabIndex = 19
+        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel7.Location = New System.Drawing.Point(869, 0)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel7.Name = "Panel7"
+        Me.Panel7.Size = New System.Drawing.Size(4, 200)
+        Me.Panel7.TabIndex = 21
         '
         'DGIncentive
         '
         Me.DGIncentive.AllowUserToAddRows = False
         Me.DGIncentive.AllowUserToDeleteRows = False
-        DataGridViewCellStyle34.BackColor = System.Drawing.Color.White
-        Me.DGIncentive.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle34
+        DataGridViewCellStyle25.BackColor = System.Drawing.Color.White
+        Me.DGIncentive.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle25
         Me.DGIncentive.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        DataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle35.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle35.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle35.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle35.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle35.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle35.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGIncentive.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle35
+        DataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle26.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle26.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle26.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle26.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle26.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle26.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGIncentive.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle26
         Me.DGIncentive.ColumnHeadersHeight = 30
         Me.DGIncentive.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.DGIncentive.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.incentiveID, Me.incentiveName, Me.incentiveAmount})
-        DataGridViewCellStyle36.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle36.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle36.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle36.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle36.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle36.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle36.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DGIncentive.DefaultCellStyle = DataGridViewCellStyle36
+        DataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle27.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle27.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle27.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle27.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle27.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle27.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DGIncentive.DefaultCellStyle = DataGridViewCellStyle27
         Me.DGIncentive.Dock = System.Windows.Forms.DockStyle.Left
         Me.DGIncentive.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DGIncentive.Location = New System.Drawing.Point(0, 0)
@@ -515,7 +450,7 @@ Partial Class FrmPayroll
         Me.DGIncentive.RowHeadersVisible = False
         Me.DGIncentive.RowHeadersWidth = 62
         Me.DGIncentive.RowTemplate.Height = 28
-        Me.DGIncentive.Size = New System.Drawing.Size(873, 200)
+        Me.DGIncentive.Size = New System.Drawing.Size(869, 200)
         Me.DGIncentive.TabIndex = 18
         Me.DGIncentive.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DGIncentive.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -560,22 +495,21 @@ Partial Class FrmPayroll
         Me.incentiveAmount.MinimumWidth = 8
         Me.incentiveAmount.Name = "incentiveAmount"
         '
-        'Panel7
+        'Panel9
         '
-        Me.Panel7.Controls.Add(Me.Panel14)
-        Me.Panel7.Controls.Add(Me.Panel15)
-        Me.Panel7.Controls.Add(Me.Panel13)
-        Me.Panel7.Controls.Add(Me.Panel12)
-        Me.Panel7.Controls.Add(Me.Panel10)
-        Me.Panel7.Controls.Add(Me.Panel11)
-        Me.Panel7.Controls.Add(Me.Panel9)
-        Me.Panel7.Controls.Add(Me.Panel16)
-        Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel7.Location = New System.Drawing.Point(0, 493)
-        Me.Panel7.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(1794, 437)
-        Me.Panel7.TabIndex = 79
+        Me.Panel9.Controls.Add(Me.Panel14)
+        Me.Panel9.Controls.Add(Me.Panel15)
+        Me.Panel9.Controls.Add(Me.Panel13)
+        Me.Panel9.Controls.Add(Me.Panel12)
+        Me.Panel9.Controls.Add(Me.Panel10)
+        Me.Panel9.Controls.Add(Me.Panel11)
+        Me.Panel9.Controls.Add(Me.Panel16)
+        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel9.Location = New System.Drawing.Point(5, 435)
+        Me.Panel9.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel9.Name = "Panel9"
+        Me.Panel9.Size = New System.Drawing.Size(1784, 490)
+        Me.Panel9.TabIndex = 80
         '
         'Panel14
         '
@@ -583,10 +517,10 @@ Partial Class FrmPayroll
         Me.Panel14.Controls.Add(Me.Guna2GroupBox1)
         Me.Panel14.Controls.Add(Me.Panel21)
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel14.Location = New System.Drawing.Point(846, 4)
+        Me.Panel14.Location = New System.Drawing.Point(846, 0)
         Me.Panel14.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(418, 433)
+        Me.Panel14.Size = New System.Drawing.Size(418, 490)
         Me.Panel14.TabIndex = 9
         '
         'Guna2GroupBox2
@@ -674,10 +608,10 @@ Partial Class FrmPayroll
         'Panel15
         '
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel15.Location = New System.Drawing.Point(826, 4)
+        Me.Panel15.Location = New System.Drawing.Point(826, 0)
         Me.Panel15.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(20, 433)
+        Me.Panel15.Size = New System.Drawing.Size(20, 490)
         Me.Panel15.TabIndex = 8
         '
         'Panel13
@@ -691,10 +625,10 @@ Partial Class FrmPayroll
         Me.Panel13.Controls.Add(Me.TxtSSS)
         Me.Panel13.Controls.Add(Me.Label9)
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel13.Location = New System.Drawing.Point(564, 4)
+        Me.Panel13.Location = New System.Drawing.Point(564, 0)
         Me.Panel13.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(262, 433)
+        Me.Panel13.Size = New System.Drawing.Size(262, 490)
         Me.Panel13.TabIndex = 6
         '
         'TxtTax
@@ -848,10 +782,10 @@ Partial Class FrmPayroll
         'Panel12
         '
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel12.Location = New System.Drawing.Point(544, 4)
+        Me.Panel12.Location = New System.Drawing.Point(544, 0)
         Me.Panel12.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(20, 433)
+        Me.Panel12.Size = New System.Drawing.Size(20, 490)
         Me.Panel12.TabIndex = 5
         '
         'Panel10
@@ -867,10 +801,10 @@ Partial Class FrmPayroll
         Me.Panel10.Controls.Add(Me.TxtLate)
         Me.Panel10.Controls.Add(Me.Label15)
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel10.Location = New System.Drawing.Point(282, 4)
+        Me.Panel10.Location = New System.Drawing.Point(282, 0)
         Me.Panel10.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(262, 433)
+        Me.Panel10.Size = New System.Drawing.Size(262, 490)
         Me.Panel10.TabIndex = 4
         '
         'TxtTotalDeduc
@@ -1061,30 +995,30 @@ Partial Class FrmPayroll
         'Panel11
         '
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel11.Location = New System.Drawing.Point(262, 4)
+        Me.Panel11.Location = New System.Drawing.Point(262, 0)
         Me.Panel11.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(20, 433)
+        Me.Panel11.Size = New System.Drawing.Size(20, 490)
         Me.Panel11.TabIndex = 3
         '
-        'Panel9
+        'Panel16
         '
-        Me.Panel9.Controls.Add(Me.TxtTotalIncrease)
-        Me.Panel9.Controls.Add(Me.Label21)
-        Me.Panel9.Controls.Add(Me.TxtNightDifferential)
-        Me.Panel9.Controls.Add(Me.Label18)
-        Me.Panel9.Controls.Add(Me.TxtIncentives)
-        Me.Panel9.Controls.Add(Me.Label14)
-        Me.Panel9.Controls.Add(Me.TxtAllowance)
-        Me.Panel9.Controls.Add(Me.Label13)
-        Me.Panel9.Controls.Add(Me.TxtOvertime)
-        Me.Panel9.Controls.Add(Me.Label8)
-        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel9.Location = New System.Drawing.Point(0, 4)
-        Me.Panel9.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(262, 433)
-        Me.Panel9.TabIndex = 1
+        Me.Panel16.Controls.Add(Me.TxtTotalIncrease)
+        Me.Panel16.Controls.Add(Me.Label21)
+        Me.Panel16.Controls.Add(Me.TxtNightDifferential)
+        Me.Panel16.Controls.Add(Me.Label18)
+        Me.Panel16.Controls.Add(Me.TxtIncentives)
+        Me.Panel16.Controls.Add(Me.Label14)
+        Me.Panel16.Controls.Add(Me.TxtAllowance)
+        Me.Panel16.Controls.Add(Me.Label13)
+        Me.Panel16.Controls.Add(Me.TxtOvertime)
+        Me.Panel16.Controls.Add(Me.Label8)
+        Me.Panel16.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel16.Location = New System.Drawing.Point(0, 0)
+        Me.Panel16.Margin = New System.Windows.Forms.Padding(2)
+        Me.Panel16.Name = "Panel16"
+        Me.Panel16.Size = New System.Drawing.Size(262, 490)
+        Me.Panel16.TabIndex = 1
         '
         'TxtTotalIncrease
         '
@@ -1270,14 +1204,13 @@ Partial Class FrmPayroll
         Me.Label8.Text = "Overtime"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'Panel16
+        'Panel8
         '
-        Me.Panel16.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel16.Location = New System.Drawing.Point(0, 0)
-        Me.Panel16.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel16.Name = "Panel16"
-        Me.Panel16.Size = New System.Drawing.Size(1794, 4)
-        Me.Panel16.TabIndex = 0
+        Me.Panel8.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Panel8.Location = New System.Drawing.Point(5, 430)
+        Me.Panel8.Name = "Panel8"
+        Me.Panel8.Size = New System.Drawing.Size(1784, 5)
+        Me.Panel8.TabIndex = 79
         '
         'Guna2Button2
         '
@@ -1289,21 +1222,21 @@ Partial Class FrmPayroll
         Me.Guna2Button2.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.Guna2Button2.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button2.ForeColor = System.Drawing.Color.White
-        Me.Guna2Button2.Location = New System.Drawing.Point(0, 930)
+        Me.Guna2Button2.Location = New System.Drawing.Point(5, 925)
         Me.Guna2Button2.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2Button2.Name = "Guna2Button2"
-        Me.Guna2Button2.Size = New System.Drawing.Size(1794, 32)
-        Me.Guna2Button2.TabIndex = 82
+        Me.Guna2Button2.Size = New System.Drawing.Size(1784, 32)
+        Me.Guna2Button2.TabIndex = 83
         Me.Guna2Button2.Text = "SAVE"
         '
         'Panel20
         '
         Me.Panel20.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel20.Location = New System.Drawing.Point(0, 962)
+        Me.Panel20.Location = New System.Drawing.Point(5, 957)
         Me.Panel20.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel20.Name = "Panel20"
-        Me.Panel20.Size = New System.Drawing.Size(1794, 4)
-        Me.Panel20.TabIndex = 81
+        Me.Panel20.Size = New System.Drawing.Size(1784, 4)
+        Me.Panel20.TabIndex = 82
         '
         'Guna2Button3
         '
@@ -1315,11 +1248,11 @@ Partial Class FrmPayroll
         Me.Guna2Button3.FillColor = System.Drawing.Color.FromArgb(CType(CType(214, Byte), Integer), CType(CType(48, Byte), Integer), CType(CType(49, Byte), Integer))
         Me.Guna2Button3.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.Guna2Button3.ForeColor = System.Drawing.Color.Black
-        Me.Guna2Button3.Location = New System.Drawing.Point(0, 966)
+        Me.Guna2Button3.Location = New System.Drawing.Point(5, 961)
         Me.Guna2Button3.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2Button3.Name = "Guna2Button3"
-        Me.Guna2Button3.Size = New System.Drawing.Size(1794, 32)
-        Me.Guna2Button3.TabIndex = 80
+        Me.Guna2Button3.Size = New System.Drawing.Size(1784, 32)
+        Me.Guna2Button3.TabIndex = 81
         Me.Guna2Button3.Text = "CALCULATE"
         '
         'FrmPayroll
@@ -1328,40 +1261,40 @@ Partial Class FrmPayroll
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1794, 998)
         Me.ControlBox = False
-        Me.Controls.Add(Me.Panel7)
+        Me.Controls.Add(Me.Panel9)
         Me.Controls.Add(Me.Guna2Button2)
         Me.Controls.Add(Me.Panel20)
         Me.Controls.Add(Me.Guna2Button3)
+        Me.Controls.Add(Me.Panel8)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.DGAttendance)
+        Me.Controls.Add(Me.Panel4)
+        Me.Controls.Add(Me.Panel3)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "FrmPayroll"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Panel1.ResumeLayout(False)
         CType(Me.DGAttendance, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel6.ResumeLayout(False)
         CType(Me.DGVoluntary, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DGIncentive, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel7.ResumeLayout(False)
+        Me.Panel9.ResumeLayout(False)
         Me.Panel14.ResumeLayout(False)
         Me.Guna2GroupBox2.ResumeLayout(False)
         Me.Guna2GroupBox1.ResumeLayout(False)
         Me.Panel13.ResumeLayout(False)
         Me.Panel10.ResumeLayout(False)
-        Me.Panel9.ResumeLayout(False)
+        Me.Panel16.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Panel2 As Panel
-    Friend WithEvents Guna2Button1 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents TxtPayrollPeriod As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label7 As Label
     Friend WithEvents DGAttendance As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents colDate As DataGridViewTextBoxColumn
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
@@ -1381,12 +1314,12 @@ Partial Class FrmPayroll
     Friend WithEvents voluntaryID As DataGridViewTextBoxColumn
     Friend WithEvents voluntaryName As DataGridViewTextBoxColumn
     Friend WithEvents voluntaryAmount As DataGridViewTextBoxColumn
-    Friend WithEvents Panel8 As Panel
+    Friend WithEvents Panel7 As Panel
     Friend WithEvents DGIncentive As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents incentiveID As DataGridViewTextBoxColumn
     Friend WithEvents incentiveName As DataGridViewTextBoxColumn
     Friend WithEvents incentiveAmount As DataGridViewTextBoxColumn
-    Friend WithEvents Panel7 As Panel
+    Friend WithEvents Panel9 As Panel
     Friend WithEvents Panel14 As Panel
     Friend WithEvents Guna2GroupBox2 As Guna.UI2.WinForms.Guna2GroupBox
     Friend WithEvents TxtNetPay As Guna.UI2.WinForms.Guna2TextBox
@@ -1416,7 +1349,7 @@ Partial Class FrmPayroll
     Friend WithEvents TxtLate As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label15 As Label
     Friend WithEvents Panel11 As Panel
-    Friend WithEvents Panel9 As Panel
+    Friend WithEvents Panel16 As Panel
     Friend WithEvents TxtTotalIncrease As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label21 As Label
     Friend WithEvents TxtNightDifferential As Guna.UI2.WinForms.Guna2TextBox
@@ -1427,7 +1360,7 @@ Partial Class FrmPayroll
     Friend WithEvents Label13 As Label
     Friend WithEvents TxtOvertime As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Label8 As Label
-    Friend WithEvents Panel16 As Panel
+    Friend WithEvents Panel8 As Panel
     Friend WithEvents Guna2Button2 As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents Panel20 As Panel
     Friend WithEvents Guna2Button3 As Guna.UI2.WinForms.Guna2Button
