@@ -8,9 +8,9 @@ Public Class FrmSignUpPayroll
             MsgBox("Please input password")
             Exit Sub
         End If
-
         If Not Regex.IsMatch(TxtPassword.Text, noSpace) Then
-            MsgBox("Invalid input")
+            MessageBox.Show("Invalid password.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            TxtPassword.Clear()
             Exit Sub
         End If
         Try
@@ -20,7 +20,7 @@ Public Class FrmSignUpPayroll
                 .Parameters.AddWithValue("@password", TxtPassword.Text.Trim)
                 .ExecuteNonQuery()
                 .Parameters.Clear()
-                MsgBox("Password Updated")
+                MessageBox.Show("Password updated.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 FrmLogin.Show()
                 Me.Close()
             End With

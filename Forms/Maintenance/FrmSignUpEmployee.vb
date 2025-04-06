@@ -8,10 +8,12 @@ Public Class FrmSignUpEmployee
             MsgEmptyField()
             Exit Sub
         ElseIf Not Regex.IsMatch(TxtUsername.Text, noSpace) Then
-            MessageBox.Show("Invalid Username")
+            MessageBox.Show("Invalid Username", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            TxtUsername.Clear()
             Exit Sub
         ElseIf Not Regex.IsMatch(TxtPassword.Text, noSpace) Then
-            MessageBox.Show("Invalid password")
+            MessageBox.Show("Invalid password", "Invalid password", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            TxtPassword.Clear()
             Exit Sub
         End If
         Try
@@ -21,7 +23,7 @@ Public Class FrmSignUpEmployee
                 .ExecuteNonQuery()
                 .Parameters.Clear()
             End With
-            MsgBox("Password set successfully", MsgBoxStyle.OkOnly)
+            MessageBox.Show("Password updated.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             FrmLogin.Show()
             Me.Close()
         Catch ex As Exception

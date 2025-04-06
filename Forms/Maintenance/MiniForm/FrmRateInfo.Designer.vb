@@ -50,6 +50,7 @@ Partial Class FrmRateInfo
         Me.TxtRates.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
         Me.TxtRates.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
         Me.TxtRates.Location = New System.Drawing.Point(3, 138)
+        Me.TxtRates.MaxLength = 3
         Me.TxtRates.Name = "TxtRates"
         Me.TxtRates.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtRates.PlaceholderText = ""

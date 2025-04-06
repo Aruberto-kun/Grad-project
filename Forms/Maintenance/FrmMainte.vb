@@ -244,6 +244,10 @@ Public Class FrmMainte
                 MessageBox.Show("Invalid percentage. Please enter a value of 50% or below.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 TxtTaxPercentage.Clear()
                 Exit Sub
+            ElseIf Val(TxtTaxMinSalary.Text) > Val(TxtTaxMaxSalary.text) Then
+                MessageBox.Show("Maximum salary should be higher than minimum salary.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtTaxMaxSalary.Clear()
+                Exit Sub
             Else
                 Dim maxSalary As Decimal = Val(TxtTaxMaxSalary.Text)
                 Dim minSalary As Decimal = Val(TxtTaxMinSalary.Text)
@@ -299,6 +303,10 @@ Public Class FrmMainte
             ElseIf Val(TxtTaxPercentage.Text > 50) Then
                 MessageBox.Show("Invalid percentage. Please enter a value of 50% or below.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 TxtTaxPercentage.Clear()
+                Exit Sub
+            ElseIf Val(TxtTaxMinSalary.Text) > Val(TxtTaxMaxSalary.text) Then
+                MessageBox.Show("Maximum salary should be higher than minimum salary.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtTaxMaxSalary.Clear()
                 Exit Sub
             Else
                 Dim maxSalary As Decimal = Val(TxtTaxMaxSalary.Text)
@@ -376,11 +384,16 @@ Public Class FrmMainte
                 Exit Sub
             ElseIf Val(TxtSSSEE.Text <= 0) Then
                 MessageBox.Show("Invalid amount of EE.", "Invalid amount", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtSSSEE.Clear()
                 Exit Sub
             ElseIf Val(TxtSSSER.Text <= 0) Then
                 MessageBox.Show("Invalid amount of ER.", "Invalid amount", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtSSSER.Clear()
                 Exit Sub
-
+            ElseIf Val(TxtSSSMinSalary.text) > Val(TxtSSSMaxSalary.text) Then
+                MessageBox.Show("Maximum salary should be higher than minimum salary.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                TxtSSSMaxSalary.Clear()
+                Exit Sub
             Else
                 Dim minSalary As Decimal
                 If String.IsNullOrEmpty(TxtSSSMinSalary.Text) Then

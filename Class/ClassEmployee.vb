@@ -108,8 +108,7 @@ Public Class ClassEmployee
                 txtsalary.Text = dg.SelectedRows(0).Cells(9).Value
                 cbtype.Text = If(String.IsNullOrEmpty(dg.SelectedRows(0).Cells(10).Value.ToString), "", dg.SelectedRows(0).Cells(10).Value)
                 cbstatus.Text = If(IsDBNull(dg.SelectedRows(0).Cells(11).Value), "", dg.SelectedRows(0).Cells(11).Value)
-                FrmAddEmployee.Show()
-                FrmEmployee.Enabled = False
+                FrmAddEmployee.ShowDialog()
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -123,7 +122,7 @@ Public Class ClassEmployee
             If employeeID = 0 Then
 
                 If cbstatus.Text = "Resigned" Then
-                    MsgBox("Can't set the status to resigned for new employees", MsgBoxStyle.Critical)
+                    MessageBox.Show("Can't set the status to resigned for new employees", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                     Exit Sub
                 End If
 
@@ -142,10 +141,8 @@ Public Class ClassEmployee
                 If cbpos.Text = "Department Head" Then
                     RunQuery("Select * from tbldepartmenthead where departmentID = '" & deptID & "' and employeeID != 0")
                     If ds.Tables("querytable").Rows.Count > 0 Then
-                        MsgBox("There's an assigned Department Head already. Demote the current Department Head to assign a new one.")
+                        MessageBox.Show("There's an assigned Department Head already. Demote the current Department Head to assign a new one.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                         Exit Sub
-
-
                     Else
 
                         'Insert employee
@@ -216,7 +213,7 @@ Public Class ClassEmployee
                             SaveAllowance(empID, txtallowances)
                             SaveSalaryHistory(empID, txtsalary)
                         End If
-                        MsgBox("Saved")
+                        MessageBox.Show("One")
                     End If
 
                 Else
@@ -276,7 +273,7 @@ Public Class ClassEmployee
                         SaveSalaryHistory(empID, txtsalary)
                     End If
                 End If
-                MsgBox("Saved")
+                MessageBox.Show("Two")
             Else
                 GetOldSalary()
                 Dim depID As Integer = cbdept.SelectedValue
@@ -297,7 +294,7 @@ Public Class ClassEmployee
                         'If may assigned Department Head
                         RunQuery("Select * from tbldepartmenthead where departmentID = '" & depID & "' and employeeID !='" & employeeID & "'")
                         If ds.Tables("querytable").Rows.Count > 0 Then
-                            MsgBox("There's an assigned Department Head already. Demote the Department head first.")
+                            MessageBox.Show("There's an assigned Department Head already. Demote the Department head first.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                             Exit Sub
 
                         Else
@@ -365,7 +362,7 @@ Public Class ClassEmployee
                             End If
 
                         End If
-                        MsgBox("Saved")
+                        MessageBox.Show("Three")
 
                     Else
                         'If hindi department head
@@ -421,7 +418,7 @@ Public Class ClassEmployee
                         If ds.Tables("querytable").Rows.Count > 0 Then
                             GetDailyWageOfMonthlyEmployees(employeeID)
                         End If
-                        MsgBox("Saved")
+                        MessageBox.Show("Four")
                     End If
 
                 Else
@@ -494,7 +491,7 @@ Public Class ClassEmployee
                                 If ds.Tables("querytable").Rows.Count > 0 Then
                                     GetDailyWageOfMonthlyEmployees(employeeID)
                                 End If
-                                MsgBox("Saved")
+                                MessageBox.Show("Five")
 
 
                             Else
@@ -560,9 +557,9 @@ Public Class ClassEmployee
                                     If ds.Tables("querytable").Rows.Count > 0 Then
                                         GetDailyWageOfMonthlyEmployees(employeeID)
                                     End If
-                                    MsgBox("Saved")
+                                    MessageBox.Show("Six")
                                 Else
-                                    MsgBox("There's an assigned Department Head already. Demote the current Department Head to assign a new one.")
+                                    MessageBox.Show("There's an assigned Department Head already. Demote the current Department Head to assign a new one.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                                     Exit Sub
                                 End If
                             End If
@@ -629,7 +626,7 @@ Public Class ClassEmployee
 
                             End With
 
-                            MsgBox("Saved")
+                            MessageBox.Show("Seven")
                         End If
                     Else
                         'Magpapalit pero hindi department head
@@ -690,7 +687,7 @@ Public Class ClassEmployee
                             .ExecuteNonQuery()
                             .Parameters.Clear()
                         End With
-                        MsgBox("Saved")
+                        MessageBox.Show("Eight")
                     End If
                 End If
             End If
@@ -853,8 +850,7 @@ Public Class ClassEmployee
             If employeeID > 0 Then
                 RunQuery("Select salary,date from tblsalaryhistory where employeeID = '" & employeeID & "'")
                 If ds.Tables("querytable").Rows.Count > 0 Then
-                    FrmSalaryHistory.Show()
-                    FrmEmployee.Enabled = False
+                    FrmSalaryHistory.ShowDialog()
                 Else
                     MsgBox("There's no salary history available")
                     Exit Sub

@@ -8,17 +8,21 @@ Public Class FrmSignUpAdmin
            String.IsNullOrEmpty(TxtUsername.Text) Then
             MsgEmptyField()
             Exit Sub
-        ElseIf Not Regex.IsMatch(TxtFirstName.Text, forNames) OrElse Not Regex.IsMatch(TxtLastName.Text, forNames) Then
-            NamesMessaegbox()
+        ElseIf Not Regex.IsMatch(TxtFirstName.Text, fornames) Then
+            MessageBox.Show("Invalid first name.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            TxtFirstName.Clear()
             Exit Sub
-        ElseIf Not Regex.IsMatch(TxtFirstName.Text, singleSpace) OrElse Not Regex.IsMatch(TxtLastName.Text, singleSpace) Then
-            NamesMessaegbox()
+        ElseIf Not Regex.IsMatch(TxtLastName.text, fornames) Then
+            MessageBox.Show("Invalid last name.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            TxtLastName.Clear()
             Exit Sub
         ElseIf Not Regex.IsMatch(TxtUsername.Text, noSpace) Then
             MessageBox.Show("Invalid username.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            TxtUsername.Clear()
             Exit Sub
         ElseIf Not Regex.IsMatch(TxtPassword.Text, noSpace) Then
             MessageBox.Show("Invalid Password", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            TxtPassword.Clear()
             Exit Sub
         End If
         Try
@@ -45,7 +49,7 @@ Public Class FrmSignUpAdmin
                 .Parameters.Clear()
             End With
 
-            MsgBox("Registration Success")
+            MessageBox.Show("Admin registered successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             FrmLogin.Show()
             Me.Close()
         Catch ex As Exception

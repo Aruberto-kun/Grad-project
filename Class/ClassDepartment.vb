@@ -6,7 +6,7 @@ Public Class ClassDepartment
             RunQuery("SELECT 
                      a.departmentID, 
                      a.departmentName, 
-                     CONCAT(c.firstname, ' ', c.middlename, ' ', c.lastname) AS departmentHead,
+                     CONCAT(c.firstname, ' ', c.lastname) AS departmentHead,
                      (SELECT COUNT(*) 
                      FROM tblemployee e 
                      WHERE e.departmentID = a.departmentID and e.status != 'Resigned') AS departmentPopulation,
@@ -28,7 +28,7 @@ Public Class ClassDepartment
     Public Shared Sub LoadDepartmentHead(cb As Guna2ComboBox, cbdep As Guna2ComboBox)
         Try
             Dim deptid As Integer = cbdep.SelectedValue
-            RunQuery("Select a.employeeID, CONCAT(a.firstname,' ',a.middlename,' ',a.lastname) as fullname from tblemployee a 
+            RunQuery("Select a.employeeID, CONCAT(a.firstname,' ',a.lastname) as fullname from tblemployee a 
                       where status ='Regular' and departmentID = '" & deptid & "'")
             cb.DisplayMember = "fullname"
             cb.ValueMember = "employeeID"
@@ -110,7 +110,7 @@ Public Class ClassDepartment
                   WHERE
                   a.attendanceID NOT IN (SELECT attendanceID FROM tblovertime)
                   AND a.employeeID IN (SELECT employeeID FROM tbldepartmenthead)
-                  GROUP BY a.attendanceID, b.firstname, b.middlename, b.lastname, a.date, a.login, a.logout, c.timeout
+                  GROUP BY a.attendanceID, b.firstname, b.lastname, a.date, a.login, a.logout, c.timeout
                   HAVING FLOOR(TIME_TO_SEC(TIMEDIFF(a.logout, CONCAT(a.date, ' ', c.timeout))) / 3600) > 0
                   ORDER BY a.attendanceID")
 
@@ -145,7 +145,7 @@ Public Class ClassDepartment
 
     Public Shared Sub LoadFiledFTIO(dg As Guna2DataGridView)
         Try
-            RunQuery("Select a.ftioID 'FTIO ID', concat(b.firstname,' ',b.middlename,' ',b.lastname) 'Full Name',a.date 'Date',a.time 'Time',a.classification 'Classification', a.reason 'Reason',a.status 'Status'
+            RunQuery("Select a.ftioID 'FTIO ID', concat(b.firstname,' ',b.lastname) 'Full Name',a.date 'Date',a.time 'Time',a.classification 'Classification', a.reason 'Reason',a.status 'Status'
             From tblfiledftio a
                       join tblemployee b on b.employeeID = a.employeeID
                       where a.status='Pending' and a.employeeID in (Select employeeID from tbldepartmenthead)")
@@ -180,7 +180,7 @@ Public Class ClassDepartment
     Public Shared Sub LoadFiledLeave(dg As Guna2DataGridView)
         Try
             dg.Rows.Clear()
-            RunQuery("select a.filedleaveID 'Filed Leave ID', CONCAT(b.firstname,' ',b.middlename,' ',b.lastname) 'Full Name', a.leavefrom 'From',a.leaveto 'To',c.leaveType 'Type',a.leavereason 'Reason' from tblfiledleave a
+            RunQuery("select a.filedleaveID 'Filed Leave ID', CONCAT(b.firstname,' ',b.lastname) 'Full Name', a.leavefrom 'From',a.leaveto 'To',c.leaveType 'Type',a.leavereason 'Reason' from tblfiledleave a
                       join tblemployee b on b.employeeID = a.employeeID
                       join tblleave c on c.leaveID = a.leaveID
                       where a.status = 'Pending' and a.employeeID in (Select employeeID from tbldepartmenthead)")

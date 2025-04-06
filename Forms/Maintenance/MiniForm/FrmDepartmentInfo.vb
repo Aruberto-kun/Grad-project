@@ -21,6 +21,10 @@ Public Class FrmDepartmentInfo
             FrmMainte.CbDepartment.DataSource = DisplayDepartment()
             FrmMainte.CbDepartment.DisplayMember = "departmentName"
             FrmMainte.CbDepartment.ValueMember = "departmentID"
+
+            FrmAddEmployee.CbDepartment.DataSource = DisplayDepartment()
+            FrmAddEmployee.CbDepartment.DisplayMember = "departmentName"
+            FrmAddEmployee.CbDepartment.ValueMember = "departmentID"
         End If
     End Sub
 
@@ -32,5 +36,9 @@ Public Class FrmDepartmentInfo
         FrmMainte.CbDepartment.DataSource = DisplayDepartment()
         FrmMainte.CbDepartment.DisplayMember = "departmentName"
         FrmMainte.CbDepartment.ValueMember = "departmentID"
+
+        FrmAddEmployee.CbDepartment.DataSource = DisplayDepartment()
+        FrmAddEmployee.CbDepartment.DisplayMember = "departmentName"
+        FrmAddEmployee.CbDepartment.ValueMember = "departmentID"
     End Sub
 End Class

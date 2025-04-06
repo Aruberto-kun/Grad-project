@@ -56,16 +56,16 @@ Partial Class FrmAddEmployee
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel8 = New System.Windows.Forms.Panel()
         Me.DGVoluntary = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.Panel7 = New System.Windows.Forms.Panel()
-        Me.DGLeaveAllocation = New Guna.UI2.WinForms.Guna2DataGridView()
-        Me.Label10 = New System.Windows.Forms.Label()
         Me.voluntaryID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.voluntaryName = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.amount = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Panel7 = New System.Windows.Forms.Panel()
+        Me.DGLeaveAllocation = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.leaveID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.leaveType = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.days = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Label10 = New System.Windows.Forms.Label()
         Me.Panel3.SuspendLayout()
         Me.Panel10.SuspendLayout()
         Me.Panel4.SuspendLayout()
@@ -110,7 +110,7 @@ Partial Class FrmAddEmployee
         Me.TxtAllowance.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.TxtAllowance.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.TxtAllowance.Location = New System.Drawing.Point(929, 288)
-        Me.TxtAllowance.MaxLength = 45
+        Me.TxtAllowance.MaxLength = 9
         Me.TxtAllowance.Name = "TxtAllowance"
         Me.TxtAllowance.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtAllowance.PlaceholderText = ""
@@ -196,10 +196,11 @@ Partial Class FrmAddEmployee
         Me.CbAssociateStatus.Dock = System.Windows.Forms.DockStyle.Top
         Me.CbAssociateStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.CbAssociateStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CbAssociateStatus.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CbAssociateStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CbAssociateStatus.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.CbAssociateStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.CbAssociateStatus.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.CbAssociateStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.CbAssociateStatus.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.CbAssociateStatus.ItemHeight = 30
         Me.CbAssociateStatus.Items.AddRange(New Object() {"Probationary", "Regular", "Resigned"})
         Me.CbAssociateStatus.Location = New System.Drawing.Point(929, 207)
@@ -226,10 +227,11 @@ Partial Class FrmAddEmployee
         Me.CbCompensationType.Dock = System.Windows.Forms.DockStyle.Top
         Me.CbCompensationType.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.CbCompensationType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CbCompensationType.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CbCompensationType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CbCompensationType.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.CbCompensationType.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.CbCompensationType.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.CbCompensationType.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.CbCompensationType.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.CbCompensationType.ItemHeight = 30
         Me.CbCompensationType.Items.AddRange(New Object() {"Daily", "Monthly"})
         Me.CbCompensationType.Location = New System.Drawing.Point(929, 126)
@@ -263,7 +265,7 @@ Partial Class FrmAddEmployee
         Me.TxtSalary.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.TxtSalary.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.TxtSalary.Location = New System.Drawing.Point(929, 45)
-        Me.TxtSalary.MaxLength = 45
+        Me.TxtSalary.MaxLength = 9
         Me.TxtSalary.Name = "TxtSalary"
         Me.TxtSalary.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtSalary.PlaceholderText = ""
@@ -316,10 +318,11 @@ Partial Class FrmAddEmployee
         Me.CbPosition.Dock = System.Windows.Forms.DockStyle.Top
         Me.CbPosition.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.CbPosition.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CbPosition.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CbPosition.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CbPosition.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.CbPosition.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.CbPosition.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.CbPosition.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.CbPosition.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.CbPosition.ItemHeight = 30
         Me.CbPosition.Location = New System.Drawing.Point(0, 366)
         Me.CbPosition.Name = "CbPosition"
@@ -345,10 +348,11 @@ Partial Class FrmAddEmployee
         Me.CbDepartment.Dock = System.Windows.Forms.DockStyle.Top
         Me.CbDepartment.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
         Me.CbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CbDepartment.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CbDepartment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(94, Byte), Integer), CType(CType(148, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CbDepartment.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.CbDepartment.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.CbDepartment.Font = New System.Drawing.Font("Segoe UI", 10.0!)
         Me.CbDepartment.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
+        Me.CbDepartment.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.CbDepartment.ItemHeight = 30
         Me.CbDepartment.Location = New System.Drawing.Point(0, 286)
         Me.CbDepartment.Name = "CbDepartment"
@@ -381,7 +385,7 @@ Partial Class FrmAddEmployee
         Me.TxtRfidNumber.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.TxtRfidNumber.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.TxtRfidNumber.Location = New System.Drawing.Point(0, 206)
-        Me.TxtRfidNumber.MaxLength = 45
+        Me.TxtRfidNumber.MaxLength = 10
         Me.TxtRfidNumber.Name = "TxtRfidNumber"
         Me.TxtRfidNumber.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtRfidNumber.PlaceholderText = ""
@@ -535,6 +539,32 @@ Partial Class FrmAddEmployee
         Me.DGVoluntary.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DGVoluntary.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
+        'voluntaryID
+        '
+        Me.voluntaryID.DataPropertyName = "voluntaryID"
+        Me.voluntaryID.HeaderText = "Voluntary ID"
+        Me.voluntaryID.Name = "voluntaryID"
+        Me.voluntaryID.ReadOnly = True
+        Me.voluntaryID.Visible = False
+        '
+        'voluntaryName
+        '
+        Me.voluntaryName.DataPropertyName = "name"
+        Me.voluntaryName.HeaderText = "Voluntary Contribution Name"
+        Me.voluntaryName.MinimumWidth = 8
+        Me.voluntaryName.Name = "voluntaryName"
+        Me.voluntaryName.ReadOnly = True
+        Me.voluntaryName.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
+        'amount
+        '
+        Me.amount.DataPropertyName = "amount"
+        Me.amount.HeaderText = "Amount"
+        Me.amount.MaxInputLength = 6
+        Me.amount.MinimumWidth = 8
+        Me.amount.Name = "amount"
+        Me.amount.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
+        '
         'Label7
         '
         Me.Label7.Dock = System.Windows.Forms.DockStyle.Top
@@ -611,43 +641,6 @@ Partial Class FrmAddEmployee
         Me.DGLeaveAllocation.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DGLeaveAllocation.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
-        'Label10
-        '
-        Me.Label10.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label10.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(929, 415)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(919, 44)
-        Me.Label10.TabIndex = 30
-        Me.Label10.Text = "Manage Leave"
-        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'voluntaryID
-        '
-        Me.voluntaryID.DataPropertyName = "voluntaryID"
-        Me.voluntaryID.HeaderText = "Voluntary ID"
-        Me.voluntaryID.Name = "voluntaryID"
-        Me.voluntaryID.ReadOnly = True
-        Me.voluntaryID.Visible = False
-        '
-        'voluntaryName
-        '
-        Me.voluntaryName.DataPropertyName = "name"
-        Me.voluntaryName.HeaderText = "Voluntary Contribution Name"
-        Me.voluntaryName.MinimumWidth = 8
-        Me.voluntaryName.Name = "voluntaryName"
-        Me.voluntaryName.ReadOnly = True
-        Me.voluntaryName.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        '
-        'amount
-        '
-        Me.amount.DataPropertyName = "amount"
-        Me.amount.HeaderText = "Amount"
-        Me.amount.MaxInputLength = 6
-        Me.amount.MinimumWidth = 8
-        Me.amount.Name = "amount"
-        Me.amount.Resizable = System.Windows.Forms.DataGridViewTriState.[False]
-        '
         'leaveID
         '
         Me.leaveID.DataPropertyName = "leaveID"
@@ -668,6 +661,17 @@ Partial Class FrmAddEmployee
         Me.days.DataPropertyName = "days"
         Me.days.HeaderText = "Days"
         Me.days.Name = "days"
+        '
+        'Label10
+        '
+        Me.Label10.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label10.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(929, 415)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(919, 44)
+        Me.Label10.TabIndex = 30
+        Me.Label10.Text = "Manage Leave"
+        Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'FrmAddEmployee
         '

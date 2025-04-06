@@ -108,9 +108,8 @@ Public Class FrmEmployee
     End Sub
 
     Private Sub BtnAddAssociate_Click(sender As Object, e As EventArgs) Handles BtnAddAssociate.Click
-        FrmAddEmployee.Show()
+        FrmAddEmployee.ShowDialog()
         FrmAddEmployee.BringToFront()
-        Me.Enabled = False
     End Sub
 
     Private Sub DgEmployee_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgEmployee.CellClick
