@@ -45,7 +45,7 @@ Public Class ClassDepartmentHeadControls
             MsgBox(ex.Message)
         End Try
     End Sub
-    Public Shared Sub NewSchedule(cbemp As Guna2ComboBox, clb As CheckedListBox, mtbtimein As MaskedTextBox, mtbtimeout As MaskedTextBox, mtbbreakin As MaskedTextBox, mtbbreakout As MaskedTextBox)
+    Public Shared Sub NewSchedule(cbemp As Guna2ComboBox, clb As CheckedListBox, mtbtimein As MaskedTextBox, mtbtimeout As MaskedTextBox, mtbbreakin As String, mtbbreakout As String)
         Try
             Dim employeeID As Integer = cbemp.SelectedValue
             Dim timein As String = mtbtimein.Text
@@ -101,23 +101,15 @@ Public Class ClassDepartmentHeadControls
 
             hoursDiff = (valtimeOut - valtimeIn).TotalHours
 
-            Dim valbreakin As TimeSpan = TimeSpan.Parse(mtbbreakin.Text)
-            Dim valbreakout As TimeSpan = TimeSpan.Parse(mtbbreakout.Text)
-            Dim breaktotaldiff As Double
-            If valbreakout < valbreakin Then
-                valbreakout = valbreakout.Add(TimeSpan.FromHours(24))
-            End If
-            breaktotaldiff = (valbreakout - valbreakin).TotalHours
-
             Dim workinghours As Double
-            workinghours = hoursDiff - breaktotaldiff
+            workinghours = hoursDiff - 1
 
             With com
                 .Parameters.AddWithValue("@employeeID", employeeID)
                 .Parameters.AddWithValue("@timein", mtbtimein.Text.Trim)
                 .Parameters.AddWithValue("@timeout", mtbtimeout.Text.Trim)
-                .Parameters.AddWithValue("@breakin", mtbbreakin.Text.Trim)
-                .Parameters.AddWithValue("@breakout", mtbbreakout.Text.Trim)
+                .Parameters.AddWithValue("@breakin", mtbbreakin.Trim)
+                .Parameters.AddWithValue("@breakout", mtbbreakout.Trim)
                 .Parameters.AddWithValue("@noofhours", workinghours)
                 .ExecuteNonQuery()
                 .Parameters.Clear()
@@ -131,8 +123,6 @@ Public Class ClassDepartmentHeadControls
             Next
             mtbtimein.Clear()
             mtbtimeout.Clear()
-            mtbbreakin.Clear()
-            mtbbreakout.Clear()
             Auditing($"{FrmDepartmentHeadControls.LblName.Text} set {FrmDepartmentHeadControls.CbEmployees.Text}'s schedule.")
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -183,7 +173,7 @@ Public Class ClassDepartmentHeadControls
             MsgBox(ex.Message)
         End Try
     End Sub
-    Public Shared Sub LoadSchedule(cbemp As Guna2ComboBox, clb As CheckedListBox, mtbtimein As MaskedTextBox, mtbtimeout As MaskedTextBox, mtbbreakin As MaskedTextBox, mtbbreakout As MaskedTextBox)
+    Public Shared Sub LoadSchedule(cbemp As Guna2ComboBox, clb As CheckedListBox, mtbtimein As MaskedTextBox, mtbtimeout As MaskedTextBox)
         Try
             Dim employeeID As Integer = cbemp.SelectedValue
             If employeeID = 0 Then
@@ -202,8 +192,6 @@ Public Class ClassDepartmentHeadControls
                 Next
                 mtbtimein.Clear()
                 mtbtimeout.Clear()
-                mtbbreakin.Clear()
-                mtbbreakout.Clear()
                 Exit Sub
             End If
 
@@ -230,8 +218,6 @@ Public Class ClassDepartmentHeadControls
             Else
                 mtbtimein.Text = ds.Tables("querytable").Rows(0)(0).ToString
                 mtbtimeout.Text = ds.Tables("querytable").Rows(0)(1).ToString
-                mtbbreakin.Text = ds.Tables("querytable").Rows(0)(2).ToString
-                mtbbreakout.Text = ds.Tables("querytable").Rows(0)(3).ToString
             End If
 
         Catch ex As Exception

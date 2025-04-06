@@ -40,12 +40,6 @@ Public Class FrmDepartmentHeadControls
         ElseIf Not Regex.IsMatch(MtbTimeOut.Text, timePattern) Then
             MessageBox.Show("Invalid time format.")
             Exit Sub
-        ElseIf Not Regex.IsMatch(mtbBreakin.Text, timePattern) Then
-            MessageBox.Show("Invalid time format.")
-            Exit Sub
-        ElseIf Not Regex.IsMatch(mtbBreakOut.Text, timePattern) Then
-            MessageBox.Show("Invalid time format.")
-            Exit Sub
         End If
         Try
             ' Parse times into DateTime objects
@@ -55,9 +49,7 @@ Public Class FrmDepartmentHeadControls
             Dim breakOut As DateTime
 
             If DateTime.TryParse(MtbTimeIn.Text, timeIn) AndAlso
-        DateTime.TryParse(MtbTimeOut.Text, timeOut) AndAlso
-        DateTime.TryParse(mtbBreakin.Text, breakIn) AndAlso
-        DateTime.TryParse(mtbBreakOut.Text, breakOut) Then
+        DateTime.TryParse(MtbTimeOut.Text, timeOut) Then
 
                 ' Validate that break times are within the range of time in and time out
                 If breakIn < timeIn OrElse breakIn > timeOut Then
@@ -80,7 +72,7 @@ Public Class FrmDepartmentHeadControls
                 Exit Sub
             End If
 
-            ClassDepartmentHeadControls.NewSchedule(CbEmployees, CLBSchedule, MtbTimeIn, MtbTimeOut, mtbBreakin, mtbBreakOut)
+            ClassDepartmentHeadControls.NewSchedule(CbEmployees, CLBSchedule, MtbTimeIn, MtbTimeOut, "12:00", "1:00")
 
         Catch ex As Exception
 
@@ -95,7 +87,7 @@ Public Class FrmDepartmentHeadControls
     End Sub
     Private Sub CbEmployees_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CbEmployees.SelectedIndexChanged
         Try
-            ClassDepartmentHeadControls.LoadSchedule(CbEmployees, CLBSchedule, MtbTimeIn, MtbTimeOut, mtbBreakin, mtbBreakOut)
+            ClassDepartmentHeadControls.LoadSchedule(CbEmployees, CLBSchedule, MtbTimeIn, MtbTimeOut)
 
         Catch ex As Exception
 
