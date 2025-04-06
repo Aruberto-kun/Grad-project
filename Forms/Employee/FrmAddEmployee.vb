@@ -5,6 +5,11 @@ Imports System.Text.RegularExpressions
 Public Class FrmAddEmployee
     Private Sub BtnCancel_Click(sender As Object, e As EventArgs) Handles BtnCancel.Click
         Me.Close()
+        TxtAllowance.Clear()
+        TxtFirstName.Clear()
+        TxtLastname.Clear()
+        TxtRfidNumber.Clear()
+        TxtSalary.Clear()
     End Sub
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
