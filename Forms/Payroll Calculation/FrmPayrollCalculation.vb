@@ -113,7 +113,7 @@ Public Class FrmPayrollCalculation
                 Exit Sub
             End If
             '
-            NewPayrollPeriod(TxtPayrollPeriodName, DTPFrom, DTPTo, RBYes)
+            ClassPayrollCalculation.NewPayrollPeriod(TxtPayrollPeriodName, DTPFrom, DTPTo, RBYes)
             ClassPayrollCalculation.LoadPayrollPeriod(DGPayrollPeriod)
 
         Catch ex As Exception

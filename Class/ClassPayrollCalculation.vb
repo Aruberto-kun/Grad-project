@@ -169,7 +169,7 @@ Public Class ClassPayrollCalculation
     End Sub
     Public Shared Sub LoadEmployees(cbemployee As Guna2ComboBox)
         Try
-            RunQuery("SELECT e.employeeID, CONCAT(e.firstname, ' ', e.middlename, ' ', e.lastname) AS fullname
+            RunQuery("SELECT e.employeeID, CONCAT(e.firstname, ' ', e.lastname) AS fullname
                       FROM tblemployee e
                       WHERE e.employeeID NOT IN (
                       SELECT p.employeeID

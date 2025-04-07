@@ -11,25 +11,25 @@ Public Class FrmReport
             dt.Clear()
             Dim status As String
             If CbStatus.SelectedIndex = 0 Then
-                adp = New MySqlDataAdapter("Select e.employeeNumber, e.rfidnumber, CONCAT(e.firstname,' ',e.middlename,' ',e.lastname) as fullname, d.departmentName, p.positionName, e.status from tblemployee e
+                adp = New MySqlDataAdapter("Select e.employeeNumber, e.rfidnumber, CONCAT(e.firstname,' ',e.lastname) as fullname, d.departmentName, p.positionName, e.status from tblemployee e
                                         LEFT JOIN tbldepartment d on d.departmentID = e.departmentID
                                         LEFT JOIN tblposition p on p.positionID = e.positionID
                                         ORDER by e.employeeNumber", conn)
             ElseIf CbStatus.SelectedIndex = 1 Then
                 status = "Regular"
-                adp = New MySqlDataAdapter("Select e.employeeNumber, e.rfidnumber, CONCAT(e.firstname,' ',e.middlename,' ',e.lastname) as fullname, d.departmentName, p.positionName, e.status from tblemployee e
+                adp = New MySqlDataAdapter("Select e.employeeNumber, e.rfidnumber, CONCAT(e.firstname,' ',e.lastname) as fullname, d.departmentName, p.positionName, e.status from tblemployee e
                                     LEFT JOIN tbldepartment d on d.departmentID = e.departmentID
                                     LEFT JOIN tblposition p on p.positionID = e.positionID
                                     where e.status = '" & status & "' ORDER by e.employeeNumber", conn)
             ElseIf CbStatus.SelectedIndex = 2 Then
                 status = "Probationary"
-                adp = New MySqlDataAdapter("Select e.employeeNumber, e.rfidnumber, CONCAT(e.firstname,' ',e.middlename,' ',e.lastname) as fullname, d.departmentName, p.positionName, e.status from tblemployee e
+                adp = New MySqlDataAdapter("Select e.employeeNumber, e.rfidnumber, CONCAT(e.firstname,' ',e.lastname) as fullname, d.departmentName, p.positionName, e.status from tblemployee e
                                     LEFT JOIN tbldepartment d on d.departmentID = e.departmentID
                                     LEFT JOIN tblposition p on p.positionID = e.positionID
                                     where e.status = '" & status & "' ORDER by e.employeeNumber", conn)
             Else
                 status = "Resigned"
-                adp = New MySqlDataAdapter("Select e.employeeNumber, e.rfidnumber, CONCAT(e.firstname,' ',e.middlename,' ',e.lastname) as fullname, d.departmentName, p.positionName, e.status from tblemployee e
+                adp = New MySqlDataAdapter("Select e.employeeNumber, e.rfidnumber, CONCAT(e.firstname,' ',e.lastname) as fullname, d.departmentName, p.positionName, e.status from tblemployee e
                                     LEFT JOIN tbldepartment d on d.departmentID = e.departmentID
                                     LEFT JOIN tblposition p on p.positionID = e.positionID
                                     where e.status = '" & status & "' ORDER by e.employeeNumber", conn)
@@ -70,7 +70,7 @@ Public Class FrmReport
                 )
                 SELECT DISTINCT
                 e.employeeNumber,
-                CONCAT(e.firstname,' ',e.middlename,' ',e.lastname) as fullname,
+                CONCAT(e.firstname,' ',e.lastname) as fullname,
                 dep.departmentName,
                 dr.date,
                 IF(att.login is null,'No Record',TIME(att.login)) as login,
@@ -106,7 +106,7 @@ Public Class FrmReport
             dt.Clear()
 
             adp = New MySqlDataAdapter("SELECT 
-                CONCAT(eh.firstname, ' ', eh.middlename, ' ', eh.lastname) AS fullname,
+                CONCAT(eh.firstname, ' ', eh.lastname) AS fullname,
                 d.departmentName,
                 COUNT(e.employeeID) AS noofemployees
                 FROM 

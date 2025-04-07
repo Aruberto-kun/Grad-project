@@ -111,7 +111,7 @@ Public Class FrmAssociate
                 dt = New DataTable("DT_Department")
                 dt.Clear()
 
-                adp = New MySqlDataAdapter("Select CONCAT(pp.datefrom,' to ',pp.dateto) as payrollperiod, e.employeeNumber, CONCAT(e.firstname,' ',e.middlename,' ',e.lastname) as name,
+                adp = New MySqlDataAdapter("Select CONCAT(pp.datefrom,' to ',pp.dateto) as payrollperiod, e.employeeNumber, CONCAT(e.firstname,' ',e.lastname) as name,
                                         p.overtime,p.allowance,p.incentives,p.nightdifferential,p.late,p.undertime,p.voluntary,p.sss,p.philhealth,p.pagibig,p.tax,p.totalincrease,
                                         p.totaldeduc,p.grosspay, (p.totalincrease + p.grosspay) as totalearning, p.netpay from tblpayrollperiod pp
                                         LEFT JOIN tblpayroll p on p.payrollperiodID = pp.payrollperiodID

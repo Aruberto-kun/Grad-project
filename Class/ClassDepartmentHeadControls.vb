@@ -26,7 +26,7 @@ Public Class ClassDepartmentHeadControls
     End Sub
     Public Shared Sub LoadEmployees(cb As Guna2ComboBox)
         Try
-            RunQuery("Select employeeID,concat(firstname,' ',middlename,' ',lastname) as fullname from tblemployee where status !='Resigned' and departmentID = '" & departmentID & "'")
+            RunQuery("Select employeeID,concat(firstname,' ',lastname) as fullname from tblemployee where status !='Resigned' and departmentID = '" & departmentID & "'")
             cb.DisplayMember = "fullname"
             cb.ValueMember = "employeeID"
             cb.DataSource = ds.Tables("querytable")
@@ -37,7 +37,7 @@ Public Class ClassDepartmentHeadControls
     End Sub
     Public Shared Sub LoadAttendance(dg As Guna2DataGridView)
         Try
-            RunQuery("Select a.attendanceID, b.employeeNumber,concat(b.firstname,' ',b.middlename,' ',b.lastname) as fullname, a.date, TIME(a.login) as login, TIME(a.logout) as logout, a.report as report from tblattendance a
+            RunQuery("Select a.attendanceID, b.employeeNumber,concat(b.firstname,' ',b.lastname) as fullname, a.date, TIME(a.login) as login, TIME(a.logout) as logout, a.report as report from tblattendance a
                       join tblemployee b on b.employeeID = a.employeeID
                       WHERE b.departmentID = '" & departmentID & "'")
             dg.DataSource = ds.Tables("querytable")
@@ -466,7 +466,7 @@ Public Class ClassDepartmentHeadControls
                   WHERE b.departmentID = '" & departmentID & "' 
                   AND a.attendanceID NOT IN (SELECT attendanceID FROM tblovertime)
                   AND a.employeeID NOT IN (SELECT employeeID FROM tbldepartmenthead)
-                  GROUP BY a.attendanceID, b.firstname, b.middlename, b.lastname, a.date, a.login, a.logout, c.timeout
+                  GROUP BY a.attendanceID, b.firstname, b.lastname, a.date, a.login, a.logout, c.timeout
                   HAVING FLOOR(TIME_TO_SEC(TIMEDIFF(a.logout, CONCAT(a.date, ' ', c.timeout))) / 3600) > 0
                   ORDER BY a.attendanceID")
 
@@ -504,7 +504,7 @@ Public Class ClassDepartmentHeadControls
             RunQuery("SELECT 
                       a.attendanceID AS 'Attendance ID',
                       a.employeeID as 'Employee ID',
-                      CONCAT(b.firstname, ' ', b.middlename, ' ', b.lastname) AS 'Full Name',
+                      CONCAT(b.firstname, ' ', b.lastname) AS 'Full Name',
                       a.date AS 'Attendance Date',
                       a.login AS 'Login',
                       a.logout AS 'Logout',
@@ -517,7 +517,7 @@ Public Class ClassDepartmentHeadControls
                       LEFT JOIN tblemployee b ON b.employeeID = a.employeeID
                       LEFT JOIN tbltimeschedule c ON c.employeeID = a.employeeID
                       WHERE b.departmentID = '" & departmentID & "' AND a.attendanceID NOT IN (SELECT attendanceID FROM tblovertime)
-                      GROUP BY a.attendanceID, b.firstname, b.middlename, b.lastname, a.date, a.login, a.logout, c.timeout
+                      GROUP BY a.attendanceID, b.firstname, b.lastname, a.date, a.login, a.logout, c.timeout
                       HAVING FLOOR(TIME_TO_SEC(TIMEDIFF(a.logout, CONCAT(a.date, ' ', c.timeout))) / 3600) > 0
                       ORDER BY a.attendanceID")
             Dim count As Integer = ds.Tables("querytable").Rows.Count
