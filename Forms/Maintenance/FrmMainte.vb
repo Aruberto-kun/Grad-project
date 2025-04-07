@@ -72,8 +72,10 @@ Public Class FrmMainte
             NewDepartment(TxtDepartment.Text)
             Auditing($"{FrmMain.fullName} created a new department: {TxtDepartment.Text}")
             DgDepartment.DataSource = DisplayDepartment()
+
             DgPosition.DataSource = DisplayPosition()
             TxtDepartment.Clear()
+
             CbDepartment.DataSource = DisplayDepartment()
             CbDepartment.DisplayMember = "departmentName"
             CbDepartment.ValueMember = "departmentID"

@@ -1,6 +1,8 @@
 ﻿Imports System.Text.RegularExpressions
 
 Public Class FrmLeaveInfo
+
+    Dim leave As String = ""
     Private Sub BtnUpdate_Click(sender As Object, e As EventArgs) Handles BtnUpdate.Click
         If String.IsNullOrEmpty(TxtLeave.Text) Then
             MsgEmptyField()
@@ -10,6 +12,7 @@ Public Class FrmLeaveInfo
             Exit Sub
         Else
             UpdateLeave(MdlMaintenance.leaveID, TxtLeave.Text)
+            Auditing($"{FrmMain.fullName} updated the leave {leave} to {TxtLeave.Text}")
             Me.Close()
             FrmMainte.dgLeave.DataSource = DisplayLeave()
         End If
@@ -17,11 +20,16 @@ Public Class FrmLeaveInfo
 
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
         DeleteLeave(MdlMaintenance.leaveID)
+        Auditing($"{FrmMain.fullName} set the leave {leave} to inactive.")
         Me.Close()
         FrmMainte.dgLeave.DataSource = DisplayLeave()
     End Sub
 
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         Me.Close()
+    End Sub
+
+    Private Sub FrmLeaveInfo_Load(sender As Object, e As EventArgs) Handles Me.Load
+        leave = TxtLeave.Text
     End Sub
 End Class

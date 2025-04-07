@@ -18,10 +18,12 @@ Public Class FrmDepartmentInfo
             Exit Sub
         Else
             UpdateDepartment(MdlMaintenance.departmentID, TxtDepartment.Text)
-            Auditing($"{FrmMain.fullName} updated the department {department} to {TxtDepartment.Text}")
+            Auditing($"{FrmMain.fullName} updated the department from {department} to {TxtDepartment.Text}")
             Me.Close()
             FrmMainte.DgDepartment.DataSource = DisplayDepartment()
+
             FrmMainte.DgPosition.DataSource = DisplayPosition()
+
             FrmMainte.CbDepartment.DataSource = DisplayDepartment()
             FrmMainte.CbDepartment.DisplayMember = "departmentName"
             FrmMainte.CbDepartment.ValueMember = "departmentID"
@@ -29,11 +31,14 @@ Public Class FrmDepartmentInfo
             FrmAddEmployee.CbDepartment.DataSource = DisplayDepartment()
             FrmAddEmployee.CbDepartment.DisplayMember = "departmentName"
             FrmAddEmployee.CbDepartment.ValueMember = "departmentID"
+
+
         End If
     End Sub
 
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
         DeleteDepartment(MdlMaintenance.departmentID)
+        Auditing($"{FrmMain.fullName} set the {department} to inactive.")
         Me.Close()
         FrmMainte.DgDepartment.DataSource = DisplayDepartment()
         FrmMainte.DgPosition.DataSource = DisplayPosition()

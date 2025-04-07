@@ -80,11 +80,11 @@ Module MdlMaintenance
                 MessageBox.Show("Department added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
             End If
         Catch ex As MySqlException
-            If ex.Number = 1062 Then
-                MessageBox.Show("Department already exist.", "Duplicate entry", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Else
-                MessageBox.Show(ex.Message)
-            End If
+        If ex.Number = 1062 Then
+            MessageBox.Show("Department already exist.", "Duplicate entry", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        Else
+            MessageBox.Show(ex.Message)
+        End If
         End Try
     End Sub
 
@@ -113,17 +113,17 @@ Module MdlMaintenance
     End Sub
 
     Public Sub UpdateDepartment(departmentID As Integer, departmentName As String)
-        Try
-            Dim command As New MySqlCommand("UPDATE tblDepartment SET departmentName = @departmentName WHERE departmentID = @departmentID", connection)
+        'Try
+        Dim command As New MySqlCommand("UPDATE tblDepartment SET departmentName = @departmentName WHERE departmentID = @departmentID", connection)
             command.Parameters.AddWithValue("@departmentName", departmentName)
             command.Parameters.AddWithValue("@departmentID", departmentID)
             command.ExecuteNonQuery()
             MessageBox.Show("Department updated successfully.")
-        Catch ex As MySqlException
-            If ex.Number = 1062 Then
-                MessageBox.Show("Department name already exist.", "Duplicate entry", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            End If
-        End Try
+        'Catch ex As MySqlException
+        '    If ex.Number = 1062 Then
+        '        MessageBox.Show("Department name already exist.", "Duplicate entry", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        '    End If
+        'End Try
     End Sub
 
     Public Sub DeleteDepartment(departmentID As Integer)
