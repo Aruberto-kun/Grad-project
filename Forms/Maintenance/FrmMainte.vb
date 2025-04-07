@@ -70,6 +70,7 @@ Public Class FrmMainte
             Exit Sub
         Else
             NewDepartment(TxtDepartment.Text)
+            Auditing($"{FrmMain.fullName} created a new department: {TxtDepartment.Text}")
             DgDepartment.DataSource = DisplayDepartment()
             DgPosition.DataSource = DisplayPosition()
             TxtDepartment.Clear()
@@ -95,6 +96,7 @@ Public Class FrmMainte
             If CbDepartment.SelectedValue IsNot Nothing AndAlso Not String.IsNullOrEmpty(TxtPosition.Text) Then
                 Dim departmentID As Integer = Convert.ToInt32(CbDepartment.SelectedValue)
                 NewPosition(departmentID, TxtPosition.Text)
+                Auditing($"{FrmMain.fullName} created a new position: {TxtPosition.Text}")
                 CbDepartment.SelectedIndex = 0
                 TxtPosition.Clear()
                 DgPosition.DataSource = DisplayPosition()
@@ -114,6 +116,7 @@ Public Class FrmMainte
             Exit Sub
         Else
             NewLeave(TxtLeave.Text)
+            Auditing($"{FrmMain.fullName} created a new type of leave: {TxtLeave.Text}")
             dgLeave.DataSource = DisplayLeave()
             TxtLeave.Clear()
         End If
@@ -129,6 +132,7 @@ Public Class FrmMainte
             Exit Sub
         Else
             NewIncentives(TxtIncentives.Text)
+            Auditing($"{FrmMain.fullName} created a new type of incentives: {TxtIncentives.Text}")
             DgIncentives.DataSource = DisplayIncentive()
             TxtIncentives.Clear()
         End If
@@ -143,6 +147,7 @@ Public Class FrmMainte
             Exit Sub
         Else
             NewHoliday(DtHoliday.Value, TxtHoliday.Text, CbClassification.SelectedItem.ToString)
+            Auditing($"{FrmMain.fullName} {TxtHoliday.Text} on {DtHoliday.Value}")
             dgHoliday.DataSource = DisplayHoliday()
             TxtHoliday.Clear()
         End If
@@ -157,6 +162,7 @@ Public Class FrmMainte
             Exit Sub
         Else
             NewVoluntary(TxtVoluntary.Text)
+            Auditing($"{FrmMain.fullName} created a new type of voluntary: {TxtVoluntary.Text}")
             DgVoluntary.DataSource = DisplayVoluntary()
             TxtVoluntary.Clear()
         End If
@@ -255,6 +261,7 @@ Public Class FrmMainte
                 Dim fixedAmount As Decimal = Val(TxtTaxFixedAmount.Text)
                 Dim taxPercentage As Integer = Val(TxtTaxPercentage.Text)
                 NewTaxDaily(minSalary, maxSalary, fixedAmount, taxPercentage)
+                Auditing($"{FrmMain.fullName} updated the tax table (Daily)")
                 CbTaxClassification.SelectedIndex = 0
                 dgTax.DataSource = DisplayTaxDaily()
                 Dim maxSalaryOne As Decimal = GetMaxSalary(CbTaxClassification)
@@ -315,6 +322,7 @@ Public Class FrmMainte
                 Dim fixedAmount As Decimal = Val(TxtTaxFixedAmount.Text)
                 Dim taxPercentage As Integer = Val(TxtTaxPercentage.Text)
                 NewTaxMonthly(minSalary, maxSalary, fixedAmount, taxPercentage)
+                Auditing($"{FrmMain.fullName} updated the tax table (Monthly)")
                 CbTaxClassification.SelectedIndex = 1
                 dgTax.DataSource = DisplayTaxMonthly()
                 Dim maxSalaryOne As Decimal = GetMaxSalary(CbTaxClassification)
@@ -329,6 +337,7 @@ Public Class FrmMainte
     Private Sub BtnDeleteTax_Click(sender As Object, e As EventArgs) Handles BtnDeleteTax.Click
         If CbTaxClassification.SelectedIndex = 0 Then
             DeleteTaxDaily()
+            Auditing($"{FrmMain.fullName} deleted the last row of the tax table (Daily)")
             CbTaxClassification.SelectedIndex = 0
             dgTax.DataSource = DisplayTaxDaily()
             Dim maxSalaryOne As Decimal = GetMaxSalary(CbTaxClassification)
@@ -339,6 +348,7 @@ Public Class FrmMainte
             Exit Sub
         ElseIf CbTaxClassification.SelectedIndex = 1 Then
             DeleteTaxMonthly()
+            Auditing($"{FrmMain.fullName} deleted the last row of the tax table (Monthly)")
             CbTaxClassification.SelectedIndex = 1
             dgTax.DataSource = DisplayTaxMonthly()
             Dim maxSalaryOne As Decimal = GetMaxSalary(CbTaxClassification)
@@ -403,6 +413,7 @@ Public Class FrmMainte
                     minSalary = Val(TxtSSSMinSalary.Text)
                 End If
                 NewSSS(minSalary, Val(TxtSSSMaxSalary.Text), Val(TxtSSSEE.Text), Val(TxtSSSER.Text))
+                Auditing($"{FrmMain.fullName} updated the SSS table")
                 dgSSS.DataSource = DisplaySSS()
                 Dim sssMaxSalary As Decimal = SSSGetMaxSalary()
                 TxtSSSMinSalary.Text = sssMaxSalary
@@ -422,6 +433,7 @@ Public Class FrmMainte
         End If
         If MessageBox.Show("Are you sure you want to delete this SSS?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
             DeleteSSS()
+            Auditing($"{FrmMain.fullName} deleted the last of the SSS table.")
             dgSSS.DataSource = DisplaySSS()
             TxtSSSMinSalary.Text = SSSGetMaxSalary()
             Exit Sub
@@ -450,6 +462,7 @@ Public Class FrmMainte
                 Exit Sub
             Else
                 NewPagibig(TxtPagibigRate.Text)
+                Auditing($"{FrmMain.fullName} updated the PAG-IBIG table.")
                 dgPagibig.DataSource = DisplayPagIbig()
                 TxtPagibigRate.Clear()
             End If
@@ -481,6 +494,7 @@ Public Class FrmMainte
                 Exit Sub
             Else
                 NewPhilhealth(Convert.ToInt32(txtPhilhealthRate.Text))
+                Auditing($"{FrmMain.fullName} updated the PhilHealth table.")
                 dgPhilhealth.DataSource = DisplayPhilhealth()
                 txtPhilhealthRate.Clear()
             End If

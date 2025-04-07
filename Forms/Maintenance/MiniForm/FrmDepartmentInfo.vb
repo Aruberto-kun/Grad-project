@@ -1,6 +1,9 @@
 ﻿Imports System.Text.RegularExpressions
 
 Public Class FrmDepartmentInfo
+
+
+    Dim department As String = ""
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         Me.Close()
     End Sub
@@ -15,6 +18,7 @@ Public Class FrmDepartmentInfo
             Exit Sub
         Else
             UpdateDepartment(MdlMaintenance.departmentID, TxtDepartment.Text)
+            Auditing($"{FrmMain.fullName} updated the department {department} to {TxtDepartment.Text}")
             Me.Close()
             FrmMainte.DgDepartment.DataSource = DisplayDepartment()
             FrmMainte.DgPosition.DataSource = DisplayPosition()
@@ -40,5 +44,9 @@ Public Class FrmDepartmentInfo
         FrmAddEmployee.CbDepartment.DataSource = DisplayDepartment()
         FrmAddEmployee.CbDepartment.DisplayMember = "departmentName"
         FrmAddEmployee.CbDepartment.ValueMember = "departmentID"
+    End Sub
+
+    Private Sub FrmDepartmentInfo_Load(sender As Object, e As EventArgs) Handles Me.Load
+        department = TxtDepartment.Text
     End Sub
 End Class
