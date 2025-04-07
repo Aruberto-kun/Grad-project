@@ -20,6 +20,7 @@ Public Class ClassLogin
             If ds.Tables("querytable").Rows.Count > 0 Then
                 usersid = ds.Tables("querytable").Rows(0)(0)
                 Dim adminname As String = ds.Tables("querytable").Rows(0)(1) & " " & ds.Tables("querytable").Rows(0)(2)
+                FrmMain.fullName = adminname
                 Dim role As String = ds.Tables("querytable").Rows(0)("role")
 
                 RunQuery("Select logged from tblusers where username = '" & username & "' and password ='" & password & "'")

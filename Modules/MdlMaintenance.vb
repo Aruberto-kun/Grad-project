@@ -883,19 +883,6 @@ Module MdlMaintenance
 
 #Region "Others"
 
-    Public Function GetFullName(username As String) As String
-        Dim fullName As String = ""
-
-        RunQuery("SELECT * FROM tblusers WHERE username = '" & username & "' AND status = 'Active'")
-
-        If ds.Tables("querytable").Rows.Count > 0 Then
-            Dim firstname As String = ds.Tables("querytable").Rows(0)("firstname").ToString()
-            Dim lastname As String = ds.Tables("querytable").Rows(0)("lastname").ToString()
-            fullName = firstname & " " & lastname
-        End If
-
-        Return fullName
-    End Function
 
 
     Public Sub Auditing(action As String)
