@@ -1,12 +1,15 @@
 ﻿Imports System.ComponentModel
 
 Public Class FrmMain
+
+    Public fullName As String = ""
     Private Sub BtnMaintenance_Click(sender As Object, e As EventArgs) Handles BtnMaintenance.Click
         DisplayFormPanel(FrmMainte, displaypanel)
     End Sub
 
     Private Sub FrmMain_Load(sender As Object, e As EventArgs) Handles Me.Load
         Timer1.Enabled = True
+        MsgBox(fullName)
     End Sub
 
     Private Sub FrmMain_Resize(sender As Object, e As EventArgs) Handles Me.Resize

@@ -10,6 +10,7 @@ Module MdlFunctions
     Public forNames As String = "^[a-zA-ZÑñ](?!.*[-']{2})[a-zA-ZÑñ,'-]*( [a-zA-ZÑñ](?!.*[-']{2})[a-zA-ZÑñ,'-]*)*$"
     Public forPrice As String = "^\d+(\.\d{1,})?$"
     Public singleSpace As String = "^[^\s]+(\s[^\s]+)*$"
+    Public userName As String = "^[a-zA-Z0-9Ññ]+$"
     Public timePattern As String = "^([01]\d|2[0-3]):[0-5]\d$"
 
     Public Sub MsgEmptyField()
@@ -37,20 +38,6 @@ Module MdlFunctions
         frm.Show()
     End Sub
 
-    Public Sub Auditing(action As String)
-        Dim command As New MySqlCommand("INSERT INTO tblaudit (action, dateActed) VALUES (@action, NOW())", conn)
-        command.Parameters.AddWithValue("@action", action)
-        command.ExecuteNonQuery()
 
-        Dim dt As DataTable = DisplayAudit()
-        FrmAudit.DgAudit.DataSource = dt
-    End Sub
 
-    Public Function DisplayAudit() As DataTable
-        Dim command As New MySqlCommand("SELECT * FROM tblaudit", conn)
-        Dim dt As New DataTable
-        Dim adapter As New MySqlDataAdapter(command)
-        adapter.Fill(dt)
-        Return dt
-    End Function
 End Module

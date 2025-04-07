@@ -83,6 +83,7 @@ Public Class FrmLogin
         Else
             If conn.State = ConnectionState.Open Then
                 ClassLogin.LoginNa(Me, TxtUsername, TxtPassword)
+                FrmMain.fullName = GetFullName(TxtUsername.Text)
             Else
                 MessageBox.Show("Not connected to server", "Not connected to server", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 TxtUsername.Clear()

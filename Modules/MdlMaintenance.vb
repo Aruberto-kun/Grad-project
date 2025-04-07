@@ -880,4 +880,39 @@ Module MdlMaintenance
         Return datatable
     End Function
 #End Region
+
+#Region "Others"
+
+    Public Function GetFullName(username As String) As String
+        Dim fullName As String = ""
+
+        RunQuery("SELECT * FROM tblusers WHERE username = '" & username & "' AND status = 'Active'")
+
+        If ds.Tables("querytable").Rows.Count > 0 Then
+            Dim firstname As String = ds.Tables("querytable").Rows(0)("firstname").ToString()
+            Dim lastname As String = ds.Tables("querytable").Rows(0)("lastname").ToString()
+            fullName = firstname & " " & lastname
+        End If
+
+        Return fullName
+    End Function
+
+
+    Public Sub Auditing(action As String)
+        Dim command As New MySqlCommand("INSERT INTO tblaudit (action, dateActed) VALUES (@action, NOW())", connection)
+        command.Parameters.AddWithValue("@action", action)
+        command.ExecuteNonQuery()
+
+        Dim dt As DataTable = DisplayAudit()
+        FrmAudit.DgAudit.DataSource = dt
+    End Sub
+
+    Public Function DisplayAudit() As DataTable
+        Dim command As New MySqlCommand("SELECT * FROM tblaudit", connection)
+        Dim dt As New DataTable
+        Dim adapter As New MySqlDataAdapter(command)
+        adapter.Fill(dt)
+        Return dt
+    End Function
+#End Region
 End Module

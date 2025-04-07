@@ -52,6 +52,7 @@ Public Class FrmMainte
             Exit Sub
         Else
             NewUser(TxtFirstname.Text, TxtLastname.Text, TxtUsername.Text)
+            Auditing($"{FrmMain.fullName} created a new user account for {TxtFirstname.Text} {TxtLastname.Text}")
             TxtFirstname.Clear()
             TxtLastname.Clear()
             TxtUsername.Clear()

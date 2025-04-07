@@ -106,7 +106,6 @@ Partial Class FrmMain
         Me.LblName.Name = "LblName"
         Me.LblName.Size = New System.Drawing.Size(1061, 85)
         Me.LblName.TabIndex = 2
-        Me.LblName.Text = "Villena, Clifford T."
         Me.LblName.TextAlign = System.Drawing.ContentAlignment.BottomLeft
         '
         'Panel8

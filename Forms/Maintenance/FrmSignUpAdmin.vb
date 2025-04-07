@@ -24,6 +24,10 @@ Public Class FrmSignUpAdmin
             MessageBox.Show("Invalid Password", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             TxtPassword.Clear()
             Exit Sub
+        ElseIf Not Regex.IsMatch(TxtUsername.Text, userName) Then
+            MessageBox.Show("Invalid username.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            TxtUsername.Clear()
+            Exit Sub
         End If
         Try
             Dim lastName As String = StrConv(TxtLastName.Text, VbStrConv.ProperCase)

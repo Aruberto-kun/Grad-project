@@ -35,6 +35,7 @@ Public Class ClassLogin
                 If role = "Admin" Then
                     FrmMain.Show()
                     FrmMain.LblName.Text = adminname
+                    Auditing($"{adminname} has successfully logged in.")
                     DisplayFormPanel(FrmMainte, FrmMain.displaypanel)
                     login.Close()
                     Exit Sub
@@ -45,6 +46,7 @@ Public Class ClassLogin
                 Else
                     FrmMain.Show()
                     FrmMain.LblName.Text = adminname
+                    Auditing($"{adminname} has successfully logged in.")
                     FrmMain.LblPos.Text = role
                     FrmMain.BtnMaintenance.Visible = False
                     FrmMain.Guna2Button3.Visible = False
