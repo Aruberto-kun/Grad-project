@@ -51,28 +51,7 @@ Public Class FrmDepartmentHeadControls
             If DateTime.TryParse(MtbTimeIn.Text, timeIn) AndAlso
         DateTime.TryParse(MtbTimeOut.Text, timeOut) Then
 
-                ' Validate that break times are within the range of time in and time out
-                If breakIn < timeIn OrElse breakIn > timeOut Then
-                    MessageBox.Show("Break In time must be within Time In and Time Out range.")
-                    Exit Sub
-                End If
-
-                If breakOut < timeIn OrElse breakOut > timeOut Then
-                    MessageBox.Show("Break Out time must be within Time In and Time Out range.")
-                    Exit Sub
-                End If
-
-                ' Ensure Break In is before Break Out
-                If breakIn >= breakOut Then
-                    MessageBox.Show("Break In time must be earlier than Break Out time.")
-                    Exit Sub
-                End If
-            Else
-                MessageBox.Show("One or more time values could not be parsed.")
-                Exit Sub
-            End If
-
-            ClassDepartmentHeadControls.NewSchedule(CbEmployees, CLBSchedule, MtbTimeIn, MtbTimeOut, "12:00", "1:00")
+                ClassDepartmentHeadControls.NewSchedule(CbEmployees, CLBSchedule, MtbTimeIn, MtbTimeOut, "12:00", "1:00")
 
         Catch ex As Exception
 
