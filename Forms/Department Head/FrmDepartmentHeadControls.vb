@@ -24,34 +24,25 @@ Public Class FrmDepartmentHeadControls
     End Sub
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
-
-        If CLBSchedule.CheckedItems.Count = 0 Then
-            MsgBox("Please set schedule atleast 1 day")
-            Exit Sub
-        End If
-
-
-        If CbEmployees.SelectedIndex = -1 Then
-            MsgEmptyField()
-            Exit Sub
-        ElseIf Not Regex.IsMatch(MtbTimeIn.Text, timePattern) Then
-            MessageBox.Show("Invalid time format.")
-            Exit Sub
-        ElseIf Not Regex.IsMatch(MtbTimeOut.Text, timePattern) Then
-            MessageBox.Show("Invalid time format.")
-            Exit Sub
-        End If
         Try
-            ' Parse times into DateTime objects
-            Dim timeIn As DateTime
-            Dim timeOut As DateTime
-            Dim breakIn As DateTime
-            Dim breakOut As DateTime
+            If CLBSchedule.CheckedItems.Count = 0 Then
+                MsgBox("Please set schedule atleast 1 day")
+                Exit Sub
+            End If
 
-            If DateTime.TryParse(MtbTimeIn.Text, timeIn) AndAlso
-        DateTime.TryParse(MtbTimeOut.Text, timeOut) Then
 
-                ClassDepartmentHeadControls.NewSchedule(CbEmployees, CLBSchedule, MtbTimeIn, MtbTimeOut, "12:00", "1:00")
+            If CbEmployees.SelectedIndex = -1 Then
+                MsgEmptyField()
+                Exit Sub
+            ElseIf Not Regex.IsMatch(MtbTimeIn.Text, timePattern) Then
+                MessageBox.Show("Invalid time format.")
+                Exit Sub
+            ElseIf Not Regex.IsMatch(MtbTimeOut.Text, timePattern) Then
+                MessageBox.Show("Invalid time format.")
+                Exit Sub
+            End If
+
+            ClassDepartmentHeadControls.NewSchedule(CbEmployees, CLBSchedule, MtbTimeIn, MtbTimeOut, "12:00", "1:00")
 
         Catch ex As Exception
 
