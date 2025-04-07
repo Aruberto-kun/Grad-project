@@ -883,8 +883,6 @@ Module MdlMaintenance
 
 #Region "Others"
 
-
-
     Public Sub Auditing(action As String)
         Dim command As New MySqlCommand("INSERT INTO tblaudit (action, dateActed) VALUES (@action, NOW())", connection)
         command.Parameters.AddWithValue("@action", action)
