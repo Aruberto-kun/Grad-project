@@ -65,4 +65,7 @@ Public Class FrmMain
         DisplayFormPanel(FrmAudit, displaypanel)
     End Sub
 
+    Private Sub BtnAccountSettings_Click(sender As Object, e As EventArgs) Handles BtnAccountSettings.Click
+        DisplayFormPanel(FrmAccountSettings, displaypanel)
+    End Sub
 End Class

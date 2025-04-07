@@ -899,5 +899,48 @@ Module MdlMaintenance
         adapter.Fill(dt)
         Return dt
     End Function
+
+    Public firstname As String = ""
+    Public lastname As String = ""
+    Public profileUsername As String = ""
+
+
+    Public Sub GetInfo(username As String)
+        Try
+            Dim query As String = "SELECT userID, firstname, lastname, username FROM tblUsers WHERE username = @username"
+            Dim command As New MySqlCommand(query, connection)
+            command.Parameters.AddWithValue("@username", username)
+
+            Dim adapter As New MySqlDataAdapter(command)
+            Dim ds As New DataSet()
+
+            adapter.Fill(ds, "tblUsers")
+
+            If ds.Tables("tblUsers").Rows.Count > 0 Then
+                Dim row As DataRow = ds.Tables("tblUsers").Rows(0)
+                FrmAccountSettings.userID = row("userID")
+                FrmAccountSettings.TxtFirstname.Text = row("firstname").ToString()
+                FrmAccountSettings.TxtLastname.Text = row("lastname").ToString()
+                FrmAccountSettings.TxtUsername.Text = row("username").ToString()
+            Else
+                MessageBox.Show("User not found.")
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        End Try
+    End Sub
+
+    Public Sub UpdateAdminPayroll(ID As Integer, firstname As String, lastname As String, username As String, password As String)
+        Dim command As New MySqlCommand("UPDATE tblUsers SET firstname = @firstname, lastname = @lastname, username = @username, password = @password WHERE userID = @userID", connection)
+        command.Parameters.AddWithValue("@firstname", firstname)
+        command.Parameters.AddWithValue("@lastname", lastname)
+        command.Parameters.AddWithValue("@username", username)
+        command.Parameters.AddWithValue("@password", password)
+        command.Parameters.AddWithValue("@userID", ID)
+        command.ExecuteNonQuery()
+        MessageBox.Show("Profile update successfully.")
+        Auditing($"{FrmMain.fullName} updated their profile.")
+    End Sub
 #End Region
 End Module

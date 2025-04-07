@@ -37,6 +37,7 @@ Public Class ClassLogin
                     FrmMain.Show()
                     FrmMain.LblName.Text = adminname
                     Auditing($"{adminname} has successfully logged in.")
+                    GetInfo(username)
                     DisplayFormPanel(FrmMainte, FrmMain.displaypanel)
                     login.Close()
                     Exit Sub

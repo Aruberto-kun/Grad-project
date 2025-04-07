@@ -46,6 +46,7 @@ Partial Class FrmMain
         Me.BtnMaintenance = New Guna.UI2.WinForms.Guna2Button()
         Me.displaypanel = New System.Windows.Forms.Panel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.BtnAccountSettings = New Guna.UI2.WinForms.Guna2Button()
         Me.Panel1.SuspendLayout()
         Me.Panel8.SuspendLayout()
         Me.Panel2.SuspendLayout()
@@ -211,6 +212,7 @@ Partial Class FrmMain
         'Panel3
         '
         Me.Panel3.BackColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.Panel3.Controls.Add(Me.BtnAccountSettings)
         Me.Panel3.Controls.Add(Me.BtnAudit)
         Me.Panel3.Controls.Add(Me.Guna2Button14)
         Me.Panel3.Controls.Add(Me.Guna2Button11)
@@ -350,6 +352,25 @@ Partial Class FrmMain
         'Timer1
         '
         '
+        'BtnAccountSettings
+        '
+        Me.BtnAccountSettings.BorderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
+        Me.BtnAccountSettings.BorderThickness = 1
+        Me.BtnAccountSettings.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.BtnAccountSettings.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.BtnAccountSettings.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.BtnAccountSettings.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.BtnAccountSettings.Dock = System.Windows.Forms.DockStyle.Left
+        Me.BtnAccountSettings.FillColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(227, Byte), Integer))
+        Me.BtnAccountSettings.Font = New System.Drawing.Font("Segoe UI", 9.0!, System.Drawing.FontStyle.Bold)
+        Me.BtnAccountSettings.ForeColor = System.Drawing.Color.Black
+        Me.BtnAccountSettings.Location = New System.Drawing.Point(1080, 0)
+        Me.BtnAccountSettings.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnAccountSettings.Name = "BtnAccountSettings"
+        Me.BtnAccountSettings.Size = New System.Drawing.Size(180, 41)
+        Me.BtnAccountSettings.TabIndex = 8
+        Me.BtnAccountSettings.Text = "Account Settings"
+        '
         'FrmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -394,4 +415,5 @@ Partial Class FrmMain
     Friend WithEvents DisplayTime As Label
     Friend WithEvents Timer1 As Timer
     Friend WithEvents Guna2Button4 As Guna.UI2.WinForms.Guna2Button
+    Friend WithEvents BtnAccountSettings As Guna.UI2.WinForms.Guna2Button
 End Class
