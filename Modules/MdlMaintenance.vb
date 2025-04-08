@@ -95,7 +95,7 @@ Module MdlMaintenance
             Dim datatable As New DataTable
             adapter.Fill(datatable)
             Return datatable
-        Catch ex As Exception
+        Catch ex As MySqlException
             Return Nothing
         End Try
     End Function
@@ -108,44 +108,46 @@ Module MdlMaintenance
                 FrmDepartmentInfo.ShowDialog()
             End If
         Catch ex As Exception
-
         End Try
     End Sub
 
     Public Sub UpdateDepartment(departmentID As Integer, departmentName As String)
-        'Try
-        Dim command As New MySqlCommand("UPDATE tblDepartment SET departmentName = @departmentName WHERE departmentID = @departmentID", connection)
+        Try
+            Dim command As New MySqlCommand("UPDATE tblDepartment SET departmentName = @departmentName WHERE departmentID = @departmentID", connection)
             command.Parameters.AddWithValue("@departmentName", departmentName)
             command.Parameters.AddWithValue("@departmentID", departmentID)
             command.ExecuteNonQuery()
             MessageBox.Show("Department updated successfully.")
-        'Catch ex As MySqlException
-        '    If ex.Number = 1062 Then
-        '        MessageBox.Show("Department name already exist.", "Duplicate entry", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-        '    End If
-        'End Try
+        Catch ex As MySqlException
+            If ex.Number = 1062 Then
+                MessageBox.Show("Department name already exist.", "Duplicate entry", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+        End Try
     End Sub
 
     Public Sub DeleteDepartment(departmentID As Integer)
+        Try
+            Dim commandOne As New MySqlCommand("SELECT COUNT(*) FROM tblEmployee WHERE departmentID = @departmentID", connection)
+            commandOne.Parameters.AddWithValue("@departmentID", departmentID)
+            Dim count As Integer = Convert.ToInt32(commandOne.ExecuteScalar())
 
-        Dim commandOne As New MySqlCommand("SELECT COUNT(*) FROM tblEmployee WHERE departmentID = @departmentID", connection)
-        commandOne.Parameters.AddWithValue("@departmentID", departmentID)
-        Dim count As Integer = Convert.ToInt32(commandOne.ExecuteScalar())
+            If count > 0 Then
+                MessageBox.Show("Selected department cannot be deleted.", "Invalid deletion", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Exit Sub
+            Else
+                Dim command As New MySqlCommand("UPDATE tblDepartment SET status = 'Inactive' WHERE departmentID = @departmentID", connection)
+                command.Parameters.AddWithValue("@departmentID", departmentID)
+                command.ExecuteNonQuery()
 
-        If count > 0 Then
-            MessageBox.Show("Selected department cannot be deleted.", "Invalid deletion", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Exit Sub
-        Else
-            Dim command As New MySqlCommand("UPDATE tblDepartment SET status = 'Inactive' WHERE departmentID = @departmentID", connection)
-            command.Parameters.AddWithValue("@departmentID", departmentID)
-            command.ExecuteNonQuery()
+                Dim commandPos As New MySqlCommand("UPDATE tblPosition SET status = 'Inactive' WHERE departmentID = @departmentID", connection)
+                commandPos.Parameters.AddWithValue("@departmentID", departmentID)
+                commandPos.ExecuteNonQuery()
 
-            Dim commandPos As New MySqlCommand("UPDATE tblPosition SET status = 'Inactive' WHERE departmentID = @departmentID", connection)
-            commandPos.Parameters.AddWithValue("@departmentID", departmentID)
-            commandPos.ExecuteNonQuery()
-
-            MessageBox.Show("Department deleted successfully.")
-        End If
+                MessageBox.Show("Department deleted successfully.")
+            End If
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 
 #End Region
@@ -234,19 +236,23 @@ Module MdlMaintenance
     End Sub
 
     Public Sub DeletePosition(positionID As Integer)
-        Dim commandOne As New MySqlCommand("SELECT COUNT(*) FROM tblEmployee WHERE positionID = @positionID", connection)
-        commandOne.Parameters.AddWithValue("@positionID", positionID)
-        Dim count As Integer = Convert.ToInt32(commandOne.ExecuteScalar())
+        Try
+            Dim commandOne As New MySqlCommand("SELECT COUNT(*) FROM tblEmployee WHERE positionID = @positionID", connection)
+            commandOne.Parameters.AddWithValue("@positionID", positionID)
+            Dim count As Integer = Convert.ToInt32(commandOne.ExecuteScalar())
 
-        If count > 0 Then
-            MessageBox.Show("Selected position cannot be deleted.", "Invalid deletion", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Exit Sub
-        Else
-            Dim command As New MySqlCommand("UPDATE tblPosition SET status = 'Inactive' WHERE positionID = @positionID", connection)
-            command.Parameters.AddWithValue("@positionID", positionID)
-            command.ExecuteNonQuery()
-            MessageBox.Show("Position deleted successfully.")
-        End If
+            If count > 0 Then
+                MessageBox.Show("Selected position cannot be deleted.", "Invalid deletion", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Exit Sub
+            Else
+                Dim command As New MySqlCommand("UPDATE tblPosition SET status = 'Inactive' WHERE positionID = @positionID", connection)
+                command.Parameters.AddWithValue("@positionID", positionID)
+                command.ExecuteNonQuery()
+                MessageBox.Show("Position deleted successfully.")
+            End If
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 
 #End Region
@@ -291,7 +297,7 @@ Module MdlMaintenance
             Dim datatable As New DataTable
             adapter.Fill(datatable)
             Return datatable
-        Catch ex As Exception
+        Catch ex As mysqlException
             MessageBox.Show(ex.Message)
             Return Nothing
         End Try
@@ -324,10 +330,14 @@ Module MdlMaintenance
     End Sub
 
     Public Sub DeleteLeave(leaveID As Integer)
-        Dim command As New MySqlCommand("UPDATE tblLeave SET status = 'Inactive' WHERE leaveID = @leaveID", connection)
-        command.Parameters.AddWithValue("@leaveID", leaveID)
-        command.ExecuteNonQuery()
-        MessageBox.Show("Leave deleted successfully.")
+        Try
+            Dim command As New MySqlCommand("UPDATE tblLeave SET status = 'Inactive' WHERE leaveID = @leaveID", connection)
+            command.Parameters.AddWithValue("@leaveID", leaveID)
+            command.ExecuteNonQuery()
+            MessageBox.Show("Leave deleted successfully.")
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 #End Region
 
@@ -373,7 +383,7 @@ Module MdlMaintenance
             Dim datatable As New DataTable
             adapter.Fill(datatable)
             Return datatable
-        Catch ex As Exception
+        Catch ex As MySqlException
             MessageBox.Show(ex.Message)
             Return Nothing
         End Try
@@ -406,10 +416,14 @@ Module MdlMaintenance
     End Sub
 
     Public Sub DeleteIncentive(incentiveID As Integer)
-        Dim command As New MySqlCommand("UPDATE tblIncentives SET status = 'Inactive' WHERE incentiveID = @departmentID", connection)
-        command.Parameters.AddWithValue("@departmentID", incentiveID)
-        command.ExecuteNonQuery()
-        MessageBox.Show("Incentive deleted successfully.")
+        Try
+            Dim command As New MySqlCommand("UPDATE tblIncentives SET status = 'Inactive' WHERE incentiveID = @departmentID", connection)
+            command.Parameters.AddWithValue("@departmentID", incentiveID)
+            command.ExecuteNonQuery()
+            MessageBox.Show("Incentive deleted successfully.")
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 #End Region
 
@@ -439,7 +453,7 @@ Module MdlMaintenance
             Dim datatable As New DataTable
             adapter.Fill(datatable)
             Return datatable
-        Catch ex As Exception
+        Catch ex As MySqlException
             MessageBox.Show(ex.Message)
             Return Nothing
         End Try
@@ -476,10 +490,14 @@ Module MdlMaintenance
     End Sub
 
     Public Sub DeleteHoliday(holidayID As Integer)
-        Dim command As New MySqlCommand("DELETE FROM tblHoliday WHERE holidayID = @holidayID", connection)
-        command.Parameters.AddWithValue("@holidayID", holidayID)
-        command.ExecuteNonQuery()
-        MessageBox.Show("Holiday deleted successfully.")
+        Try
+            Dim command As New MySqlCommand("DELETE FROM tblHoliday WHERE holidayID = @holidayID", connection)
+            command.Parameters.AddWithValue("@holidayID", holidayID)
+            command.ExecuteNonQuery()
+            MessageBox.Show("Holiday deleted successfully.")
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 
 #End Region
@@ -495,7 +513,7 @@ Module MdlMaintenance
             command.Parameters.AddWithValue("@rateID", rateID)
             command.ExecuteNonQuery()
             MessageBox.Show("Rate updated successfully.")
-        Catch ex As Exception
+        Catch ex As MySqlException
             MessageBox.Show(ex.Message)
         End Try
     End Sub
@@ -507,7 +525,7 @@ Module MdlMaintenance
             Dim datatable As New DataTable
             adapter.Fill(datatable)
             Return datatable
-        Catch ex As Exception
+        Catch ex As MySqlException
             MessageBox.Show(ex.Message)
             Return Nothing
         End Try
@@ -544,36 +562,44 @@ Module MdlMaintenance
             End If
             Return maxsal
 
-        Catch ex As Exception
+        Catch ex As MySqlException
             Return 0
         End Try
     End Function
 #Region "INSERT AND UPDATE"
 
     Public Sub NewTaxDaily(minimumSalary As Decimal, maximumSalary As Decimal, fixedAmount As Decimal, percentage As Integer)
-        Dim command As New MySqlCommand("INSERT INTO tblTaxDaily (minSalary, maxSalary, fixedAmount, percentage) 
+        Try
+            Dim command As New MySqlCommand("INSERT INTO tblTaxDaily (minSalary, maxSalary, fixedAmount, percentage) 
                                              VALUES (@minSalary, @maxSalary, @fixedAmount, @percentage)", connection)
-        With command.Parameters
-            .AddWithValue("@minSalary", minimumSalary)
-            .AddWithValue("@maxSalary", maximumSalary)
-            .AddWithValue("@fixedAmount", fixedAmount)
-            .AddWithValue("@percentage", percentage)
-        End With
-        command.ExecuteNonQuery()
-        MessageBox.Show("Tax added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            With command.Parameters
+                .AddWithValue("@minSalary", minimumSalary)
+                .AddWithValue("@maxSalary", maximumSalary)
+                .AddWithValue("@fixedAmount", fixedAmount)
+                .AddWithValue("@percentage", percentage)
+            End With
+            command.ExecuteNonQuery()
+            MessageBox.Show("Tax added successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 
     Public Sub NewTaxMonthly(minimumSalary As Decimal, maximumSalary As Decimal, fixedAmount As Decimal, percentage As Integer)
-        Dim command As New MySqlCommand("INSERT INTO tblTaxMonthly (minSalary, maxSalary, fixedAmount, percentage) 
+        Try
+            Dim command As New MySqlCommand("INSERT INTO tblTaxMonthly (minSalary, maxSalary, fixedAmount, percentage) 
                                               VALUES (@minSalary, @maxSalary, @fixedAmount, @percentage)", connection)
-        With command.Parameters
-            .AddWithValue("@minSalary", minimumSalary)
-            .AddWithValue("@maxSalary", maximumSalary)
-            .AddWithValue("@fixedAmount", fixedAmount)
-            .AddWithValue("@percentage", percentage)
-        End With
-        command.ExecuteNonQuery()
-        MessageBox.Show("Tax added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            With command.Parameters
+                .AddWithValue("@minSalary", minimumSalary)
+                .AddWithValue("@maxSalary", maximumSalary)
+                .AddWithValue("@fixedAmount", fixedAmount)
+                .AddWithValue("@percentage", percentage)
+            End With
+            command.ExecuteNonQuery()
+            MessageBox.Show("Tax added successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 
     Public Sub DeleteTaxDaily()
@@ -587,8 +613,8 @@ Module MdlMaintenance
             Dim command As New MySqlCommand("DELETE FROM tblTaxDaily ORDER BY taxDailyID DESC LIMIT 1", connection)
             command.ExecuteNonQuery()
             MessageBox.Show("Tax deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Catch ex As Exception
-
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
         End Try
     End Sub
 
@@ -603,29 +629,38 @@ Module MdlMaintenance
             Dim command As New MySqlCommand("DELETE FROM tblTaxMonthly ORDER BY taxMonthlyID DESC LIMIT 1", connection)
             command.ExecuteNonQuery()
             MessageBox.Show("Tax deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Catch ex As Exception
-
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
         End Try
     End Sub
 
 #End Region
 
 #Region "READ"
-
     Public Function DisplayTaxDaily() As DataTable
-        Dim command As New MySqlCommand("SELECT minsalary, maxsalary, fixedamount, percentage FROM tblTaxDaily", connection)
-        Dim adapter As New MySqlDataAdapter(command)
-        Dim datatable As New DataTable
-        adapter.Fill(datatable)
-        Return datatable
+        Try
+            Dim command As New MySqlCommand("SELECT minsalary, maxsalary, fixedamount, percentage FROM tblTaxDaily", connection)
+            Dim adapter As New MySqlDataAdapter(command)
+            Dim datatable As New DataTable
+            adapter.Fill(datatable)
+            Return datatable
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+            Return Nothing
+        End Try
     End Function
 
     Public Function DisplayTaxMonthly() As DataTable
-        Dim command As New MySqlCommand("SELECT minsalary, maxsalary, fixedamount, percentage FROM tblTaxMonthly", connection)
-        Dim adapter As New MySqlDataAdapter(command)
-        Dim datatable As New DataTable
-        adapter.Fill(datatable)
-        Return datatable
+        Try
+            Dim command As New MySqlCommand("SELECT minsalary, maxsalary, fixedamount, percentage FROM tblTaxMonthly", connection)
+            Dim adapter As New MySqlDataAdapter(command)
+            Dim datatable As New DataTable
+            adapter.Fill(datatable)
+            Return datatable
+        Catch ex As Exception
+            MessageBox.Show(ex.Message)
+            Return Nothing
+        End Try
     End Function
 
 #End Region
@@ -667,7 +702,8 @@ Module MdlMaintenance
             Dim command As New MySqlCommand("DELETE FROM tblSSS ORDER BY sssID DESC LIMIT 1", connection)
             command.ExecuteNonQuery()
             MessageBox.Show("SSS deleted successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
-        Catch ex As Exception
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
         End Try
     End Sub
 
@@ -702,7 +738,7 @@ Module MdlMaintenance
                 max = 0
             End If
             Return max
-        Catch ex As Exception
+        Catch ex As MySqlException
             MessageBox.Show(ex.Message)
             Return 0
         End Try
@@ -820,7 +856,7 @@ Module MdlMaintenance
             Dim datatable As New DataTable
             adapter.Fill(datatable)
             Return datatable
-        Catch ex As Exception
+        Catch ex As MySqlException
             MessageBox.Show(ex.Message)
             Return Nothing
         End Try
@@ -853,52 +889,65 @@ Module MdlMaintenance
     End Sub
 
     Public Sub DeleteVoluntary(voluntaryID As Integer)
-        Dim command As New MySqlCommand("UPDATE tblVoluntary SET status = 'Inactive' WHERE voluntaryID = @voluntaryID", connection)
-        command.Parameters.AddWithValue("@voluntaryID", voluntaryID)
-        command.ExecuteNonQuery()
-        MessageBox.Show("Update deleted successfully.")
+        Try
+            Dim command As New MySqlCommand("UPDATE tblVoluntary SET status = 'Inactive' WHERE voluntaryID = @voluntaryID", connection)
+            command.Parameters.AddWithValue("@voluntaryID", voluntaryID)
+            command.ExecuteNonQuery()
+            MessageBox.Show("Update deleted successfully.")
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 
 #End Region
 
 #Region "Employees"
-    Public Function SearchEmployees(search As String) As DataTable
-        Dim query As String = "SELECT employeeNumber, rfidNumber, firstname, lastname FROM tblemployee"
+    'Public Function SearchEmployees(search As String) As DataTable
+    '    Dim query As String = "SELECT employeeNumber, rfidNumber, firstname, lastname FROM tblemployee"
 
-        If Not String.IsNullOrEmpty(search) Then
-            query += " WHERE employeeNumber LIKE @search OR rfidNumber LIKE @search OR firstname LIKE @search OR lastname LIKE @search"
-        End If
+    '    If Not String.IsNullOrEmpty(search) Then
+    '        query += " WHERE employeeNumber LIKE @search OR rfidNumber LIKE @search OR firstname LIKE @search OR lastname LIKE @search"
+    '    End If
 
-        Dim command As New MySqlCommand(query, connection)
+    '    Dim command As New MySqlCommand(query, connection)
 
-        If Not String.IsNullOrEmpty(search) Then
-            command.Parameters.AddWithValue("@search", "%" & search & "%")
-        End If
-        Dim adapter As New MySqlDataAdapter(command)
-        Dim datatable As New DataTable
-        adapter.Fill(datatable)
-        Return datatable
-    End Function
+    '    If Not String.IsNullOrEmpty(search) Then
+    '        command.Parameters.AddWithValue("@search", "%" & search & "%")
+    '    End If
+    '    Dim adapter As New MySqlDataAdapter(command)
+    '    Dim datatable As New DataTable
+    '    adapter.Fill(datatable)
+    '    Return datatable
+    'End Function
 #End Region
 
 #Region "Others"
 
     Public Sub Auditing(action As String, actionType As String)
-        Dim command As New MySqlCommand("INSERT INTO tblaudit (action, dateActed, actionType) VALUES (@action, NOW(), @actionType)", connection)
-        command.Parameters.AddWithValue("@action", action)
-        command.Parameters.AddWithValue("@actionType", actionType)
-        command.ExecuteNonQuery()
+        Try
+            Dim command As New MySqlCommand("INSERT INTO tblaudit (action, dateActed, actionType) VALUES (@action, NOW(), @actionType)", connection)
+            command.Parameters.AddWithValue("@action", action)
+            command.Parameters.AddWithValue("@actionType", actionType)
+            command.ExecuteNonQuery()
 
-        Dim dt As DataTable = DisplayAudit()
-        FrmAudit.DgAudit.DataSource = dt
+            Dim dt As DataTable = DisplayAudit()
+            FrmAudit.DgAudit.DataSource = dt
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 
     Public Function DisplayAudit() As DataTable
-        Dim command As New MySqlCommand("SELECT * FROM tblaudit", connection)
-        Dim dt As New DataTable
-        Dim adapter As New MySqlDataAdapter(command)
-        adapter.Fill(dt)
-        Return dt
+        Try
+            Dim command As New MySqlCommand("SELECT * FROM tblaudit", connection)
+            Dim dt As New DataTable
+            Dim adapter As New MySqlDataAdapter(command)
+            adapter.Fill(dt)
+            Return dt
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+            Return Nothing
+        End Try
     End Function
 
     Public firstname As String = ""
@@ -927,50 +976,72 @@ Module MdlMaintenance
                 MessageBox.Show("User not found.")
             End If
 
-        Catch ex As Exception
+        Catch ex As MySqlException
             MessageBox.Show("Error: " & ex.Message)
         End Try
     End Sub
 
     Public Sub UpdateAdminPayroll(ID As Integer, firstname As String, lastname As String, username As String, password As String)
-        Dim command As New MySqlCommand("UPDATE tblUsers SET firstname = @firstname, lastname = @lastname, username = @username, password = @password WHERE userID = @userID", connection)
-        command.Parameters.AddWithValue("@firstname", firstname)
-        command.Parameters.AddWithValue("@lastname", lastname)
-        command.Parameters.AddWithValue("@username", username)
-        command.Parameters.AddWithValue("@password", password)
-        command.Parameters.AddWithValue("@userID", ID)
-        command.ExecuteNonQuery()
-        MessageBox.Show("Profile update successfully.")
-        Auditing($"{FrmMain.fullName} updated their profile.", "Others")
+        Try
+            Dim command As New MySqlCommand("UPDATE tblUsers SET firstname = @firstname, lastname = @lastname, username = @username, password = @password WHERE userID = @userID", connection)
+            command.Parameters.AddWithValue("@firstname", firstname)
+            command.Parameters.AddWithValue("@lastname", lastname)
+            command.Parameters.AddWithValue("@username", username)
+            command.Parameters.AddWithValue("@password", password)
+            command.Parameters.AddWithValue("@userID", ID)
+            command.ExecuteNonQuery()
+            MessageBox.Show("Profile update successfully.")
+            Auditing($"{FrmMain.fullName} updated their profile.", "Others")
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 
     Public Function GetAuditID() As Integer
-        Dim command As New MySqlCommand("SELECT auditID FROM tblAudit ORDER BY auditID DESC LIMIT 1", connection)
-        Return command.ExecuteScalar()
+        Try
+            Dim command As New MySqlCommand("SELECT auditID FROM tblAudit ORDER BY auditID DESC LIMIT 1", connection)
+            Return command.ExecuteScalar()
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+            Return Nothing
+        End Try
     End Function
 
     Public Sub UpdateAudit(auditID As Integer, oldValue As String, newValue As String)
-        Dim command As New MySqlCommand("INSERT INTO tblAuditInfo (auditID, oldValue, newValue) VALUES (@auditID, @oldValue, @newValue)", connection)
-        command.Parameters.AddWithValue("@auditID", auditID)
-        command.Parameters.AddWithValue("@oldValue", oldValue)
-        command.Parameters.AddWithValue("@newValue", newValue)
-        command.ExecuteNonQuery()
+        Try
+            Dim command As New MySqlCommand("INSERT INTO tblAuditInfo (auditID, oldValue, newValue) VALUES (@auditID, @oldValue, @newValue)", connection)
+            command.Parameters.AddWithValue("@auditID", auditID)
+            command.Parameters.AddWithValue("@oldValue", oldValue)
+            command.Parameters.AddWithValue("@newValue", newValue)
+            command.ExecuteNonQuery()
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 
     Public Function DisplayAuditInfo(auditID) As DataTable
-        Dim command As New MySqlCommand("SELECT * FROM tblAuditInfo WHERE auditID = @auditID", connection)
-        command.Parameters.AddWithValue("@auditID", auditID)
-        Dim datatable As New DataTable
-        Dim adapter As New MySqlDataAdapter(command)
-        adapter.Fill(datatable)
-        Return datatable
+        Try
+            Dim command As New MySqlCommand("SELECT * FROM tblAuditInfo WHERE auditID = @auditID", connection)
+            command.Parameters.AddWithValue("@auditID", auditID)
+            Dim datatable As New DataTable
+            Dim adapter As New MySqlDataAdapter(command)
+            adapter.Fill(datatable)
+            Return datatable
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+            Return Nothing
+        End Try
     End Function
 
     Public Sub DeletePeriod(payrollID As Integer)
-        Dim command As New MySqlCommand("DELETE FROM tblPayrollPeriod WHERE payrollPeriodID = @periodID", connection)
-        command.Parameters.AddWithValue("@periodID", payrollID)
-        command.ExecuteNonQuery()
-        MessageBox.Show("Payroll period has been deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Try
+            Dim command As New MySqlCommand("DELETE FROM tblPayrollPeriod WHERE payrollPeriodID = @periodID", connection)
+            command.Parameters.AddWithValue("@periodID", payrollID)
+            command.ExecuteNonQuery()
+            MessageBox.Show("Payroll period has been deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Catch ex As MySqlException
+            MessageBox.Show(ex.Message)
+        End Try
     End Sub
 #End Region
 End Module
