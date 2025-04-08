@@ -245,7 +245,7 @@ Public Class FrmMainte
                 MessageBox.Show("Invalid fixed amount. Please enter a value of 10,000 or below.", "Invalid amount", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 TxtTaxFixedAmount.Clear()
                 Exit Sub
-            ElseIf Val(TxtTaxPercentage.Text <= 0) Then
+            ElseIf Val(TxtTaxPercentage.Text < 0) Then
                 MessageBox.Show("Invalid percentage", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 TxtTaxPercentage.Clear()
                 Exit Sub
@@ -298,7 +298,7 @@ Public Class FrmMainte
                 MessageBox.Show("Invalid amount of maximum salary", "Invalid amount", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Exit Sub
                 TxtTaxMaxSalary.Clear()
-            ElseIf Val(TxtTaxFixedAmount.Text <= 0) Then
+            ElseIf Val(TxtTaxFixedAmount.Text < 0) Then
                 MessageBox.Show("Invalid fixed amount", "Invalid amount", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 TxtTaxFixedAmount.Clear()
                 Exit Sub
@@ -306,7 +306,7 @@ Public Class FrmMainte
                 MessageBox.Show("Invalid fixed amount. Please enter a value of 300,000 or below.", "Invalid amount", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 TxtTaxFixedAmount.Clear()
                 Exit Sub
-            ElseIf Val(TxtTaxPercentage.Text <= 0) Then
+            ElseIf Val(TxtTaxPercentage.Text < 0) Then
                 MessageBox.Show("Invalid percentage", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 TxtTaxPercentage.Clear()
                 Exit Sub
