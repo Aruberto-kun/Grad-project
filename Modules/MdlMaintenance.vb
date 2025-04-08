@@ -942,5 +942,18 @@ Module MdlMaintenance
         MessageBox.Show("Profile update successfully.")
         Auditing($"{FrmMain.fullName} updated their profile.")
     End Sub
+
+    Public Function GetAuditID() As Integer
+        Dim command As New MySqlCommand("SELECT auditID FROM tblAudit ORDER BY auditID DESC LIMIT 1", connection)
+        Return command.ExecuteScalar()
+    End Function
+
+    Public Sub UpdateAudit(auditID As Integer, oldValue As String, newValue As String)
+        Dim command As New MySqlCommand("INSERT INTO tblAuditInfo (auditID, from, to) VALUES (@auditID, @from, @to)", connection)
+        command.Parameters.AddWithValue("@audit", auditID)
+        command.Parameters.AddWithValue("@from", oldValue)
+        command.Parameters.AddWithValue("@to", newValue)
+        command.ExecuteNonQuery()
+    End Sub
 #End Region
 End Module
