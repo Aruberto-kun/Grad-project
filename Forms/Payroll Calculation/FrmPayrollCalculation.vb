@@ -1,87 +1,23 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports Guna.UI2.WinForms
 Public Class FrmPayrollCalculation
-    'Private Sub CbEmployees_SelectedIndexChanged(sender As Object, e As EventArgs)
-    '    If CbEmployees.SelectedIndex = -1 Then
-    '        Exit Sub
-    '    End If
-    '    ClassPayrollCalculation.LoadAttendance(DGAttendance, CbEmployees)
-    '    ClassPayrollCalculation.EmployeeCompensationType(CbEmployees)
-    '    ClassPayrollCalculation.EmployeeStatus(CbEmployees)
-    '    ClassPayrollCalculation.LoadIncentive(DGIncentive)
-    '    ClassPayrollCalculation.LoadAllowance(TxtAllowance, CbEmployees)
-    '    ClassPayrollCalculation.LoadVoluntary(DGVoluntary, CbEmployees)
-    'End Sub
 
-    'Private Sub Guna2Button3_Click(sender As Object, e As EventArgs)
-
-    '    'Select Employee
-    '    If CbEmployees.SelectedIndex = -1 Then
-    '        MsgBox("Please select an employee first", MsgBoxStyle.Critical)
-    '        Exit Sub
-    '    End If
-
-    '    'If employee has schedule
-    '    If ClassPayrollCalculation.hasschedule = False Then
-    '        MsgBox("Employee doesn't have assigned schedule yet")
-    '        Exit Sub
-    '    End If
-
-    '    'Check if all logins have logouts and vice versa
-    '    For Each row As DataGridViewRow In DGAttendance.Rows
-    '        Dim otcount As Integer = If(String.IsNullOrEmpty(row.Cells("colOvertime").Value.ToString), 0, row.Cells("colOvertime").Value)
-    '        Dim otremarks As String = If(String.IsNullOrEmpty(row.Cells("colOtRemarks").Value.ToString), "No record", row.Cells("colOtRemarks").Value)
-    '        Dim login As String = If(String.IsNullOrEmpty(row.Cells("colTimeIn").Value.ToString), "No record", row.Cells("colTimeIn").Value)
-    '        Dim logout As String = If(String.IsNullOrEmpty(row.Cells("colTimeOut").Value.ToString), "No record", row.Cells("colTimeOut").Value)
-    '        If (login = "No record" And logout <> "No record") Or (login <> "No record" And logout = "No record") Then
-    '            MsgBox("A record doesn't have a login or logout. Please inform the employee or the Department Head")
-    '            Exit Sub
-    '        End If
-
-    '        If otcount = 0 Then
-    '            Continue For
-    '        End If
-
-    '        If otremarks = "No record" Then
-    '            MsgBox("An overtime is still pending. Please inform the Department Head")
-    '            Exit Sub
-    '        End If
-    '    Next
-
-    '    ClassPayrollCalculation.GetGrossPay(CbEmployees, DGAttendance, TxtGrossPay)
-    '    ClassPayrollCalculation.GetOvertime(CbEmployees, DGAttendance, TxtOvertime)
-    '    'ClassPayrollCalculation.GetAllowance(DGAllowance, TxtAllowance)
-    '    ClassPayrollCalculation.GetIncentives(DGIncentive, TxtIncentives)
-    '    ClassPayrollCalculation.GetLate(DGAttendance, TxtLate, CbEmployees)
-    '    ClassPayrollCalculation.GetUndertime(DGAttendance, TxtUndertime, CbEmployees)
-    '    ClassPayrollCalculation.GetNightDifferential(DGAttendance, TxtNightDifferential, CbEmployees)
-    '    ClassPayrollCalculation.GetVoluntaryContrib(DGVoluntary, TxtVoluntaryContributions)
-    '    ClassPayrollCalculation.GetSSS(TxtGrossPay, TxtSSS)
-    '    ClassPayrollCalculation.GetPhilhealth(TxtGrossPay, TxtPhilHealth)
-    '    ClassPayrollCalculation.GetPagIbig(TxtPagIbig)
-    '    ClassPayrollCalculation.GetTax(TxtGrossPay, TxtTax, TxtSSS, TxtPhilHealth, TxtPagIbig)
-    '    ClassPayrollCalculation.TotalIncrease(TxtOvertime, TxtAllowance, TxtIncentives, TxtNightDifferential, TxtTotalIncrease)
-    '    ClassPayrollCalculation.TotalMandatoryContri(TxtSSS, TxtPhilHealth, TxtPagIbig, TxtTax, TxtMandatory)
-    '    ClassPayrollCalculation.TotalDeductions(TxtLate, TxtUndertime, TxtVoluntaryContributions, TxtMandatory, TxtTotalDeduc)
-    '    ClassPayrollCalculation.GetNetPay(TxtGrossPay, TxtTotalIncrease, TxtTotalDeduc, TxtNetPay)
-    'End Sub
 
     Private Sub FrmPayrollCalculation_Load(sender As Object, e As EventArgs) Handles Me.Load
         OpenServerConnection()
         ClassPayrollCalculation.GetRates()
         ClassPayrollCalculation.LoadPayrollPeriod(DGPayrollPeriod)
         RBYes.Checked = True
+
+        ' Add this in the Form Designer
+        Dim contextMenu As New ContextMenuStrip()
+        Dim deleteMenuItem As New ToolStripMenuItem("Delete")
+
+        ' Add the delete menu item to the context menu
+        contextMenu.Items.Add(deleteMenuItem)
+        DGPayrollPeriod.ContextMenuStrip = contextMenu
+
     End Sub
-    'Private Sub Guna2Button2_Click(sender As Object, e As EventArgs)
-    '    Try
-    '        If MsgBox("Verify salary calculation", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-    '            ClassPayrollCalculation.SaveSalary(CbEmployees, TxtOvertime, TxtAllowance, TxtIncentives, TxtNightDifferential, TxtLate, TxtUndertime, TxtVoluntaryContributions, TxtSSS, TxtPhilHealth, TxtPagIbig, TxtTax, TxtMandatory, TxtTotalIncrease, TxtTotalDeduc, TxtGrossPay, TxtNetPay)
-    '        End If
-    '    Catch ex As Exception
-
-    '    End Try
-    'End Sub
-
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
         Try
             'max 17 days and min 14 days
@@ -187,4 +123,28 @@ Public Class FrmPayrollCalculation
     Private Sub DGVEmployeeList_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVEmployeeList.CellDoubleClick
         ClassPayrollCalculation.SelectEmployee(DGVEmployeeList, FrmPayroll.Label1, FrmPayroll.Label2, FrmPayroll.Label3)
     End Sub
+
+    Private Sub DGPayrollPeriod_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DGPayrollPeriod.CellMouseClick
+        If e.Button = MouseButtons.Right Then
+            If e.RowIndex >= 0 Then
+                DGPayrollPeriod.ClearSelection()
+                DGPayrollPeriod.Rows(e.RowIndex).Selected = True
+            End If
+        End If
+    End Sub
+
+    Private Sub deleteMenuItem_Click(sender As Object, e As EventArgs) Handles deleteMenuItem.Click
+        Dim selectedRowIndex As Integer = DGPayrollPeriod.SelectedCells(0).RowIndex
+        Dim confirm As DialogResult = MessageBox.Show("Are you sure you want to delete this record?", "Confirm Delete", MessageBoxButtons.YesNo)
+
+        If confirm = DialogResult.Yes Then
+            Dim payrollPeriodID As Integer = DGPayrollPeriod.Rows(selectedRowIndex).Cells("ColPayrollPeriodID").Value
+            DGPayrollPeriod.Rows.RemoveAt(selectedRowIndex)
+            DeletePeriod(payrollPeriodID)
+            ClassPayrollCalculation.LoadPayrollPeriod(DGPayrollPeriod)
+        End If
+    End Sub
+
+
+
 End Class

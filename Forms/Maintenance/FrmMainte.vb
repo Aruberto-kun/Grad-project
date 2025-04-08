@@ -237,7 +237,7 @@ Public Class FrmMainte
                 MessageBox.Show("Invalid amount of maximum salary", "Invalid amount", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Exit Sub
                 TxtTaxMaxSalary.Clear()
-            ElseIf Val(TxtTaxFixedAmount.Text <= 0) Then
+            ElseIf Val(TxtTaxFixedAmount.Text < 0) Then
                 MessageBox.Show("Invalid fixed amount", "Invalid amount", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 TxtTaxFixedAmount.Clear()
                 Exit Sub
