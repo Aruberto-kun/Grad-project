@@ -3,8 +3,8 @@ Imports MySql.Data.MySqlClient
 
 Public Class FrmUpdateEmployee
 
-    Dim firstname As String = ""
-    Dim lastname As String = ""
+    Dim oldfirstname As String = ""
+    Dim oldlastname As String = ""
     Dim rfidnumber As String = ""
     Dim department As String = ""
     Dim position As String = ""
@@ -46,24 +46,52 @@ Public Class FrmUpdateEmployee
                 Exit Sub
             End If
 
-            Dim changesMade As Boolean = False
 
-            ClassEmployee.UpdateAssociate(TxtFirstName, TxtLastname, TxtRfidNumber, CbDepartment, CbPosition, TxtSalary, CbCompensationType, CbAssociateStatus, TxtAllowance)
-            ClassEmployee.LoadEmployee(FrmEmployee.DgEmployee)
+            Auditing($"{FrmMain.fullName} updated {oldfirstname} {oldlastname} information.", "Update")
             Dim auditID As Integer = GetAuditID()
 
-            If TxtFirstName.Text <> firstName Then
-                UpdateAudit(auditID, firstName, TxtFirstName.Text)
-                changesMade = True
-            End If
+        ClassEmployee.UpdateAssociate(TxtFirstName, TxtLastname, TxtRfidNumber, CbDepartment, CbPosition, TxtSalary, CbCompensationType, CbAssociateStatus, TxtAllowance)
 
-            If TxtLastname.Text <> lastName Then
-                UpdateAudit(auditID, lastName, TxtLastname.Text)
-                changesMade = True
-            End If
-            Me.Close()
+        ClassEmployee.LoadEmployee(FrmEmployee.DgEmployee)
+
+        If TxtFirstName.Text <> oldfirstname Then
+            UpdateAudit(auditID, oldfirstname, TxtFirstName.Text)
+        End If
+
+        If TxtLastname.Text <> oldlastname Then
+            UpdateAudit(auditID, oldlastname, TxtLastname.Text)
+        End If
+
+        If TxtRfidNumber.Text <> rfidnumber Then
+            UpdateAudit(auditID, rfidnumber, TxtRfidNumber.Text)
+        End If
+
+        If CbDepartment.Text.ToString() <> department Then
+            UpdateAudit(auditID, department, CbDepartment.Text)
+        End If
+
+        If CbPosition.Text.ToString() <> position Then
+            UpdateAudit(auditID, position, CbPosition.Text)
+        End If
+
+        If TxtSalary.Text <> salary Then
+            UpdateAudit(auditID, salary.ToString(), TxtSalary.Text)
+        End If
+
+        If CbCompensationType.Text.ToString() <> compensation Then
+            UpdateAudit(auditID, compensation, CbCompensationType.Text)
+        End If
+
+        If CbAssociateStatus.Text.ToString() <> associateStatus Then
+            UpdateAudit(auditID, associateStatus, CbAssociateStatus.Text)
+        End If
+
+        If TxtAllowance.Text <> allowance Then
+            UpdateAudit(auditID, allowance.ToString(), TxtAllowance.Text)
+        End If
+        Me.Close()
         Catch ex As MySqlException
-            MsgBox(ex.Message)
+        MsgBox(ex.Message)
         End Try
     End Sub
 
@@ -115,8 +143,8 @@ Public Class FrmUpdateEmployee
         ClassEmployee.LoadVoluntary(DGVoluntary)
         ClassEmployee.LoadLeaveAllocation(DGLeaveAllocation)
 
-        firstname = TxtFirstName.Text
-        lastname = TxtLastname.Text
+        oldfirstname = TxtFirstName.Text
+        oldlastname = TxtLastname.Text
         rfidnumber = TxtRfidNumber.Text
         department = CbDepartment.Text
         position = CbPosition.Text

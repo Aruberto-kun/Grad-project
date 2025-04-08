@@ -883,9 +883,10 @@ Module MdlMaintenance
 
 #Region "Others"
 
-    Public Sub Auditing(action As String)
-        Dim command As New MySqlCommand("INSERT INTO tblaudit (action, dateActed) VALUES (@action, NOW())", connection)
+    Public Sub Auditing(action As String, actionType As String)
+        Dim command As New MySqlCommand("INSERT INTO tblaudit (action, dateActed, actionType) VALUES (@action, NOW(), @actionType)", connection)
         command.Parameters.AddWithValue("@action", action)
+        command.Parameters.AddWithValue("@actionType", actionType)
         command.ExecuteNonQuery()
 
         Dim dt As DataTable = DisplayAudit()
@@ -940,7 +941,7 @@ Module MdlMaintenance
         command.Parameters.AddWithValue("@userID", ID)
         command.ExecuteNonQuery()
         MessageBox.Show("Profile update successfully.")
-        Auditing($"{FrmMain.fullName} updated their profile.")
+        Auditing($"{FrmMain.fullName} updated their profile.", "Others")
     End Sub
 
     Public Function GetAuditID() As Integer
@@ -949,11 +950,20 @@ Module MdlMaintenance
     End Function
 
     Public Sub UpdateAudit(auditID As Integer, oldValue As String, newValue As String)
-        Dim command As New MySqlCommand("INSERT INTO tblAuditInfo (auditID, from, to) VALUES (@auditID, @from, @to)", connection)
-        command.Parameters.AddWithValue("@audit", auditID)
-        command.Parameters.AddWithValue("@from", oldValue)
-        command.Parameters.AddWithValue("@to", newValue)
+        Dim command As New MySqlCommand("INSERT INTO tblAuditInfo (auditID, oldValue, newValue) VALUES (@auditID, @oldValue, @newValue)", connection)
+        command.Parameters.AddWithValue("@auditID", auditID)
+        command.Parameters.AddWithValue("@oldValue", oldValue)
+        command.Parameters.AddWithValue("@newValue", newValue)
         command.ExecuteNonQuery()
     End Sub
+
+    Public Function DisplayAuditInfo(auditID) As DataTable
+        Dim command As New MySqlCommand("SELECT * FROM tblAuditInfo WHERE auditID = @auditID", connection)
+        command.Parameters.AddWithValue("@auditID", auditID)
+        Dim datatable As New DataTable
+        Dim adapter As New MySqlDataAdapter(command)
+        adapter.Fill(datatable)
+        Return datatable
+    End Function
 #End Region
 End Module

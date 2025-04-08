@@ -12,7 +12,7 @@ Public Class FrmVoluntaryInfo
             Exit Sub
         Else
             UpdateVoluntary(MdlMaintenance.voluntaryID, TxtVoluntary.Text)
-            Auditing($"{FrmMain.fullName} updated the voluntary {voluntary} to {TxtVoluntary.Text}")
+            Auditing($"{FrmMain.fullName} updated the voluntary {voluntary} to {TxtVoluntary.Text}", "Others")
             Me.Close()
             FrmMainte.DgVoluntary.DataSource = DisplayVoluntary()
         End If
@@ -20,7 +20,7 @@ Public Class FrmVoluntaryInfo
 
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
         DeleteVoluntary(MdlMaintenance.voluntaryID)
-        Auditing($"{FrmMain.fullName} set the voluntary {voluntary} to inactive.")
+        Auditing($"{FrmMain.fullName} set the voluntary {voluntary} to inactive.", "Others")
         Me.Close()
         FrmMainte.DgVoluntary.DataSource = DisplayVoluntary()
     End Sub

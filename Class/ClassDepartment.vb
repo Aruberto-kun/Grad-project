@@ -85,7 +85,7 @@ Public Class ClassDepartment
             MsgBox("Saved", MsgBoxStyle.OkOnly)
             FrmDepartmentControls.TCDepartment.SelectedTab = FrmDepartmentControls.TPDepartmentList
             LoadDepartmentDG(dg)
-            Auditing($"{FrmMain.LblName.Text} set {FrmDepartmentControls.CbDepartmentHead.Text} as Department Head in {FrmDepartmentControls.CbDepartment.Text}")
+            Auditing($"{FrmMain.LblName.Text} set {FrmDepartmentControls.CbDepartmentHead.Text} as Department Head in {FrmDepartmentControls.CbDepartment.Text}", "Others")
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

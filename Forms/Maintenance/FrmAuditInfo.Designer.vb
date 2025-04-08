@@ -26,21 +26,19 @@ Partial Class FrmAuditInfo
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
+        Me.TxtDateActed = New System.Windows.Forms.Label()
         Me.TxtActor = New System.Windows.Forms.Label()
+        Me.LinkLabel1 = New System.Windows.Forms.LinkLabel()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
-        Me.DgAudit = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.DgAuditInfo = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.infoID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.auditID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.dateActed = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.oldValue = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.newValue = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.remarks = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TxtDateActed = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
-        CType(Me.DgAudit, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.DgAuditInfo, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Panel1
@@ -53,6 +51,27 @@ Partial Class FrmAuditInfo
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(800, 67)
         Me.Panel1.TabIndex = 0
+        '
+        'TxtDateActed
+        '
+        Me.TxtDateActed.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TxtDateActed.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtDateActed.Location = New System.Drawing.Point(0, 38)
+        Me.TxtDateActed.Name = "TxtDateActed"
+        Me.TxtDateActed.Size = New System.Drawing.Size(751, 25)
+        Me.TxtDateActed.TabIndex = 2
+        Me.TxtDateActed.Text = "Label1"
+        '
+        'TxtActor
+        '
+        Me.TxtActor.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TxtActor.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TxtActor.Location = New System.Drawing.Point(0, 0)
+        Me.TxtActor.Name = "TxtActor"
+        Me.TxtActor.Size = New System.Drawing.Size(751, 38)
+        Me.TxtActor.TabIndex = 1
+        Me.TxtActor.Text = "Label1"
+        Me.TxtActor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'LinkLabel1
         '
@@ -67,17 +86,6 @@ Partial Class FrmAuditInfo
         Me.LinkLabel1.TabIndex = 0
         Me.LinkLabel1.TabStop = True
         Me.LinkLabel1.Text = "[close]"
-        '
-        'TxtActor
-        '
-        Me.TxtActor.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TxtActor.Font = New System.Drawing.Font("Segoe UI", 13.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtActor.Location = New System.Drawing.Point(0, 0)
-        Me.TxtActor.Name = "TxtActor"
-        Me.TxtActor.Size = New System.Drawing.Size(751, 38)
-        Me.TxtActor.TabIndex = 1
-        Me.TxtActor.Text = "Label1"
-        Me.TxtActor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel2
         '
@@ -103,15 +111,15 @@ Partial Class FrmAuditInfo
         Me.Panel4.Size = New System.Drawing.Size(790, 5)
         Me.Panel4.TabIndex = 3
         '
-        'DgAudit
+        'DgAuditInfo
         '
-        Me.DgAudit.AllowUserToAddRows = False
-        Me.DgAudit.AllowUserToDeleteRows = False
-        Me.DgAudit.AllowUserToResizeColumns = False
-        Me.DgAudit.AllowUserToResizeRows = False
+        Me.DgAuditInfo.AllowUserToAddRows = False
+        Me.DgAuditInfo.AllowUserToDeleteRows = False
+        Me.DgAuditInfo.AllowUserToResizeColumns = False
+        Me.DgAuditInfo.AllowUserToResizeRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.DgAudit.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        Me.DgAudit.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.DgAuditInfo.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.DgAuditInfo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(231, Byte), Integer))
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -119,9 +127,9 @@ Partial Class FrmAuditInfo
         DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(108, Byte), Integer), CType(CType(92, Byte), Integer), CType(CType(231, Byte), Integer))
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgAudit.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.DgAudit.ColumnHeadersHeight = 40
-        Me.DgAudit.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.infoID, Me.auditID, Me.dateActed, Me.oldValue, Me.newValue, Me.remarks})
+        Me.DgAuditInfo.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.DgAuditInfo.ColumnHeadersHeight = 40
+        Me.DgAuditInfo.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.infoID, Me.auditID, Me.oldValue, Me.newValue})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -129,40 +137,40 @@ Partial Class FrmAuditInfo
         DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgAudit.DefaultCellStyle = DataGridViewCellStyle3
-        Me.DgAudit.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DgAudit.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DgAudit.Location = New System.Drawing.Point(5, 67)
-        Me.DgAudit.Margin = New System.Windows.Forms.Padding(2)
-        Me.DgAudit.Name = "DgAudit"
-        Me.DgAudit.ReadOnly = True
-        Me.DgAudit.RowHeadersVisible = False
-        Me.DgAudit.RowHeadersWidth = 51
-        Me.DgAudit.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        Me.DgAudit.RowTemplate.Height = 24
-        Me.DgAudit.Size = New System.Drawing.Size(790, 378)
-        Me.DgAudit.TabIndex = 5
-        Me.DgAudit.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
-        Me.DgAudit.ThemeStyle.AlternatingRowsStyle.Font = Nothing
-        Me.DgAudit.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
-        Me.DgAudit.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
-        Me.DgAudit.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
-        Me.DgAudit.ThemeStyle.BackColor = System.Drawing.Color.White
-        Me.DgAudit.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DgAudit.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DgAudit.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        Me.DgAudit.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DgAudit.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.DgAudit.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
-        Me.DgAudit.ThemeStyle.HeaderStyle.Height = 40
-        Me.DgAudit.ThemeStyle.ReadOnly = True
-        Me.DgAudit.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
-        Me.DgAudit.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
-        Me.DgAudit.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DgAudit.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        Me.DgAudit.ThemeStyle.RowsStyle.Height = 24
-        Me.DgAudit.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DgAudit.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.DgAuditInfo.DefaultCellStyle = DataGridViewCellStyle3
+        Me.DgAuditInfo.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DgAuditInfo.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgAuditInfo.Location = New System.Drawing.Point(5, 67)
+        Me.DgAuditInfo.Margin = New System.Windows.Forms.Padding(2)
+        Me.DgAuditInfo.Name = "DgAuditInfo"
+        Me.DgAuditInfo.ReadOnly = True
+        Me.DgAuditInfo.RowHeadersVisible = False
+        Me.DgAuditInfo.RowHeadersWidth = 51
+        Me.DgAuditInfo.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
+        Me.DgAuditInfo.RowTemplate.Height = 24
+        Me.DgAuditInfo.Size = New System.Drawing.Size(790, 378)
+        Me.DgAuditInfo.TabIndex = 5
+        Me.DgAuditInfo.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
+        Me.DgAuditInfo.ThemeStyle.AlternatingRowsStyle.Font = Nothing
+        Me.DgAuditInfo.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty
+        Me.DgAuditInfo.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty
+        Me.DgAuditInfo.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty
+        Me.DgAuditInfo.ThemeStyle.BackColor = System.Drawing.Color.White
+        Me.DgAuditInfo.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgAuditInfo.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgAuditInfo.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
+        Me.DgAuditInfo.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DgAuditInfo.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
+        Me.DgAuditInfo.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
+        Me.DgAuditInfo.ThemeStyle.HeaderStyle.Height = 40
+        Me.DgAuditInfo.ThemeStyle.ReadOnly = True
+        Me.DgAuditInfo.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
+        Me.DgAuditInfo.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
+        Me.DgAuditInfo.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DgAuditInfo.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        Me.DgAuditInfo.ThemeStyle.RowsStyle.Height = 24
+        Me.DgAuditInfo.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.DgAuditInfo.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
         '
         'infoID
         '
@@ -178,44 +186,21 @@ Partial Class FrmAuditInfo
         Me.auditID.HeaderText = "Audit ID"
         Me.auditID.Name = "auditID"
         Me.auditID.ReadOnly = True
-        '
-        'dateActed
-        '
-        Me.dateActed.DataPropertyName = "dateActed"
-        Me.dateActed.HeaderText = "Date"
-        Me.dateActed.Name = "dateActed"
-        Me.dateActed.ReadOnly = True
+        Me.auditID.Visible = False
         '
         'oldValue
         '
-        Me.oldValue.DataPropertyName = "from"
+        Me.oldValue.DataPropertyName = "oldValue"
         Me.oldValue.HeaderText = "Old Value"
         Me.oldValue.Name = "oldValue"
         Me.oldValue.ReadOnly = True
         '
         'newValue
         '
-        Me.newValue.DataPropertyName = "to"
+        Me.newValue.DataPropertyName = "newValue"
         Me.newValue.HeaderText = "New Value"
         Me.newValue.Name = "newValue"
         Me.newValue.ReadOnly = True
-        '
-        'remarks
-        '
-        Me.remarks.DataPropertyName = "remarks"
-        Me.remarks.HeaderText = "Action"
-        Me.remarks.Name = "remarks"
-        Me.remarks.ReadOnly = True
-        '
-        'TxtDateActed
-        '
-        Me.TxtDateActed.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TxtDateActed.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TxtDateActed.Location = New System.Drawing.Point(0, 38)
-        Me.TxtDateActed.Name = "TxtDateActed"
-        Me.TxtDateActed.Size = New System.Drawing.Size(751, 25)
-        Me.TxtDateActed.TabIndex = 2
-        Me.TxtDateActed.Text = "Label1"
         '
         'FrmAuditInfo
         '
@@ -223,7 +208,7 @@ Partial Class FrmAuditInfo
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
         Me.ControlBox = False
-        Me.Controls.Add(Me.DgAudit)
+        Me.Controls.Add(Me.DgAuditInfo)
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel2)
@@ -233,7 +218,7 @@ Partial Class FrmAuditInfo
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Panel1.ResumeLayout(False)
         Me.Panel1.PerformLayout()
-        CType(Me.DgAudit, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.DgAuditInfo, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -244,12 +229,10 @@ Partial Class FrmAuditInfo
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Panel3 As Panel
     Friend WithEvents Panel4 As Panel
-    Friend WithEvents DgAudit As Guna.UI2.WinForms.Guna2DataGridView
+    Friend WithEvents DgAuditInfo As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents TxtDateActed As Label
     Friend WithEvents infoID As DataGridViewTextBoxColumn
     Friend WithEvents auditID As DataGridViewTextBoxColumn
-    Friend WithEvents dateActed As DataGridViewTextBoxColumn
     Friend WithEvents oldValue As DataGridViewTextBoxColumn
     Friend WithEvents newValue As DataGridViewTextBoxColumn
-    Friend WithEvents remarks As DataGridViewTextBoxColumn
 End Class

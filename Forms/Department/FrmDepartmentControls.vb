@@ -54,7 +54,7 @@
                         Dim name As String = DGFiledLeave.Rows(e.RowIndex).Cells("Full Name").Value.ToString
                         Dim leaveFrom As String = DGFiledLeave.Rows(e.RowIndex).Cells("leavefrom").Value.ToString
                         Dim leaveTo As String = DGFiledLeave.Rows(e.RowIndex).Cells("leaveTo").Value.ToString
-                        Auditing($"{FrmMain.fullName} approved {name}'s leave from {leaveFrom} to {leaveTo}")
+                        Auditing($"{FrmMain.fullName} approved {name}'s leave from {leaveFrom} to {leaveTo}", "Others")
                         DGFiledLeave.Rows.RemoveAt(e.RowIndex)
                     End If
 
@@ -66,7 +66,7 @@
                         Dim name As String = DGFiledLeave.Rows(e.RowIndex).Cells("Full Name").Value.ToString
                         Dim leaveFrom As String = DGFiledLeave.Rows(e.RowIndex).Cells("leavefrom").Value.ToString
                         Dim leaveTo As String = DGFiledLeave.Rows(e.RowIndex).Cells("leaveTo").Value.ToString
-                        Auditing($"{FrmMain.fullName} declined {name}'s leave from {leaveFrom} to {leaveTo}.")
+                        Auditing($"{FrmMain.fullName} declined {name}'s leave from {leaveFrom} to {leaveTo}.", "Others")
                         DGFiledLeave.Rows.RemoveAt(e.RowIndex)
                     End If
 
@@ -90,7 +90,7 @@
                         Dim name As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Full Name").Value.ToString
                         Dim ftioDate As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Date").Value.ToString
                         Dim ftioTime As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Time").Value.ToString
-                        Auditing($"{FrmMain.fullName} approved {name}'s filed FTIO dated {ftioDate} {ftioTime}.")
+                        Auditing($"{FrmMain.fullName} approved {name}'s filed FTIO dated {ftioDate} {ftioTime}.", "Others")
                         DGFiledFTIO.Rows.RemoveAt(e.RowIndex)
                     End If
 
@@ -102,7 +102,7 @@
                         Dim name As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Full Name").Value.ToString
                         Dim ftioDate As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Date").Value.ToString
                         Dim ftioTime As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Time").Value.ToString
-                        Auditing($"{FrmMain.fullName} declined {name}'s filed FTIO dated {ftioDate} {ftioTime}.")
+                        Auditing($"{FrmMain.fullName} declined {name}'s filed FTIO dated {ftioDate} {ftioTime}.", "Others")
                         DGFiledFTIO.Rows.RemoveAt(e.RowIndex)
                     End If
 

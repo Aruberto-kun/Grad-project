@@ -20,7 +20,7 @@ Public Class FrmPositionInfo
             Exit Sub
         Else
             UpdatePosition(MdlMaintenance.positionID, TxtPosition.Text)
-            Auditing($"{FrmMain.fullName} updated the position from {position} to {TxtPosition.Text}")
+            Auditing($"{FrmMain.fullName} updated the position from {position} to {TxtPosition.Text}", "Others")
             Me.Close()
             FrmMainte.DgPosition.DataSource = DisplayPosition()
         End If
@@ -28,7 +28,7 @@ Public Class FrmPositionInfo
 
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
         DeletePosition(MdlMaintenance.positionID)
-        Auditing($"{FrmMain.fullName} set the position {position} to inactive.")
+        Auditing($"{FrmMain.fullName} set the position {position} to inactive.", "Others")
         Me.Close()
         FrmMainte.DgPosition.DataSource = DisplayPosition()
     End Sub

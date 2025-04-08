@@ -78,7 +78,7 @@ Public Class FrmDepartmentHeadControls
                         Dim name As String = DGFiledLeave.Rows(e.RowIndex).Cells("Full Name").Value.ToString
                         Dim leaveFrom As String = DGFiledLeave.Rows(e.RowIndex).Cells("From").Value.ToString
                         Dim leaveTo As String = DGFiledLeave.Rows(e.RowIndex).Cells("To").Value.ToString
-                        Auditing($"{LblName.Text} approved {name}'s leave from {leaveFrom} to {leaveTo}.")
+                        Auditing($"{LblName.Text} approved {name}'s leave from {leaveFrom} to {leaveTo}.", "Others")
                         DGFiledLeave.Rows.RemoveAt(e.RowIndex)
                     End If
 
@@ -90,7 +90,7 @@ Public Class FrmDepartmentHeadControls
                         Dim name As String = DGFiledLeave.Rows(e.RowIndex).Cells("Full Name").Value.ToString
                         Dim leaveFrom As String = DGFiledLeave.Rows(e.RowIndex).Cells("From").Value.ToString
                         Dim leaveTo As String = DGFiledLeave.Rows(e.RowIndex).Cells("To").Value.ToString
-                        Auditing($"{LblName.Text} declined {name}'s leave from {leaveFrom} to {leaveTo}.")
+                        Auditing($"{LblName.Text} declined {name}'s leave from {leaveFrom} to {leaveTo}.", "Others")
                         DGFiledLeave.Rows.RemoveAt(e.RowIndex)
                     End If
 
@@ -114,7 +114,7 @@ Public Class FrmDepartmentHeadControls
                         Dim name As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Full Name").Value.ToString
                         Dim ftioDate As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Date").Value.ToString
                         Dim ftioTime As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Time").Value.ToString
-                        Auditing($"{LblName.Text} approved {name}'s filed FTIO dated {ftioDate} {ftioTime}.")
+                        Auditing($"{LblName.Text} approved {name}'s filed FTIO dated {ftioDate} {ftioTime}.", "Others")
                     End If
 
                 ElseIf e.ColumnIndex = DGFiledFTIO.Columns("Decline").Index Then
@@ -126,7 +126,7 @@ Public Class FrmDepartmentHeadControls
                         Dim name As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Full Name").Value.ToString
                         Dim ftioDate As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Date").Value.ToString
                         Dim ftioTime As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Time").Value.ToString
-                        Auditing($"{LblName.Text} declined {name}'s filed FTIO dated {ftioDate} {ftioTime}.")
+                        Auditing($"{LblName.Text} declined {name}'s filed FTIO dated {ftioDate} {ftioTime}.", "Others")
                     End If
 
                 End If
@@ -151,7 +151,7 @@ Public Class FrmDepartmentHeadControls
                         ClassDepartmentHeadControls.LoadOvertime(DGOvertime)
                         Dim name As String = DGOvertime.Rows(e.RowIndex).Cells("FullName").Value.ToString
                         Dim overtimeDate As String = DGOvertime.Rows(e.RowIndex).Cells("Attendance Date").Value.ToString
-                        Auditing($"{LblName.Text} approved {name}'s overtime dated {overtimeDate}.")
+                        Auditing($"{LblName.Text} approved {name}'s overtime dated {overtimeDate}.", "Others")
                     End If
 
                 ElseIf e.ColumnIndex = DGOvertime.Columns("Decline").Index Then
@@ -163,7 +163,7 @@ Public Class FrmDepartmentHeadControls
                         ClassDepartmentHeadControls.LoadOvertime(DGOvertime)
                         Dim name As String = DGOvertime.Rows(e.RowIndex).Cells("FullName").Value.ToString
                         Dim overtimeDate As String = DGOvertime.Rows(e.RowIndex).Cells("Attendance Date").Value.ToString
-                        Auditing($"{LblName.Text} declined {name}'s overtime dated {overtimeDate}.")
+                        Auditing($"{LblName.Text} declined {name}'s overtime dated {overtimeDate}.", "Others")
                     End If
 
                 End If
@@ -192,7 +192,7 @@ Public Class FrmDepartmentHeadControls
     Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
         If MsgBox("Are you sure you want to logout?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
             MsgBox("Logout Success")
-            Auditing($"{departmentHeadName} has logged out.")
+            Auditing($"{departmentHeadName} has logged out.", "Attendance")
             FrmLogin.Show()
             Me.Close()
             Exit Sub

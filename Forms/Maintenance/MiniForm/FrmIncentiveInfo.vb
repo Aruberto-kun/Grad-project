@@ -13,7 +13,7 @@ Public Class FrmIncentiveInfo
             Exit Sub
         Else
             UpdateIncentive(MdlMaintenance.incentiveID, TxtIncentiveName.Text)
-            Auditing($"{FrmMain.fullName} updated the incentive from {incentive} to {TxtIncentiveName.Text}")
+            Auditing($"{FrmMain.fullName} updated the incentive from {incentive} to {TxtIncentiveName.Text}", "Others")
             Me.Close()
             FrmMainte.DgIncentives.DataSource = DisplayIncentive()
         End If
@@ -21,7 +21,7 @@ Public Class FrmIncentiveInfo
 
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
         DeleteIncentive(MdlMaintenance.incentiveID)
-        Auditing($"{FrmMain.fullName} set the incentive {incentive} to inactive.")
+        Auditing($"{FrmMain.fullName} set the incentive {incentive} to inactive.", "Others")
         Me.Close()
         FrmMainte.DgIncentives.DataSource = DisplayIncentive()
     End Sub

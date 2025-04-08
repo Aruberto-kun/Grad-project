@@ -19,7 +19,7 @@ Public Class FrmRateInfo
         Else
             Dim rate As Integer = Val(TxtRates.Text)
             UpdateRate(rate, MdlMaintenance.rateID)
-            Auditing($"{FrmMain.fullName} updated the rate of {TxtRateClassification.Text} to {TxtRates.Text}")
+            Auditing($"{FrmMain.fullName} updated the rate of {TxtRateClassification.Text} to {TxtRates.Text}", "Others")
             Me.Close()
             FrmMainte.dgRates.DataSource = DisplayRates()
         End If
