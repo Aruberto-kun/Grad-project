@@ -52,8 +52,25 @@ Public Class FrmUpdateEmployee
                     MessageBox.Show("Invalid Voluntary amount.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 End Try
             Next
+            ClassEmployee.UpdateAssociate(TxtFirstName, TxtLastname, TxtRfidNumber, CbDepartment, CbPosition, TxtSalary, CbCompensationType, CbAssociateStatus, TxtAllowance)
+            ClassEmployee.LoadEmployee(FrmEmployee.DgEmployee)
+            Me.Close()
         Catch ex As MySqlException
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Private Sub FrmUpdateEmployee_Load(sender As Object, e As EventArgs) Handles Me.Load
+        OpenServerConnection()
+        ClassEmployee.LoadDepartment(CbDepartment)
+        ClassEmployee.SelectEmployee(FrmEmployee.DgEmployee, TxtRfidNumber, TxtFirstName, TxtLastname, CbDepartment, CbPosition, TxtSalary, CbCompensationType, CbAssociateStatus)
+        ClassEmployee.LoadAllowance(TxtAllowance)
+    End Sub
+
+    Private Sub CbDepartment_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CbDepartment.SelectedIndexChanged
+        ClassEmployee.LoadPosition(CbDepartment, CbPosition)
+    End Sub
+    Private Sub BtnCancel_Click(sender As Object, e As EventArgs) Handles BtnCancel.Click
+        Me.Close()
     End Sub
 End Class

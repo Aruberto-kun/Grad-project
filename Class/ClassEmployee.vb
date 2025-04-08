@@ -4,7 +4,18 @@ Imports MySql.Data.MySqlClient
 Public Class ClassEmployee
     Public Shared employeeID As Integer
     Public Shared oldSalary As Integer
-
+    Public Shared Sub ClearFields(txtfirstname As Guna2TextBox, txtlastname As Guna2TextBox, txtrfid As Guna2TextBox, cbDept As Guna2ComboBox, cbPos As Guna2ComboBox, txtsalary As Guna2TextBox, cbType As Guna2ComboBox, cbStatus As Guna2ComboBox, txtallowance As Guna2TextBox)
+        employeeID = 0
+        txtfirstname.Clear()
+        txtlastname.Clear()
+        txtrfid.Clear()
+        cbDept.SelectedIndex = -1
+        cbPos.SelectedIndex = -1
+        txtsalary.Clear()
+        cbType.SelectedIndex = -1
+        cbStatus.SelectedIndex = -1
+        txtallowance.Clear()
+    End Sub
     Public Shared Sub LoadEmployee(dg As DataGridView)
         Try
             RunQuery("Select a.employeeID,a.employeeNumber,a.rfidnumber,CONCAT(a.firstname,' ',a.lastname) as fullname,a.firstname,a.lastname,b.departmentName,if(a.positionID=0,NULL,c.positionName) as positionName,d.salary,d.type,a.status from tblemployee a
@@ -82,7 +93,6 @@ Public Class ClassEmployee
         End Try
     End Sub
 
-
     Public Shared Sub LoadPosition(cbDept As Guna2ComboBox, cbPos As Guna2ComboBox)
         Try
             RunQuery("Select * from tblposition where departmentID = '" & cbDept.SelectedValue & "'")
@@ -108,7 +118,6 @@ Public Class ClassEmployee
                 txtsalary.Text = dg.SelectedRows(0).Cells(9).Value
                 cbtype.Text = If(String.IsNullOrEmpty(dg.SelectedRows(0).Cells(10).Value.ToString), "", dg.SelectedRows(0).Cells(10).Value)
                 cbstatus.Text = If(IsDBNull(dg.SelectedRows(0).Cells(11).Value), "", dg.SelectedRows(0).Cells(11).Value)
-                FrmAddEmployee.ShowDialog()
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -708,6 +717,590 @@ Public Class ClassEmployee
         Catch ex As Exception
             MsgBox(ex.Message)
             Exit Sub
+        End Try
+    End Sub
+    Public Shared Sub UpdateAssociate(txtfirstname As Guna2TextBox, txtlastname As Guna2TextBox, txtrfid As Guna2TextBox, cbDept As Guna2ComboBox, cbPos As Guna2ComboBox, txtsalary As Guna2TextBox, cbType As Guna2ComboBox, cbStatus As Guna2ComboBox, txtallowance As Guna2TextBox)
+        Try
+            GetOldSalary()
+            Dim depID As Integer = cbDept.SelectedValue
+            Dim selectedposID As Integer = cbPos.SelectedValue
+            RunQuery("Select * from tblemployee where employeeID = '" & employeeID & "'")
+            Dim posID As Integer
+            If ds.Tables("querytable").Rows.Count > 0 Then
+                posID = ds.Tables("querytable").Rows(0)(0)
+            End If
+
+            'If no current position
+            If posID = 0 Then
+
+
+                'If aassign na department head
+                If cbPos.Text = "Department Head" Then
+
+                    'If may assigned Department Head
+                    RunQuery("Select * from tbldepartmenthead where departmentID = '" & depID & "' and employeeID !='" & employeeID & "'")
+                    If ds.Tables("querytable").Rows.Count > 0 Then
+                        MessageBox.Show("There's an assigned Department Head already. Demote the Department head first.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                        Exit Sub
+
+                    Else
+                        'If walang department head
+                        RunCommand("Update tblemployee SET rfidnumber=@rfidnumber, firstname=@firstname,lastname=@lastname,
+                                            departmentID=@departmentID,positionID=@positionID,status=@status WHERE employeeID=@employeeID")
+                        With com
+                            .Parameters.AddWithValue("@rfidnumber", txtrfid.Text.Trim)
+                            .Parameters.AddWithValue("@firstname", txtfirstname.Text.Trim)
+                            .Parameters.AddWithValue("@lastname", txtlastname.Text.Trim)
+                            .Parameters.AddWithValue("@departmentID", depID)
+                            .Parameters.AddWithValue("@positionID", selectedposID)
+                            .Parameters.AddWithValue("@status", cbStatus.Text)
+                            .Parameters.AddWithValue("@employeeID", employeeID)
+                            .ExecuteNonQuery()
+                            .Parameters.Clear()
+
+                        End With
+
+                        'Create new department head
+                        RunCommand("Insert into tbldepartmenthead (departmentID,employeeID) VALUES (@departmentID,@employeeID) 
+                                    ON DUPLICATE KEY UPDATE employeeID=@employeeID")
+                        With com
+                            .Parameters.AddWithValue("@departmentID", depID)
+                            .Parameters.AddWithValue("@employeeID", employeeID)
+
+                        End With
+
+                        'Update Salary
+                        RunCommand("Update tblsalary set salary=@salary, type=@type WHERE employeeID=@employeeID")
+                        With com
+                            .Parameters.AddWithValue("@employeeID", employeeID)
+                            .Parameters.AddWithValue("@salary", txtsalary.Text.Trim)
+                            .Parameters.AddWithValue("@type", FrmUpdateEmployee.CbCompensationType.Text)
+                            .ExecuteNonQuery()
+                            .Parameters.Clear()
+
+                        End With
+
+                        'Insert Voluntary Contribution
+                        For Each row As DataGridViewRow In FrmUpdateEmployee.DGVoluntary.Rows
+                            Dim volID As Integer = row.Cells("voluntaryID").Value
+                            Dim amount As Decimal = If(String.IsNullOrEmpty(row.Cells("amount").Value.ToString), 0, row.Cells("amount").Value)
+
+                            RunCommand("Insert into tblempvoluntary (employeeID,voluntaryID,amount) VALUES (@employeeID,@voluntaryID,@amount)
+                                        ON DUPLICATE KEY UPDATE amount=@amount")
+                            With com
+                                .Parameters.AddWithValue("@employeeID", employeeID)
+                                .Parameters.AddWithValue("@voluntaryID", volID)
+                                .Parameters.AddWithValue("@amount", amount)
+                                .ExecuteNonQuery()
+                                .Parameters.Clear()
+                            End With
+                        Next
+
+                        SaveLeaveAllocation(employeeID)
+                        SaveAllowance(employeeID, txtallowance)
+                        SaveSalaryHistory(employeeID, txtsalary)
+
+                        'Check if may schedule
+                        RunQuery("Select * from tblschedule where employeeID = '" & employeeID & "'")
+                        If ds.Tables("querytable").Rows.Count > 0 Then
+                            GetDailyWageOfMonthlyEmployees(employeeID)
+
+                        End If
+
+                    End If
+                    MsgBox("Updated Successfully", MsgBoxStyle.OkOnly)
+
+                Else
+                    'If hindi department head
+                    RunCommand("Update tblemployee SET rfidnumber=@rfidnumber, firstname=@firstname,lastname=@lastname,
+                                            departmentID=@departmentID,positionID=@positionID,status=@status WHERE employeeID=@employeeID")
+                    With com
+                        .Parameters.AddWithValue("@rfidnumber", txtrfid.Text.Trim)
+                        .Parameters.AddWithValue("@firstname", txtfirstname.Text.Trim)
+                        .Parameters.AddWithValue("@lastname", txtlastname.Text.Trim)
+                        .Parameters.AddWithValue("@departmentID", depID)
+                        .Parameters.AddWithValue("@positionID", selectedposID)
+                        .Parameters.AddWithValue("@status", cbStatus.Text)
+                        .Parameters.AddWithValue("@employeeID", employeeID)
+                        .ExecuteNonQuery()
+                        .Parameters.Clear()
+
+                    End With
+
+                    'Update Salary
+                    RunCommand("Update tblsalary set salary=@salary, type=@type WHERE employeeID=@employeeID")
+                    With com
+                        .Parameters.AddWithValue("@employeeID", employeeID)
+                        .Parameters.AddWithValue("@salary", txtsalary.Text.Trim)
+                        .Parameters.AddWithValue("@type", FrmUpdateEmployee.CbCompensationType.Text)
+                        .ExecuteNonQuery()
+                        .Parameters.Clear()
+
+                    End With
+
+                    'Insert Voluntary Contribution
+                    For Each row As DataGridViewRow In FrmUpdateEmployee.DGVoluntary.Rows
+                        Dim volID As Integer = row.Cells("voluntaryID").Value
+                        Dim amount As Decimal = If(String.IsNullOrEmpty(row.Cells("amount").Value.ToString), 0, row.Cells("amount").Value)
+
+                        RunCommand("Insert into tblempvoluntary (employeeID,voluntaryID,amount) VALUES (@employeeID,@voluntaryID,@amount)
+                                        ON DUPLICATE KEY UPDATE amount=@amount")
+                        With com
+                            .Parameters.AddWithValue("@employeeID", employeeID)
+                            .Parameters.AddWithValue("@voluntaryID", volID)
+                            .Parameters.AddWithValue("@amount", amount)
+                            .ExecuteNonQuery()
+                            .Parameters.Clear()
+                        End With
+                    Next
+
+                    SaveLeaveAllocation(employeeID)
+                    SaveAllowance(employeeID, txtallowance)
+                    SaveSalaryHistory(employeeID, txtsalary)
+
+
+                    'Check if may schedule
+                    RunQuery("Select * from tblschedule where employeeID = '" & employeeID & "'")
+                    If ds.Tables("querytable").Rows.Count > 0 Then
+                        GetDailyWageOfMonthlyEmployees(employeeID)
+                    End If
+                    MsgBox("Updated Successfully", MsgBoxStyle.OkOnly)
+                End If
+
+            Else
+                'May position na magpapalit lang
+
+                'Magpapalit into department head
+                If cbPos.Text = "Department Head" Then
+                    RunQuery("Select * from tbldepartmenthead where departmentID = '" & depID & "'")
+                    'If merong department
+                    If ds.Tables("querytable").Rows.Count > 0 Then
+                        Dim sempid As Integer = ds.Tables("querytable").Rows(0)(2)
+                        If sempid = 0 Then
+                            'IF WALANG DEPARTMENT HEAD
+
+                            'Update profile
+                            RunCommand("Update tblemployee SET rfidnumber=@rfidnumber, firstname=@firstname,lastname=@lastname,
+                                            departmentID=@departmentID,positionID=@positionID,status=@status WHERE employeeID=@employeeID")
+                            With com
+                                .Parameters.AddWithValue("@rfidnumber", txtrfid.Text.Trim)
+                                .Parameters.AddWithValue("@firstname", txtfirstname.Text.Trim)
+                                .Parameters.AddWithValue("@lastname", txtlastname.Text.Trim)
+                                .Parameters.AddWithValue("@departmentID", depID)
+                                .Parameters.AddWithValue("@positionID", selectedposID)
+                                .Parameters.AddWithValue("@status", cbStatus.Text)
+                                .Parameters.AddWithValue("@employeeID", employeeID)
+                                .ExecuteNonQuery()
+                                .Parameters.Clear()
+
+                            End With
+
+                            'Update Salary
+                            RunCommand("Update tblsalary set salary=@salary, type=@type WHERE employeeID=@employeeID")
+                            With com
+                                .Parameters.AddWithValue("@employeeID", employeeID)
+                                .Parameters.AddWithValue("@salary", txtsalary.Text.Trim)
+                                .Parameters.AddWithValue("@type", FrmUpdateEmployee.CbCompensationType.Text)
+                                .ExecuteNonQuery()
+                                .Parameters.Clear()
+
+                            End With
+                            'Insert Voluntary Contribution
+                            For Each row As DataGridViewRow In FrmUpdateEmployee.DGVoluntary.Rows
+                                Dim volID As Integer = row.Cells("voluntaryID").Value
+                                Dim amount As Decimal = If(String.IsNullOrEmpty(row.Cells("amount").Value.ToString), 0, row.Cells("amount").Value)
+
+                                RunCommand("Insert into tblempvoluntary (employeeID,voluntaryID,amount) VALUES (@employeeID,@voluntaryID,@amount)
+                                        ON DUPLICATE KEY UPDATE amount=@amount")
+                                With com
+                                    .Parameters.AddWithValue("@employeeID", employeeID)
+                                    .Parameters.AddWithValue("@voluntaryID", volID)
+                                    .Parameters.AddWithValue("@amount", amount)
+                                    .ExecuteNonQuery()
+                                    .Parameters.Clear()
+                                End With
+                            Next
+                            SaveLeaveAllocation(employeeID)
+                            SaveAllowance(employeeID, txtallowance)
+                            SaveSalaryHistory(employeeID, txtsalary)
+
+                            'Assign Department HEad
+                            RunCommand("Update tbldepartmenthead set employeeID = '" & employeeID & "' where employeeID = 0 and departmentID = '" & depID & "'")
+                            With com
+                                .ExecuteNonQuery()
+                                .Parameters.Clear()
+                            End With
+
+
+                            'Check if may schedule
+                            RunQuery("Select * from tblschedule where employeeID = '" & employeeID & "'")
+                            If ds.Tables("querytable").Rows.Count > 0 Then
+                                GetDailyWageOfMonthlyEmployees(employeeID)
+                            End If
+                            MsgBox("Updated Successfully", MsgBoxStyle.OkOnly)
+
+
+                        Else
+                            ''IF MERONG DEPARTMENT HEAD
+                            If sempid = employeeID Then
+                                'IF SAME ACCOUNT 
+
+                                'Update profile
+                                RunCommand("Update tblemployee SET rfidnumber=@rfidnumber, firstname=@firstname,lastname=@lastname,
+                                            departmentID=@departmentID,positionID=@positionID,status=@status WHERE employeeID=@employeeID")
+                                With com
+                                    .Parameters.AddWithValue("@rfidnumber", txtrfid.Text.Trim)
+                                    .Parameters.AddWithValue("@firstname", txtfirstname.Text.Trim)
+                                    .Parameters.AddWithValue("@lastname", txtlastname.Text.Trim)
+                                    .Parameters.AddWithValue("@departmentID", depID)
+                                    .Parameters.AddWithValue("@positionID", selectedposID)
+                                    .Parameters.AddWithValue("@status", cbStatus.Text)
+                                    .Parameters.AddWithValue("@employeeID", employeeID)
+                                    .ExecuteNonQuery()
+                                    .Parameters.Clear()
+
+                                End With
+
+                                'Update Salary
+                                RunCommand("Update tblsalary set salary=@salary, type=@type WHERE employeeID=@employeeID")
+                                With com
+                                    .Parameters.AddWithValue("@employeeID", employeeID)
+                                    .Parameters.AddWithValue("@salary", txtsalary.Text.Trim)
+                                    .Parameters.AddWithValue("@type", FrmUpdateEmployee.CbCompensationType.Text)
+                                    .ExecuteNonQuery()
+                                    .Parameters.Clear()
+                                End With
+
+                                'Insert Voluntary Contribution
+                                For Each row As DataGridViewRow In FrmUpdateEmployee.DGVoluntary.Rows
+                                    Dim volID As Integer = row.Cells("voluntaryID").Value
+                                    Dim amount As Decimal = If(String.IsNullOrEmpty(row.Cells("amount").Value.ToString), 0, row.Cells("amount").Value)
+
+                                    RunCommand("Insert into tblempvoluntary (employeeID,voluntaryID,amount) VALUES (@employeeID,@voluntaryID,@amount)
+                                        ON DUPLICATE KEY UPDATE amount=@amount")
+                                    With com
+                                        .Parameters.AddWithValue("@employeeID", employeeID)
+                                        .Parameters.AddWithValue("@voluntaryID", volID)
+                                        .Parameters.AddWithValue("@amount", amount)
+                                        .ExecuteNonQuery()
+                                        .Parameters.Clear()
+                                    End With
+                                Next
+                                SaveLeaveAllocation(employeeID)
+                                SaveAllowance(employeeID, txtallowance)
+                                SaveSalaryHistory(employeeID, txtsalary)
+
+                                'Create new department head
+                                RunCommand("Insert into tbldepartmenthead (departmentID,employeeID) VALUES (@departmentID,@employeeID) 
+                                    ON DUPLICATE KEY UPDATE employeeID=@employeeID")
+                                With com
+                                    .Parameters.AddWithValue("@departmentID", depID)
+                                    .Parameters.AddWithValue("@employeeID", employeeID)
+                                End With
+
+                                'Check if may schedule
+                                RunQuery("Select * from tblschedule where employeeID = '" & employeeID & "'")
+                                If ds.Tables("querytable").Rows.Count > 0 Then
+                                    GetDailyWageOfMonthlyEmployees(employeeID)
+                                End If
+                                MsgBox("Updated Successfully", MsgBoxStyle.OkOnly)
+                            Else
+                                MessageBox.Show("There's an assigned Department Head already. Demote the current Department Head to assign a new one.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                                Exit Sub
+                            End If
+                        End If
+                    Else
+                        'If wala pang department
+                        'Update profile
+                        RunCommand("Update tblemployee SET rfidnumber=@rfidnumber, firstname=@firstname,lastname=@lastname,
+                                            departmentID=@departmentID,positionID=@positionID,status=@status WHERE employeeID=@employeeID")
+                        With com
+                            .Parameters.AddWithValue("@rfidnumber", txtrfid.Text.Trim)
+                            .Parameters.AddWithValue("@firstname", txtfirstname.Text.Trim)
+                            .Parameters.AddWithValue("@lastname", txtlastname.Text.Trim)
+                            .Parameters.AddWithValue("@departmentID", depID)
+                            .Parameters.AddWithValue("@positionID", selectedposID)
+                            .Parameters.AddWithValue("@status", cbStatus.Text)
+                            .Parameters.AddWithValue("@employeeID", employeeID)
+                            .ExecuteNonQuery()
+                            .Parameters.Clear()
+
+                        End With
+
+                        'Update Salary
+                        RunCommand("Update tblsalary set salary=@salary, type=@type WHERE employeeID=@employeeID")
+                        With com
+                            .Parameters.AddWithValue("@employeeID", employeeID)
+                            .Parameters.AddWithValue("@salary", txtsalary.Text.Trim)
+                            .Parameters.AddWithValue("@type", FrmUpdateEmployee.CbCompensationType.Text)
+                            .ExecuteNonQuery()
+                            .Parameters.Clear()
+
+                        End With
+                        'Insert Voluntary Contribution
+                        For Each row As DataGridViewRow In FrmUpdateEmployee.DGVoluntary.Rows
+                            Dim volID As Integer = row.Cells("voluntaryID").Value
+                            Dim amount As Decimal = If(String.IsNullOrEmpty(row.Cells("amount").Value.ToString), 0, row.Cells("amount").Value)
+
+                            RunCommand("Insert into tblempvoluntary (employeeID,voluntaryID,amount) VALUES (@employeeID,@voluntaryID,@amount)
+                                        ON DUPLICATE KEY UPDATE amount=@amount")
+                            With com
+                                .Parameters.AddWithValue("@employeeID", employeeID)
+                                .Parameters.AddWithValue("@voluntaryID", volID)
+                                .Parameters.AddWithValue("@amount", amount)
+                                .ExecuteNonQuery()
+                                .Parameters.Clear()
+                            End With
+                        Next
+                        SaveLeaveAllocation(employeeID)
+                        SaveAllowance(employeeID, txtallowance)
+                        SaveSalaryHistory(employeeID, txtsalary)
+
+
+                        'Check if may schedule
+                        RunQuery("Select * from tblschedule where employeeID = '" & employeeID & "'")
+                        If ds.Tables("querytable").Rows.Count > 0 Then
+                            GetDailyWageOfMonthlyEmployees(employeeID)
+                        End If
+
+                        'Create new department head
+                        RunCommand("Insert into tbldepartmenthead (departmentID,employeeID) VALUES (@departmentID,@employeeID) 
+                                    ON DUPLICATE KEY UPDATE employeeID=@employeeID")
+                        With com
+                            .Parameters.AddWithValue("@departmentID", depID)
+                            .Parameters.AddWithValue("@employeeID", employeeID)
+
+                        End With
+
+                        MessageBox.Show("Seven")
+                    End If
+                Else
+                    'Magpapalit pero hindi department head
+                    RunCommand("Update tblemployee SET rfidnumber=@rfidnumber, firstname=@firstname,lastname=@lastname,
+                                            departmentID=@departmentID,positionID=@positionID,status=@status WHERE employeeID=@employeeID")
+                    With com
+                        .Parameters.AddWithValue("@rfidnumber", txtrfid.Text.Trim)
+                        .Parameters.AddWithValue("@firstname", txtfirstname.Text.Trim)
+                        .Parameters.AddWithValue("@lastname", txtlastname.Text.Trim)
+                        .Parameters.AddWithValue("@departmentID", depID)
+                        .Parameters.AddWithValue("@positionID", selectedposID)
+                        .Parameters.AddWithValue("@status", cbStatus.Text)
+                        .Parameters.AddWithValue("@employeeID", employeeID)
+                        .ExecuteNonQuery()
+                        .Parameters.Clear()
+                    End With
+
+                    'Update Salary
+                    RunCommand("Update tblsalary set salary=@salary, type=@type WHERE employeeID=@employeeID")
+                    With com
+                        .Parameters.AddWithValue("@employeeID", employeeID)
+                        .Parameters.AddWithValue("@salary", txtsalary.Text.Trim)
+                        .Parameters.AddWithValue("@type", FrmUpdateEmployee.CbCompensationType.Text)
+                        .ExecuteNonQuery()
+                        .Parameters.Clear()
+
+                    End With
+                    'Insert Voluntary Contribution
+                    For Each row As DataGridViewRow In FrmUpdateEmployee.DGVoluntary.Rows
+                        Dim volID As Integer = row.Cells("voluntaryID").Value
+                        Dim amount As Decimal = If(String.IsNullOrEmpty(row.Cells("amount").Value.ToString), 0, row.Cells("amount").Value)
+
+                        RunCommand("Insert into tblempvoluntary (employeeID,voluntaryID,amount) VALUES (@employeeID,@voluntaryID,@amount)
+                                        ON DUPLICATE KEY UPDATE amount=@amount")
+                        With com
+                            .Parameters.AddWithValue("@employeeID", employeeID)
+                            .Parameters.AddWithValue("@voluntaryID", volID)
+                            .Parameters.AddWithValue("@amount", amount)
+                            .ExecuteNonQuery()
+                            .Parameters.Clear()
+                        End With
+                    Next
+
+                    SaveLeaveAllocation(employeeID)
+                    SaveAllowance(employeeID, txtallowance)
+                    SaveSalaryHistory(employeeID, txtsalary)
+
+
+                    'Check if may schedule
+                    RunQuery("Select * from tblschedule where employeeID = '" & employeeID & "'")
+                    If ds.Tables("querytable").Rows.Count > 0 Then
+                        GetDailyWageOfMonthlyEmployees(employeeID)
+                    End If
+
+                    'Remove from department head list
+                    RunCommand("Update tbldepartmenthead SET employeeID = 0 WHERE employeeID = '" & employeeID & "'")
+                    With com
+                        .ExecuteNonQuery()
+                        .Parameters.Clear()
+                    End With
+                    MessageBox.Show("Eight")
+                End If
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message, MsgBoxStyle.Critical)
+            Exit Sub
+        End Try
+    End Sub
+
+    Public Shared Sub NewAssociate(txtfirstname As Guna2TextBox, txtlastname As Guna2TextBox, txtrfid As Guna2TextBox, cbDept As Guna2ComboBox, cbPos As Guna2ComboBox, txtsalary As Guna2TextBox, cbType As Guna2ComboBox, cbStatus As Guna2ComboBox, txtallowance As Guna2TextBox)
+        Try
+            employeeID = 0
+            Dim employeenumber As Integer
+            If cbStatus.Text = "Resigned" Then
+                MessageBox.Show("Can't set the status to resigned for new employees", "Invalid", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Exit Sub
+            End If
+
+            Dim deptID As Integer = cbDept.SelectedValue
+
+            'Get Last Inserted Employee Number
+            RunQuery("Select * from tblemployee order by employeeID DESC LIMIT 1")
+            If ds.Tables("querytable").Rows.Count > 0 Then
+                employeenumber = ds.Tables("querytable").Rows(0)(1) + 1
+            Else
+                Dim year = Now.Year
+                employeenumber = year & "0001"
+            End If
+
+            'If Position is Department Head and there is an existing Department Head
+            If cbPos.Text = "Department Head" Then
+                RunQuery("Select * from tbldepartmenthead where departmentID = '" & deptID & "' and employeeID != 0")
+                If ds.Tables("querytable").Rows.Count > 0 Then
+                    MessageBox.Show("There's an assigned Department Head already. Demote the current Department Head to assign a new one.", "", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                    Exit Sub
+                Else
+
+                    'Insert employee
+                    RunCommand("Insert into tblemployee (employeeNumber,rfidnumber,lastname,firstname,departmentID,positionID,status) VALUES
+                        (@employeeNumber,@rfidnumber,@lastname,@firstname,@departmentID,@positionID,@status)")
+                    With com
+                        .Parameters.AddWithValue("@employeeID", employeeID)
+                        .Parameters.AddWithValue("@employeeNumber", employeenumber)
+                        .Parameters.AddWithValue("@rfidnumber", txtrfid.Text)
+                        .Parameters.AddWithValue("@lastname", txtlastname.Text)
+                        .Parameters.AddWithValue("@firstname", txtfirstname.Text)
+                        .Parameters.AddWithValue("@departmentID", cbDept.SelectedValue)
+                        .Parameters.AddWithValue("@positionID", cbPos.SelectedValue)
+                        .Parameters.AddWithValue("@status", cbStatus.Text)
+                        .ExecuteNonQuery()
+                        .Parameters.Clear()
+                    End With
+
+
+                    'Get last inserted Employee ID
+                    RunQuery("Select employeeID from tblemployee order by employeeID DESC limit 1")
+                    Dim newemployeeID As Integer = ds.Tables("querytable").Rows(0)(0)
+
+                    'If Position is Department Head and no Department Assigned yet
+                    If cbPos.Text = "Department Head" Then
+                        RunCommand("Insert into tbldepartmenthead (departmentID,employeeID) VALUES (@departmentID,@employeeID) 
+                                    ON DUPLICATE KEY UPDATE employeeID=@employeeID")
+                        With com
+                            .Parameters.AddWithValue("@departmentID", deptID)
+                            .Parameters.AddWithValue("@employeeID", newemployeeID)
+                            .ExecuteNonQuery()
+                            .Parameters.Clear()
+                        End With
+                    End If
+
+                    'Get last inserted
+                    RunQuery("Select * from tblemployee ORDER by employeeID DESC LIMIT 1")
+                    If ds.Tables("querytable").Rows.Count > 0 Then
+                        Dim empID As Integer = ds.Tables("querytable").Rows(0)(0)
+
+                        RunCommand("Insert into tblsalary (employeeID,salary,type) VALUES (@employeeID,@salary,@type)")
+                        With com
+                            .Parameters.AddWithValue("@employeeID", empID)
+                            .Parameters.AddWithValue("@salary", txtsalary.Text.Trim)
+                            .Parameters.AddWithValue("@type", FrmAddEmployee.CbCompensationType.Text)
+                            .ExecuteNonQuery()
+                            .Parameters.Clear()
+
+                        End With
+
+                        'Voluntary
+                        For Each row As DataGridViewRow In FrmAddEmployee.DGVoluntary.Rows
+                            Dim volID As Integer = row.Cells("voluntaryID").Value
+                            Dim amount As Decimal = If(String.IsNullOrEmpty(row.Cells("amount").Value), 0, row.Cells("amount").Value)
+
+                            RunCommand("Insert into tblempvoluntary (employeeID,voluntaryID,amount) VALUES (@employeeID,@voluntaryID,@amount)
+                                    ON DUPLICATE KEY UPDATE amount=@amount")
+                            With com
+                                .Parameters.AddWithValue("@employeeID", empID)
+                                .Parameters.AddWithValue("@voluntaryID", volID)
+                                .Parameters.AddWithValue("@amount", amount)
+                                .ExecuteNonQuery()
+                                .Parameters.Clear()
+                            End With
+                        Next
+
+                        SaveLeaveAllocation(empID)
+                        SaveAllowance(empID, txtallowance)
+                        SaveSalaryHistory(empID, txtsalary)
+                    End If
+                    MessageBox.Show("One")
+                End If
+
+            Else
+                'Insert employee
+                RunCommand("Insert into tblemployee (employeeNumber,rfidnumber,lastname,firstname,departmentID,positionID,status) VALUES
+                        (@employeeNumber,@rfidnumber,@lastname,@firstname,@departmentID,@positionID,@status)")
+                With com
+                    .Parameters.AddWithValue("@employeeID", employeeID)
+                    .Parameters.AddWithValue("@employeeNumber", employeenumber)
+                    .Parameters.AddWithValue("@rfidnumber", txtrfid.Text)
+                    .Parameters.AddWithValue("@lastname", txtlastname.Text)
+                    .Parameters.AddWithValue("@firstname", txtfirstname.Text)
+                    .Parameters.AddWithValue("@departmentID", cbDept.SelectedValue)
+                    .Parameters.AddWithValue("@positionID", cbPos.SelectedValue)
+                    .Parameters.AddWithValue("@status", cbStatus.Text)
+                    .ExecuteNonQuery()
+                    .Parameters.Clear()
+                End With
+
+                'Get last inserted Employee ID
+                RunQuery("Select employeeID from tblemployee order by employeeID DESC limit 1")
+                Dim newemployeeID As Integer = ds.Tables("querytable").Rows(0)(0)
+
+
+                'Get last inserted
+                RunQuery("Select * from tblemployee ORDER by employeeID DESC LIMIT 1")
+                If ds.Tables("querytable").Rows.Count > 0 Then
+                    Dim empID As Integer = ds.Tables("querytable").Rows(0)(0)
+
+                    RunCommand("Insert into tblsalary (employeeID,salary,type) VALUES (@employeeID,@salary,@type)")
+                    With com
+                        .Parameters.AddWithValue("@employeeID", empID)
+                        .Parameters.AddWithValue("@salary", txtsalary.Text.Trim)
+                        .Parameters.AddWithValue("@type", FrmAddEmployee.CbCompensationType.Text)
+                        .ExecuteNonQuery()
+                        .Parameters.Clear()
+
+                    End With
+
+                    'Voluntary
+                    For Each row As DataGridViewRow In FrmAddEmployee.DGVoluntary.Rows
+                        Dim volID As Integer = row.Cells("voluntaryID").Value
+                        Dim amount As Decimal = If(String.IsNullOrEmpty(row.Cells("amount").Value), 0, row.Cells("amount").Value)
+
+                        RunCommand("Insert into tblempvoluntary (employeeID,voluntaryID,amount) VALUES (@employeeID,@voluntaryID,@amount)
+                                    ON DUPLICATE KEY UPDATE amount=@amount")
+                        With com
+                            .Parameters.AddWithValue("@employeeID", empID)
+                            .Parameters.AddWithValue("@voluntaryID", volID)
+                            .Parameters.AddWithValue("@amount", amount)
+                            .ExecuteNonQuery()
+                            .Parameters.Clear()
+                        End With
+                    Next
+                    SaveLeaveAllocation(empID)
+                    SaveAllowance(empID, txtallowance)
+                    SaveSalaryHistory(empID, txtsalary)
+                End If
+            End If
+            MessageBox.Show("Two")
+        Catch ex As Exception
+
         End Try
     End Sub
 

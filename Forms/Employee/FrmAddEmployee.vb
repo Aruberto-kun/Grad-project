@@ -59,7 +59,7 @@ Public Class FrmAddEmployee
                 Exit Sub
             End If
 
-            ClassEmployee.NewEmployee(TxtRfidNumber, TxtLastname, TxtFirstName, CbDepartment, CbPosition, TxtSalary, CbAssociateStatus, TxtAllowance)
+            ClassEmployee.NewAssociate(TxtFirstName, TxtLastname, TxtRfidNumber, CbDepartment, CbPosition, TxtSalary, CbCompensationType, CbAssociateStatus, TxtAllowance)
             ClassEmployee.LoadEmployee(FrmEmployee.DgEmployee)
             Me.Close()
         Catch ex As MySqlException
@@ -116,11 +116,7 @@ Public Class FrmAddEmployee
         Try
             ClassEmployee.LoadVoluntary(DGVoluntary)
             ClassEmployee.LoadLeaveAllocation(DGLeaveAllocation)
-            CbAssociateStatus.SelectedIndex = 0
-            CbCompensationType.SelectedIndex = 0
-            CbDepartment.SelectedIndex = 0
-            CbPosition.SelectedIndex = 0
-            DGLeaveAllocation.Columns(2).ValueType = GetType(String)
+            ClassEmployee.ClearFields(TxtFirstName, TxtLastname, TxtRfidNumber, CbDepartment, CbPosition, TxtSalary, CbCompensationType, CbAssociateStatus, TxtAllowance)
         Catch ex As Exception
 
         End Try

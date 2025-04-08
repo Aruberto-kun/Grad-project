@@ -88,7 +88,8 @@ Public Class FrmEmployee
     End Sub
 
     Private Sub DgEmployee_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgEmployee.CellDoubleClick
-        ClassEmployee.SelectEmployee(DgEmployee, FrmAddEmployee.TxtRfidNumber, FrmAddEmployee.TxtFirstName, FrmAddEmployee.TxtLastname, FrmAddEmployee.CbDepartment, FrmAddEmployee.CbPosition, FrmAddEmployee.TxtSalary, FrmAddEmployee.CbCompensationType, FrmAddEmployee.CbAssociateStatus)
+        'ClassEmployee.SelectEmployee(DgEmployee, FrmUpdateEmployee.TxtRfidNumber, FrmUpdateEmployee.TxtFirstName, FrmUpdateEmployee.TxtLastname, FrmUpdateEmployee.CbDepartment, FrmUpdateEmployee.CbPosition, FrmUpdateEmployee.TxtSalary, FrmUpdateEmployee.CbCompensationType, FrmUpdateEmployee.CbAssociateStatus)
+        FrmUpdateEmployee.ShowDialog()
     End Sub
 
     Private Sub DgEmployee_MouseDown(sender As Object, e As MouseEventArgs) Handles DgEmployee.MouseDown
