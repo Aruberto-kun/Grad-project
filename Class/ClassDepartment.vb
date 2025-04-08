@@ -22,6 +22,8 @@ Public Class ClassDepartment
                      a.departmentID, a.departmentName, departmentHead, a.status")
             dg.DataSource = ds.Tables("querytable")
         Catch ex As Exception
+            MsgBox(ex.Message)
+            Exit Sub
 
         End Try
     End Sub
@@ -35,6 +37,8 @@ Public Class ClassDepartment
             cb.DataSource = ds.Tables("querytable")
             cb.SelectedIndex = -1
         Catch ex As Exception
+            MsgBox(ex.Message)
+            Exit Sub
 
         End Try
     End Sub
@@ -47,6 +51,8 @@ Public Class ClassDepartment
             cb.SelectedIndex = -1
         Catch ex As Exception
             MsgBox(ex.Message)
+            Exit Sub
+
         End Try
     End Sub
 
@@ -88,6 +94,8 @@ Public Class ClassDepartment
             Auditing($"{FrmMain.LblName.Text} set {FrmDepartmentControls.CbDepartmentHead.Text} as Department Head in {FrmDepartmentControls.CbDepartment.Text}", "Others")
         Catch ex As Exception
             MsgBox(ex.Message)
+            Exit Sub
+
         End Try
     End Sub
     Public Shared Sub LoadOvertime(dg As Guna2DataGridView)
@@ -114,9 +122,8 @@ Public Class ClassDepartment
                   HAVING FLOOR(TIME_TO_SEC(TIMEDIFF(a.logout, CONCAT(a.date, ' ', c.timeout))) / 3600) > 0
                   ORDER BY a.attendanceID")
 
-            If ds.Tables("querytable").Rows.Count > 0 Then
-                ' Bind the data to the DataGridView
-                dg.DataSource = ds.Tables("querytable")
+            ' Bind the data to the DataGridView
+            dg.DataSource = ds.Tables("querytable")
 
                 ' Add Approve button column
                 If dg.Columns("Approve") Is Nothing Then
@@ -127,31 +134,30 @@ Public Class ClassDepartment
                     dg.Columns.Add(approveButtonColumn)
                 End If
 
-                ' Add Decline button column
-                If dg.Columns("Decline") Is Nothing Then
-                    Dim declineButtonColumn As New DataGridViewButtonColumn()
-                    declineButtonColumn.Name = "Decline"
-                    declineButtonColumn.Text = "Decline"
-                    declineButtonColumn.UseColumnTextForButtonValue = True ' Display the text on the button
-                    dg.Columns.Add(declineButtonColumn)
-                End If
-
+            ' Add Decline button column
+            If dg.Columns("Decline") Is Nothing Then
+                Dim declineButtonColumn As New DataGridViewButtonColumn()
+                declineButtonColumn.Name = "Decline"
+                declineButtonColumn.Text = "Decline"
+                declineButtonColumn.UseColumnTextForButtonValue = True ' Display the text on the button
+                dg.Columns.Add(declineButtonColumn)
             End If
         Catch ex As Exception
-            ' Handle the error
-            MessageBox.Show("Error: " & ex.Message)
+            MsgBox(ex.Message)
+            Exit Sub
+
         End Try
     End Sub
 
     Public Shared Sub LoadFiledFTIO(dg As Guna2DataGridView)
         Try
+
             RunQuery("Select a.ftioID 'FTIO ID', concat(b.firstname,' ',b.lastname) 'Full Name',a.date 'Date',a.time 'Time',a.classification 'Classification', a.reason 'Reason',a.status 'Status'
             From tblfiledftio a
                       join tblemployee b on b.employeeID = a.employeeID
                       where a.status='Pending' and a.employeeID in (Select employeeID from tbldepartmenthead)")
-            If ds.Tables("querytable").Rows.Count > 0 Then
-                ' Bind the data to the DataGridView
-                dg.DataSource = ds.Tables("querytable")
+            ' Bind the data to the DataGridView
+            dg.DataSource = ds.Tables("querytable")
 
                 ' Add Approve button column
                 If dg.Columns("Approve") Is Nothing Then
@@ -163,54 +169,52 @@ Public Class ClassDepartment
 
                 End If
 
-                ' Add Decline button column
-                If dg.Columns("Decline") Is Nothing Then
-                    Dim declineButtonColumn As New DataGridViewButtonColumn()
-                    declineButtonColumn.Name = "Decline"
-                    declineButtonColumn.Text = "Decline"
-                    declineButtonColumn.UseColumnTextForButtonValue = True ' Display the text on the button
-                    dg.Columns.Add(declineButtonColumn)
-                End If
+            ' Add Decline button column
+            If dg.Columns("Decline") Is Nothing Then
+                Dim declineButtonColumn As New DataGridViewButtonColumn()
+                declineButtonColumn.Name = "Decline"
+                declineButtonColumn.Text = "Decline"
+                declineButtonColumn.UseColumnTextForButtonValue = True ' Display the text on the button
+                dg.Columns.Add(declineButtonColumn)
             End If
         Catch ex As Exception
+            MsgBox(ex.Message)
+            Exit Sub
 
         End Try
     End Sub
 
     Public Shared Sub LoadFiledLeave(dg As Guna2DataGridView)
         Try
-            dg.Rows.Clear()
             RunQuery("select a.filedleaveID 'Filed Leave ID', CONCAT(b.firstname,' ',b.lastname) 'Full Name', a.leavefrom 'From',a.leaveto 'To',c.leaveType 'Type',a.leavereason 'Reason' from tblfiledleave a
                       join tblemployee b on b.employeeID = a.employeeID
                       join tblleave c on c.leaveID = a.leaveID
                       where a.status = 'Pending' and a.employeeID in (Select employeeID from tbldepartmenthead)")
+            ' Bind the data to the DataGridView
+            dg.DataSource = ds.Tables("querytable")
 
-            If ds.Tables("querytable").Rows.Count > 0 Then
-                ' Bind the data to the DataGridView
-                dg.DataSource = ds.Tables("querytable")
-
-                ' Add Approve button column
-                If dg.Columns("Approve") Is Nothing Then
-                    Dim approveButtonColumn As New DataGridViewButtonColumn()
-                    approveButtonColumn.Name = "Approve"
-                    approveButtonColumn.Text = "Approve"
-                    approveButtonColumn.UseColumnTextForButtonValue = True ' Display the text on the button
-                    dg.Columns.Add(approveButtonColumn)
-                End If
-
-
-                ' Add Decline button column
-                If dg.Columns("Decline") Is Nothing Then
-                    Dim declineButtonColumn As New DataGridViewButtonColumn()
-                    declineButtonColumn.Name = "Decline"
-                    declineButtonColumn.Text = "Decline"
-                    declineButtonColumn.UseColumnTextForButtonValue = True ' Display the text on the button
-                    dg.Columns.Add(declineButtonColumn)
-                End If
-
+            ' Add Approve button column
+            If dg.Columns("Approve") Is Nothing Then
+                Dim approveButtonColumn As New DataGridViewButtonColumn()
+                approveButtonColumn.Name = "Approve"
+                approveButtonColumn.Text = "Approve"
+                approveButtonColumn.UseColumnTextForButtonValue = True ' Display the text on the button
+                dg.Columns.Add(approveButtonColumn)
             End If
-        Catch ex As Exception
 
+
+            ' Add Decline button column
+            If dg.Columns("Decline") Is Nothing Then
+                Dim declineButtonColumn As New DataGridViewButtonColumn()
+                declineButtonColumn.Name = "Decline"
+                declineButtonColumn.Text = "Decline"
+                declineButtonColumn.UseColumnTextForButtonValue = True ' Display the text on the button
+                dg.Columns.Add(declineButtonColumn)
+            End If
+
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Exit Sub
         End Try
     End Sub
     Public Shared Sub DeclineFTIO(ftioID As Integer)
@@ -222,41 +226,39 @@ Public Class ClassDepartment
             End With
             MsgBox("FTIO declined", MsgBoxStyle.OkOnly)
         Catch ex As Exception
+            MsgBox(ex.Message)
+            Exit Sub
 
         End Try
     End Sub
     Public Shared Sub ApproveFTIO(ftioId As Integer)
         Try
-            RunCommand("Update tblfiledftio SET status='Approve' where ftioID = '" & ftioId & "'")
-            With com
-                .ExecuteNonQuery()
-                .Parameters.Clear()
-            End With
-
             RunQuery("Select employeeID, date, time, classification from tblfiledftio WHERE ftioID = '" & ftioId & "'")
             If ds.Tables("querytable").Rows.Count > 0 Then
-                Dim ftioemployeeID As Integer = ds.Tables("querytable").Rows(0)(0)
-                Dim ftiodate As Date = Convert.ToDateTime(ds.Tables("querytable").Rows(0)(1))
-                Dim timestring As TimeSpan = TimeSpan.Parse(ds.Tables("querytable").Rows(0)(2).ToString())
-                Dim ftiotime As String = timestring.ToString("hh\:mm\:ss")
-                Dim ftioFinal As String = ftiodate.ToString("yyyy-MM-dd") & " " & ftiotime
-                Dim classification As String = ds.Tables("querytable").Rows(0)(3).ToString()
-
-                If classification = "Login" Then
-                    RunCommand("INSERT INTO tblattendance (employeeID, date, login, report) 
+            Dim ftioemployeeID As Integer = ds.Tables("querytable").Rows(0)(0)
+            Dim ftiodate As Date = Convert.ToDateTime(ds.Tables("querytable").Rows(0)(1))
+            Dim timestring As TimeSpan = TimeSpan.Parse(ds.Tables("querytable").Rows(0)(2).ToString())
+            Dim ftiotime As String = timestring.ToString("hh\:mm\:ss")
+            Dim ftioFinal As String = ftiodate.ToString("yyyy-MM-dd") & " " & ftiotime
+            Dim classification As String = ds.Tables("querytable").Rows(0)(3).ToString()
+            If classification = "Login" Then
+                RunCommand("INSERT INTO tblattendance (employeeID, date, login, report) 
                     VALUES (@employeeID, @date, @login, 'Present')
                     ON DUPLICATE KEY UPDATE login = @login")
-                    With com
-                        .Parameters.AddWithValue("@login", ftioFinal)
-                        .Parameters.AddWithValue("@employeeID", ftioemployeeID)
-                        .Parameters.AddWithValue("@date", ftiodate)
-                        .ExecuteNonQuery()
-                        .Parameters.Clear()
-                    End With
-                ElseIf classification = "Logout" Then
+                With com
+                    .Parameters.AddWithValue("@login", ftioFinal)
+                    .Parameters.AddWithValue("@employeeID", ftioemployeeID)
+                    .Parameters.AddWithValue("@date", ftiodate)
+                    .ExecuteNonQuery()
+                    .Parameters.Clear()
+                End With
+            ElseIf classification = "Logout" Then
+
+                RunQuery("Select * from tblattendance where employeeID = '" & ftioemployeeID & "' and date = '" & ftiodate.ToString("yyyy-MM-dd") & "'")
+                If ds.Tables("querytable").Rows.Count > 0 Then
                     RunCommand("INSERT INTO tblattendance (employeeID, date, logout, report) 
-                    VALUES (@employeeID, @date, @logout, 'Present')
-                    ON DUPLICATE KEY UPDATE logout = @logout")
+                                    VALUES (@employeeID, @date, @logout, 'Present')
+                                    ON DUPLICATE KEY UPDATE logout = @logout")
                     With com
                         .Parameters.AddWithValue("@logout", ftioFinal)
                         .Parameters.AddWithValue("@employeeID", ftioemployeeID)
@@ -264,12 +266,24 @@ Public Class ClassDepartment
                         .ExecuteNonQuery()
                         .Parameters.Clear()
                     End With
+                Else
+                    MsgBox("There's no login record on the specified date.", MsgBoxStyle.Critical)
+                    Exit Sub
                 End If
+
             End If
-            MsgBox("FTIO Approved", MsgBoxStyle.OkOnly)
+        End If
+        RunCommand("Update tblfiledftio SET status='Approve' where ftioID = '" & ftioId & "'")
+        With com
+            .ExecuteNonQuery()
+            .Parameters.Clear()
+        End With
+        MsgBox("FTIO Approved", MsgBoxStyle.OkOnly)
 
         Catch ex As Exception
-            MsgBox(ex.Message)
+        MsgBox(ex.Message)
+        Exit Sub
+
         End Try
     End Sub
 
@@ -352,10 +366,9 @@ Public Class ClassDepartment
             End While
 
         Catch ex As Exception
-
+            MsgBox(ex.Message)
+            Exit Sub
         End Try
-
-
     End Sub
     Public Shared Sub DeclineLeave(leaveid As Integer)
         Try

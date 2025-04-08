@@ -72,7 +72,7 @@ Public Class FrmEmployee
             Dim selectedRow As DataGridViewRow = DGEmployee.SelectedRows(0)
 
             ' Retrieve the userID of the selected row (assuming userID is at index 0)
-            Dim userID As Integer = selectedRow.Cells(0).Value
+            Dim userID As Integer = selectedRow.Cells("Column1").Value
 
             If MsgBox("Are you sure you want to reset the password of this user?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                 RunCommand("Update tblemployee set password=NULL where employeeID = '" & userID & "'")
@@ -83,12 +83,12 @@ Public Class FrmEmployee
                 End With
             End If
         Catch ex As Exception
-
+            MsgBox(ex.Message)
+            Exit Sub
         End Try
     End Sub
 
     Private Sub DgEmployee_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DgEmployee.CellDoubleClick
-        'ClassEmployee.SelectEmployee(DgEmployee, FrmUpdateEmployee.TxtRfidNumber, FrmUpdateEmployee.TxtFirstName, FrmUpdateEmployee.TxtLastname, FrmUpdateEmployee.CbDepartment, FrmUpdateEmployee.CbPosition, FrmUpdateEmployee.TxtSalary, FrmUpdateEmployee.CbCompensationType, FrmUpdateEmployee.CbAssociateStatus)
         FrmUpdateEmployee.ShowDialog()
     End Sub
 
@@ -98,8 +98,10 @@ Public Class FrmEmployee
             If e.Button = MouseButtons.Right Then
                 ' Check if any row is selected
                 If DgEmployee.SelectedRows.Count > 0 Then
-                    ' Show the ContextMenuStrip at the mouse click location
-                    ContextMenuStrip1.Show(DgEmployee, e.Location)
+                    If FrmMain.LblPos.Text.Trim = "Admin" Then
+                        ' Show the ContextMenuStrip at the mouse click location
+                        ContextMenuStrip1.Show(DgEmployee, e.Location)
+                    End If
                 End If
             End If
 
@@ -127,4 +129,32 @@ Public Class FrmEmployee
         End If
     End Sub
 
+    Private Sub LogOffToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogOffToolStripMenuItem.Click
+        Try
+            Dim selectedRow As DataGridViewRow = DgEmployee.SelectedRows(0)
+
+            ' Retrieve the userID of the selected row (assuming userID is at index 0)
+            Dim employeeID As Integer = selectedRow.Cells("Column1").Value
+
+
+            RunQuery("Select logged from tblemployee where employeeID = '" & employeeID & "'")
+            If ds.Tables("querytable").Rows(0)(0).ToString = "no" Then
+                MsgBox("User is already logged off", MsgBoxStyle.Information)
+                Exit Sub
+            End If
+
+
+            If MsgBox("Are you sure you want to log off this user?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                RunCommand("Update tblemployee set logged='no' where employeeID = '" & employeeID & "'")
+                With com
+                    .ExecuteNonQuery()
+                    .Parameters.Clear()
+                    MsgBox("Logged Off")
+                End With
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Exit Sub
+        End Try
+    End Sub
 End Class

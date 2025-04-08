@@ -506,5 +506,70 @@ Public Class FrmMainte
         End Try
     End Sub
 
+    Private Sub DgUser_MouseDown(sender As Object, e As MouseEventArgs) Handles DgUser.MouseDown
+        Try
+            ' Check if the right mouse button is clicked
+            If e.Button = MouseButtons.Right Then
+                ' Check if any row is selected
+                If DgUser.SelectedRows.Count > 0 Then
+                    If FrmMain.LblPos.Text.Trim = "Admin" Then
+                        ' Show the ContextMenuStrip at the mouse click location
+                        ContextMenuStrip1.Show(DgUser, e.Location)
+                    End If
+                End If
+            End If
+
+        Catch ex As Exception
+
+        End Try
+    End Sub
+
+    Private Sub ToolStripMenuItem1_Click(sender As Object, e As EventArgs) Handles ToolStripMenuItem1.Click
+        Try
+            Dim selectedRow As DataGridViewRow = DgUser.SelectedRows(0)
+
+            ' Retrieve the userID of the selected row (assuming userID is at index 0)
+            Dim userID As Integer = selectedRow.Cells("UserID").Value
+
+            If MsgBox("Are you sure you want to reset the password of this user?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                RunCommand("Update tblusers set password=NULL where userID = '" & userID & "'")
+                With com
+                    .ExecuteNonQuery()
+                    .Parameters.Clear()
+                    MsgBox("Password reset")
+                End With
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Exit Sub
+        End Try
+    End Sub
+
+    Private Sub LogOffToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles LogOffToolStripMenuItem.Click
+        Try
+            Dim selectedRow As DataGridViewRow = DgUser.SelectedRows(0)
+
+            ' Retrieve the userID of the selected row (assuming userID is at index 0)
+            Dim userID As Integer = selectedRow.Cells("UserID").Value
+            Dim logged As String = selectedRow.Cells("logged").Value
+            If logged = "Logged Off" Then
+                MsgBox("User is already logged off")
+                Exit Sub
+            End If
+
+            If MsgBox("Are you sure you want to log off this user?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                RunCommand("Update tblusers set logged='no' where userID = '" & userID & "'")
+                With com
+                    .ExecuteNonQuery()
+                    .Parameters.Clear()
+                    MsgBox("Logged Off")
+                End With
+                DgUser.DataSource = DisplayUsers()
+            End If
+        Catch ex As Exception
+        MsgBox(ex.Message)
+        Exit Sub
+        End Try
+    End Sub
 #End Region
 End Class

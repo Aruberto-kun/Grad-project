@@ -67,8 +67,8 @@ Public Class FrmDepartmentHeadControls
     End Sub
 
     Private Sub DGFiledLeave_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGFiledLeave.CellContentClick
-        Try
-            If e.RowIndex >= 0 Then
+        'Try
+        If e.RowIndex >= 0 Then
                 If e.ColumnIndex = DGFiledLeave.Columns("Approve").Index Then
                     ' Get the Filed Leave ID of the selected row
                     Dim filedLeaveID As Integer = Convert.ToInt32(DGFiledLeave.Rows(e.RowIndex).Cells("Filed Leave ID").Value)
@@ -79,7 +79,7 @@ Public Class FrmDepartmentHeadControls
                         Dim leaveFrom As String = DGFiledLeave.Rows(e.RowIndex).Cells("From").Value.ToString
                         Dim leaveTo As String = DGFiledLeave.Rows(e.RowIndex).Cells("To").Value.ToString
                         Auditing($"{LblName.Text} approved {name}'s leave from {leaveFrom} to {leaveTo}.", "Others")
-                        DGFiledLeave.Rows.RemoveAt(e.RowIndex)
+                        ClassDepartmentHeadControls.LoadFiledLeave(DGFiledLeave)
                     End If
 
                 ElseIf e.ColumnIndex = DGFiledLeave.Columns("Decline").Index Then
@@ -91,15 +91,16 @@ Public Class FrmDepartmentHeadControls
                         Dim leaveFrom As String = DGFiledLeave.Rows(e.RowIndex).Cells("From").Value.ToString
                         Dim leaveTo As String = DGFiledLeave.Rows(e.RowIndex).Cells("To").Value.ToString
                         Auditing($"{LblName.Text} declined {name}'s leave from {leaveFrom} to {leaveTo}.", "Others")
-                        DGFiledLeave.Rows.RemoveAt(e.RowIndex)
+                        ClassDepartmentHeadControls.LoadFiledLeave(DGFiledLeave)
                     End If
 
                 End If
             End If
 
-        Catch ex As Exception
-
-        End Try
+        'Catch ex As Exception
+        '    MsgBox(ex.Message)
+        '    Exit Sub
+        'End Try
     End Sub
     Private Sub DGFiledFTIO_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGFiledFTIO.CellContentClick
         Try
@@ -110,11 +111,11 @@ Public Class FrmDepartmentHeadControls
 
                     If MsgBox("Are you sure you want to approve the FTIO filed?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                         ClassDepartmentHeadControls.ApproveFTIO(FTIOID)
-                        ClassDepartmentHeadControls.LoadFiledFTIO(DGFiledFTIO)
                         Dim name As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Full Name").Value.ToString
                         Dim ftioDate As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Date").Value.ToString
                         Dim ftioTime As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Time").Value.ToString
                         Auditing($"{LblName.Text} approved {name}'s filed FTIO dated {ftioDate} {ftioTime}.", "Others")
+                        ClassDepartmentHeadControls.LoadFiledFTIO(DGFiledFTIO)
                     End If
 
                 ElseIf e.ColumnIndex = DGFiledFTIO.Columns("Decline").Index Then
@@ -122,11 +123,11 @@ Public Class FrmDepartmentHeadControls
                     Dim FTIOID As Integer = Convert.ToInt32(DGFiledFTIO.Rows(e.RowIndex).Cells("FTIO ID").Value)
                     If MsgBox("Are you sure you want to decline the FTIO filed?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                         ClassDepartmentHeadControls.DeclineFTIO(FTIOID)
-                        ClassDepartmentHeadControls.LoadFiledFTIO(DGFiledFTIO)
                         Dim name As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Full Name").Value.ToString
                         Dim ftioDate As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Date").Value.ToString
                         Dim ftioTime As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Time").Value.ToString
                         Auditing($"{LblName.Text} declined {name}'s filed FTIO dated {ftioDate} {ftioTime}.", "Others")
+                        ClassDepartmentHeadControls.LoadFiledFTIO(DGFiledFTIO)
                     End If
 
                 End If
@@ -138,39 +139,41 @@ Public Class FrmDepartmentHeadControls
     End Sub
 
     Private Sub DGOvertime_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGOvertime.CellContentClick
-        Try
-            If e.RowIndex >= 0 Then
+        'Try
+        If e.RowIndex >= 0 Then
                 If e.ColumnIndex = DGOvertime.Columns("Approve").Index Then
                     ' Get the Filed FTIO ID of the selected row
-                    Dim employeeID As Integer = Convert.ToInt32(DGOvertime.Rows(e.RowIndex).Cells("EmployeeID").Value)
-                    Dim attendanceID As Integer = Convert.ToInt32(DGOvertime.Rows(e.RowIndex).Cells("AttendanceID").Value)
+                    Dim employeeID As Integer = Convert.ToInt32(DGOvertime.Rows(e.RowIndex).Cells("Employee ID").Value)
+                    Dim attendanceID As Integer = Convert.ToInt32(DGOvertime.Rows(e.RowIndex).Cells("Attendance ID").Value)
 
 
-                    If MsgBox("Are you sure you want to approve the Overtime filed?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-                        ClassDepartmentHeadControls.ApproveOvertime(employeeID, attendanceID, DGOvertime)
-                        ClassDepartmentHeadControls.LoadOvertime(DGOvertime)
-                        Dim name As String = DGOvertime.Rows(e.RowIndex).Cells("FullName").Value.ToString
-                        Dim overtimeDate As String = DGOvertime.Rows(e.RowIndex).Cells("Attendance Date").Value.ToString
-                        Auditing($"{LblName.Text} approved {name}'s overtime dated {overtimeDate}.", "Others")
-                    End If
+                If MsgBox("Are you sure you want to approve the Overtime filed?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                    MsgBox(DGOvertime.Rows(e.RowIndex).Cells("Full Name").Value.ToString)
+                    ClassDepartmentHeadControls.ApproveOvertime(employeeID, attendanceID, DGOvertime)
+                    Dim name As String = DGOvertime.Rows(e.RowIndex).Cells("Full Name").Value.ToString
+                    Dim overtimeDate As String = DGOvertime.Rows(e.RowIndex).Cells("Attendance Date").Value.ToString
+                    Auditing($"{LblName.Text} approved {name}'s overtime dated {overtimeDate}.", "Others")
+                    ClassDepartmentHeadControls.LoadOvertime(DGOvertime)
+                End If
 
-                ElseIf e.ColumnIndex = DGOvertime.Columns("Decline").Index Then
+            ElseIf e.ColumnIndex = DGOvertime.Columns("Decline").Index Then
                     ' Get the Filed FTIO ID of the selected row
-                    Dim employeeID As Integer = Convert.ToInt32(DGOvertime.Rows(e.RowIndex).Cells("EmployeeID").Value)
-                    Dim attendanceID As Integer = Convert.ToInt32(DGOvertime.Rows(e.RowIndex).Cells("AttendanceID").Value)
+                    Dim employeeID As Integer = Convert.ToInt32(DGOvertime.Rows(e.RowIndex).Cells("Employee ID").Value)
+                    Dim attendanceID As Integer = Convert.ToInt32(DGOvertime.Rows(e.RowIndex).Cells("Attendance ID").Value)
                     If MsgBox("Are you sure you want to decline the Overtime filed?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                         ClassDepartmentHeadControls.DeclineOvertime(employeeID, attendanceID, DGOvertime)
-                        ClassDepartmentHeadControls.LoadOvertime(DGOvertime)
-                        Dim name As String = DGOvertime.Rows(e.RowIndex).Cells("FullName").Value.ToString
+                        Dim name As String = DGOvertime.Rows(e.RowIndex).Cells("Full Name").Value.ToString
                         Dim overtimeDate As String = DGOvertime.Rows(e.RowIndex).Cells("Attendance Date").Value.ToString
                         Auditing($"{LblName.Text} declined {name}'s overtime dated {overtimeDate}.", "Others")
+                        ClassDepartmentHeadControls.LoadOvertime(DGOvertime)
                     End If
 
                 End If
             End If
-        Catch ex As Exception
-
-        End Try
+        'Catch ex As Exception
+        '    MsgBox(ex.Message)
+        '    Exit Sub
+        'End Try
 
     End Sub
 
@@ -179,6 +182,7 @@ Public Class FrmDepartmentHeadControls
         ClassDepartmentHeadControls.RefreshOvertime(DGOvertime)
         ClassDepartmentHeadControls.RefreshFTIO(DGFiledFTIO)
         ClassDepartmentHeadControls.RefreshLeave(DGFiledLeave)
+        ClassDepartmentHeadControls.LoadPersonalOvertime(DGOTShowing)
     End Sub
 
     Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick

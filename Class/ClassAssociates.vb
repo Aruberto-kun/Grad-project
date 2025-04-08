@@ -138,19 +138,19 @@ Public Class ClassAssociates
     Public Shared Sub LoadOvertime(dg As Guna2DataGridView)
         Try
             RunQuery("SELECT 
-                      a.date, 
-                      a.login, 
-                      a.logout, 
+                      a.date as 'Date', 
+                      a.login as 'Login', 
+                      a.logout as 'Logout', 
                       CASE
                       WHEN a.logout > CONCAT(a.date, ' ', b.timeout)
                       THEN FLOOR(TIME_TO_SEC(TIMEDIFF(a.logout, CONCAT(a.date, ' ', b.timeout))) / 3600)  -- Overtime in hours
                       ELSE 0
                       END AS 'Overtime',
-                      c.remarks
+                      c.remarks as 'Remarks'
                       FROM tblattendance a
                       LEFT JOIN tbltimeschedule b ON b.employeeID = a.employeeID
                       LEFT JOIN tblovertime c on c.attendanceID = a.attendanceID
-                      WHERE a.employeeID = 1 and FLOOR(TIME_TO_SEC(TIMEDIFF(a.logout, CONCAT(a.date, ' ', b.timeout))) / 3600) > 0")
+                      WHERE a.employeeID = '" & employeeID & "' and FLOOR(TIME_TO_SEC(TIMEDIFF(a.logout, CONCAT(a.date, ' ', b.timeout))) / 3600) > 0")
             dg.DataSource = ds.Tables("querytable")
         Catch ex As Exception
 
