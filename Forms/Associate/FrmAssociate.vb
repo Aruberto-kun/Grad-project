@@ -137,7 +137,7 @@ Public Class FrmAssociate
     Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
         If MsgBox("Are you sure you want to logout?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
             MsgBox("Logout Success")
-            Auditing($"{associateName} has logged out.")
+            Auditing($"{associateName} has logged out.", "Attendance")
             FrmLogin.Show()
             Me.Close()
             Exit Sub

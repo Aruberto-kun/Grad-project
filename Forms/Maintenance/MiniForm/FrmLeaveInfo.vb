@@ -2,7 +2,7 @@
 
 Public Class FrmLeaveInfo
 
-    Dim leave As String = ""
+    Dim leaveName As String = ""
     Private Sub BtnUpdate_Click(sender As Object, e As EventArgs) Handles BtnUpdate.Click
         If String.IsNullOrEmpty(TxtLeave.Text) Then
             MsgEmptyField()
@@ -12,7 +12,7 @@ Public Class FrmLeaveInfo
             Exit Sub
         Else
             UpdateLeave(MdlMaintenance.leaveID, TxtLeave.Text)
-            Auditing($"{FrmMain.fullName} updated the leave {leave} to {TxtLeave.Text}")
+            Auditing($"{FrmMain.fullName} updated the leave {leaveName} to {TxtLeave.Text}", "Others")
             Me.Close()
             FrmMainte.dgLeave.DataSource = DisplayLeave()
         End If
@@ -20,7 +20,7 @@ Public Class FrmLeaveInfo
 
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
         DeleteLeave(MdlMaintenance.leaveID)
-        Auditing($"{FrmMain.fullName} set the leave {leave} to inactive.")
+        Auditing($"{FrmMain.fullName} set the leave {leaveName} to inactive.", "Others")
         Me.Close()
         FrmMainte.dgLeave.DataSource = DisplayLeave()
     End Sub
@@ -30,6 +30,6 @@ Public Class FrmLeaveInfo
     End Sub
 
     Private Sub FrmLeaveInfo_Load(sender As Object, e As EventArgs) Handles Me.Load
-        leave = TxtLeave.Text
+        leaveName = TxtLeave.Text
     End Sub
 End Class

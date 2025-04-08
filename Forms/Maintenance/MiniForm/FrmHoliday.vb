@@ -11,7 +11,7 @@ Public Class FrmHoliday
             Exit Sub
         Else
             UpdateHoliday(MdlMaintenance.holidayID, DtHoliday.Value, TxtHolidayName.Text, CbClassification.SelectedItem.ToString)
-            Auditing($"{FrmMain.fullName} updated a holiday.")
+            Auditing($"{FrmMain.fullName} updated a holiday.", "Others")
             Me.Close()
             FrmMainte.dgHoliday.DataSource = DisplayHoliday()
         End If
@@ -23,7 +23,7 @@ Public Class FrmHoliday
 
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
         DeleteHoliday(MdlMaintenance.holidayID)
-        Auditing($"{FrmMain.fullName} delete a holiday.")
+        Auditing($"{FrmMain.fullName} delete a holiday.", "Others")
         Me.Close()
         FrmMainte.dgHoliday.DataSource = DisplayHoliday()
     End Sub

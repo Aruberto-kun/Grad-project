@@ -88,7 +88,7 @@ Public Class ClassAssociates
             dtpto.Value = Now
             cb.SelectedIndex = -1
             txtreason.Clear()
-            Auditing($"{FrmAssociate.LblName.Text} filed {cb.Text} from {dtpfrom.Value} to {dtpto.Value}")
+            Auditing($"{FrmAssociate.LblName.Text} filed {cb.Text} from {dtpfrom.Value} to {dtpto.Value}", "Others")
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -120,7 +120,7 @@ Public Class ClassAssociates
             dtp.Value = Now
             cb.SelectedIndex = -1
             txtreason.Clear()
-            Auditing($"{FrmAssociate.LblName.Text} filed FTIO {cb.Text} for date {dtp.Value}")
+            Auditing($"{FrmAssociate.LblName.Text} filed FTIO {cb.Text} for date {dtp.Value}", "Others")
         Catch ex As Exception
             MessageBox.Show("FTIO is already filed.")
         End Try

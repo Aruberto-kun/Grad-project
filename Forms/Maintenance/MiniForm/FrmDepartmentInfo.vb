@@ -18,7 +18,7 @@ Public Class FrmDepartmentInfo
             Exit Sub
         Else
             UpdateDepartment(MdlMaintenance.departmentID, TxtDepartment.Text)
-            Auditing($"{FrmMain.fullName} updated the department from {department} to {TxtDepartment.Text}")
+            Auditing($"{FrmMain.fullName} updated the department from {department} to {TxtDepartment.Text}", "Others")
             Me.Close()
             FrmMainte.DgDepartment.DataSource = DisplayDepartment()
 
@@ -38,7 +38,7 @@ Public Class FrmDepartmentInfo
 
     Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
         DeleteDepartment(MdlMaintenance.departmentID)
-        Auditing($"{FrmMain.fullName} set the {department} to inactive.")
+        Auditing($"{FrmMain.fullName} set the {department} to inactive.", "Others")
         Me.Close()
         FrmMainte.DgDepartment.DataSource = DisplayDepartment()
         FrmMainte.DgPosition.DataSource = DisplayPosition()

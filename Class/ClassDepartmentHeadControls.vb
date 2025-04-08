@@ -123,7 +123,7 @@ Public Class ClassDepartmentHeadControls
             Next
             mtbtimein.Clear()
             mtbtimeout.Clear()
-            Auditing($"{FrmDepartmentHeadControls.LblName.Text} set {FrmDepartmentHeadControls.CbEmployees.Text}'s schedule.")
+            Auditing($"{FrmDepartmentHeadControls.LblName.Text} set {FrmDepartmentHeadControls.CbEmployees.Text}'s schedule.", "Others")
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -579,7 +579,7 @@ Public Class ClassDepartmentHeadControls
             dtp.Value = Now
             cb.SelectedIndex = -1
             txtreason.Clear()
-            Auditing($"{FrmDepartmentHeadControls.LblName.Text} filed FTIO {cb.Text} for date {dtp.Value}")
+            Auditing($"{FrmDepartmentHeadControls.LblName.Text} filed FTIO {cb.Text} for date {dtp.Value}", "Others")
         Catch ex As Exception
             MessageBox.Show(ex.Message)
         End Try
@@ -612,7 +612,7 @@ Public Class ClassDepartmentHeadControls
             dtpto.Value = Now
             cb.SelectedIndex = -1
             txtreason.Clear()
-            Auditing($"{FrmDepartmentHeadControls.LblName.Text} filed {cb.Text} from {dtpfrom.Value} to {dtpto.Value}")
+            Auditing($"{FrmDepartmentHeadControls.LblName.Text} filed {cb.Text} from {dtpfrom.Value} to {dtpto.Value}", "Others")
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

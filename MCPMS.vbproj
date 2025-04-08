@@ -150,6 +150,12 @@
     <Compile Include="Forms\Maintenance\FrmAudit.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Maintenance\FrmAuditInfo.Designer.vb">
+      <DependentUpon>FrmAuditInfo.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Maintenance\FrmAuditInfo.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Maintenance\FrmLogin.Designer.vb">
       <DependentUpon>FrmLogin.vb</DependentUpon>
     </Compile>
@@ -350,6 +356,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Maintenance\FrmAudit.resx">
       <DependentUpon>FrmAudit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Maintenance\FrmAuditInfo.resx">
+      <DependentUpon>FrmAuditInfo.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Maintenance\FrmLogin.resx">
       <DependentUpon>FrmLogin.vb</DependentUpon>
