@@ -3,6 +3,8 @@ Imports System.Text.RegularExpressions
 Imports MySql.Data.MySqlClient
 
 Public Class FrmDepartmentHeadControls
+
+    Public departmentHeadName As String = ""
     Private Sub FrmDepartmentHeadControls_Load(sender As Object, e As EventArgs) Handles Me.Load
         OpenServerConnection()
         ClassDepartmentHeadControls.GetDepartmentID()
@@ -190,6 +192,7 @@ Public Class FrmDepartmentHeadControls
     Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
         If MsgBox("Are you sure you want to logout?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
             MsgBox("Logout Success")
+            Auditing($"{departmentHeadName} has logged out.")
             FrmLogin.Show()
             Me.Close()
             Exit Sub

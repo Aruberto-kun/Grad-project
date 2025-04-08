@@ -98,6 +98,7 @@ Public Class ClassLogin
                         ClassDepartmentHeadControls.employeeID = employeeID
                         FrmDepartmentHeadControls.Show()
                         FrmDepartmentHeadControls.LblName.Text = empname
+                        FrmDepartmentHeadControls.departmentHeadName = empname
                         FrmDepartmentHeadControls.LblPosition.Text = posname
                         login.Close()
                         Exit Sub
@@ -106,6 +107,7 @@ Public Class ClassLogin
                         ClassAssociates.employeeID = employeeID
                         FrmAssociate.Show()
                         FrmAssociate.LblName.Text = empname
+                        FrmAssociate.associateName = empname
                         FrmAssociate.LblPosition.Text = posname
                         login.Close()
                         Exit Sub
