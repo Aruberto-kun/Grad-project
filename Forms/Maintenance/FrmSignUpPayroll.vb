@@ -12,6 +12,10 @@ Public Class FrmSignUpPayroll
             MessageBox.Show("Invalid password.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             TxtPassword.Clear()
             Exit Sub
+        ElseIf Not Regex.IsMatch(TxtPassword.Text, username) Then
+            MessageBox.Show("Invalid password.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            TxtPassword.Clear()
+            Exit Sub
         End If
         Try
             RunCommand("Update tblusers set password=@password where username=@username")

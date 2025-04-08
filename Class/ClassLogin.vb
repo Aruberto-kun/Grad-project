@@ -12,6 +12,7 @@ Public Class ClassLogin
                 MsgBox("Please update your password first")
                 FrmSignUpPayroll.Show()
                 FrmSignUpPayroll.TxtUsername.Text = txtusername.Text.Trim
+                FrmLogin.Close()
                 Exit Sub
             End If
 
@@ -50,6 +51,7 @@ Public Class ClassLogin
                     FrmMain.LblName.Text = adminname
                     Auditing($"{adminname} has successfully logged in.")
                     FrmMain.LblPos.Text = role
+                    GetInfo(username)
                     FrmMain.BtnMaintenance.Visible = False
                     FrmMain.Guna2Button3.Visible = False
                     FrmMain.Guna2Button14.Visible = False
@@ -96,6 +98,7 @@ Public Class ClassLogin
                         ClassDepartmentHeadControls.employeeID = employeeID
                         FrmDepartmentHeadControls.Show()
                         FrmDepartmentHeadControls.LblName.Text = empname
+                        FrmDepartmentHeadControls.departmentHeadName = empname
                         FrmDepartmentHeadControls.LblPosition.Text = posname
                         login.Close()
                         Exit Sub
@@ -104,6 +107,7 @@ Public Class ClassLogin
                         ClassAssociates.employeeID = employeeID
                         FrmAssociate.Show()
                         FrmAssociate.LblName.Text = empname
+                        FrmAssociate.associateName = empname
                         FrmAssociate.LblPosition.Text = posname
                         login.Close()
                         Exit Sub

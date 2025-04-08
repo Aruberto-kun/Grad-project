@@ -52,7 +52,9 @@
                     If MsgBox("Are you sure you want to approve the leave filed?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                         ClassDepartment.ApproveLeave(filedLeaveID)
                         Dim name As String = DGFiledLeave.Rows(e.RowIndex).Cells("Full Name").Value.ToString
-                        'Auditing($"{LblName.Text} approved {name}'s leave.")
+                        Dim leaveFrom As String = DGFiledLeave.Rows(e.RowIndex).Cells("leavefrom").Value.ToString
+                        Dim leaveTo As String = DGFiledLeave.Rows(e.RowIndex).Cells("leaveTo").Value.ToString
+                        Auditing($"{FrmMain.fullName} approved {name}'s leave from {leaveFrom} to {leaveTo}")
                         DGFiledLeave.Rows.RemoveAt(e.RowIndex)
                     End If
 
@@ -62,7 +64,9 @@
                     If MsgBox("Are you sure you want to decline the leave filed?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                         ClassDepartment.DeclineLeave(filedLeaveID)
                         Dim name As String = DGFiledLeave.Rows(e.RowIndex).Cells("Full Name").Value.ToString
-                        'Auditing($"{LblName.Text} approved {name}'s leave.")
+                        Dim leaveFrom As String = DGFiledLeave.Rows(e.RowIndex).Cells("leavefrom").Value.ToString
+                        Dim leaveTo As String = DGFiledLeave.Rows(e.RowIndex).Cells("leaveTo").Value.ToString
+                        Auditing($"{FrmMain.fullName} declined {name}'s leave from {leaveFrom} to {leaveTo}.")
                         DGFiledLeave.Rows.RemoveAt(e.RowIndex)
                     End If
 
@@ -84,7 +88,9 @@
                     If MsgBox("Are you sure you want to approve the FTIO filed?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                         ClassDepartment.ApproveFTIO(FTIOID)
                         Dim name As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Full Name").Value.ToString
-                        'Auditing($"{LblName.Text} approved {name}'s FTIO.")
+                        Dim ftioDate As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Date").Value.ToString
+                        Dim ftioTime As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Time").Value.ToString
+                        Auditing($"{FrmMain.fullName} approved {name}'s filed FTIO dated {ftioDate} {ftioTime}.")
                         DGFiledFTIO.Rows.RemoveAt(e.RowIndex)
                     End If
 
@@ -94,7 +100,9 @@
                     If MsgBox("Are you sure you want to decline the FTIO filed?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                         ClassDepartment.DeclineLeave(FTIOID)
                         Dim name As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Full Name").Value.ToString
-                        'Auditing($"{LblName.Text} declined {name}'s FTIO.")
+                        Dim ftioDate As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Date").Value.ToString
+                        Dim ftioTime As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Time").Value.ToString
+                        Auditing($"{FrmMain.fullName} declined {name}'s filed FTIO dated {ftioDate} {ftioTime}.")
                         DGFiledFTIO.Rows.RemoveAt(e.RowIndex)
                     End If
 

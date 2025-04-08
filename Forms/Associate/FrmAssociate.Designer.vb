@@ -162,7 +162,7 @@ Partial Class FrmAssociate
         Me.Panel7.Controls.Add(Me.Panel9)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel7.Location = New System.Drawing.Point(0, 0)
-        Me.Panel7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(1454, 167)
         Me.Panel7.TabIndex = 2
@@ -214,7 +214,7 @@ Partial Class FrmAssociate
         Me.Panel8.Controls.Add(Me.DisplayTime)
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel8.Location = New System.Drawing.Point(1231, 0)
-        Me.Panel8.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(223, 167)
         Me.Panel8.TabIndex = 1
@@ -253,7 +253,7 @@ Partial Class FrmAssociate
         Me.Panel9.Controls.Add(Me.Panel13)
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel9.Location = New System.Drawing.Point(0, 0)
-        Me.Panel9.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel9.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(170, 167)
         Me.Panel9.TabIndex = 0
@@ -264,7 +264,7 @@ Partial Class FrmAssociate
         Me.Guna2CirclePictureBox1.Image = CType(resources.GetObject("Guna2CirclePictureBox1.Image"), System.Drawing.Image)
         Me.Guna2CirclePictureBox1.ImageRotate = 0!
         Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(22, 24)
-        Me.Guna2CirclePictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2CirclePictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
         Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
         Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(126, 119)
@@ -276,7 +276,7 @@ Partial Class FrmAssociate
         '
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel10.Location = New System.Drawing.Point(0, 24)
-        Me.Panel10.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(22, 119)
         Me.Panel10.TabIndex = 3
@@ -285,7 +285,7 @@ Partial Class FrmAssociate
         '
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel11.Location = New System.Drawing.Point(148, 24)
-        Me.Panel11.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel11.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel11.Name = "Panel11"
         Me.Panel11.Size = New System.Drawing.Size(22, 119)
         Me.Panel11.TabIndex = 2
@@ -294,7 +294,7 @@ Partial Class FrmAssociate
         '
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel12.Location = New System.Drawing.Point(0, 143)
-        Me.Panel12.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel12.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel12.Name = "Panel12"
         Me.Panel12.Size = New System.Drawing.Size(170, 24)
         Me.Panel12.TabIndex = 1
@@ -303,7 +303,7 @@ Partial Class FrmAssociate
         '
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel13.Location = New System.Drawing.Point(0, 0)
-        Me.Panel13.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel13.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel13.Name = "Panel13"
         Me.Panel13.Size = New System.Drawing.Size(170, 24)
         Me.Panel13.TabIndex = 0
@@ -319,7 +319,7 @@ Partial Class FrmAssociate
         Me.TCAssociate.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TCAssociate.ItemSize = New System.Drawing.Size(250, 40)
         Me.TCAssociate.Location = New System.Drawing.Point(0, 167)
-        Me.TCAssociate.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TCAssociate.Margin = New System.Windows.Forms.Padding(2)
         Me.TCAssociate.Name = "TCAssociate"
         Me.TCAssociate.SelectedIndex = 0
         Me.TCAssociate.Size = New System.Drawing.Size(1454, 631)
@@ -349,9 +349,9 @@ Partial Class FrmAssociate
         Me.TPSchedAndAttendancec.Controls.Add(Me.DGSchedule)
         Me.TPSchedAndAttendancec.Controls.Add(Me.Label3)
         Me.TPSchedAndAttendancec.Location = New System.Drawing.Point(254, 4)
-        Me.TPSchedAndAttendancec.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TPSchedAndAttendancec.Margin = New System.Windows.Forms.Padding(2)
         Me.TPSchedAndAttendancec.Name = "TPSchedAndAttendancec"
-        Me.TPSchedAndAttendancec.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TPSchedAndAttendancec.Padding = New System.Windows.Forms.Padding(2)
         Me.TPSchedAndAttendancec.Size = New System.Drawing.Size(1196, 623)
         Me.TPSchedAndAttendancec.TabIndex = 0
         Me.TPSchedAndAttendancec.Text = "Schedule and Attendance"
@@ -387,7 +387,7 @@ Partial Class FrmAssociate
         Me.DGAttendance.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGAttendance.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DGAttendance.Location = New System.Drawing.Point(2, 379)
-        Me.DGAttendance.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DGAttendance.Margin = New System.Windows.Forms.Padding(2)
         Me.DGAttendance.Name = "DGAttendance"
         Me.DGAttendance.ReadOnly = True
         Me.DGAttendance.RowHeadersVisible = False
@@ -493,7 +493,7 @@ Partial Class FrmAssociate
         Me.DGSchedule.Dock = System.Windows.Forms.DockStyle.Top
         Me.DGSchedule.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DGSchedule.Location = New System.Drawing.Point(2, 42)
-        Me.DGSchedule.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DGSchedule.Margin = New System.Windows.Forms.Padding(2)
         Me.DGSchedule.Name = "DGSchedule"
         Me.DGSchedule.ReadOnly = True
         Me.DGSchedule.RowHeadersVisible = False
@@ -573,9 +573,9 @@ Partial Class FrmAssociate
         Me.TPLeave.Controls.Add(Me.Panel1)
         Me.TPLeave.Controls.Add(Me.Panel5)
         Me.TPLeave.Location = New System.Drawing.Point(254, 4)
-        Me.TPLeave.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TPLeave.Margin = New System.Windows.Forms.Padding(2)
         Me.TPLeave.Name = "TPLeave"
-        Me.TPLeave.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TPLeave.Padding = New System.Windows.Forms.Padding(2)
         Me.TPLeave.Size = New System.Drawing.Size(1196, 623)
         Me.TPLeave.TabIndex = 1
         Me.TPLeave.Text = "Leave Filing"
@@ -589,7 +589,7 @@ Partial Class FrmAssociate
         Me.Panel1.Controls.Add(Me.Label5)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.Location = New System.Drawing.Point(252, 2)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(942, 619)
         Me.Panel1.TabIndex = 31
@@ -622,7 +622,7 @@ Partial Class FrmAssociate
         Me.DGLeaveFiled.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGLeaveFiled.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DGLeaveFiled.Location = New System.Drawing.Point(0, 304)
-        Me.DGLeaveFiled.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DGLeaveFiled.Margin = New System.Windows.Forms.Padding(2)
         Me.DGLeaveFiled.Name = "DGLeaveFiled"
         Me.DGLeaveFiled.RowHeadersVisible = False
         Me.DGLeaveFiled.RowHeadersWidth = 51
@@ -725,7 +725,7 @@ Partial Class FrmAssociate
         Me.DGLeaveCount.Dock = System.Windows.Forms.DockStyle.Top
         Me.DGLeaveCount.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DGLeaveCount.Location = New System.Drawing.Point(0, 35)
-        Me.DGLeaveCount.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DGLeaveCount.Margin = New System.Windows.Forms.Padding(2)
         Me.DGLeaveCount.Name = "DGLeaveCount"
         Me.DGLeaveCount.ReadOnly = True
         Me.DGLeaveCount.RowHeadersVisible = False
@@ -826,7 +826,7 @@ Partial Class FrmAssociate
         Me.BtnLeaveSave.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnLeaveSave.ForeColor = System.Drawing.Color.White
         Me.BtnLeaveSave.Location = New System.Drawing.Point(0, 578)
-        Me.BtnLeaveSave.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnLeaveSave.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnLeaveSave.Name = "BtnLeaveSave"
         Me.BtnLeaveSave.Size = New System.Drawing.Size(245, 41)
         Me.BtnLeaveSave.TabIndex = 41
@@ -887,7 +887,7 @@ Partial Class FrmAssociate
         Me.CBLeaveType.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CBLeaveType.ItemHeight = 30
         Me.CBLeaveType.Location = New System.Drawing.Point(0, 149)
-        Me.CBLeaveType.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CBLeaveType.Margin = New System.Windows.Forms.Padding(2)
         Me.CBLeaveType.Name = "CBLeaveType"
         Me.CBLeaveType.Size = New System.Drawing.Size(245, 36)
         Me.CBLeaveType.TabIndex = 38
@@ -912,7 +912,7 @@ Partial Class FrmAssociate
         Me.DTPLeaveTo.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.DTPLeaveTo.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DTPLeaveTo.Location = New System.Drawing.Point(0, 87)
-        Me.DTPLeaveTo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DTPLeaveTo.Margin = New System.Windows.Forms.Padding(2)
         Me.DTPLeaveTo.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.DTPLeaveTo.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.DTPLeaveTo.Name = "DTPLeaveTo"
@@ -940,7 +940,7 @@ Partial Class FrmAssociate
         Me.DTPLeaveFrom.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.DTPLeaveFrom.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DTPLeaveFrom.Location = New System.Drawing.Point(0, 25)
-        Me.DTPLeaveFrom.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DTPLeaveFrom.Margin = New System.Windows.Forms.Padding(2)
         Me.DTPLeaveFrom.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.DTPLeaveFrom.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.DTPLeaveFrom.Name = "DTPLeaveFrom"
@@ -973,9 +973,9 @@ Partial Class FrmAssociate
         Me.TPFTIO.Controls.Add(Me.Panel15)
         Me.TPFTIO.Controls.Add(Me.Panel3)
         Me.TPFTIO.Location = New System.Drawing.Point(254, 4)
-        Me.TPFTIO.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TPFTIO.Margin = New System.Windows.Forms.Padding(2)
         Me.TPFTIO.Name = "TPFTIO"
-        Me.TPFTIO.Size = New System.Drawing.Size(1197, 622)
+        Me.TPFTIO.Size = New System.Drawing.Size(1196, 623)
         Me.TPFTIO.TabIndex = 2
         Me.TPFTIO.Text = "FTIO Filing"
         Me.TPFTIO.UseVisualStyleBackColor = True
@@ -986,9 +986,9 @@ Partial Class FrmAssociate
         Me.Panel14.Controls.Add(Me.Label14)
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel14.Location = New System.Drawing.Point(254, 0)
-        Me.Panel14.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel14.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(943, 622)
+        Me.Panel14.Size = New System.Drawing.Size(942, 623)
         Me.Panel14.TabIndex = 36
         '
         'DGFTIOFiled
@@ -1019,12 +1019,12 @@ Partial Class FrmAssociate
         Me.DGFTIOFiled.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGFTIOFiled.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DGFTIOFiled.Location = New System.Drawing.Point(0, 35)
-        Me.DGFTIOFiled.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DGFTIOFiled.Margin = New System.Windows.Forms.Padding(2)
         Me.DGFTIOFiled.Name = "DGFTIOFiled"
         Me.DGFTIOFiled.RowHeadersVisible = False
         Me.DGFTIOFiled.RowHeadersWidth = 51
         Me.DGFTIOFiled.RowTemplate.Height = 24
-        Me.DGFTIOFiled.Size = New System.Drawing.Size(943, 587)
+        Me.DGFTIOFiled.Size = New System.Drawing.Size(942, 588)
         Me.DGFTIOFiled.TabIndex = 22
         Me.DGFTIOFiled.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DGFTIOFiled.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -1090,7 +1090,7 @@ Partial Class FrmAssociate
         Me.Label14.Font = New System.Drawing.Font("Segoe UI", 15.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.Location = New System.Drawing.Point(0, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(943, 35)
+        Me.Label14.Size = New System.Drawing.Size(942, 35)
         Me.Label14.TabIndex = 24
         Me.Label14.Text = "Filed FTIO"
         '
@@ -1098,9 +1098,9 @@ Partial Class FrmAssociate
         '
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel15.Location = New System.Drawing.Point(250, 0)
-        Me.Panel15.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel15.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(4, 622)
+        Me.Panel15.Size = New System.Drawing.Size(4, 623)
         Me.Panel15.TabIndex = 35
         '
         'Panel3
@@ -1117,7 +1117,7 @@ Partial Class FrmAssociate
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(250, 622)
+        Me.Panel3.Size = New System.Drawing.Size(250, 623)
         Me.Panel3.TabIndex = 34
         '
         'TxtFTIOReason
@@ -1163,7 +1163,7 @@ Partial Class FrmAssociate
         Me.mtbTime.Dock = System.Windows.Forms.DockStyle.Top
         Me.mtbTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.mtbTime.Location = New System.Drawing.Point(0, 148)
-        Me.mtbTime.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.mtbTime.Margin = New System.Windows.Forms.Padding(2)
         Me.mtbTime.Mask = "00:00"
         Me.mtbTime.Name = "mtbTime"
         Me.mtbTime.Size = New System.Drawing.Size(250, 26)
@@ -1191,8 +1191,8 @@ Partial Class FrmAssociate
         Me.BtnFTIOSave.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnFTIOSave.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnFTIOSave.ForeColor = System.Drawing.Color.White
-        Me.BtnFTIOSave.Location = New System.Drawing.Point(0, 581)
-        Me.BtnFTIOSave.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnFTIOSave.Location = New System.Drawing.Point(0, 582)
+        Me.BtnFTIOSave.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnFTIOSave.Name = "BtnFTIOSave"
         Me.BtnFTIOSave.Size = New System.Drawing.Size(250, 41)
         Me.BtnFTIOSave.TabIndex = 34
@@ -1216,7 +1216,7 @@ Partial Class FrmAssociate
         Me.CBFTIOType.ItemHeight = 30
         Me.CBFTIOType.Items.AddRange(New Object() {"Login", "Logout"})
         Me.CBFTIOType.Location = New System.Drawing.Point(0, 87)
-        Me.CBFTIOType.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CBFTIOType.Margin = New System.Windows.Forms.Padding(2)
         Me.CBFTIOType.Name = "CBFTIOType"
         Me.CBFTIOType.Size = New System.Drawing.Size(250, 36)
         Me.CBFTIOType.TabIndex = 31
@@ -1241,7 +1241,7 @@ Partial Class FrmAssociate
         Me.DTPFTIODate.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.DTPFTIODate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DTPFTIODate.Location = New System.Drawing.Point(0, 25)
-        Me.DTPFTIODate.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DTPFTIODate.Margin = New System.Windows.Forms.Padding(2)
         Me.DTPFTIODate.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.DTPFTIODate.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.DTPFTIODate.Name = "DTPFTIODate"
@@ -1265,8 +1265,8 @@ Partial Class FrmAssociate
         Me.TPOvertime.Controls.Add(Me.DGOvertime)
         Me.TPOvertime.Location = New System.Drawing.Point(254, 4)
         Me.TPOvertime.Name = "TPOvertime"
-        Me.TPOvertime.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
-        Me.TPOvertime.Size = New System.Drawing.Size(1197, 622)
+        Me.TPOvertime.Padding = New System.Windows.Forms.Padding(3)
+        Me.TPOvertime.Size = New System.Drawing.Size(1196, 623)
         Me.TPOvertime.TabIndex = 3
         Me.TPOvertime.Text = "Overtime Filing"
         Me.TPOvertime.UseVisualStyleBackColor = True
@@ -1300,14 +1300,14 @@ Partial Class FrmAssociate
         Me.DGOvertime.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGOvertime.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DGOvertime.Location = New System.Drawing.Point(3, 3)
-        Me.DGOvertime.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DGOvertime.Margin = New System.Windows.Forms.Padding(2)
         Me.DGOvertime.Name = "DGOvertime"
         Me.DGOvertime.ReadOnly = True
         Me.DGOvertime.RowHeadersVisible = False
         Me.DGOvertime.RowHeadersWidth = 51
         Me.DGOvertime.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.DGOvertime.RowTemplate.Height = 24
-        Me.DGOvertime.Size = New System.Drawing.Size(1191, 616)
+        Me.DGOvertime.Size = New System.Drawing.Size(1190, 617)
         Me.DGOvertime.TabIndex = 7
         Me.DGOvertime.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DGOvertime.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -1336,8 +1336,8 @@ Partial Class FrmAssociate
         Me.TPPaySlip.Controls.Add(Me.DGSalaryAndPaySlip)
         Me.TPPaySlip.Location = New System.Drawing.Point(254, 4)
         Me.TPPaySlip.Name = "TPPaySlip"
-        Me.TPPaySlip.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
-        Me.TPPaySlip.Size = New System.Drawing.Size(1197, 622)
+        Me.TPPaySlip.Padding = New System.Windows.Forms.Padding(3)
+        Me.TPPaySlip.Size = New System.Drawing.Size(1196, 623)
         Me.TPPaySlip.TabIndex = 4
         Me.TPPaySlip.Text = "Salary and Pay Slip"
         Me.TPPaySlip.UseVisualStyleBackColor = True
@@ -1370,12 +1370,12 @@ Partial Class FrmAssociate
         Me.DGSalaryAndPaySlip.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGSalaryAndPaySlip.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DGSalaryAndPaySlip.Location = New System.Drawing.Point(3, 3)
-        Me.DGSalaryAndPaySlip.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DGSalaryAndPaySlip.Margin = New System.Windows.Forms.Padding(2)
         Me.DGSalaryAndPaySlip.Name = "DGSalaryAndPaySlip"
         Me.DGSalaryAndPaySlip.RowHeadersVisible = False
         Me.DGSalaryAndPaySlip.RowHeadersWidth = 51
         Me.DGSalaryAndPaySlip.RowTemplate.Height = 24
-        Me.DGSalaryAndPaySlip.Size = New System.Drawing.Size(1191, 616)
+        Me.DGSalaryAndPaySlip.Size = New System.Drawing.Size(1190, 617)
         Me.DGSalaryAndPaySlip.TabIndex = 23
         Me.DGSalaryAndPaySlip.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DGSalaryAndPaySlip.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -1452,7 +1452,7 @@ Partial Class FrmAssociate
         Me.Controls.Add(Me.TCAssociate)
         Me.Controls.Add(Me.Panel7)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FrmAssociate"
         Me.Panel7.ResumeLayout(False)
         Me.Panel8.ResumeLayout(False)

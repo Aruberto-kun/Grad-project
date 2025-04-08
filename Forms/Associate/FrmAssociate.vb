@@ -28,7 +28,7 @@ Public Class FrmAssociate
         ClassAssociates.LoadSalaryAndPaySlip(DGSalaryAndPaySlip)
     End Sub
 
-    dim remainingLeavee As Integer = 0
+    Dim remainingLeavee As Integer = 0
     Dim difference As Integer = 0
 
     Private Sub CBLeaveType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBLeaveType.SelectedIndexChanged
@@ -133,9 +133,11 @@ Public Class FrmAssociate
         End Try
     End Sub
 
+    Public associateName As String = ""
     Private Sub Guna2Button4_Click(sender As Object, e As EventArgs) Handles Guna2Button4.Click
         If MsgBox("Are you sure you want to logout?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
             MsgBox("Logout Success")
+            Auditing($"{associateName} has logged out.")
             FrmLogin.Show()
             Me.Close()
             Exit Sub
@@ -145,4 +147,5 @@ Public Class FrmAssociate
     Private Sub FrmAssociate_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         ClassLogin.SetToLoggedOutEmployees(ClassAssociates.employeeID)
     End Sub
+
 End Class
