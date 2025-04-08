@@ -90,9 +90,9 @@ Public Class ClassPayrollCalculation
         Try
             If dg.SelectedRows.Count > 0 Then
                 employeeID = dg.SelectedRows(0).Cells(0).Value
-                lblname.Text = dg.SelectedRows(0).Cells(2).Value
-                lbldept.Text = dg.SelectedRows(0).Cells(3).Value
-                lblpos.Text = dg.SelectedRows(0).Cells(4).Value
+                lblname.Text = $"Employee Name: {dg.SelectedRows(0).Cells(2).Value}"
+                lbldept.Text = $"Department: {dg.SelectedRows(0).Cells(3).Value}"
+                lblpos.Text = $"Position: {dg.SelectedRows(0).Cells(4).Value}"
                 FrmPayroll.ShowDialog()
             End If
         Catch ex As Exception
@@ -148,9 +148,8 @@ Public Class ClassPayrollCalculation
         End Try
     End Sub
 #End Region
-    Public Shared Sub EmployeeStatus(cb As Guna2ComboBox)
+    Public Shared Sub EmployeeStatus()
         Try
-            Dim employeeID As Integer = cb.SelectedValue
             RunQuery("Select status from tblemployee where employeeID = '" & employeeID & "'")
             If ds.Tables("querytable").Rows.Count > 0 Then
                 employmentstatus = ds.Tables("querytable").Rows(0)(0)
@@ -158,9 +157,8 @@ Public Class ClassPayrollCalculation
         Catch ex As Exception
         End Try
     End Sub
-    Public Shared Sub EmployeeCompensationType(cb As Guna2ComboBox)
+    Public Shared Sub EmployeeCompensationType()
         Try
-            Dim employeeID As Integer = cb.SelectedValue
             RunQuery("Select type from tblsalary where employeeID = '" & employeeID & "'")
             If ds.Tables("querytable").Rows.Count > 0 Then
                 compensationtype = ds.Tables("querytable").Rows(0)(0)
@@ -182,6 +180,15 @@ Public Class ClassPayrollCalculation
             End If
         Catch ex As Exception
 
+        End Try
+    End Sub
+    Public Shared Sub GetDailyWage(lbldaily As Label)
+        Try
+            RunQuery("Select coalesce(daily,0) as daily from tblsalary where employeeID = '" & employeeID & "'")
+            lbldaily.Text = $"Daily Wage: {ds.Tables("querytable").Rows(0)(0)}"
+        Catch ex As Exception
+            MsgBox(ex.Message)
+            Exit Sub
         End Try
     End Sub
     Public Shared Sub LoadEmployees(dgv As Guna2DataGridView)
@@ -215,9 +222,8 @@ Public Class ClassPayrollCalculation
 
         End Try
     End Sub
-    Public Shared Sub LoadAllowance(txt As Guna2TextBox, cbEmp As Guna2ComboBox)
+    Public Shared Sub LoadAllowance(txt As Guna2TextBox)
         Try
-            Dim employeeID As Integer = cbEmp.SelectedValue
             If employeeID = 0 Then
                 Exit Sub
             End If
@@ -232,12 +238,11 @@ Public Class ClassPayrollCalculation
 
         End Try
     End Sub
-    Public Shared Sub LoadVoluntary(dg As Guna2DataGridView, cbemp As Guna2ComboBox)
+    Public Shared Sub LoadVoluntary(dg As Guna2DataGridView)
         Try
-            Dim employeeID As Integer = cbemp.SelectedValue
             RunQuery("Select a.voluntaryID, b.name, a.amount from tblempvoluntary a
                       LEFT JOIN tblvoluntary b on b.voluntaryID = a.voluntaryID
-                      WHERE a.employeeID='" & employeeID & "'")
+                      WHERE a.employeeID='" & employeeID & "' and a.amount <> '0.00'")
             If isPayout = "Yes" Then
                 dg.DataSource = ds.Tables("querytable")
             Else
@@ -248,14 +253,11 @@ Public Class ClassPayrollCalculation
 
         End Try
     End Sub
-    Public Shared Sub LoadAttendance(dg As Guna2DataGridView, cbemp As Guna2ComboBox)
+    Public Shared Sub LoadAttendance(dg As Guna2DataGridView)
         Try
-            If cbemp.SelectedIndex = -1 Then
-                dg.DataSource = Nothing
+            If employeeID = 0 Then
                 Exit Sub
             End If
-
-            Dim employeeID As Integer = cbemp.SelectedValue
 
             RunQuery("WITH RECURSIVE date_range AS (
                 SELECT '" & datefrom & "' AS date
@@ -319,7 +321,7 @@ Public Class ClassPayrollCalculation
             hasschedule = True
             RunQuery("Select * from tbltimeschedule WHERE employeeID = '" & employeeID & "'")
             If ds.Tables("querytable").Rows.Count = 0 Then
-                MsgBox("No schedule set to the employee yet")
+                'MsgBox("No schedule set to the employee yet")
                 hasschedule = False
             End If
 
@@ -327,9 +329,8 @@ Public Class ClassPayrollCalculation
             MsgBox(ex.Message)
         End Try
     End Sub
-    Public Shared Sub GetGrossPay(cbemp As Guna2ComboBox, dg As Guna2DataGridView, txtgrosspay As Guna2TextBox)
+    Public Shared Sub GetGrossPay(dg As Guna2DataGridView, txtgrosspay As Guna2TextBox)
         Try
-            Dim employeeID As Integer = cbemp.SelectedValue
             If employeeID = 0 Then
                 Exit Sub
             End If
@@ -484,9 +485,8 @@ Public Class ClassPayrollCalculation
         End Try
 
     End Sub
-    Public Shared Sub GetOvertime(cbemp As Guna2ComboBox, dg As Guna2DataGridView, txtovertime As Guna2TextBox)
+    Public Shared Sub GetOvertime(dg As Guna2DataGridView, txtovertime As Guna2TextBox)
         Try
-            Dim employeeID As Integer = cbemp.SelectedValue
             If employeeID = 0 Then
                 Exit Sub
             End If
@@ -538,24 +538,6 @@ Public Class ClassPayrollCalculation
             MsgBox(ex.Message)
         End Try
     End Sub
-    'Public Shared Sub GetAllowance(dg As Guna2DataGridView, txtallowance As Guna2TextBox)
-    '    Try
-    '        If isPayout = "Yes" Then
-    '            Dim totalallowance As Decimal
-    '            For Each row As DataGridViewRow In dg.Rows
-    '                Dim allowanceamount As Decimal = row.Cells("allowanceAmount").Value
-    '                totalallowance += allowanceamount
-    '            Next
-    '            txtallowance.Clear()
-    '            txtallowance.Text = totalallowance
-    '        Else
-    '            txtallowance.Text = "0"
-    '        End If
-
-    '    Catch ex As Exception
-
-    '    End Try
-    'End Sub
     Public Shared Sub GetIncentives(dg As Guna2DataGridView, txtincentives As Guna2TextBox)
         Try
             Dim totalincentive As Decimal
@@ -583,9 +565,8 @@ Public Class ClassPayrollCalculation
 
         End Try
     End Sub
-    Public Shared Sub GetLate(dg As Guna2DataGridView, txtlate As Guna2TextBox, cbemp As Guna2ComboBox)
+    Public Shared Sub GetLate(dg As Guna2DataGridView, txtlate As Guna2TextBox)
         Try
-            Dim employeeID As Integer = cbemp.SelectedValue
             If employeeID = 0 Then
                 Exit Sub
             End If
@@ -608,9 +589,8 @@ Public Class ClassPayrollCalculation
 
         End Try
     End Sub
-    Public Shared Sub GetUndertime(dg As Guna2DataGridView, txtundertime As Guna2TextBox, cbemp As Guna2ComboBox)
+    Public Shared Sub GetUndertime(dg As Guna2DataGridView, txtundertime As Guna2TextBox)
         Try
-            Dim employeeID As Integer = cbemp.SelectedValue
             If employeeID = 0 Then
                 Exit Sub
             End If
@@ -634,9 +614,8 @@ Public Class ClassPayrollCalculation
 
         End Try
     End Sub
-    Public Shared Sub GetNightDifferential(dg As Guna2DataGridView, txtnightdifferential As Guna2TextBox, cbemp As Guna2ComboBox)
+    Public Shared Sub GetNightDifferential(dg As Guna2DataGridView, txtnightdifferential As Guna2TextBox)
         Try
-            Dim employeeID As Integer = cbemp.SelectedValue
             If employeeID = 0 Then
                 Exit Sub
             End If
@@ -781,9 +760,8 @@ Public Class ClassPayrollCalculation
 
         End Try
     End Sub
-    Public Shared Sub SaveSalary(cb As Guna2ComboBox, txtot As Guna2TextBox, txtallowance As Guna2TextBox, txtincentives As Guna2TextBox, txtnightdiff As Guna2TextBox, txtlate As Guna2TextBox, txtundertime As Guna2TextBox, txtvoluntary As Guna2TextBox, txtsss As Guna2TextBox, txtphilhealth As Guna2TextBox, txtpagibig As Guna2TextBox, txttax As Guna2TextBox, txtmandatory As Guna2TextBox, txttotalincrease As Guna2TextBox, txttotaldeduc As Guna2TextBox, txtgrosspay As Guna2TextBox, txtnetpay As Guna2TextBox)
+    Public Shared Sub SaveSalary(txtot As Guna2TextBox, txtallowance As Guna2TextBox, txtincentives As Guna2TextBox, txtnightdiff As Guna2TextBox, txtlate As Guna2TextBox, txtundertime As Guna2TextBox, txtvoluntary As Guna2TextBox, txtsss As Guna2TextBox, txtphilhealth As Guna2TextBox, txtpagibig As Guna2TextBox, txttax As Guna2TextBox, txtmandatory As Guna2TextBox, txttotalincrease As Guna2TextBox, txttotaldeduc As Guna2TextBox, txtgrosspay As Guna2TextBox, txtnetpay As Guna2TextBox)
         Try
-            Dim employeeID As Integer = cb.SelectedValue
             RunCommand("Insert into tblpayroll (employeeID,payrollperiodID,overtime,allowance,incentives,nightdifferential,late,undertime,voluntary,sss,philhealth,pagibig,tax,mandatory,totalincrease,totaldeduc,grosspay,netpay) VALUES
                         (@employeeID,@payrollperiodID,@overtime,@allowance,@incentives,@nightdifferential,@late,@undertime,@voluntary,@sss,@philhealth,@pagibig,@tax,@mandatory,@totalincrease,@totaldeduc,@grosspay,@netpay)")
             With com
@@ -810,7 +788,6 @@ Public Class ClassPayrollCalculation
             End With
             MsgBox("Payroll saved!")
             LoadEmployees(FrmPayrollCalculation.DGVEmployeeList)
-            cb.SelectedIndex = -1
             txtot.Clear()
             txtallowance.Clear()
             txtincentives.Clear()
@@ -828,7 +805,7 @@ Public Class ClassPayrollCalculation
             txtgrosspay.Clear()
             txtnetpay.Clear()
         Catch ex As Exception
-
+            MsgBox(ex.Message)
         End Try
     End Sub
 End Class
