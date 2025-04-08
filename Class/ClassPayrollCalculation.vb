@@ -18,6 +18,9 @@ Public Class ClassPayrollCalculation
     Shared datefrom As String
 
     Public Shared hasschedule As Boolean
+
+
+    Shared employeeID As Integer
 #Region "Payroll Period"
     Public Shared Sub NewPayrollPeriod(payrollperiodname As Guna2TextBox, dtpfrom As Guna2DateTimePicker, dtpto As Guna2DateTimePicker, rb As RadioButton)
         Try
@@ -83,6 +86,19 @@ Public Class ClassPayrollCalculation
 
         End Try
     End Sub
+    Public Shared Sub SelectEmployee(dg As Guna2DataGridView, lblname As Label, lbldept As Label, lblpos As Label)
+        Try
+            If dg.SelectedRows.Count > 0 Then
+                employeeID = dg.SelectedRows(0).Cells(0).Value
+                lblname.Text = dg.SelectedRows(0).Cells(2).Value
+                lbldept.Text = dg.SelectedRows(0).Cells(3).Value
+                lblpos.Text = dg.SelectedRows(0).Cells(4).Value
+                FrmPayroll.ShowDialog()
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
     Public Shared Sub RefreshPayrollPeriodCB(cb As Guna2ComboBox)
         Try
             Dim itemcount As Integer = cb.Items.Count
@@ -125,6 +141,7 @@ Public Class ClassPayrollCalculation
             isPayout = txtpayout.Text
             datefrom = txtfrom.Text
             dateto = txtto.Text
+            MsgBox(payrollperiodID)
 
         Catch ex As Exception
 
@@ -167,22 +184,18 @@ Public Class ClassPayrollCalculation
 
         End Try
     End Sub
-    Public Shared Sub LoadEmployees(cbemployee As Guna2ComboBox)
+    Public Shared Sub LoadEmployees(dgv As Guna2DataGridView)
         Try
-            RunQuery("SELECT e.employeeID, CONCAT(e.firstname, ' ', e.lastname) AS fullname
+            RunQuery("SELECT e.employeeID,e.employeeNumber, CONCAT(e.firstname, ' ', e.lastname) AS fullname, d.departmentName, po.positionName
                       FROM tblemployee e
-                      WHERE e.employeeID NOT IN (
+                      LEFT JOIN tbldepartment d on d.departmentID = e.departmentID
+                      LEFT JOIN tblposition po on po.positionID = e.positionID
+                      WHERE e.status <> 'Resigned' and e.employeeID NOT IN (
                       SELECT p.employeeID
                       FROM tblpayroll p
                       WHERE p.payrollperiodID = '" & payrollperiodID & "')")
             If ds.Tables.Contains("querytable") AndAlso ds.Tables("querytable").Rows.Count > 0 Then
-                cbemployee.ValueMember = "employeeID"
-                cbemployee.DisplayMember = "fullname"
-                cbemployee.DataSource = ds.Tables("querytable")
-                cbemployee.SelectedIndex = -1
-            Else
-                ' Handle empty data source
-                cbemployee.DataSource = Nothing
+                dgv.DataSource = ds.Tables("querytable")
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -796,7 +809,7 @@ Public Class ClassPayrollCalculation
                 .Parameters.Clear()
             End With
             MsgBox("Payroll saved!")
-            LoadEmployees(cb)
+            LoadEmployees(FrmPayrollCalculation.DGVEmployeeList)
             cb.SelectedIndex = -1
             txtot.Clear()
             txtallowance.Clear()

@@ -80,7 +80,7 @@ Partial Class FrmEmployee
         '
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel5.Location = New System.Drawing.Point(7, 1092)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(1834, 6)
         Me.Panel5.TabIndex = 13
@@ -89,7 +89,7 @@ Partial Class FrmEmployee
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel3.Location = New System.Drawing.Point(1841, 60)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(7, 1038)
         Me.Panel3.TabIndex = 11
@@ -125,7 +125,7 @@ Partial Class FrmEmployee
         Me.CbEmployeeStatus.Items.AddRange(New Object() {"All", "Probationary", "Regular", "Resigned"})
         Me.CbEmployeeStatus.ItemsAppearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
         Me.CbEmployeeStatus.Location = New System.Drawing.Point(883, 5)
-        Me.CbEmployeeStatus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CbEmployeeStatus.Margin = New System.Windows.Forms.Padding(4)
         Me.CbEmployeeStatus.Name = "CbEmployeeStatus"
         Me.CbEmployeeStatus.Size = New System.Drawing.Size(224, 39)
         Me.CbEmployeeStatus.TabIndex = 10
@@ -134,7 +134,7 @@ Partial Class FrmEmployee
         '
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel9.Location = New System.Drawing.Point(1107, 5)
-        Me.Panel9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel9.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel9.Name = "Panel9"
         Me.Panel9.Size = New System.Drawing.Size(5, 50)
         Me.Panel9.TabIndex = 8
@@ -169,7 +169,7 @@ Partial Class FrmEmployee
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel2.Location = New System.Drawing.Point(1544, 5)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(7, 50)
         Me.Panel2.TabIndex = 6
@@ -185,7 +185,7 @@ Partial Class FrmEmployee
         Me.BtnAddAssociate.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnAddAssociate.ForeColor = System.Drawing.Color.White
         Me.BtnAddAssociate.Location = New System.Drawing.Point(1551, 5)
-        Me.BtnAddAssociate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnAddAssociate.Margin = New System.Windows.Forms.Padding(4)
         Me.BtnAddAssociate.Name = "BtnAddAssociate"
         Me.BtnAddAssociate.Size = New System.Drawing.Size(292, 50)
         Me.BtnAddAssociate.TabIndex = 5
@@ -195,7 +195,7 @@ Partial Class FrmEmployee
         '
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1843, 5)
         Me.Panel1.TabIndex = 2
@@ -204,7 +204,7 @@ Partial Class FrmEmployee
         '
         Me.Panel61.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel61.Location = New System.Drawing.Point(0, 55)
-        Me.Panel61.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel61.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel61.Name = "Panel61"
         Me.Panel61.Size = New System.Drawing.Size(1843, 5)
         Me.Panel61.TabIndex = 1
@@ -213,7 +213,7 @@ Partial Class FrmEmployee
         '
         Me.Panel62.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel62.Location = New System.Drawing.Point(1843, 0)
-        Me.Panel62.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel62.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel62.Name = "Panel62"
         Me.Panel62.Size = New System.Drawing.Size(5, 60)
         Me.Panel62.TabIndex = 0
@@ -222,7 +222,7 @@ Partial Class FrmEmployee
         '
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel4.Location = New System.Drawing.Point(0, 60)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(7, 1038)
         Me.Panel4.TabIndex = 12
@@ -240,7 +240,7 @@ Partial Class FrmEmployee
         Me.Panel57.Controls.Add(Me.Panel62)
         Me.Panel57.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel57.Location = New System.Drawing.Point(0, 0)
-        Me.Panel57.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel57.Margin = New System.Windows.Forms.Padding(4)
         Me.Panel57.Name = "Panel57"
         Me.Panel57.Size = New System.Drawing.Size(1848, 60)
         Me.Panel57.TabIndex = 9
@@ -275,7 +275,7 @@ Partial Class FrmEmployee
         Me.DgEmployee.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgEmployee.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgEmployee.Location = New System.Drawing.Point(7, 60)
-        Me.DgEmployee.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DgEmployee.Margin = New System.Windows.Forms.Padding(4)
         Me.DgEmployee.Name = "DgEmployee"
         Me.DgEmployee.ReadOnly = True
         Me.DgEmployee.RowHeadersVisible = False

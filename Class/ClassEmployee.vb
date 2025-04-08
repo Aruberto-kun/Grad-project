@@ -80,7 +80,6 @@ Public Class ClassEmployee
 
         End Try
     End Sub
-
     Public Shared Sub RefreshVoluntary(dg As DataGridView)
         Try
             RunQuery("select * from tblvoluntary where status = 'Active'")

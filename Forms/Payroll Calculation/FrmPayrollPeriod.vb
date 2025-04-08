@@ -13,14 +13,12 @@
 
         End Try
     End Sub
-
     Private Sub FrmPayrollPeriod_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         FrmMain.Enabled = True
     End Sub
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         ClassPayrollCalculation.RefreshPayrollPeriodCB(CbPayrollPeriod)
     End Sub
-
     Private Sub CbPayrollPeriod_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CbPayrollPeriod.SelectedIndexChanged
         ClassPayrollCalculation.SelectPayrollPeriod(CbPayrollPeriod, TxtFrom, TxtTo, TxtPayout)
     End Sub
@@ -31,7 +29,7 @@
             Exit Sub
         End If
         ClassPayrollCalculation.UsePayrollPeriod(CbPayrollPeriod, FrmPayrollCalculation.TxtPayrollPeriod, TxtFrom, TxtTo, TxtPayout)
-        'ClassPayrollCalculation.LoadEmployees(FrmPayrollCalculation.CbEmployees)
+        ClassPayrollCalculation.LoadEmployees(FrmPayrollCalculation.DGVEmployeeList)
         Me.Close()
     End Sub
 End Class
