@@ -28,7 +28,7 @@ Public Class FrmAssociate
         ClassAssociates.LoadSalaryAndPaySlip(DGSalaryAndPaySlip)
     End Sub
 
-    dim remainingLeavee As Integer = 0
+    Dim remainingLeavee As Integer = 0
     Dim difference As Integer = 0
 
     Private Sub CBLeaveType_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBLeaveType.SelectedIndexChanged
@@ -145,4 +145,5 @@ Public Class FrmAssociate
     Private Sub FrmAssociate_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         ClassLogin.SetToLoggedOutEmployees(ClassAssociates.employeeID)
     End Sub
+
 End Class

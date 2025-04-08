@@ -8,11 +8,15 @@ Public Class FrmSignUpEmployee
             MsgEmptyField()
             Exit Sub
         ElseIf Not Regex.IsMatch(TxtUsername.Text, noSpace) Then
-            MessageBox.Show("Invalid Username", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("Invalid Username.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             TxtUsername.Clear()
             Exit Sub
         ElseIf Not Regex.IsMatch(TxtPassword.Text, noSpace) Then
-            MessageBox.Show("Invalid password", "Invalid password", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            MessageBox.Show("Invalid password.", "Invalid password", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            TxtPassword.Clear()
+            Exit Sub
+        ElseIf Not Regex.IsMatch(TxtPassword.Text, userName) Then
+            MessageBox.Show("Invalid password.", "Invalid password", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             TxtPassword.Clear()
             Exit Sub
         End If

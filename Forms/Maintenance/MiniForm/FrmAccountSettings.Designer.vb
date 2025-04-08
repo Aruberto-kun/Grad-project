@@ -25,6 +25,11 @@ Partial Class FrmAccountSettings
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
+        Me.BtnSaveUser = New Guna.UI2.WinForms.Guna2Button()
+        Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.TxtConfirmPass = New Guna.UI2.WinForms.Guna2TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.TxtPassword = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TxtUsername = New Guna.UI2.WinForms.Guna2TextBox()
@@ -33,11 +38,6 @@ Partial Class FrmAccountSettings
         Me.Label3 = New System.Windows.Forms.Label()
         Me.TxtFirstname = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
-        Me.TxtConfirmPass = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.BtnSaveUser = New Guna.UI2.WinForms.Guna2Button()
-        Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Panel2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -80,6 +80,76 @@ Partial Class FrmAccountSettings
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(338, 679)
         Me.Panel2.TabIndex = 2
+        '
+        'CheckBox1
+        '
+        Me.CheckBox1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.CheckBox1.Location = New System.Drawing.Point(0, 480)
+        Me.CheckBox1.Name = "CheckBox1"
+        Me.CheckBox1.Size = New System.Drawing.Size(338, 34)
+        Me.CheckBox1.TabIndex = 43
+        Me.CheckBox1.Text = "Show Password"
+        Me.CheckBox1.UseVisualStyleBackColor = True
+        '
+        'BtnSaveUser
+        '
+        Me.BtnSaveUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray
+        Me.BtnSaveUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
+        Me.BtnSaveUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
+        Me.BtnSaveUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
+        Me.BtnSaveUser.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.BtnSaveUser.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
+        Me.BtnSaveUser.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.BtnSaveUser.ForeColor = System.Drawing.Color.White
+        Me.BtnSaveUser.Location = New System.Drawing.Point(0, 633)
+        Me.BtnSaveUser.Margin = New System.Windows.Forms.Padding(2)
+        Me.BtnSaveUser.Name = "BtnSaveUser"
+        Me.BtnSaveUser.Size = New System.Drawing.Size(338, 41)
+        Me.BtnSaveUser.TabIndex = 42
+        Me.BtnSaveUser.Text = "SAVE"
+        '
+        'Panel3
+        '
+        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.Panel3.Location = New System.Drawing.Point(0, 674)
+        Me.Panel3.Name = "Panel3"
+        Me.Panel3.Size = New System.Drawing.Size(338, 5)
+        Me.Panel3.TabIndex = 41
+        '
+        'TxtConfirmPass
+        '
+        Me.TxtConfirmPass.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
+        Me.TxtConfirmPass.BorderRadius = 5
+        Me.TxtConfirmPass.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.TxtConfirmPass.DefaultText = ""
+        Me.TxtConfirmPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
+        Me.TxtConfirmPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
+        Me.TxtConfirmPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtConfirmPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
+        Me.TxtConfirmPass.Dock = System.Windows.Forms.DockStyle.Top
+        Me.TxtConfirmPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
+        Me.TxtConfirmPass.Font = New System.Drawing.Font("Segoe UI", 9.0!)
+        Me.TxtConfirmPass.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
+        Me.TxtConfirmPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
+        Me.TxtConfirmPass.Location = New System.Drawing.Point(0, 438)
+        Me.TxtConfirmPass.MaxLength = 45
+        Me.TxtConfirmPass.Name = "TxtConfirmPass"
+        Me.TxtConfirmPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
+        Me.TxtConfirmPass.PlaceholderText = ""
+        Me.TxtConfirmPass.SelectedText = ""
+        Me.TxtConfirmPass.Size = New System.Drawing.Size(338, 42)
+        Me.TxtConfirmPass.TabIndex = 40
+        '
+        'Label6
+        '
+        Me.Label6.Dock = System.Windows.Forms.DockStyle.Top
+        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(0, 384)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(338, 54)
+        Me.Label6.TabIndex = 39
+        Me.Label6.Text = "Confirm Password:"
+        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'TxtPassword
         '
@@ -220,76 +290,6 @@ Partial Class FrmAccountSettings
         Me.Label2.TabIndex = 0
         Me.Label2.Text = "First name:"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'TxtConfirmPass
-        '
-        Me.TxtConfirmPass.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.TxtConfirmPass.BorderRadius = 5
-        Me.TxtConfirmPass.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TxtConfirmPass.DefaultText = ""
-        Me.TxtConfirmPass.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.TxtConfirmPass.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.TxtConfirmPass.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtConfirmPass.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtConfirmPass.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TxtConfirmPass.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.TxtConfirmPass.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtConfirmPass.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.TxtConfirmPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.TxtConfirmPass.Location = New System.Drawing.Point(0, 438)
-        Me.TxtConfirmPass.MaxLength = 45
-        Me.TxtConfirmPass.Name = "TxtConfirmPass"
-        Me.TxtConfirmPass.PasswordChar = Global.Microsoft.VisualBasic.ChrW(8226)
-        Me.TxtConfirmPass.PlaceholderText = ""
-        Me.TxtConfirmPass.SelectedText = ""
-        Me.TxtConfirmPass.Size = New System.Drawing.Size(338, 42)
-        Me.TxtConfirmPass.TabIndex = 40
-        '
-        'Label6
-        '
-        Me.Label6.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label6.Font = New System.Drawing.Font("Segoe UI", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(0, 384)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(338, 54)
-        Me.Label6.TabIndex = 39
-        Me.Label6.Text = "Confirm Password:"
-        Me.Label6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Panel3
-        '
-        Me.Panel3.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel3.Location = New System.Drawing.Point(0, 674)
-        Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(338, 5)
-        Me.Panel3.TabIndex = 41
-        '
-        'BtnSaveUser
-        '
-        Me.BtnSaveUser.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.BtnSaveUser.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.BtnSaveUser.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.BtnSaveUser.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.BtnSaveUser.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BtnSaveUser.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnSaveUser.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BtnSaveUser.ForeColor = System.Drawing.Color.White
-        Me.BtnSaveUser.Location = New System.Drawing.Point(0, 633)
-        Me.BtnSaveUser.Margin = New System.Windows.Forms.Padding(2)
-        Me.BtnSaveUser.Name = "BtnSaveUser"
-        Me.BtnSaveUser.Size = New System.Drawing.Size(338, 41)
-        Me.BtnSaveUser.TabIndex = 42
-        Me.BtnSaveUser.Text = "SAVE"
-        '
-        'CheckBox1
-        '
-        Me.CheckBox1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.CheckBox1.Location = New System.Drawing.Point(0, 480)
-        Me.CheckBox1.Name = "CheckBox1"
-        Me.CheckBox1.Size = New System.Drawing.Size(338, 34)
-        Me.CheckBox1.TabIndex = 43
-        Me.CheckBox1.Text = "Show Password"
-        Me.CheckBox1.UseVisualStyleBackColor = True
         '
         'FrmAccountSettings
         '

@@ -38,10 +38,19 @@ Public Class FrmAccountSettings
             MessageBox.Show("Password do not match.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             TxtConfirmPass.Clear()
             Exit Sub
+        ElseIf Not Regex.IsMatch(TxtUsername.Text, userName) Then
+            MessageBox.Show("Invalid username.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            TxtUsername.Clear()
+            Exit Sub
+        ElseIf Not Regex.IsMatch(TxtPassword.Text, userName) Then
+            MessageBox.Show("Invalid password.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            TxtPassword.Clear()
+            Exit Sub
         Else
             UpdateAdminPayroll(userID, TxtFirstname.Text, TxtLastname.Text, TxtUsername.Text, TxtPassword.Text)
             TxtPassword.Clear()
             TxtConfirmPass.Clear()
         End If
     End Sub
+
 End Class

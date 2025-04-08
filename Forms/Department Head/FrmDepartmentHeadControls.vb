@@ -74,7 +74,9 @@ Public Class FrmDepartmentHeadControls
                     If MsgBox("Are you sure you want to approve the leave filed?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                         ClassDepartmentHeadControls.ApproveLeave(filedLeaveID)
                         Dim name As String = DGFiledLeave.Rows(e.RowIndex).Cells("Full Name").Value.ToString
-                        Auditing($"{LblName.Text} approved {name}'s leave.")
+                        Dim leaveFrom As String = DGFiledLeave.Rows(e.RowIndex).Cells("From").Value.ToString
+                        Dim leaveTo As String = DGFiledLeave.Rows(e.RowIndex).Cells("To").Value.ToString
+                        Auditing($"{LblName.Text} approved {name}'s leave from {leaveFrom} to {leaveTo}.")
                         DGFiledLeave.Rows.RemoveAt(e.RowIndex)
                     End If
 
@@ -84,7 +86,9 @@ Public Class FrmDepartmentHeadControls
                     If MsgBox("Are you sure you want to decline the leave filed?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
                         ClassDepartmentHeadControls.DeclineLeave(filedLeaveID)
                         Dim name As String = DGFiledLeave.Rows(e.RowIndex).Cells("Full Name").Value.ToString
-                        Auditing($"{LblName.Text} approved {name}'s leave.")
+                        Dim leaveFrom As String = DGFiledLeave.Rows(e.RowIndex).Cells("From").Value.ToString
+                        Dim leaveTo As String = DGFiledLeave.Rows(e.RowIndex).Cells("To").Value.ToString
+                        Auditing($"{LblName.Text} declined {name}'s leave from {leaveFrom} to {leaveTo}.")
                         DGFiledLeave.Rows.RemoveAt(e.RowIndex)
                     End If
 
@@ -106,7 +110,9 @@ Public Class FrmDepartmentHeadControls
                         ClassDepartmentHeadControls.ApproveFTIO(FTIOID)
                         ClassDepartmentHeadControls.LoadFiledFTIO(DGFiledFTIO)
                         Dim name As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Full Name").Value.ToString
-                        Auditing($"{LblName.Text} approved {name}'s FTIO.")
+                        Dim ftioDate As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Date").Value.ToString
+                        Dim ftioTime As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Time").Value.ToString
+                        Auditing($"{LblName.Text} approved {name}'s filed FTIO dated {ftioDate} {ftioTime}.")
                     End If
 
                 ElseIf e.ColumnIndex = DGFiledFTIO.Columns("Decline").Index Then
@@ -116,7 +122,9 @@ Public Class FrmDepartmentHeadControls
                         ClassDepartmentHeadControls.DeclineFTIO(FTIOID)
                         ClassDepartmentHeadControls.LoadFiledFTIO(DGFiledFTIO)
                         Dim name As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Full Name").Value.ToString
-                        Auditing($"{LblName.Text} declined {name}'s FTIO.")
+                        Dim ftioDate As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Date").Value.ToString
+                        Dim ftioTime As String = DGFiledFTIO.Rows(e.RowIndex).Cells("Time").Value.ToString
+                        Auditing($"{LblName.Text} declined {name}'s filed FTIO dated {ftioDate} {ftioTime}.")
                     End If
 
                 End If
@@ -140,7 +148,8 @@ Public Class FrmDepartmentHeadControls
                         ClassDepartmentHeadControls.ApproveOvertime(employeeID, attendanceID, DGOvertime)
                         ClassDepartmentHeadControls.LoadOvertime(DGOvertime)
                         Dim name As String = DGOvertime.Rows(e.RowIndex).Cells("FullName").Value.ToString
-                        Auditing($"{LblName.Text} approved {name}'s overtime.")
+                        Dim overtimeDate As String = DGOvertime.Rows(e.RowIndex).Cells("Attendance Date").Value.ToString
+                        Auditing($"{LblName.Text} approved {name}'s overtime dated {overtimeDate}.")
                     End If
 
                 ElseIf e.ColumnIndex = DGOvertime.Columns("Decline").Index Then
@@ -151,7 +160,8 @@ Public Class FrmDepartmentHeadControls
                         ClassDepartmentHeadControls.DeclineOvertime(employeeID, attendanceID, DGOvertime)
                         ClassDepartmentHeadControls.LoadOvertime(DGOvertime)
                         Dim name As String = DGOvertime.Rows(e.RowIndex).Cells("FullName").Value.ToString
-                        Auditing($"{LblName.Text} declined {name}'s overtime.")
+                        Dim overtimeDate As String = DGOvertime.Rows(e.RowIndex).Cells("Attendance Date").Value.ToString
+                        Auditing($"{LblName.Text} declined {name}'s overtime dated {overtimeDate}.")
                     End If
 
                 End If
