@@ -144,13 +144,6 @@ Partial Class FrmMainte
         Me.rateClassification = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.rate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Panel48 = New System.Windows.Forms.Panel()
-        Me.Panel25 = New System.Windows.Forms.Panel()
-        Me.Panel27 = New System.Windows.Forms.Panel()
-        Me.TxtRateClassification = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.TxtRates = New Guna.UI2.WinForms.Guna2TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.BtnSaveRate = New Guna.UI2.WinForms.Guna2Button()
         Me.tabContri = New System.Windows.Forms.TabPage()
         Me.Guna2TabControl2 = New Guna.UI2.WinForms.Guna2TabControl()
         Me.tabTax = New System.Windows.Forms.TabPage()
@@ -261,8 +254,6 @@ Partial Class FrmMainte
         Me.Panel23.SuspendLayout()
         Me.tabRate.SuspendLayout()
         CType(Me.dgRates, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel25.SuspendLayout()
-        Me.Panel27.SuspendLayout()
         Me.tabContri.SuspendLayout()
         Me.Guna2TabControl2.SuspendLayout()
         Me.tabTax.SuspendLayout()
@@ -303,10 +294,10 @@ Partial Class FrmMainte
         Me.Guna2TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2TabControl1.ItemSize = New System.Drawing.Size(180, 40)
         Me.Guna2TabControl1.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2TabControl1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2TabControl1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2TabControl1.Name = "Guna2TabControl1"
         Me.Guna2TabControl1.SelectedIndex = 0
-        Me.Guna2TabControl1.Size = New System.Drawing.Size(1927, 881)
+        Me.Guna2TabControl1.Size = New System.Drawing.Size(1445, 716)
         Me.Guna2TabControl1.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty
         Me.Guna2TabControl1.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(9, Byte), Integer), CType(CType(132, Byte), Integer), CType(CType(227, Byte), Integer))
         Me.Guna2TabControl1.TabButtonHoverState.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!)
@@ -332,9 +323,9 @@ Partial Class FrmMainte
         Me.tabUser.Controls.Add(Me.Panel51)
         Me.tabUser.Controls.Add(Me.Panel37)
         Me.tabUser.Location = New System.Drawing.Point(184, 4)
-        Me.tabUser.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.tabUser.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tabUser.Name = "tabUser"
-        Me.tabUser.Size = New System.Drawing.Size(1739, 873)
+        Me.tabUser.Size = New System.Drawing.Size(1257, 708)
         Me.tabUser.TabIndex = 10
         Me.tabUser.Text = "User Maintenance"
         Me.tabUser.UseVisualStyleBackColor = True
@@ -368,15 +359,15 @@ Partial Class FrmMainte
         Me.DgUser.DefaultCellStyle = DataGridViewCellStyle3
         Me.DgUser.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgUser.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DgUser.Location = New System.Drawing.Point(354, 0)
-        Me.DgUser.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DgUser.Location = New System.Drawing.Point(265, 0)
+        Me.DgUser.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DgUser.Name = "DgUser"
         Me.DgUser.ReadOnly = True
         Me.DgUser.RowHeadersVisible = False
         Me.DgUser.RowHeadersWidth = 51
         Me.DgUser.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.DgUser.RowTemplate.Height = 24
-        Me.DgUser.Size = New System.Drawing.Size(1385, 873)
+        Me.DgUser.Size = New System.Drawing.Size(992, 708)
         Me.DgUser.TabIndex = 5
         Me.DgUser.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DgUser.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -427,10 +418,9 @@ Partial Class FrmMainte
         'Panel51
         '
         Me.Panel51.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel51.Location = New System.Drawing.Point(347, 0)
-        Me.Panel51.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel51.Location = New System.Drawing.Point(260, 0)
         Me.Panel51.Name = "Panel51"
-        Me.Panel51.Size = New System.Drawing.Size(7, 873)
+        Me.Panel51.Size = New System.Drawing.Size(5, 708)
         Me.Panel51.TabIndex = 4
         '
         'Panel37
@@ -438,9 +428,9 @@ Partial Class FrmMainte
         Me.Panel37.Controls.Add(Me.Panel39)
         Me.Panel37.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel37.Location = New System.Drawing.Point(0, 0)
-        Me.Panel37.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel37.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel37.Name = "Panel37"
-        Me.Panel37.Size = New System.Drawing.Size(347, 873)
+        Me.Panel37.Size = New System.Drawing.Size(260, 708)
         Me.Panel37.TabIndex = 2
         '
         'Panel39
@@ -454,9 +444,8 @@ Partial Class FrmMainte
         Me.Panel39.Controls.Add(Me.Label25)
         Me.Panel39.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel39.Location = New System.Drawing.Point(0, 0)
-        Me.Panel39.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel39.Name = "Panel39"
-        Me.Panel39.Size = New System.Drawing.Size(347, 873)
+        Me.Panel39.Size = New System.Drawing.Size(260, 708)
         Me.Panel39.TabIndex = 25
         '
         'BtnSaveUser
@@ -469,10 +458,10 @@ Partial Class FrmMainte
         Me.BtnSaveUser.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnSaveUser.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSaveUser.ForeColor = System.Drawing.Color.White
-        Me.BtnSaveUser.Location = New System.Drawing.Point(0, 823)
-        Me.BtnSaveUser.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnSaveUser.Location = New System.Drawing.Point(0, 667)
+        Me.BtnSaveUser.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BtnSaveUser.Name = "BtnSaveUser"
-        Me.BtnSaveUser.Size = New System.Drawing.Size(347, 50)
+        Me.BtnSaveUser.Size = New System.Drawing.Size(260, 41)
         Me.BtnSaveUser.TabIndex = 22
         Me.BtnSaveUser.Text = "SAVE"
         '
@@ -493,23 +482,24 @@ Partial Class FrmMainte
         Me.TxtUsername.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtUsername.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtUsername.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtUsername.Location = New System.Drawing.Point(0, 248)
-        Me.TxtUsername.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TxtUsername.Location = New System.Drawing.Point(0, 200)
+        Me.TxtUsername.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtUsername.MaxLength = 40
         Me.TxtUsername.Name = "TxtUsername"
         Me.TxtUsername.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtUsername.PlaceholderText = ""
         Me.TxtUsername.SelectedText = ""
-        Me.TxtUsername.Size = New System.Drawing.Size(347, 46)
+        Me.TxtUsername.Size = New System.Drawing.Size(260, 37)
         Me.TxtUsername.TabIndex = 14
         '
         'Label29
         '
         Me.Label29.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label29.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label29.Location = New System.Drawing.Point(0, 196)
+        Me.Label29.Location = New System.Drawing.Point(0, 158)
+        Me.Label29.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label29.Name = "Label29"
-        Me.Label29.Size = New System.Drawing.Size(347, 52)
+        Me.Label29.Size = New System.Drawing.Size(260, 42)
         Me.Label29.TabIndex = 13
         Me.Label29.Text = "Username:"
         Me.Label29.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -531,23 +521,24 @@ Partial Class FrmMainte
         Me.TxtLastname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtLastname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtLastname.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtLastname.Location = New System.Drawing.Point(0, 150)
-        Me.TxtLastname.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TxtLastname.Location = New System.Drawing.Point(0, 121)
+        Me.TxtLastname.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtLastname.MaxLength = 40
         Me.TxtLastname.Name = "TxtLastname"
         Me.TxtLastname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtLastname.PlaceholderText = ""
         Me.TxtLastname.SelectedText = ""
-        Me.TxtLastname.Size = New System.Drawing.Size(347, 46)
+        Me.TxtLastname.Size = New System.Drawing.Size(260, 37)
         Me.TxtLastname.TabIndex = 10
         '
         'Label27
         '
         Me.Label27.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label27.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label27.Location = New System.Drawing.Point(0, 98)
+        Me.Label27.Location = New System.Drawing.Point(0, 79)
+        Me.Label27.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label27.Name = "Label27"
-        Me.Label27.Size = New System.Drawing.Size(347, 52)
+        Me.Label27.Size = New System.Drawing.Size(260, 42)
         Me.Label27.TabIndex = 9
         Me.Label27.Text = "Last name:"
         Me.Label27.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -569,14 +560,14 @@ Partial Class FrmMainte
         Me.TxtFirstname.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtFirstname.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtFirstname.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtFirstname.Location = New System.Drawing.Point(0, 52)
-        Me.TxtFirstname.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TxtFirstname.Location = New System.Drawing.Point(0, 42)
+        Me.TxtFirstname.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtFirstname.MaxLength = 40
         Me.TxtFirstname.Name = "TxtFirstname"
         Me.TxtFirstname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtFirstname.PlaceholderText = ""
         Me.TxtFirstname.SelectedText = ""
-        Me.TxtFirstname.Size = New System.Drawing.Size(347, 46)
+        Me.TxtFirstname.Size = New System.Drawing.Size(260, 37)
         Me.TxtFirstname.TabIndex = 7
         '
         'Label25
@@ -584,8 +575,9 @@ Partial Class FrmMainte
         Me.Label25.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label25.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label25.Location = New System.Drawing.Point(0, 0)
+        Me.Label25.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(347, 52)
+        Me.Label25.Size = New System.Drawing.Size(260, 42)
         Me.Label25.TabIndex = 6
         Me.Label25.Text = "First name:"
         Me.Label25.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -596,10 +588,10 @@ Partial Class FrmMainte
         Me.tabDepartment.Controls.Add(Me.Panel38)
         Me.tabDepartment.Controls.Add(Me.Panel6)
         Me.tabDepartment.Location = New System.Drawing.Point(184, 4)
-        Me.tabDepartment.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.tabDepartment.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tabDepartment.Name = "tabDepartment"
-        Me.tabDepartment.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.tabDepartment.Size = New System.Drawing.Size(1739, 873)
+        Me.tabDepartment.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tabDepartment.Size = New System.Drawing.Size(1257, 708)
         Me.tabDepartment.TabIndex = 0
         Me.tabDepartment.Text = "Department"
         Me.tabDepartment.UseVisualStyleBackColor = True
@@ -633,15 +625,15 @@ Partial Class FrmMainte
         Me.DgDepartment.DefaultCellStyle = DataGridViewCellStyle6
         Me.DgDepartment.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgDepartment.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DgDepartment.Location = New System.Drawing.Point(290, 2)
-        Me.DgDepartment.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DgDepartment.Location = New System.Drawing.Point(217, 2)
+        Me.DgDepartment.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DgDepartment.Name = "DgDepartment"
         Me.DgDepartment.ReadOnly = True
         Me.DgDepartment.RowHeadersVisible = False
         Me.DgDepartment.RowHeadersWidth = 51
         Me.DgDepartment.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.DgDepartment.RowTemplate.Height = 24
-        Me.DgDepartment.Size = New System.Drawing.Size(1446, 869)
+        Me.DgDepartment.Size = New System.Drawing.Size(1038, 704)
         Me.DgDepartment.TabIndex = 10
         Me.DgDepartment.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DgDepartment.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -694,20 +686,18 @@ Partial Class FrmMainte
         'Panel38
         '
         Me.Panel38.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel38.Location = New System.Drawing.Point(283, 2)
-        Me.Panel38.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel38.Location = New System.Drawing.Point(212, 2)
         Me.Panel38.Name = "Panel38"
-        Me.Panel38.Size = New System.Drawing.Size(7, 869)
+        Me.Panel38.Size = New System.Drawing.Size(5, 704)
         Me.Panel38.TabIndex = 9
         '
         'Panel6
         '
         Me.Panel6.Controls.Add(Me.Panel4)
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel6.Location = New System.Drawing.Point(3, 2)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel6.Location = New System.Drawing.Point(2, 2)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(280, 869)
+        Me.Panel6.Size = New System.Drawing.Size(210, 704)
         Me.Panel6.TabIndex = 8
         '
         'Panel4
@@ -717,9 +707,9 @@ Partial Class FrmMainte
         Me.Panel4.Controls.Add(Me.Label1)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(280, 869)
+        Me.Panel4.Size = New System.Drawing.Size(210, 704)
         Me.Panel4.TabIndex = 7
         '
         'BtnSaveDepartment
@@ -732,10 +722,10 @@ Partial Class FrmMainte
         Me.BtnSaveDepartment.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnSaveDepartment.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSaveDepartment.ForeColor = System.Drawing.Color.White
-        Me.BtnSaveDepartment.Location = New System.Drawing.Point(0, 819)
-        Me.BtnSaveDepartment.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnSaveDepartment.Location = New System.Drawing.Point(0, 663)
+        Me.BtnSaveDepartment.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BtnSaveDepartment.Name = "BtnSaveDepartment"
-        Me.BtnSaveDepartment.Size = New System.Drawing.Size(280, 50)
+        Me.BtnSaveDepartment.Size = New System.Drawing.Size(210, 41)
         Me.BtnSaveDepartment.TabIndex = 8
         Me.BtnSaveDepartment.Text = "SAVE"
         '
@@ -756,14 +746,14 @@ Partial Class FrmMainte
         Me.TxtDepartment.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtDepartment.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtDepartment.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtDepartment.Location = New System.Drawing.Point(0, 52)
-        Me.TxtDepartment.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TxtDepartment.Location = New System.Drawing.Point(0, 42)
+        Me.TxtDepartment.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtDepartment.MaxLength = 40
         Me.TxtDepartment.Name = "TxtDepartment"
         Me.TxtDepartment.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtDepartment.PlaceholderText = ""
         Me.TxtDepartment.SelectedText = ""
-        Me.TxtDepartment.Size = New System.Drawing.Size(280, 46)
+        Me.TxtDepartment.Size = New System.Drawing.Size(210, 37)
         Me.TxtDepartment.TabIndex = 7
         '
         'Label1
@@ -771,8 +761,9 @@ Partial Class FrmMainte
         Me.Label1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label1.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label1.Location = New System.Drawing.Point(0, 0)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(280, 52)
+        Me.Label1.Size = New System.Drawing.Size(210, 42)
         Me.Label1.TabIndex = 7
         Me.Label1.Text = "Department Name:"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -783,9 +774,9 @@ Partial Class FrmMainte
         Me.tabPosition.Controls.Add(Me.Panel41)
         Me.tabPosition.Controls.Add(Me.Panel11)
         Me.tabPosition.Location = New System.Drawing.Point(184, 4)
-        Me.tabPosition.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.tabPosition.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tabPosition.Name = "tabPosition"
-        Me.tabPosition.Size = New System.Drawing.Size(1739, 873)
+        Me.tabPosition.Size = New System.Drawing.Size(1257, 708)
         Me.tabPosition.TabIndex = 2
         Me.tabPosition.Text = "Position"
         Me.tabPosition.UseVisualStyleBackColor = True
@@ -819,15 +810,15 @@ Partial Class FrmMainte
         Me.DgPosition.DefaultCellStyle = DataGridViewCellStyle9
         Me.DgPosition.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgPosition.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DgPosition.Location = New System.Drawing.Point(354, 0)
-        Me.DgPosition.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DgPosition.Location = New System.Drawing.Point(265, 0)
+        Me.DgPosition.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DgPosition.Name = "DgPosition"
         Me.DgPosition.ReadOnly = True
         Me.DgPosition.RowHeadersVisible = False
         Me.DgPosition.RowHeadersWidth = 51
         Me.DgPosition.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.DgPosition.RowTemplate.Height = 24
-        Me.DgPosition.Size = New System.Drawing.Size(1385, 873)
+        Me.DgPosition.Size = New System.Drawing.Size(992, 708)
         Me.DgPosition.TabIndex = 12
         Me.DgPosition.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DgPosition.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -888,10 +879,9 @@ Partial Class FrmMainte
         'Panel41
         '
         Me.Panel41.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel41.Location = New System.Drawing.Point(347, 0)
-        Me.Panel41.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel41.Location = New System.Drawing.Point(260, 0)
         Me.Panel41.Name = "Panel41"
-        Me.Panel41.Size = New System.Drawing.Size(7, 873)
+        Me.Panel41.Size = New System.Drawing.Size(5, 708)
         Me.Panel41.TabIndex = 11
         '
         'Panel11
@@ -899,9 +889,8 @@ Partial Class FrmMainte
         Me.Panel11.Controls.Add(Me.Panel10)
         Me.Panel11.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel11.Location = New System.Drawing.Point(0, 0)
-        Me.Panel11.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel11.Name = "Panel11"
-        Me.Panel11.Size = New System.Drawing.Size(347, 873)
+        Me.Panel11.Size = New System.Drawing.Size(260, 708)
         Me.Panel11.TabIndex = 10
         '
         'Panel10
@@ -913,9 +902,9 @@ Partial Class FrmMainte
         Me.Panel10.Controls.Add(Me.Label4)
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel10.Location = New System.Drawing.Point(0, 0)
-        Me.Panel10.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel10.Name = "Panel10"
-        Me.Panel10.Size = New System.Drawing.Size(347, 873)
+        Me.Panel10.Size = New System.Drawing.Size(260, 708)
         Me.Panel10.TabIndex = 7
         '
         'BtnSavePosition
@@ -928,10 +917,10 @@ Partial Class FrmMainte
         Me.BtnSavePosition.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnSavePosition.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSavePosition.ForeColor = System.Drawing.Color.White
-        Me.BtnSavePosition.Location = New System.Drawing.Point(0, 823)
-        Me.BtnSavePosition.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnSavePosition.Location = New System.Drawing.Point(0, 667)
+        Me.BtnSavePosition.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BtnSavePosition.Name = "BtnSavePosition"
-        Me.BtnSavePosition.Size = New System.Drawing.Size(347, 50)
+        Me.BtnSavePosition.Size = New System.Drawing.Size(260, 41)
         Me.BtnSavePosition.TabIndex = 15
         Me.BtnSavePosition.Text = "SAVE"
         '
@@ -952,23 +941,24 @@ Partial Class FrmMainte
         Me.TxtPosition.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtPosition.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtPosition.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtPosition.Location = New System.Drawing.Point(0, 120)
-        Me.TxtPosition.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TxtPosition.Location = New System.Drawing.Point(0, 104)
+        Me.TxtPosition.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtPosition.MaxLength = 40
         Me.TxtPosition.Name = "TxtPosition"
         Me.TxtPosition.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtPosition.PlaceholderText = ""
         Me.TxtPosition.SelectedText = ""
-        Me.TxtPosition.Size = New System.Drawing.Size(347, 46)
+        Me.TxtPosition.Size = New System.Drawing.Size(260, 37)
         Me.TxtPosition.TabIndex = 14
         '
         'Label3
         '
         Me.Label3.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label3.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(0, 78)
+        Me.Label3.Location = New System.Drawing.Point(0, 70)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(347, 42)
+        Me.Label3.Size = New System.Drawing.Size(260, 34)
         Me.Label3.TabIndex = 13
         Me.Label3.Text = "Position:"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -989,10 +979,10 @@ Partial Class FrmMainte
         Me.CbDepartment.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CbDepartment.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CbDepartment.ItemHeight = 30
-        Me.CbDepartment.Location = New System.Drawing.Point(0, 42)
-        Me.CbDepartment.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.CbDepartment.Location = New System.Drawing.Point(0, 34)
+        Me.CbDepartment.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.CbDepartment.Name = "CbDepartment"
-        Me.CbDepartment.Size = New System.Drawing.Size(347, 36)
+        Me.CbDepartment.Size = New System.Drawing.Size(260, 36)
         Me.CbDepartment.TabIndex = 12
         '
         'Label4
@@ -1000,8 +990,9 @@ Partial Class FrmMainte
         Me.Label4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label4.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(0, 0)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(347, 42)
+        Me.Label4.Size = New System.Drawing.Size(260, 34)
         Me.Label4.TabIndex = 12
         Me.Label4.Text = "Department:"
         Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1012,10 +1003,10 @@ Partial Class FrmMainte
         Me.tabLeave.Controls.Add(Me.Panel40)
         Me.tabLeave.Controls.Add(Me.Panel8)
         Me.tabLeave.Location = New System.Drawing.Point(184, 4)
-        Me.tabLeave.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.tabLeave.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tabLeave.Name = "tabLeave"
-        Me.tabLeave.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.tabLeave.Size = New System.Drawing.Size(1739, 873)
+        Me.tabLeave.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tabLeave.Size = New System.Drawing.Size(1257, 708)
         Me.tabLeave.TabIndex = 1
         Me.tabLeave.Text = "Leave"
         Me.tabLeave.UseVisualStyleBackColor = True
@@ -1049,15 +1040,15 @@ Partial Class FrmMainte
         Me.dgLeave.DefaultCellStyle = DataGridViewCellStyle12
         Me.dgLeave.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgLeave.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgLeave.Location = New System.Drawing.Point(333, 2)
-        Me.dgLeave.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgLeave.Location = New System.Drawing.Point(249, 2)
+        Me.dgLeave.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dgLeave.Name = "dgLeave"
         Me.dgLeave.ReadOnly = True
         Me.dgLeave.RowHeadersVisible = False
         Me.dgLeave.RowHeadersWidth = 51
         Me.dgLeave.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dgLeave.RowTemplate.Height = 24
-        Me.dgLeave.Size = New System.Drawing.Size(1403, 869)
+        Me.dgLeave.Size = New System.Drawing.Size(1006, 704)
         Me.dgLeave.TabIndex = 10
         Me.dgLeave.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgLeave.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -1110,10 +1101,9 @@ Partial Class FrmMainte
         'Panel40
         '
         Me.Panel40.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel40.Location = New System.Drawing.Point(326, 2)
-        Me.Panel40.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel40.Location = New System.Drawing.Point(244, 2)
         Me.Panel40.Name = "Panel40"
-        Me.Panel40.Size = New System.Drawing.Size(7, 869)
+        Me.Panel40.Size = New System.Drawing.Size(5, 704)
         Me.Panel40.TabIndex = 9
         '
         'Panel8
@@ -1121,10 +1111,9 @@ Partial Class FrmMainte
         Me.Panel8.Controls.Add(Me.Panel5)
         Me.Panel8.Controls.Add(Me.BtnSaveLeave)
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel8.Location = New System.Drawing.Point(3, 2)
-        Me.Panel8.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel8.Location = New System.Drawing.Point(2, 2)
         Me.Panel8.Name = "Panel8"
-        Me.Panel8.Size = New System.Drawing.Size(323, 869)
+        Me.Panel8.Size = New System.Drawing.Size(242, 704)
         Me.Panel8.TabIndex = 8
         '
         'Panel5
@@ -1133,9 +1122,9 @@ Partial Class FrmMainte
         Me.Panel5.Controls.Add(Me.Label2)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel5.Location = New System.Drawing.Point(0, 0)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(323, 819)
+        Me.Panel5.Size = New System.Drawing.Size(242, 663)
         Me.Panel5.TabIndex = 7
         '
         'TxtLeave
@@ -1155,14 +1144,14 @@ Partial Class FrmMainte
         Me.TxtLeave.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtLeave.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtLeave.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtLeave.Location = New System.Drawing.Point(0, 52)
-        Me.TxtLeave.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TxtLeave.Location = New System.Drawing.Point(0, 42)
+        Me.TxtLeave.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtLeave.MaxLength = 40
         Me.TxtLeave.Name = "TxtLeave"
         Me.TxtLeave.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtLeave.PlaceholderText = ""
         Me.TxtLeave.SelectedText = ""
-        Me.TxtLeave.Size = New System.Drawing.Size(323, 46)
+        Me.TxtLeave.Size = New System.Drawing.Size(242, 37)
         Me.TxtLeave.TabIndex = 8
         '
         'Label2
@@ -1170,8 +1159,9 @@ Partial Class FrmMainte
         Me.Label2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label2.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(0, 0)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(323, 52)
+        Me.Label2.Size = New System.Drawing.Size(242, 42)
         Me.Label2.TabIndex = 6
         Me.Label2.Text = "Type of Leave: "
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1186,10 +1176,10 @@ Partial Class FrmMainte
         Me.BtnSaveLeave.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnSaveLeave.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSaveLeave.ForeColor = System.Drawing.Color.White
-        Me.BtnSaveLeave.Location = New System.Drawing.Point(0, 819)
-        Me.BtnSaveLeave.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnSaveLeave.Location = New System.Drawing.Point(0, 663)
+        Me.BtnSaveLeave.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BtnSaveLeave.Name = "BtnSaveLeave"
-        Me.BtnSaveLeave.Size = New System.Drawing.Size(323, 50)
+        Me.BtnSaveLeave.Size = New System.Drawing.Size(242, 41)
         Me.BtnSaveLeave.TabIndex = 6
         Me.BtnSaveLeave.Text = "SAVE"
         '
@@ -1199,9 +1189,9 @@ Partial Class FrmMainte
         Me.tabIncentives.Controls.Add(Me.Panel43)
         Me.tabIncentives.Controls.Add(Me.Panel17)
         Me.tabIncentives.Location = New System.Drawing.Point(184, 4)
-        Me.tabIncentives.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.tabIncentives.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tabIncentives.Name = "tabIncentives"
-        Me.tabIncentives.Size = New System.Drawing.Size(1739, 873)
+        Me.tabIncentives.Size = New System.Drawing.Size(1257, 708)
         Me.tabIncentives.TabIndex = 5
         Me.tabIncentives.Text = "Incentives"
         Me.tabIncentives.UseVisualStyleBackColor = True
@@ -1235,15 +1225,15 @@ Partial Class FrmMainte
         Me.DgIncentives.DefaultCellStyle = DataGridViewCellStyle15
         Me.DgIncentives.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgIncentives.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DgIncentives.Location = New System.Drawing.Point(354, 0)
-        Me.DgIncentives.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DgIncentives.Location = New System.Drawing.Point(265, 0)
+        Me.DgIncentives.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DgIncentives.Name = "DgIncentives"
         Me.DgIncentives.ReadOnly = True
         Me.DgIncentives.RowHeadersVisible = False
         Me.DgIncentives.RowHeadersWidth = 51
         Me.DgIncentives.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.DgIncentives.RowTemplate.Height = 24
-        Me.DgIncentives.Size = New System.Drawing.Size(1385, 873)
+        Me.DgIncentives.Size = New System.Drawing.Size(992, 708)
         Me.DgIncentives.TabIndex = 7
         Me.DgIncentives.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DgIncentives.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -1296,10 +1286,9 @@ Partial Class FrmMainte
         'Panel43
         '
         Me.Panel43.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel43.Location = New System.Drawing.Point(347, 0)
-        Me.Panel43.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel43.Location = New System.Drawing.Point(260, 0)
         Me.Panel43.Name = "Panel43"
-        Me.Panel43.Size = New System.Drawing.Size(7, 873)
+        Me.Panel43.Size = New System.Drawing.Size(5, 708)
         Me.Panel43.TabIndex = 6
         '
         'Panel17
@@ -1308,9 +1297,9 @@ Partial Class FrmMainte
         Me.Panel17.Controls.Add(Me.BtnSaveIncentives)
         Me.Panel17.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel17.Location = New System.Drawing.Point(0, 0)
-        Me.Panel17.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel17.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel17.Name = "Panel17"
-        Me.Panel17.Size = New System.Drawing.Size(347, 873)
+        Me.Panel17.Size = New System.Drawing.Size(260, 708)
         Me.Panel17.TabIndex = 4
         '
         'Panel20
@@ -1319,9 +1308,9 @@ Partial Class FrmMainte
         Me.Panel20.Controls.Add(Me.Label8)
         Me.Panel20.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel20.Location = New System.Drawing.Point(0, 0)
-        Me.Panel20.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel20.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel20.Name = "Panel20"
-        Me.Panel20.Size = New System.Drawing.Size(347, 823)
+        Me.Panel20.Size = New System.Drawing.Size(260, 667)
         Me.Panel20.TabIndex = 6
         '
         'TxtIncentives
@@ -1341,14 +1330,14 @@ Partial Class FrmMainte
         Me.TxtIncentives.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtIncentives.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtIncentives.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtIncentives.Location = New System.Drawing.Point(0, 52)
-        Me.TxtIncentives.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TxtIncentives.Location = New System.Drawing.Point(0, 42)
+        Me.TxtIncentives.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtIncentives.MaxLength = 40
         Me.TxtIncentives.Name = "TxtIncentives"
         Me.TxtIncentives.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtIncentives.PlaceholderText = ""
         Me.TxtIncentives.SelectedText = ""
-        Me.TxtIncentives.Size = New System.Drawing.Size(347, 46)
+        Me.TxtIncentives.Size = New System.Drawing.Size(260, 37)
         Me.TxtIncentives.TabIndex = 7
         '
         'Label8
@@ -1356,8 +1345,9 @@ Partial Class FrmMainte
         Me.Label8.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label8.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label8.Location = New System.Drawing.Point(0, 0)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(347, 52)
+        Me.Label8.Size = New System.Drawing.Size(260, 42)
         Me.Label8.TabIndex = 6
         Me.Label8.Text = "Types of Incentives:"
         Me.Label8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1372,10 +1362,10 @@ Partial Class FrmMainte
         Me.BtnSaveIncentives.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnSaveIncentives.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSaveIncentives.ForeColor = System.Drawing.Color.White
-        Me.BtnSaveIncentives.Location = New System.Drawing.Point(0, 823)
-        Me.BtnSaveIncentives.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnSaveIncentives.Location = New System.Drawing.Point(0, 667)
+        Me.BtnSaveIncentives.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BtnSaveIncentives.Name = "BtnSaveIncentives"
-        Me.BtnSaveIncentives.Size = New System.Drawing.Size(347, 50)
+        Me.BtnSaveIncentives.Size = New System.Drawing.Size(260, 41)
         Me.BtnSaveIncentives.TabIndex = 5
         Me.BtnSaveIncentives.Text = "SAVE"
         '
@@ -1385,9 +1375,9 @@ Partial Class FrmMainte
         Me.tabHoliday.Controls.Add(Me.Panel44)
         Me.tabHoliday.Controls.Add(Me.Panel22)
         Me.tabHoliday.Location = New System.Drawing.Point(184, 4)
-        Me.tabHoliday.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.tabHoliday.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tabHoliday.Name = "tabHoliday"
-        Me.tabHoliday.Size = New System.Drawing.Size(1739, 873)
+        Me.tabHoliday.Size = New System.Drawing.Size(1257, 708)
         Me.tabHoliday.TabIndex = 6
         Me.tabHoliday.Text = "Holiday"
         Me.tabHoliday.UseVisualStyleBackColor = True
@@ -1421,15 +1411,15 @@ Partial Class FrmMainte
         Me.dgHoliday.DefaultCellStyle = DataGridViewCellStyle18
         Me.dgHoliday.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgHoliday.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgHoliday.Location = New System.Drawing.Point(354, 0)
-        Me.dgHoliday.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgHoliday.Location = New System.Drawing.Point(265, 0)
+        Me.dgHoliday.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dgHoliday.Name = "dgHoliday"
         Me.dgHoliday.ReadOnly = True
         Me.dgHoliday.RowHeadersVisible = False
         Me.dgHoliday.RowHeadersWidth = 51
         Me.dgHoliday.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dgHoliday.RowTemplate.Height = 24
-        Me.dgHoliday.Size = New System.Drawing.Size(1385, 873)
+        Me.dgHoliday.Size = New System.Drawing.Size(992, 708)
         Me.dgHoliday.TabIndex = 8
         Me.dgHoliday.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgHoliday.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -1488,10 +1478,9 @@ Partial Class FrmMainte
         'Panel44
         '
         Me.Panel44.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel44.Location = New System.Drawing.Point(347, 0)
-        Me.Panel44.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel44.Location = New System.Drawing.Point(260, 0)
         Me.Panel44.Name = "Panel44"
-        Me.Panel44.Size = New System.Drawing.Size(7, 873)
+        Me.Panel44.Size = New System.Drawing.Size(5, 708)
         Me.Panel44.TabIndex = 7
         '
         'Panel22
@@ -1500,9 +1489,9 @@ Partial Class FrmMainte
         Me.Panel22.Controls.Add(Me.BtnSaveHoliday)
         Me.Panel22.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel22.Location = New System.Drawing.Point(0, 0)
-        Me.Panel22.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel22.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel22.Name = "Panel22"
-        Me.Panel22.Size = New System.Drawing.Size(347, 873)
+        Me.Panel22.Size = New System.Drawing.Size(260, 708)
         Me.Panel22.TabIndex = 5
         '
         'Panel23
@@ -1515,9 +1504,9 @@ Partial Class FrmMainte
         Me.Panel23.Controls.Add(Me.Label24)
         Me.Panel23.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel23.Location = New System.Drawing.Point(0, 0)
-        Me.Panel23.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel23.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel23.Name = "Panel23"
-        Me.Panel23.Size = New System.Drawing.Size(347, 823)
+        Me.Panel23.Size = New System.Drawing.Size(260, 667)
         Me.Panel23.TabIndex = 6
         '
         'CbClassification
@@ -1537,19 +1526,20 @@ Partial Class FrmMainte
         Me.CbClassification.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CbClassification.ItemHeight = 30
         Me.CbClassification.Items.AddRange(New Object() {"Double Holiday", "Special Holiday", "Regular Holiday"})
-        Me.CbClassification.Location = New System.Drawing.Point(0, 248)
-        Me.CbClassification.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.CbClassification.Location = New System.Drawing.Point(0, 200)
+        Me.CbClassification.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.CbClassification.Name = "CbClassification"
-        Me.CbClassification.Size = New System.Drawing.Size(347, 36)
+        Me.CbClassification.Size = New System.Drawing.Size(260, 36)
         Me.CbClassification.TabIndex = 16
         '
         'Label10
         '
         Me.Label10.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label10.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(0, 196)
+        Me.Label10.Location = New System.Drawing.Point(0, 158)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(347, 52)
+        Me.Label10.Size = New System.Drawing.Size(260, 42)
         Me.Label10.TabIndex = 16
         Me.Label10.Text = "Classification:"
         Me.Label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1562,12 +1552,12 @@ Partial Class FrmMainte
         Me.DtHoliday.Dock = System.Windows.Forms.DockStyle.Top
         Me.DtHoliday.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.DtHoliday.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DtHoliday.Location = New System.Drawing.Point(0, 150)
-        Me.DtHoliday.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DtHoliday.Location = New System.Drawing.Point(0, 121)
+        Me.DtHoliday.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DtHoliday.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.DtHoliday.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.DtHoliday.Name = "DtHoliday"
-        Me.DtHoliday.Size = New System.Drawing.Size(347, 46)
+        Me.DtHoliday.Size = New System.Drawing.Size(260, 37)
         Me.DtHoliday.TabIndex = 15
         Me.DtHoliday.Value = New Date(2024, 11, 2, 16, 21, 31, 190)
         '
@@ -1575,9 +1565,10 @@ Partial Class FrmMainte
         '
         Me.Label32.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label32.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label32.Location = New System.Drawing.Point(0, 98)
+        Me.Label32.Location = New System.Drawing.Point(0, 79)
+        Me.Label32.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label32.Name = "Label32"
-        Me.Label32.Size = New System.Drawing.Size(347, 52)
+        Me.Label32.Size = New System.Drawing.Size(260, 42)
         Me.Label32.TabIndex = 14
         Me.Label32.Text = "Date:"
         Me.Label32.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1599,14 +1590,14 @@ Partial Class FrmMainte
         Me.TxtHoliday.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtHoliday.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtHoliday.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtHoliday.Location = New System.Drawing.Point(0, 52)
-        Me.TxtHoliday.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TxtHoliday.Location = New System.Drawing.Point(0, 42)
+        Me.TxtHoliday.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtHoliday.MaxLength = 40
         Me.TxtHoliday.Name = "TxtHoliday"
         Me.TxtHoliday.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtHoliday.PlaceholderText = ""
         Me.TxtHoliday.SelectedText = ""
-        Me.TxtHoliday.Size = New System.Drawing.Size(347, 46)
+        Me.TxtHoliday.Size = New System.Drawing.Size(260, 37)
         Me.TxtHoliday.TabIndex = 13
         '
         'Label24
@@ -1614,8 +1605,9 @@ Partial Class FrmMainte
         Me.Label24.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label24.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label24.Location = New System.Drawing.Point(0, 0)
+        Me.Label24.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label24.Name = "Label24"
-        Me.Label24.Size = New System.Drawing.Size(347, 52)
+        Me.Label24.Size = New System.Drawing.Size(260, 42)
         Me.Label24.TabIndex = 11
         Me.Label24.Text = "Holiday Name:"
         Me.Label24.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1630,10 +1622,10 @@ Partial Class FrmMainte
         Me.BtnSaveHoliday.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnSaveHoliday.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSaveHoliday.ForeColor = System.Drawing.Color.White
-        Me.BtnSaveHoliday.Location = New System.Drawing.Point(0, 823)
-        Me.BtnSaveHoliday.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnSaveHoliday.Location = New System.Drawing.Point(0, 667)
+        Me.BtnSaveHoliday.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BtnSaveHoliday.Name = "BtnSaveHoliday"
-        Me.BtnSaveHoliday.Size = New System.Drawing.Size(347, 50)
+        Me.BtnSaveHoliday.Size = New System.Drawing.Size(260, 41)
         Me.BtnSaveHoliday.TabIndex = 5
         Me.BtnSaveHoliday.Text = "SAVE"
         '
@@ -1641,11 +1633,10 @@ Partial Class FrmMainte
         '
         Me.tabRate.Controls.Add(Me.dgRates)
         Me.tabRate.Controls.Add(Me.Panel48)
-        Me.tabRate.Controls.Add(Me.Panel25)
         Me.tabRate.Location = New System.Drawing.Point(184, 4)
-        Me.tabRate.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.tabRate.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tabRate.Name = "tabRate"
-        Me.tabRate.Size = New System.Drawing.Size(1739, 873)
+        Me.tabRate.Size = New System.Drawing.Size(1257, 708)
         Me.tabRate.TabIndex = 7
         Me.tabRate.Text = "Premium Rates"
         Me.tabRate.UseVisualStyleBackColor = True
@@ -1679,15 +1670,15 @@ Partial Class FrmMainte
         Me.dgRates.DefaultCellStyle = DataGridViewCellStyle21
         Me.dgRates.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgRates.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgRates.Location = New System.Drawing.Point(354, 0)
-        Me.dgRates.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgRates.Location = New System.Drawing.Point(5, 0)
+        Me.dgRates.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dgRates.Name = "dgRates"
         Me.dgRates.ReadOnly = True
         Me.dgRates.RowHeadersVisible = False
         Me.dgRates.RowHeadersWidth = 51
         Me.dgRates.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dgRates.RowTemplate.Height = 24
-        Me.dgRates.Size = New System.Drawing.Size(1385, 873)
+        Me.dgRates.Size = New System.Drawing.Size(1252, 708)
         Me.dgRates.TabIndex = 8
         Me.dgRates.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgRates.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -1739,137 +1730,18 @@ Partial Class FrmMainte
         'Panel48
         '
         Me.Panel48.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel48.Location = New System.Drawing.Point(347, 0)
-        Me.Panel48.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel48.Location = New System.Drawing.Point(0, 0)
         Me.Panel48.Name = "Panel48"
-        Me.Panel48.Size = New System.Drawing.Size(7, 873)
+        Me.Panel48.Size = New System.Drawing.Size(5, 708)
         Me.Panel48.TabIndex = 7
-        '
-        'Panel25
-        '
-        Me.Panel25.Controls.Add(Me.Panel27)
-        Me.Panel25.Controls.Add(Me.BtnSaveRate)
-        Me.Panel25.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel25.Location = New System.Drawing.Point(0, 0)
-        Me.Panel25.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Panel25.Name = "Panel25"
-        Me.Panel25.Size = New System.Drawing.Size(347, 873)
-        Me.Panel25.TabIndex = 5
-        '
-        'Panel27
-        '
-        Me.Panel27.Controls.Add(Me.TxtRateClassification)
-        Me.Panel27.Controls.Add(Me.Label12)
-        Me.Panel27.Controls.Add(Me.TxtRates)
-        Me.Panel27.Controls.Add(Me.Label11)
-        Me.Panel27.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel27.Location = New System.Drawing.Point(0, 0)
-        Me.Panel27.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.Panel27.Name = "Panel27"
-        Me.Panel27.Size = New System.Drawing.Size(347, 823)
-        Me.Panel27.TabIndex = 6
-        '
-        'TxtRateClassification
-        '
-        Me.TxtRateClassification.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtRateClassification.BorderRadius = 5
-        Me.TxtRateClassification.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TxtRateClassification.DefaultText = ""
-        Me.TxtRateClassification.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.TxtRateClassification.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.TxtRateClassification.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtRateClassification.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtRateClassification.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TxtRateClassification.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtRateClassification.FocusedState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtRateClassification.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtRateClassification.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtRateClassification.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtRateClassification.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtRateClassification.Location = New System.Drawing.Point(0, 150)
-        Me.TxtRateClassification.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.TxtRateClassification.MaxLength = 40
-        Me.TxtRateClassification.Name = "TxtRateClassification"
-        Me.TxtRateClassification.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.TxtRateClassification.PlaceholderText = ""
-        Me.TxtRateClassification.ReadOnly = True
-        Me.TxtRateClassification.SelectedText = ""
-        Me.TxtRateClassification.Size = New System.Drawing.Size(347, 46)
-        Me.TxtRateClassification.TabIndex = 11
-        '
-        'Label12
-        '
-        Me.Label12.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label12.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(0, 98)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(347, 52)
-        Me.Label12.TabIndex = 10
-        Me.Label12.Text = "Classification:"
-        Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'TxtRates
-        '
-        Me.TxtRates.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtRates.BorderRadius = 5
-        Me.TxtRates.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.TxtRates.DefaultText = ""
-        Me.TxtRates.DisabledState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer), CType(CType(208, Byte), Integer))
-        Me.TxtRates.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer), CType(CType(226, Byte), Integer))
-        Me.TxtRates.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtRates.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer), CType(CType(138, Byte), Integer))
-        Me.TxtRates.Dock = System.Windows.Forms.DockStyle.Top
-        Me.TxtRates.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtRates.FocusedState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtRates.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.TxtRates.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtRates.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtRates.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtRates.Location = New System.Drawing.Point(0, 52)
-        Me.TxtRates.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.TxtRates.MaxLength = 40
-        Me.TxtRates.Name = "TxtRates"
-        Me.TxtRates.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.TxtRates.PlaceholderText = ""
-        Me.TxtRates.SelectedText = ""
-        Me.TxtRates.Size = New System.Drawing.Size(347, 46)
-        Me.TxtRates.TabIndex = 7
-        '
-        'Label11
-        '
-        Me.Label11.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Label11.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(0, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(347, 52)
-        Me.Label11.TabIndex = 6
-        Me.Label11.Text = "Rates (%):"
-        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'BtnSaveRate
-        '
-        Me.BtnSaveRate.DisabledState.BorderColor = System.Drawing.Color.DarkGray
-        Me.BtnSaveRate.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray
-        Me.BtnSaveRate.DisabledState.FillColor = System.Drawing.Color.FromArgb(CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer), CType(CType(169, Byte), Integer))
-        Me.BtnSaveRate.DisabledState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer), CType(CType(141, Byte), Integer))
-        Me.BtnSaveRate.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.BtnSaveRate.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
-        Me.BtnSaveRate.Font = New System.Drawing.Font("Segoe UI", 9.0!)
-        Me.BtnSaveRate.ForeColor = System.Drawing.Color.White
-        Me.BtnSaveRate.Location = New System.Drawing.Point(0, 823)
-        Me.BtnSaveRate.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.BtnSaveRate.Name = "BtnSaveRate"
-        Me.BtnSaveRate.Size = New System.Drawing.Size(347, 50)
-        Me.BtnSaveRate.TabIndex = 5
-        Me.BtnSaveRate.Text = "SAVE"
         '
         'tabContri
         '
         Me.tabContri.Controls.Add(Me.Guna2TabControl2)
         Me.tabContri.Location = New System.Drawing.Point(184, 4)
-        Me.tabContri.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.tabContri.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tabContri.Name = "tabContri"
-        Me.tabContri.Size = New System.Drawing.Size(1739, 873)
+        Me.tabContri.Size = New System.Drawing.Size(1257, 708)
         Me.tabContri.TabIndex = 8
         Me.tabContri.Text = "Government Contributions"
         Me.tabContri.UseVisualStyleBackColor = True
@@ -1883,10 +1755,10 @@ Partial Class FrmMainte
         Me.Guna2TabControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2TabControl2.ItemSize = New System.Drawing.Size(180, 40)
         Me.Guna2TabControl2.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2TabControl2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Guna2TabControl2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Guna2TabControl2.Name = "Guna2TabControl2"
         Me.Guna2TabControl2.SelectedIndex = 0
-        Me.Guna2TabControl2.Size = New System.Drawing.Size(1739, 873)
+        Me.Guna2TabControl2.Size = New System.Drawing.Size(1257, 708)
         Me.Guna2TabControl2.TabButtonHoverState.BorderColor = System.Drawing.Color.Empty
         Me.Guna2TabControl2.TabButtonHoverState.FillColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(70, Byte), Integer))
         Me.Guna2TabControl2.TabButtonHoverState.Font = New System.Drawing.Font("Segoe UI Semibold", 10.0!)
@@ -1914,9 +1786,9 @@ Partial Class FrmMainte
         Me.tabTax.Controls.Add(Me.Panel49)
         Me.tabTax.Controls.Add(Me.Panel36)
         Me.tabTax.Location = New System.Drawing.Point(4, 44)
-        Me.tabTax.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.tabTax.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tabTax.Name = "tabTax"
-        Me.tabTax.Size = New System.Drawing.Size(1731, 825)
+        Me.tabTax.Size = New System.Drawing.Size(1249, 660)
         Me.tabTax.TabIndex = 0
         Me.tabTax.Text = "Tax"
         Me.tabTax.UseVisualStyleBackColor = True
@@ -1950,15 +1822,15 @@ Partial Class FrmMainte
         Me.dgTax.DefaultCellStyle = DataGridViewCellStyle24
         Me.dgTax.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgTax.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgTax.Location = New System.Drawing.Point(354, 55)
-        Me.dgTax.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgTax.Location = New System.Drawing.Point(265, 45)
+        Me.dgTax.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dgTax.Name = "dgTax"
         Me.dgTax.ReadOnly = True
         Me.dgTax.RowHeadersVisible = False
         Me.dgTax.RowHeadersWidth = 51
         Me.dgTax.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dgTax.RowTemplate.Height = 24
-        Me.dgTax.Size = New System.Drawing.Size(1377, 770)
+        Me.dgTax.Size = New System.Drawing.Size(984, 615)
         Me.dgTax.TabIndex = 7
         Me.dgTax.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgTax.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -2030,20 +1902,18 @@ Partial Class FrmMainte
         Me.Panel1.Controls.Add(Me.Panel55)
         Me.Panel1.Controls.Add(Me.Panel56)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel1.Location = New System.Drawing.Point(354, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel1.Location = New System.Drawing.Point(265, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1377, 55)
+        Me.Panel1.Size = New System.Drawing.Size(984, 45)
         Me.Panel1.TabIndex = 8
         '
         'Label5
         '
         Me.Label5.Dock = System.Windows.Forms.DockStyle.Right
         Me.Label5.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(939, 0)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Location = New System.Drawing.Point(655, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(208, 50)
+        Me.Label5.Size = New System.Drawing.Size(156, 41)
         Me.Label5.TabIndex = 5
         Me.Label5.Text = "Tax Classification:"
         Me.Label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight
@@ -2052,10 +1922,9 @@ Partial Class FrmMainte
         '
         Me.Panel52.Controls.Add(Me.CbTaxClassification)
         Me.Panel52.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel52.Location = New System.Drawing.Point(1147, 0)
-        Me.Panel52.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel52.Location = New System.Drawing.Point(811, 0)
         Me.Panel52.Name = "Panel52"
-        Me.Panel52.Size = New System.Drawing.Size(225, 50)
+        Me.Panel52.Size = New System.Drawing.Size(169, 41)
         Me.Panel52.TabIndex = 4
         '
         'CbTaxClassification
@@ -2076,37 +1945,33 @@ Partial Class FrmMainte
         Me.CbTaxClassification.ItemHeight = 33
         Me.CbTaxClassification.Items.AddRange(New Object() {"Daily", "Monthly"})
         Me.CbTaxClassification.ItemsAppearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.CbTaxClassification.Location = New System.Drawing.Point(0, 11)
-        Me.CbTaxClassification.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CbTaxClassification.Location = New System.Drawing.Point(0, 2)
         Me.CbTaxClassification.Name = "CbTaxClassification"
-        Me.CbTaxClassification.Size = New System.Drawing.Size(225, 39)
+        Me.CbTaxClassification.Size = New System.Drawing.Size(169, 39)
         Me.CbTaxClassification.TabIndex = 6
         '
         'Panel55
         '
         Me.Panel55.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel55.Location = New System.Drawing.Point(0, 50)
-        Me.Panel55.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel55.Location = New System.Drawing.Point(0, 41)
         Me.Panel55.Name = "Panel55"
-        Me.Panel55.Size = New System.Drawing.Size(1372, 5)
+        Me.Panel55.Size = New System.Drawing.Size(980, 4)
         Me.Panel55.TabIndex = 1
         '
         'Panel56
         '
         Me.Panel56.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel56.Location = New System.Drawing.Point(1372, 0)
-        Me.Panel56.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel56.Location = New System.Drawing.Point(980, 0)
         Me.Panel56.Name = "Panel56"
-        Me.Panel56.Size = New System.Drawing.Size(5, 55)
+        Me.Panel56.Size = New System.Drawing.Size(4, 45)
         Me.Panel56.TabIndex = 0
         '
         'Panel49
         '
         Me.Panel49.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel49.Location = New System.Drawing.Point(347, 0)
-        Me.Panel49.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel49.Location = New System.Drawing.Point(260, 0)
         Me.Panel49.Name = "Panel49"
-        Me.Panel49.Size = New System.Drawing.Size(7, 825)
+        Me.Panel49.Size = New System.Drawing.Size(5, 660)
         Me.Panel49.TabIndex = 6
         '
         'Panel36
@@ -2117,9 +1982,9 @@ Partial Class FrmMainte
         Me.Panel36.Controls.Add(Me.BtnDeleteTax)
         Me.Panel36.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel36.Location = New System.Drawing.Point(0, 0)
-        Me.Panel36.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel36.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel36.Name = "Panel36"
-        Me.Panel36.Size = New System.Drawing.Size(347, 825)
+        Me.Panel36.Size = New System.Drawing.Size(260, 660)
         Me.Panel36.TabIndex = 2
         '
         'Panel7
@@ -2134,9 +1999,8 @@ Partial Class FrmMainte
         Me.Panel7.Controls.Add(Me.Label13)
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel7.Location = New System.Drawing.Point(0, 0)
-        Me.Panel7.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(347, 719)
+        Me.Panel7.Size = New System.Drawing.Size(260, 573)
         Me.Panel7.TabIndex = 6
         '
         'TxtTaxPercentage
@@ -2156,23 +2020,24 @@ Partial Class FrmMainte
         Me.TxtTaxPercentage.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtTaxPercentage.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtTaxPercentage.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtTaxPercentage.Location = New System.Drawing.Point(0, 346)
-        Me.TxtTaxPercentage.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TxtTaxPercentage.Location = New System.Drawing.Point(0, 279)
+        Me.TxtTaxPercentage.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtTaxPercentage.MaxLength = 2
         Me.TxtTaxPercentage.Name = "TxtTaxPercentage"
         Me.TxtTaxPercentage.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtTaxPercentage.PlaceholderText = ""
         Me.TxtTaxPercentage.SelectedText = ""
-        Me.TxtTaxPercentage.Size = New System.Drawing.Size(347, 46)
+        Me.TxtTaxPercentage.Size = New System.Drawing.Size(260, 37)
         Me.TxtTaxPercentage.TabIndex = 13
         '
         'Label16
         '
         Me.Label16.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label16.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(0, 294)
+        Me.Label16.Location = New System.Drawing.Point(0, 237)
+        Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(347, 52)
+        Me.Label16.Size = New System.Drawing.Size(260, 42)
         Me.Label16.TabIndex = 13
         Me.Label16.Text = "Percentage:"
         Me.Label16.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -2194,23 +2059,24 @@ Partial Class FrmMainte
         Me.TxtTaxFixedAmount.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtTaxFixedAmount.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtTaxFixedAmount.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtTaxFixedAmount.Location = New System.Drawing.Point(0, 248)
-        Me.TxtTaxFixedAmount.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TxtTaxFixedAmount.Location = New System.Drawing.Point(0, 200)
+        Me.TxtTaxFixedAmount.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtTaxFixedAmount.MaxLength = 10
         Me.TxtTaxFixedAmount.Name = "TxtTaxFixedAmount"
         Me.TxtTaxFixedAmount.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtTaxFixedAmount.PlaceholderText = ""
         Me.TxtTaxFixedAmount.SelectedText = ""
-        Me.TxtTaxFixedAmount.Size = New System.Drawing.Size(347, 46)
+        Me.TxtTaxFixedAmount.Size = New System.Drawing.Size(260, 37)
         Me.TxtTaxFixedAmount.TabIndex = 12
         '
         'Label15
         '
         Me.Label15.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label15.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label15.Location = New System.Drawing.Point(0, 196)
+        Me.Label15.Location = New System.Drawing.Point(0, 158)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(347, 52)
+        Me.Label15.Size = New System.Drawing.Size(260, 42)
         Me.Label15.TabIndex = 11
         Me.Label15.Text = "Fixed Amount:"
         Me.Label15.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -2232,23 +2098,24 @@ Partial Class FrmMainte
         Me.TxtTaxMaxSalary.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtTaxMaxSalary.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtTaxMaxSalary.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtTaxMaxSalary.Location = New System.Drawing.Point(0, 150)
-        Me.TxtTaxMaxSalary.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TxtTaxMaxSalary.Location = New System.Drawing.Point(0, 121)
+        Me.TxtTaxMaxSalary.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtTaxMaxSalary.MaxLength = 8
         Me.TxtTaxMaxSalary.Name = "TxtTaxMaxSalary"
         Me.TxtTaxMaxSalary.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtTaxMaxSalary.PlaceholderText = ""
         Me.TxtTaxMaxSalary.SelectedText = ""
-        Me.TxtTaxMaxSalary.Size = New System.Drawing.Size(347, 46)
+        Me.TxtTaxMaxSalary.Size = New System.Drawing.Size(260, 37)
         Me.TxtTaxMaxSalary.TabIndex = 10
         '
         'Label14
         '
         Me.Label14.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label14.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(0, 98)
+        Me.Label14.Location = New System.Drawing.Point(0, 79)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(347, 52)
+        Me.Label14.Size = New System.Drawing.Size(260, 42)
         Me.Label14.TabIndex = 9
         Me.Label14.Text = "Maximum Salary:"
         Me.Label14.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -2270,15 +2137,15 @@ Partial Class FrmMainte
         Me.TxtTaxMinSalary.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtTaxMinSalary.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtTaxMinSalary.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtTaxMinSalary.Location = New System.Drawing.Point(0, 52)
-        Me.TxtTaxMinSalary.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TxtTaxMinSalary.Location = New System.Drawing.Point(0, 42)
+        Me.TxtTaxMinSalary.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtTaxMinSalary.MaxLength = 40
         Me.TxtTaxMinSalary.Name = "TxtTaxMinSalary"
         Me.TxtTaxMinSalary.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtTaxMinSalary.PlaceholderText = ""
         Me.TxtTaxMinSalary.ReadOnly = True
         Me.TxtTaxMinSalary.SelectedText = ""
-        Me.TxtTaxMinSalary.Size = New System.Drawing.Size(347, 46)
+        Me.TxtTaxMinSalary.Size = New System.Drawing.Size(260, 37)
         Me.TxtTaxMinSalary.TabIndex = 8
         '
         'Label13
@@ -2286,8 +2153,9 @@ Partial Class FrmMainte
         Me.Label13.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label13.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.Location = New System.Drawing.Point(0, 0)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(347, 52)
+        Me.Label13.Size = New System.Drawing.Size(260, 42)
         Me.Label13.TabIndex = 6
         Me.Label13.Text = "Minimum Salary:"
         Me.Label13.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -2302,20 +2170,19 @@ Partial Class FrmMainte
         Me.BtnSaveTax.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnSaveTax.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSaveTax.ForeColor = System.Drawing.Color.White
-        Me.BtnSaveTax.Location = New System.Drawing.Point(0, 719)
-        Me.BtnSaveTax.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnSaveTax.Location = New System.Drawing.Point(0, 573)
+        Me.BtnSaveTax.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BtnSaveTax.Name = "BtnSaveTax"
-        Me.BtnSaveTax.Size = New System.Drawing.Size(347, 50)
+        Me.BtnSaveTax.Size = New System.Drawing.Size(260, 41)
         Me.BtnSaveTax.TabIndex = 5
         Me.BtnSaveTax.Text = "SAVE"
         '
         'Panel9
         '
         Me.Panel9.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel9.Location = New System.Drawing.Point(0, 769)
-        Me.Panel9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel9.Location = New System.Drawing.Point(0, 614)
         Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(347, 6)
+        Me.Panel9.Size = New System.Drawing.Size(260, 5)
         Me.Panel9.TabIndex = 4
         '
         'BtnDeleteTax
@@ -2328,10 +2195,10 @@ Partial Class FrmMainte
         Me.BtnDeleteTax.FillColor = System.Drawing.Color.FromArgb(CType(CType(194, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(22, Byte), Integer))
         Me.BtnDeleteTax.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnDeleteTax.ForeColor = System.Drawing.Color.White
-        Me.BtnDeleteTax.Location = New System.Drawing.Point(0, 775)
-        Me.BtnDeleteTax.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnDeleteTax.Location = New System.Drawing.Point(0, 619)
+        Me.BtnDeleteTax.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BtnDeleteTax.Name = "BtnDeleteTax"
-        Me.BtnDeleteTax.Size = New System.Drawing.Size(347, 50)
+        Me.BtnDeleteTax.Size = New System.Drawing.Size(260, 41)
         Me.BtnDeleteTax.TabIndex = 3
         Me.BtnDeleteTax.Text = "DELETE"
         '
@@ -2341,9 +2208,9 @@ Partial Class FrmMainte
         Me.tabSSS.Controls.Add(Me.Panel50)
         Me.tabSSS.Controls.Add(Me.Panel42)
         Me.tabSSS.Location = New System.Drawing.Point(4, 44)
-        Me.tabSSS.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.tabSSS.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tabSSS.Name = "tabSSS"
-        Me.tabSSS.Size = New System.Drawing.Size(1668, 823)
+        Me.tabSSS.Size = New System.Drawing.Size(1249, 660)
         Me.tabSSS.TabIndex = 1
         Me.tabSSS.Text = "SSS"
         Me.tabSSS.UseVisualStyleBackColor = True
@@ -2377,15 +2244,15 @@ Partial Class FrmMainte
         Me.dgSSS.DefaultCellStyle = DataGridViewCellStyle27
         Me.dgSSS.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgSSS.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgSSS.Location = New System.Drawing.Point(354, 0)
-        Me.dgSSS.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgSSS.Location = New System.Drawing.Point(265, 0)
+        Me.dgSSS.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dgSSS.Name = "dgSSS"
         Me.dgSSS.ReadOnly = True
         Me.dgSSS.RowHeadersVisible = False
         Me.dgSSS.RowHeadersWidth = 51
         Me.dgSSS.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dgSSS.RowTemplate.Height = 24
-        Me.dgSSS.Size = New System.Drawing.Size(1314, 823)
+        Me.dgSSS.Size = New System.Drawing.Size(984, 660)
         Me.dgSSS.TabIndex = 8
         Me.dgSSS.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgSSS.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -2453,10 +2320,9 @@ Partial Class FrmMainte
         'Panel50
         '
         Me.Panel50.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel50.Location = New System.Drawing.Point(347, 0)
-        Me.Panel50.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel50.Location = New System.Drawing.Point(260, 0)
         Me.Panel50.Name = "Panel50"
-        Me.Panel50.Size = New System.Drawing.Size(7, 823)
+        Me.Panel50.Size = New System.Drawing.Size(5, 660)
         Me.Panel50.TabIndex = 7
         '
         'Panel42
@@ -2467,9 +2333,9 @@ Partial Class FrmMainte
         Me.Panel42.Controls.Add(Me.BtnDeleteSSS)
         Me.Panel42.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel42.Location = New System.Drawing.Point(0, 0)
-        Me.Panel42.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel42.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel42.Name = "Panel42"
-        Me.Panel42.Size = New System.Drawing.Size(347, 823)
+        Me.Panel42.Size = New System.Drawing.Size(260, 660)
         Me.Panel42.TabIndex = 3
         '
         'Panel12
@@ -2484,9 +2350,8 @@ Partial Class FrmMainte
         Me.Panel12.Controls.Add(Me.Label20)
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel12.Location = New System.Drawing.Point(0, 0)
-        Me.Panel12.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(347, 718)
+        Me.Panel12.Size = New System.Drawing.Size(260, 574)
         Me.Panel12.TabIndex = 7
         '
         'TxtSSSER
@@ -2506,23 +2371,24 @@ Partial Class FrmMainte
         Me.TxtSSSER.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtSSSER.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtSSSER.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtSSSER.Location = New System.Drawing.Point(0, 346)
-        Me.TxtSSSER.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TxtSSSER.Location = New System.Drawing.Point(0, 279)
+        Me.TxtSSSER.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtSSSER.MaxLength = 10
         Me.TxtSSSER.Name = "TxtSSSER"
         Me.TxtSSSER.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtSSSER.PlaceholderText = ""
         Me.TxtSSSER.SelectedText = ""
-        Me.TxtSSSER.Size = New System.Drawing.Size(347, 46)
+        Me.TxtSSSER.Size = New System.Drawing.Size(260, 37)
         Me.TxtSSSER.TabIndex = 14
         '
         'Label17
         '
         Me.Label17.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label17.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(0, 294)
+        Me.Label17.Location = New System.Drawing.Point(0, 237)
+        Me.Label17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(347, 52)
+        Me.Label17.Size = New System.Drawing.Size(260, 42)
         Me.Label17.TabIndex = 13
         Me.Label17.Text = "ER:"
         Me.Label17.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -2544,23 +2410,24 @@ Partial Class FrmMainte
         Me.TxtSSSEE.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtSSSEE.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtSSSEE.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtSSSEE.Location = New System.Drawing.Point(0, 248)
-        Me.TxtSSSEE.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TxtSSSEE.Location = New System.Drawing.Point(0, 200)
+        Me.TxtSSSEE.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtSSSEE.MaxLength = 8
         Me.TxtSSSEE.Name = "TxtSSSEE"
         Me.TxtSSSEE.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtSSSEE.PlaceholderText = ""
         Me.TxtSSSEE.SelectedText = ""
-        Me.TxtSSSEE.Size = New System.Drawing.Size(347, 46)
+        Me.TxtSSSEE.Size = New System.Drawing.Size(260, 37)
         Me.TxtSSSEE.TabIndex = 12
         '
         'Label18
         '
         Me.Label18.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label18.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label18.Location = New System.Drawing.Point(0, 196)
+        Me.Label18.Location = New System.Drawing.Point(0, 158)
+        Me.Label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(347, 52)
+        Me.Label18.Size = New System.Drawing.Size(260, 42)
         Me.Label18.TabIndex = 11
         Me.Label18.Text = "EE:"
         Me.Label18.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -2582,23 +2449,24 @@ Partial Class FrmMainte
         Me.TxtSSSMaxSalary.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtSSSMaxSalary.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtSSSMaxSalary.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtSSSMaxSalary.Location = New System.Drawing.Point(0, 150)
-        Me.TxtSSSMaxSalary.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TxtSSSMaxSalary.Location = New System.Drawing.Point(0, 121)
+        Me.TxtSSSMaxSalary.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtSSSMaxSalary.MaxLength = 8
         Me.TxtSSSMaxSalary.Name = "TxtSSSMaxSalary"
         Me.TxtSSSMaxSalary.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtSSSMaxSalary.PlaceholderText = ""
         Me.TxtSSSMaxSalary.SelectedText = ""
-        Me.TxtSSSMaxSalary.Size = New System.Drawing.Size(347, 46)
+        Me.TxtSSSMaxSalary.Size = New System.Drawing.Size(260, 37)
         Me.TxtSSSMaxSalary.TabIndex = 10
         '
         'Label19
         '
         Me.Label19.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label19.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.Location = New System.Drawing.Point(0, 98)
+        Me.Label19.Location = New System.Drawing.Point(0, 79)
+        Me.Label19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(347, 52)
+        Me.Label19.Size = New System.Drawing.Size(260, 42)
         Me.Label19.TabIndex = 9
         Me.Label19.Text = "Maximum Salary:"
         Me.Label19.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -2620,15 +2488,15 @@ Partial Class FrmMainte
         Me.TxtSSSMinSalary.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtSSSMinSalary.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtSSSMinSalary.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtSSSMinSalary.Location = New System.Drawing.Point(0, 52)
-        Me.TxtSSSMinSalary.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TxtSSSMinSalary.Location = New System.Drawing.Point(0, 42)
+        Me.TxtSSSMinSalary.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtSSSMinSalary.MaxLength = 25
         Me.TxtSSSMinSalary.Name = "TxtSSSMinSalary"
         Me.TxtSSSMinSalary.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtSSSMinSalary.PlaceholderText = ""
         Me.TxtSSSMinSalary.ReadOnly = True
         Me.TxtSSSMinSalary.SelectedText = ""
-        Me.TxtSSSMinSalary.Size = New System.Drawing.Size(347, 46)
+        Me.TxtSSSMinSalary.Size = New System.Drawing.Size(260, 37)
         Me.TxtSSSMinSalary.TabIndex = 8
         '
         'Label20
@@ -2636,8 +2504,9 @@ Partial Class FrmMainte
         Me.Label20.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label20.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label20.Location = New System.Drawing.Point(0, 0)
+        Me.Label20.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(347, 52)
+        Me.Label20.Size = New System.Drawing.Size(260, 42)
         Me.Label20.TabIndex = 6
         Me.Label20.Text = "Minimum Salary:"
         Me.Label20.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -2652,20 +2521,20 @@ Partial Class FrmMainte
         Me.BtnSaveSSS.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnSaveSSS.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSaveSSS.ForeColor = System.Drawing.Color.White
-        Me.BtnSaveSSS.Location = New System.Drawing.Point(0, 718)
-        Me.BtnSaveSSS.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnSaveSSS.Location = New System.Drawing.Point(0, 574)
+        Me.BtnSaveSSS.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BtnSaveSSS.Name = "BtnSaveSSS"
-        Me.BtnSaveSSS.Size = New System.Drawing.Size(347, 50)
+        Me.BtnSaveSSS.Size = New System.Drawing.Size(260, 41)
         Me.BtnSaveSSS.TabIndex = 5
         Me.BtnSaveSSS.Text = "SAVE"
         '
         'Panel13
         '
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel13.Location = New System.Drawing.Point(0, 768)
-        Me.Panel13.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel13.Location = New System.Drawing.Point(0, 615)
+        Me.Panel13.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel13.Name = "Panel13"
-        Me.Panel13.Size = New System.Drawing.Size(347, 5)
+        Me.Panel13.Size = New System.Drawing.Size(260, 4)
         Me.Panel13.TabIndex = 4
         '
         'BtnDeleteSSS
@@ -2678,10 +2547,10 @@ Partial Class FrmMainte
         Me.BtnDeleteSSS.FillColor = System.Drawing.Color.FromArgb(CType(CType(194, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(22, Byte), Integer))
         Me.BtnDeleteSSS.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnDeleteSSS.ForeColor = System.Drawing.Color.White
-        Me.BtnDeleteSSS.Location = New System.Drawing.Point(0, 773)
-        Me.BtnDeleteSSS.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnDeleteSSS.Location = New System.Drawing.Point(0, 619)
+        Me.BtnDeleteSSS.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BtnDeleteSSS.Name = "BtnDeleteSSS"
-        Me.BtnDeleteSSS.Size = New System.Drawing.Size(347, 50)
+        Me.BtnDeleteSSS.Size = New System.Drawing.Size(260, 41)
         Me.BtnDeleteSSS.TabIndex = 3
         Me.BtnDeleteSSS.Text = "DELETE"
         '
@@ -2690,9 +2559,9 @@ Partial Class FrmMainte
         Me.tabPagibig.Controls.Add(Me.dgPagibig)
         Me.tabPagibig.Controls.Add(Me.Panel14)
         Me.tabPagibig.Location = New System.Drawing.Point(4, 44)
-        Me.tabPagibig.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.tabPagibig.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tabPagibig.Name = "tabPagibig"
-        Me.tabPagibig.Size = New System.Drawing.Size(1668, 823)
+        Me.tabPagibig.Size = New System.Drawing.Size(1249, 660)
         Me.tabPagibig.TabIndex = 2
         Me.tabPagibig.Text = "PAG-IBIG"
         Me.tabPagibig.UseVisualStyleBackColor = True
@@ -2726,15 +2595,15 @@ Partial Class FrmMainte
         Me.dgPagibig.DefaultCellStyle = DataGridViewCellStyle30
         Me.dgPagibig.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgPagibig.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgPagibig.Location = New System.Drawing.Point(300, 0)
-        Me.dgPagibig.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgPagibig.Location = New System.Drawing.Point(225, 0)
+        Me.dgPagibig.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dgPagibig.Name = "dgPagibig"
         Me.dgPagibig.ReadOnly = True
         Me.dgPagibig.RowHeadersVisible = False
         Me.dgPagibig.RowHeadersWidth = 51
         Me.dgPagibig.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dgPagibig.RowTemplate.Height = 24
-        Me.dgPagibig.Size = New System.Drawing.Size(1368, 823)
+        Me.dgPagibig.Size = New System.Drawing.Size(1024, 660)
         Me.dgPagibig.TabIndex = 7
         Me.dgPagibig.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgPagibig.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -2790,9 +2659,9 @@ Partial Class FrmMainte
         Me.Panel14.Controls.Add(Me.Panel46)
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
-        Me.Panel14.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel14.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(300, 823)
+        Me.Panel14.Size = New System.Drawing.Size(225, 660)
         Me.Panel14.TabIndex = 4
         '
         'TxtPagibigRate
@@ -2812,14 +2681,14 @@ Partial Class FrmMainte
         Me.TxtPagibigRate.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtPagibigRate.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtPagibigRate.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtPagibigRate.Location = New System.Drawing.Point(0, 52)
-        Me.TxtPagibigRate.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TxtPagibigRate.Location = New System.Drawing.Point(0, 42)
+        Me.TxtPagibigRate.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtPagibigRate.MaxLength = 4
         Me.TxtPagibigRate.Name = "TxtPagibigRate"
         Me.TxtPagibigRate.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtPagibigRate.PlaceholderText = ""
         Me.TxtPagibigRate.SelectedText = ""
-        Me.TxtPagibigRate.Size = New System.Drawing.Size(295, 46)
+        Me.TxtPagibigRate.Size = New System.Drawing.Size(221, 37)
         Me.TxtPagibigRate.TabIndex = 7
         '
         'Label26
@@ -2827,8 +2696,9 @@ Partial Class FrmMainte
         Me.Label26.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label26.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label26.Location = New System.Drawing.Point(0, 0)
+        Me.Label26.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label26.Name = "Label26"
-        Me.Label26.Size = New System.Drawing.Size(295, 52)
+        Me.Label26.Size = New System.Drawing.Size(221, 42)
         Me.Label26.TabIndex = 6
         Me.Label26.Text = "Rate:"
         Me.Label26.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -2843,20 +2713,20 @@ Partial Class FrmMainte
         Me.BtnSavePagibig.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnSavePagibig.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSavePagibig.ForeColor = System.Drawing.Color.White
-        Me.BtnSavePagibig.Location = New System.Drawing.Point(0, 773)
-        Me.BtnSavePagibig.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnSavePagibig.Location = New System.Drawing.Point(0, 619)
+        Me.BtnSavePagibig.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BtnSavePagibig.Name = "BtnSavePagibig"
-        Me.BtnSavePagibig.Size = New System.Drawing.Size(295, 50)
+        Me.BtnSavePagibig.Size = New System.Drawing.Size(221, 41)
         Me.BtnSavePagibig.TabIndex = 5
         Me.BtnSavePagibig.Text = "SAVE"
         '
         'Panel46
         '
         Me.Panel46.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel46.Location = New System.Drawing.Point(295, 0)
-        Me.Panel46.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel46.Location = New System.Drawing.Point(221, 0)
+        Me.Panel46.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel46.Name = "Panel46"
-        Me.Panel46.Size = New System.Drawing.Size(5, 823)
+        Me.Panel46.Size = New System.Drawing.Size(4, 660)
         Me.Panel46.TabIndex = 1
         '
         'tabPhilHealth
@@ -2864,9 +2734,9 @@ Partial Class FrmMainte
         Me.tabPhilHealth.Controls.Add(Me.dgPhilhealth)
         Me.tabPhilHealth.Controls.Add(Me.Panel47)
         Me.tabPhilHealth.Location = New System.Drawing.Point(4, 44)
-        Me.tabPhilHealth.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.tabPhilHealth.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tabPhilHealth.Name = "tabPhilHealth"
-        Me.tabPhilHealth.Size = New System.Drawing.Size(1668, 823)
+        Me.tabPhilHealth.Size = New System.Drawing.Size(1296, 661)
         Me.tabPhilHealth.TabIndex = 3
         Me.tabPhilHealth.Text = "PhilHealth"
         Me.tabPhilHealth.UseVisualStyleBackColor = True
@@ -2898,14 +2768,14 @@ Partial Class FrmMainte
         Me.dgPhilhealth.DefaultCellStyle = DataGridViewCellStyle33
         Me.dgPhilhealth.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgPhilhealth.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.dgPhilhealth.Location = New System.Drawing.Point(300, 0)
-        Me.dgPhilhealth.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.dgPhilhealth.Location = New System.Drawing.Point(225, 0)
+        Me.dgPhilhealth.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.dgPhilhealth.Name = "dgPhilhealth"
         Me.dgPhilhealth.ReadOnly = True
         Me.dgPhilhealth.RowHeadersVisible = False
         Me.dgPhilhealth.RowHeadersWidth = 51
         Me.dgPhilhealth.RowTemplate.Height = 24
-        Me.dgPhilhealth.Size = New System.Drawing.Size(1368, 823)
+        Me.dgPhilhealth.Size = New System.Drawing.Size(1071, 661)
         Me.dgPhilhealth.TabIndex = 8
         Me.dgPhilhealth.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgPhilhealth.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -2961,9 +2831,9 @@ Partial Class FrmMainte
         Me.Panel47.Controls.Add(Me.Panel15)
         Me.Panel47.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel47.Location = New System.Drawing.Point(0, 0)
-        Me.Panel47.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel47.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel47.Name = "Panel47"
-        Me.Panel47.Size = New System.Drawing.Size(300, 823)
+        Me.Panel47.Size = New System.Drawing.Size(225, 661)
         Me.Panel47.TabIndex = 5
         '
         'txtPhilhealthRate
@@ -2983,14 +2853,14 @@ Partial Class FrmMainte
         Me.txtPhilhealthRate.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.txtPhilhealthRate.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.txtPhilhealthRate.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.txtPhilhealthRate.Location = New System.Drawing.Point(0, 52)
-        Me.txtPhilhealthRate.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.txtPhilhealthRate.Location = New System.Drawing.Point(0, 42)
+        Me.txtPhilhealthRate.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.txtPhilhealthRate.MaxLength = 2
         Me.txtPhilhealthRate.Name = "txtPhilhealthRate"
         Me.txtPhilhealthRate.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtPhilhealthRate.PlaceholderText = ""
         Me.txtPhilhealthRate.SelectedText = ""
-        Me.txtPhilhealthRate.Size = New System.Drawing.Size(295, 46)
+        Me.txtPhilhealthRate.Size = New System.Drawing.Size(221, 37)
         Me.txtPhilhealthRate.TabIndex = 7
         '
         'Label22
@@ -2998,8 +2868,9 @@ Partial Class FrmMainte
         Me.Label22.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label22.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label22.Location = New System.Drawing.Point(0, 0)
+        Me.Label22.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(295, 52)
+        Me.Label22.Size = New System.Drawing.Size(221, 42)
         Me.Label22.TabIndex = 6
         Me.Label22.Text = "Rate (%):"
         Me.Label22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -3014,20 +2885,20 @@ Partial Class FrmMainte
         Me.BtnSavePhilhealth.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnSavePhilhealth.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSavePhilhealth.ForeColor = System.Drawing.Color.White
-        Me.BtnSavePhilhealth.Location = New System.Drawing.Point(0, 773)
-        Me.BtnSavePhilhealth.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnSavePhilhealth.Location = New System.Drawing.Point(0, 620)
+        Me.BtnSavePhilhealth.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BtnSavePhilhealth.Name = "BtnSavePhilhealth"
-        Me.BtnSavePhilhealth.Size = New System.Drawing.Size(295, 50)
+        Me.BtnSavePhilhealth.Size = New System.Drawing.Size(221, 41)
         Me.BtnSavePhilhealth.TabIndex = 5
         Me.BtnSavePhilhealth.Text = "SAVE"
         '
         'Panel15
         '
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel15.Location = New System.Drawing.Point(295, 0)
-        Me.Panel15.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel15.Location = New System.Drawing.Point(221, 0)
+        Me.Panel15.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(5, 823)
+        Me.Panel15.Size = New System.Drawing.Size(4, 661)
         Me.Panel15.TabIndex = 1
         '
         'tabVoluntary
@@ -3036,9 +2907,9 @@ Partial Class FrmMainte
         Me.tabVoluntary.Controls.Add(Me.Panel19)
         Me.tabVoluntary.Controls.Add(Me.Panel2)
         Me.tabVoluntary.Location = New System.Drawing.Point(184, 4)
-        Me.tabVoluntary.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.tabVoluntary.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.tabVoluntary.Name = "tabVoluntary"
-        Me.tabVoluntary.Size = New System.Drawing.Size(1739, 873)
+        Me.tabVoluntary.Size = New System.Drawing.Size(1257, 708)
         Me.tabVoluntary.TabIndex = 9
         Me.tabVoluntary.Text = "Voluntary Contributions"
         Me.tabVoluntary.UseVisualStyleBackColor = True
@@ -3072,15 +2943,15 @@ Partial Class FrmMainte
         Me.DgVoluntary.DefaultCellStyle = DataGridViewCellStyle36
         Me.DgVoluntary.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgVoluntary.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DgVoluntary.Location = New System.Drawing.Point(354, 0)
-        Me.DgVoluntary.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DgVoluntary.Location = New System.Drawing.Point(265, 0)
+        Me.DgVoluntary.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DgVoluntary.Name = "DgVoluntary"
         Me.DgVoluntary.ReadOnly = True
         Me.DgVoluntary.RowHeadersVisible = False
         Me.DgVoluntary.RowHeadersWidth = 51
         Me.DgVoluntary.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.DgVoluntary.RowTemplate.Height = 24
-        Me.DgVoluntary.Size = New System.Drawing.Size(1385, 873)
+        Me.DgVoluntary.Size = New System.Drawing.Size(992, 708)
         Me.DgVoluntary.TabIndex = 5
         Me.DgVoluntary.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DgVoluntary.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -3133,10 +3004,9 @@ Partial Class FrmMainte
         'Panel19
         '
         Me.Panel19.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel19.Location = New System.Drawing.Point(347, 0)
-        Me.Panel19.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel19.Location = New System.Drawing.Point(260, 0)
         Me.Panel19.Name = "Panel19"
-        Me.Panel19.Size = New System.Drawing.Size(7, 873)
+        Me.Panel19.Size = New System.Drawing.Size(5, 708)
         Me.Panel19.TabIndex = 4
         '
         'Panel2
@@ -3145,9 +3015,9 @@ Partial Class FrmMainte
         Me.Panel2.Controls.Add(Me.BtnSaveVoluntary)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(347, 873)
+        Me.Panel2.Size = New System.Drawing.Size(260, 708)
         Me.Panel2.TabIndex = 2
         '
         'Panel3
@@ -3156,9 +3026,9 @@ Partial Class FrmMainte
         Me.Panel3.Controls.Add(Me.Label9)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(347, 823)
+        Me.Panel3.Size = New System.Drawing.Size(260, 667)
         Me.Panel3.TabIndex = 6
         '
         'TxtVoluntary
@@ -3178,14 +3048,14 @@ Partial Class FrmMainte
         Me.TxtVoluntary.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtVoluntary.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.TxtVoluntary.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.TxtVoluntary.Location = New System.Drawing.Point(0, 52)
-        Me.TxtVoluntary.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.TxtVoluntary.Location = New System.Drawing.Point(0, 42)
+        Me.TxtVoluntary.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtVoluntary.MaxLength = 40
         Me.TxtVoluntary.Name = "TxtVoluntary"
         Me.TxtVoluntary.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtVoluntary.PlaceholderText = ""
         Me.TxtVoluntary.SelectedText = ""
-        Me.TxtVoluntary.Size = New System.Drawing.Size(347, 46)
+        Me.TxtVoluntary.Size = New System.Drawing.Size(260, 37)
         Me.TxtVoluntary.TabIndex = 7
         '
         'Label9
@@ -3193,8 +3063,9 @@ Partial Class FrmMainte
         Me.Label9.Dock = System.Windows.Forms.DockStyle.Top
         Me.Label9.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label9.Location = New System.Drawing.Point(0, 0)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(347, 52)
+        Me.Label9.Size = New System.Drawing.Size(260, 42)
         Me.Label9.TabIndex = 6
         Me.Label9.Text = "Voluntary Name:"
         Me.Label9.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -3209,10 +3080,10 @@ Partial Class FrmMainte
         Me.BtnSaveVoluntary.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnSaveVoluntary.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSaveVoluntary.ForeColor = System.Drawing.Color.White
-        Me.BtnSaveVoluntary.Location = New System.Drawing.Point(0, 823)
-        Me.BtnSaveVoluntary.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BtnSaveVoluntary.Location = New System.Drawing.Point(0, 667)
+        Me.BtnSaveVoluntary.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BtnSaveVoluntary.Name = "BtnSaveVoluntary"
-        Me.BtnSaveVoluntary.Size = New System.Drawing.Size(347, 50)
+        Me.BtnSaveVoluntary.Size = New System.Drawing.Size(260, 41)
         Me.BtnSaveVoluntary.TabIndex = 5
         Me.BtnSaveVoluntary.Text = "SAVE"
         '
@@ -3222,23 +3093,23 @@ Partial Class FrmMainte
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
         Me.ContextMenuStrip1.ShowImageMargin = False
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(155, 28)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(131, 26)
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(154, 24)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(130, 22)
         Me.ToolStripMenuItem1.Text = "Reset Password"
         '
         'FrmMainte
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1927, 881)
+        Me.ClientSize = New System.Drawing.Size(1445, 716)
         Me.ControlBox = False
         Me.Controls.Add(Me.Guna2TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "FrmMainte"
         Me.Guna2TabControl1.ResumeLayout(False)
         Me.tabUser.ResumeLayout(False)
@@ -3267,8 +3138,6 @@ Partial Class FrmMainte
         Me.Panel23.ResumeLayout(False)
         Me.tabRate.ResumeLayout(False)
         CType(Me.dgRates, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel25.ResumeLayout(False)
-        Me.Panel27.ResumeLayout(False)
         Me.tabContri.ResumeLayout(False)
         Me.Guna2TabControl2.ResumeLayout(False)
         Me.tabTax.ResumeLayout(False)
@@ -3307,8 +3176,6 @@ Partial Class FrmMainte
     Friend WithEvents BtnSaveIncentives As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents tabHoliday As TabPage
     Friend WithEvents tabRate As TabPage
-    Friend WithEvents Panel25 As Panel
-    Friend WithEvents BtnSaveRate As Guna.UI2.WinForms.Guna2Button
     Friend WithEvents tabContri As TabPage
     Friend WithEvents tabVoluntary As TabPage
     Friend WithEvents Panel2 As Panel
@@ -3372,11 +3239,6 @@ Partial Class FrmMainte
     Friend WithEvents voluntaryStatus As DataGridViewTextBoxColumn
     Friend WithEvents Panel19 As Panel
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents Panel27 As Panel
-    Friend WithEvents TxtRateClassification As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label12 As Label
-    Friend WithEvents TxtRates As Guna.UI2.WinForms.Guna2TextBox
-    Friend WithEvents Label11 As Label
     Friend WithEvents dgRates As Guna.UI2.WinForms.Guna2DataGridView
     Friend WithEvents rateID As DataGridViewTextBoxColumn
     Friend WithEvents rateClassification As DataGridViewTextBoxColumn

@@ -1,11 +1,22 @@
 ﻿Imports MySql.Data.MySqlClient
 Imports Guna.UI2.WinForms
 Public Class FrmPayrollCalculation
+
+
     Private Sub FrmPayrollCalculation_Load(sender As Object, e As EventArgs) Handles Me.Load
         OpenServerConnection()
         ClassPayrollCalculation.GetRates()
         ClassPayrollCalculation.LoadPayrollPeriod(DGPayrollPeriod)
         RBYes.Checked = True
+
+        ' Add this in the Form Designer
+        Dim contextMenu As New ContextMenuStrip()
+        Dim deleteMenuItem As New ToolStripMenuItem("Delete")
+
+        ' Add the delete menu item to the context menu
+        contextMenu.Items.Add(deleteMenuItem)
+        DGPayrollPeriod.ContextMenuStrip = contextMenu
+
     End Sub
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
         Try
@@ -112,4 +123,28 @@ Public Class FrmPayrollCalculation
     Private Sub DGVEmployeeList_CellDoubleClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVEmployeeList.CellDoubleClick
         ClassPayrollCalculation.SelectEmployee(DGVEmployeeList, FrmPayroll.Label1, FrmPayroll.Label2, FrmPayroll.Label3)
     End Sub
+
+    Private Sub DGPayrollPeriod_CellMouseClick(sender As Object, e As DataGridViewCellMouseEventArgs) Handles DGPayrollPeriod.CellMouseClick
+        If e.Button = MouseButtons.Right Then
+            If e.RowIndex >= 0 Then
+                DGPayrollPeriod.ClearSelection()
+                DGPayrollPeriod.Rows(e.RowIndex).Selected = True
+            End If
+        End If
+    End Sub
+
+    Private Sub deleteMenuItem_Click(sender As Object, e As EventArgs) Handles deleteMenuItem.Click
+        Dim selectedRowIndex As Integer = DGPayrollPeriod.SelectedCells(0).RowIndex
+        Dim confirm As DialogResult = MessageBox.Show("Are you sure you want to delete this record?", "Confirm Delete", MessageBoxButtons.YesNo)
+
+        If confirm = DialogResult.Yes Then
+            Dim payrollPeriodID As Integer = DGPayrollPeriod.Rows(selectedRowIndex).Cells("ColPayrollPeriodID").Value
+            DGPayrollPeriod.Rows.RemoveAt(selectedRowIndex)
+            DeletePeriod(payrollPeriodID)
+            ClassPayrollCalculation.LoadPayrollPeriod(DGPayrollPeriod)
+        End If
+    End Sub
+
+
+
 End Class

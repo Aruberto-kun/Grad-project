@@ -613,7 +613,7 @@ Module MdlMaintenance
 #Region "READ"
 
     Public Function DisplayTaxDaily() As DataTable
-        Dim command As New MySqlCommand("SELECT * FROM tblTaxDaily", connection)
+        Dim command As New MySqlCommand("SELECT minsalary, maxsalary, fixedamount, percentage FROM tblTaxDaily", connection)
         Dim adapter As New MySqlDataAdapter(command)
         Dim datatable As New DataTable
         adapter.Fill(datatable)
@@ -621,7 +621,7 @@ Module MdlMaintenance
     End Function
 
     Public Function DisplayTaxMonthly() As DataTable
-        Dim command As New MySqlCommand("SELECT * FROM tblTaxMonthly", connection)
+        Dim command As New MySqlCommand("SELECT minsalary, maxsalary, fixedamount, percentage FROM tblTaxMonthly", connection)
         Dim adapter As New MySqlDataAdapter(command)
         Dim datatable As New DataTable
         adapter.Fill(datatable)
@@ -965,5 +965,12 @@ Module MdlMaintenance
         adapter.Fill(datatable)
         Return datatable
     End Function
+
+    Public Sub DeletePeriod(payrollID As Integer)
+        Dim command As New MySqlCommand("DELETE FROM tblPayrollPeriod WHERE payrollPeriodID = @periodID", connection)
+        command.Parameters.AddWithValue("@periodID", payrollID)
+        command.ExecuteNonQuery()
+        MessageBox.Show("Payroll period has been deleted.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Sub
 #End Region
 End Module

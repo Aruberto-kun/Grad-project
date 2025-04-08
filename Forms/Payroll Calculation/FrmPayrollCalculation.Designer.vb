@@ -64,7 +64,7 @@ Partial Class FrmPayrollCalculation
         Me.TxtPayrollPeriod = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
-        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.deleteMenuItem = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.TCEmployee.SuspendLayout()
         Me.TPPayrollPeriod.SuspendLayout()
         CType(Me.DGPayrollPeriod, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -83,7 +83,7 @@ Partial Class FrmPayrollCalculation
         Me.TCEmployee.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TCEmployee.ItemSize = New System.Drawing.Size(180, 40)
         Me.TCEmployee.Location = New System.Drawing.Point(0, 0)
-        Me.TCEmployee.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TCEmployee.Margin = New System.Windows.Forms.Padding(2)
         Me.TCEmployee.Name = "TCEmployee"
         Me.TCEmployee.SelectedIndex = 0
         Me.TCEmployee.Size = New System.Drawing.Size(1454, 882)
@@ -113,9 +113,9 @@ Partial Class FrmPayrollCalculation
         Me.TPPayrollPeriod.Controls.Add(Me.Label1)
         Me.TPPayrollPeriod.Controls.Add(Me.BtnSave)
         Me.TPPayrollPeriod.Location = New System.Drawing.Point(184, 4)
-        Me.TPPayrollPeriod.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TPPayrollPeriod.Margin = New System.Windows.Forms.Padding(2)
         Me.TPPayrollPeriod.Name = "TPPayrollPeriod"
-        Me.TPPayrollPeriod.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TPPayrollPeriod.Padding = New System.Windows.Forms.Padding(2)
         Me.TPPayrollPeriod.Size = New System.Drawing.Size(1266, 874)
         Me.TPPayrollPeriod.TabIndex = 1
         Me.TPPayrollPeriod.Text = "Payroll Period"
@@ -139,6 +139,7 @@ Partial Class FrmPayrollCalculation
         Me.DGPayrollPeriod.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DGPayrollPeriod.ColumnHeadersHeight = 40
         Me.DGPayrollPeriod.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colPayrollPeriodID, Me.colPayrollPeriodName, Me.colDateFrom, Me.colDateTo, Me.colPayout, Me.colReleased})
+        Me.DGPayrollPeriod.ContextMenuStrip = Me.deleteMenuItem
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -150,7 +151,7 @@ Partial Class FrmPayrollCalculation
         Me.DGPayrollPeriod.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGPayrollPeriod.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DGPayrollPeriod.Location = New System.Drawing.Point(2, 359)
-        Me.DGPayrollPeriod.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DGPayrollPeriod.Margin = New System.Windows.Forms.Padding(2)
         Me.DGPayrollPeriod.Name = "DGPayrollPeriod"
         Me.DGPayrollPeriod.ReadOnly = True
         Me.DGPayrollPeriod.RowHeadersVisible = False
@@ -235,7 +236,7 @@ Partial Class FrmPayrollCalculation
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(2, 38)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1262, 321)
         Me.Panel1.TabIndex = 8
@@ -253,7 +254,7 @@ Partial Class FrmPayrollCalculation
         Me.Panel2.Controls.Add(Me.Label2)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(573, 321)
         Me.Panel2.TabIndex = 0
@@ -264,7 +265,7 @@ Partial Class FrmPayrollCalculation
         Me.RBNo.Dock = System.Windows.Forms.DockStyle.Top
         Me.RBNo.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RBNo.Location = New System.Drawing.Point(0, 296)
-        Me.RBNo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RBNo.Margin = New System.Windows.Forms.Padding(2)
         Me.RBNo.Name = "RBNo"
         Me.RBNo.Size = New System.Drawing.Size(573, 22)
         Me.RBNo.TabIndex = 19
@@ -278,7 +279,7 @@ Partial Class FrmPayrollCalculation
         Me.RBYes.Dock = System.Windows.Forms.DockStyle.Top
         Me.RBYes.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RBYes.Location = New System.Drawing.Point(0, 274)
-        Me.RBYes.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.RBYes.Margin = New System.Windows.Forms.Padding(2)
         Me.RBYes.Name = "RBYes"
         Me.RBYes.Size = New System.Drawing.Size(573, 22)
         Me.RBYes.TabIndex = 18
@@ -307,7 +308,7 @@ Partial Class FrmPayrollCalculation
         Me.DTPTo.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.DTPTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DTPTo.Location = New System.Drawing.Point(0, 194)
-        Me.DTPTo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DTPTo.Margin = New System.Windows.Forms.Padding(2)
         Me.DTPTo.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.DTPTo.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.DTPTo.Name = "DTPTo"
@@ -336,7 +337,7 @@ Partial Class FrmPayrollCalculation
         Me.DTPFrom.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.DTPFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DTPFrom.Location = New System.Drawing.Point(0, 114)
-        Me.DTPFrom.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DTPFrom.Margin = New System.Windows.Forms.Padding(2)
         Me.DTPFrom.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.DTPFrom.MinDate = New Date(2000, 1, 1, 0, 0, 0, 0)
         Me.DTPFrom.Name = "DTPFrom"
@@ -414,7 +415,7 @@ Partial Class FrmPayrollCalculation
         Me.BtnSave.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSave.ForeColor = System.Drawing.Color.White
         Me.BtnSave.Location = New System.Drawing.Point(2, 831)
-        Me.BtnSave.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnSave.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(1262, 41)
         Me.BtnSave.TabIndex = 6
@@ -426,9 +427,9 @@ Partial Class FrmPayrollCalculation
         Me.TPPayrollCalculation.Controls.Add(Me.Panel5)
         Me.TPPayrollCalculation.Controls.Add(Me.Panel3)
         Me.TPPayrollCalculation.Location = New System.Drawing.Point(184, 4)
-        Me.TPPayrollCalculation.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TPPayrollCalculation.Margin = New System.Windows.Forms.Padding(2)
         Me.TPPayrollCalculation.Name = "TPPayrollCalculation"
-        Me.TPPayrollCalculation.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TPPayrollCalculation.Padding = New System.Windows.Forms.Padding(2)
         Me.TPPayrollCalculation.Size = New System.Drawing.Size(1266, 874)
         Me.TPPayrollCalculation.TabIndex = 2
         Me.TPPayrollCalculation.Text = "Payroll Calculation"
@@ -616,10 +617,11 @@ Partial Class FrmPayrollCalculation
         Me.Guna2Button1.TabIndex = 25
         Me.Guna2Button1.Text = "Change Payroll Period"
         '
-        'ContextMenuStrip1
+        'deleteMenuItem
         '
-        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(181, 26)
+        Me.deleteMenuItem.Name = "ContextMenuStrip1"
+        Me.deleteMenuItem.Size = New System.Drawing.Size(61, 4)
+        Me.deleteMenuItem.Text = "Delete"
         '
         'FrmPayrollCalculation
         '
@@ -629,7 +631,7 @@ Partial Class FrmPayrollCalculation
         Me.ControlBox = False
         Me.Controls.Add(Me.TCEmployee)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FrmPayrollCalculation"
         Me.TCEmployee.ResumeLayout(False)
         Me.TPPayrollPeriod.ResumeLayout(False)
@@ -679,5 +681,5 @@ Partial Class FrmPayrollCalculation
     Friend WithEvents Column12 As DataGridViewTextBoxColumn
     Friend WithEvents Column13 As DataGridViewTextBoxColumn
     Friend WithEvents Column14 As DataGridViewTextBoxColumn
-    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents deleteMenuItem As ContextMenuStrip
 End Class

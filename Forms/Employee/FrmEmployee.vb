@@ -126,4 +126,5 @@ Public Class FrmEmployee
             ClassEmployee.ViewSalaryHistory(FrmSalaryHistory.DGSalaryHistory)
         End If
     End Sub
+
 End Class

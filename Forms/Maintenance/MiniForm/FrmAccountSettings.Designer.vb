@@ -49,7 +49,7 @@ Partial Class FrmAccountSettings
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(1422, 55)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "ADMIN PROFILE"
+        Me.Label1.Text = "PROFILE SETTINGS"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'Panel1
