@@ -41,20 +41,28 @@
             End If
         Next
 
-        ClassPayrollCalculation.GetGrossPay(DGAttendance, TxtGrossPay)
+        'Increase
         ClassPayrollCalculation.GetOvertime(DGAttendance, TxtOvertime)
         ClassPayrollCalculation.GetIncentives(DGIncentive, TxtIncentives)
+        ClassPayrollCalculation.GetNightDifferential(DGAttendance, TxtNightDifferential)
+        ClassPayrollCalculation.TotalIncrease(TxtOvertime, TxtAllowance, TxtIncentives, TxtNightDifferential, TxtTotalIncrease)
+
+        'Gross Pay
+        ClassPayrollCalculation.GetGrossPay(DGAttendance, TxtGrossPay)
+
+
+        'Deductions
         ClassPayrollCalculation.GetLate(DGAttendance, TxtLate)
         ClassPayrollCalculation.GetUndertime(DGAttendance, TxtUndertime)
-        ClassPayrollCalculation.GetNightDifferential(DGAttendance, TxtNightDifferential)
         ClassPayrollCalculation.GetVoluntaryContrib(DGVoluntary, TxtVoluntaryContributions)
         ClassPayrollCalculation.GetSSS(TxtGrossPay, TxtSSS)
         ClassPayrollCalculation.GetPhilhealth(TxtGrossPay, TxtPhilHealth)
         ClassPayrollCalculation.GetPagIbig(TxtPagIbig)
-        'ClassPayrollCalculation.GetTax(TxtGrossPay, TxtTax, TxtSSS, TxtPhilHealth, TxtPagIbig)
-        ClassPayrollCalculation.TotalIncrease(TxtOvertime, TxtAllowance, TxtIncentives, TxtNightDifferential, TxtTotalIncrease)
-        ClassPayrollCalculation.TotalMandatoryContri(TxtSSS, TxtPhilHealth, TxtPagIbig, TxtTax, TxtMandatory)
         ClassPayrollCalculation.TotalDeductions(TxtLate, TxtUndertime, TxtVoluntaryContributions, TxtMandatory, TxtTotalDeduc)
+
+        'ClassPayrollCalculation.GetTax(TxtGrossPay, TxtTax, TxtSSS, TxtPhilHealth, TxtPagIbig)
+        ClassPayrollCalculation.TotalMandatoryContri(TxtSSS, TxtPhilHealth, TxtPagIbig, TxtTax, TxtMandatory)
+
         ClassPayrollCalculation.GetNetPay(TxtGrossPay, TxtTotalIncrease, TxtTotalDeduc, TxtNetPay)
     End Sub
 

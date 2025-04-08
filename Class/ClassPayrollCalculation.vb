@@ -701,18 +701,31 @@ Public Class ClassPayrollCalculation
         Try
             Dim taxableamount As Decimal = Val(grosspay.Text) - (Val(txtsss.Text) + Val(txtphilhealth.Text) + Val(txtpagibig.Text))
             If compensationtype = "Daily" Then
-                RunQuery("Select * from tbltaxdaily WHERE minSalary <= '" & taxableamount & "' and maxSalary >= '" & taxableamount & "'")
-                If ds.Tables("querytable").Rows.Count > 0 Then
-                    Dim minSalary As Decimal = ds.Tables("querytable").Rows(0)(1)
-                    Dim fixedamount As Decimal = ds.Tables("querytable").Rows(0)(3)
-                    Dim percent As Integer = ds.Tables("querytable").Rows(0)(4) / 100
+                Dim totaltax As Decimal = 0
 
-                    Dim taxpercent As Decimal = (taxableamount - minSalary) * percent
-                    Dim total = fixedamount + taxpercent
 
-                    txttax.Clear()
-                    txttax.Text = Val(total)
-                End If
+
+                'RunQuery("Select * from tbltaxdaily WHERE minSalary <= '" & taxableamount & "' and maxSalary >= '" & taxableamount & "'")
+                'If ds.Tables("querytable").Rows.Count > 0 Then
+                '    Dim minSalary As Decimal = ds.Tables("querytable").Rows(0)(1)
+                '    Dim fixedamount As Decimal = ds.Tables("querytable").Rows(0)(3)
+                '    Dim percent As Integer = ds.Tables("querytable").Rows(0)(4) / 100
+
+                '    Dim taxpercent As Decimal = (taxableamount - minSalary) * percent
+                '    Dim total = fixedamount + taxpercent
+
+                '    txttax.Clear()
+                '    txttax.Text = Val(total)
+                'End If
+
+
+
+
+
+
+
+
+
             Else
                 RunQuery("Select * from tbltaxmonthly WHERE minSalary <= '" & taxableamount & "' and maxSalary >= '" & taxableamount & "'")
                 If ds.Tables("querytable").Rows.Count > 0 Then
