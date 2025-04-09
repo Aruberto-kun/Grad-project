@@ -1029,16 +1029,15 @@ Public Class ClassPayrollCalculation
                 GetLate(FrmPayroll.DGAttendance, FrmPayroll.TxtLate)
                 GetUndertime(FrmPayroll.DGAttendance, FrmPayroll.TxtUndertime)
 
+                FrmPayroll.TxtGrossPay.Text = totalgross + Val(FrmPayroll.TxtIncentives.Text)
+
                 'Government Contributions
                 GetSSS(FrmPayroll.TxtGrossPay, FrmPayroll.TxtSSS)
                 GetPhilhealth(FrmPayroll.TxtGrossPay, FrmPayroll.TxtPhilHealth)
                 GetPagIbig(FrmPayroll.TxtPagIbig)
 
-
-                FrmPayroll.TxtGrossPay.Text = totalgross + Val(FrmPayroll.TxtIncentives.Text)
                 Dim adjusted As Decimal = Val(FrmPayroll.TxtGrossPay.Text) - (Val(FrmPayroll.TxtSSS.Text) + Val(FrmPayroll.TxtPhilHealth.Text) + Val(FrmPayroll.TxtPagIbig.Text))
                 Dim dailytaxable As Decimal = adjusted / compensateddays
-
 
                 ds.Clear()
                 RunQuery("Select * from tbltaxdaily WHERE minSalary <= '" & dailytaxable & "' and maxSalary >= '" & dailytaxable & "'")
@@ -1059,8 +1058,10 @@ Public Class ClassPayrollCalculation
                 FrmPayroll.TxtNetPay.Text = (Val(FrmPayroll.TxtGrossPay.Text) + Val(FrmPayroll.TxtAllowance.Text)) - (Val(FrmPayroll.TxtMandatory.Text) + Val(FrmPayroll.TxtVoluntaryContributions.Text))
             Else
                 '''''MONTHLYYYYYYYYYYYYYYYYYYYYYY'''''''''''
-                FrmPayroll.colDailyPay.Visible = True
+                FrmPayroll.colDailyPay.Visible = False
+                MsgBox(salary)
                 Dim totalpay As Decimal = salary / 2
+                MsgBox(totalpay)
                 For Each row As DataGridViewRow In FrmPayroll.DGAttendance.Rows
                     Dim dayclass As String = row.Cells("colClassification").Value
                     Dim holiday As String = row.Cells("colHoliday").Value
@@ -1139,7 +1140,6 @@ Public Class ClassPayrollCalculation
                 GetPagIbig(FrmPayroll.TxtPagIbig)
 
                 Dim taxable As Decimal = Val(FrmPayroll.TxtGrossPay.Text) - (Val(FrmPayroll.TxtSSS.Text) + Val(FrmPayroll.TxtPhilHealth.Text) + Val(FrmPayroll.TxtPagIbig.Text))
-                Console.WriteLine(taxable)
                 MsgBox($"The Taxable amount is: {taxable}")
 
 
@@ -1148,15 +1148,10 @@ Public Class ClassPayrollCalculation
                 RunQuery1("Select * from tbltaxmonthly WHERE minSalary <= '" & taxable & "' and maxSalary >= '" & taxable & "'")
                 If ds1.Tables("querytable") IsNot Nothing AndAlso ds1.Tables("querytable").Rows.Count > 0 Then
                     Dim rowcount As Integer = ds1.Tables("querytable").Rows.Count
-                    MsgBox(rowcount)
                     Dim minSalary As Decimal = ds1.Tables("querytable").Rows(0)(1)
-                    MsgBox(minSalary)
                     Dim fixedamounts As Decimal = ds1.Tables("querytable").Rows(0)(3)
-                    MsgBox(fixedamounts)
                     Dim percents As Decimal = ds1.Tables("querytable").Rows(0)(4) / 100
-                    MsgBox(percents)
                     Dim taxpercents As Decimal = (taxable - minSalary) * percents
-                    MsgBox(taxpercents)
                     Dim total As Decimal = fixedamounts + taxpercents
                     FrmPayroll.TxtTax.Text = total
                 Else

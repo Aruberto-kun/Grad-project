@@ -18,12 +18,12 @@ Public Class ClassEmployee
     End Sub
     Public Shared Sub LoadEmployee(dg As DataGridView)
         Try
-            RunQuery("Select a.employeeID,a.employeeNumber,a.rfidnumber,CONCAT(a.firstname,' ',a.lastname) as fullname,a.firstname,a.lastname,b.departmentName,if(a.positionID=0,NULL,c.positionName) as positionName,d.salary,d.type,a.status from tblemployee a
+            RunQuery1("Select a.employeeID,a.employeeNumber,a.rfidnumber,CONCAT(a.firstname,' ',a.lastname) as fullname,a.firstname,a.lastname,b.departmentName,if(a.positionID=0,NULL,c.positionName) as positionName,d.salary,d.type,a.status from tblemployee a
                       LEFT JOIN tbldepartment b on b.departmentID = a.departmentID
                       LEFT JOIN tblposition c on c.positionID = a.positionID
                       LEFT JOIN tblsalary d on d.employeeID = a.employeeID
                       ORDER by a.employeeID")
-            dg.DataSource = ds.Tables("querytable")
+            dg.DataSource = ds1.Tables("querytable")
 
             ' Check if the button column already exists to avoid adding it multiple times
             If dg.Columns("btnViewSalaryHistory") Is Nothing Then
@@ -114,6 +114,17 @@ Public Class ClassEmployee
             Dim count As Integer = ds.Tables("querytable").Rows.Count
             If dg.Rows.Count < count Then
                 LoadVoluntary(dg)
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+    Public Shared Sub RefreshEmployee(dg As Guna2DataGridView)
+        Try
+            RunQuery("Select * from tblemployee")
+            Dim count As Integer = ds.Tables("querytable").Rows.Count
+            If dg.Rows.Count < count Then
+                LoadEmployee(dg)
             End If
         Catch ex As Exception
 
@@ -909,7 +920,7 @@ Public Class ClassEmployee
     End Sub
     Public Shared Sub LoadSalaryHistory(dg As Guna2DataGridView)
         Try
-            RunQuery("Select salary,date from tblsalaryhistory where employeeID= '" & employeeID & "'")
+            RunQuery("Select salary,date from tblsalaryhistory order by date DESC  where employeeID= '" & employeeID & "' ")
             dg.DataSource = ds.Tables("querytable")
         Catch ex As Exception
 

@@ -11,6 +11,7 @@ Public Class FrmEmployee
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         ClassEmployee.RefreshDepartment(FrmAddEmployee.CbDepartment)
         ClassEmployee.RefreshVoluntary(FrmAddEmployee.DGVoluntary)
+        ClassEmployee.RefreshEmployee(DgEmployee)
     End Sub
 
     Private Sub DGVoluntary_DataError(sender As Object, e As DataGridViewDataErrorEventArgs)

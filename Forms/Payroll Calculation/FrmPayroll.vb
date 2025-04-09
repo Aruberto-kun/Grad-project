@@ -73,4 +73,18 @@ Public Class FrmPayroll
 
         End Try
     End Sub
+
+    Private Sub DGIncentive_CellValidating(sender As Object, e As DataGridViewCellValidatingEventArgs) Handles DGIncentive.CellValidating
+        Dim columnName As String = DGIncentive.Columns(e.ColumnIndex).Name
+
+        If columnName = "incentiveAmount" Then
+            Dim value As String = e.FormattedValue.ToString()
+            Dim dec As Decimal
+
+            If Not Decimal.TryParse(value, dec) OrElse dec < 0 Then
+                MessageBox.Show("Please enter a valid number greater than or equal to 0.")
+                e.Cancel = True
+            End If
+        End If
+    End Sub
 End Class
