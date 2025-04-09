@@ -554,11 +554,23 @@ Module MdlMaintenance
         Try
             Dim maxsal As Decimal
             If cb.Text = "Daily" Then
-                RunQuery("Select * from tblTaxDaily order by maxSalary DESC limit 1")
-                maxsal = ds.Tables("querytable").Rows(0)(2) + 0.01
+                Dim command As New MySqlCommand("SELECT COUNT(*) FROM tblTaxDaily", connection)
+                Dim count As Integer = Convert.ToInt32(command.ExecuteScalar())
+                If count > 0 Then
+                    RunQuery("Select * from tblTaxDaily order by maxSalary DESC limit 1")
+                    maxsal = ds.Tables("querytable").Rows(0)(2) + 0.01
+                Else
+                    maxsal = 0
+                End If
             Else
-                RunQuery("Select * from tblTaxMonthly order by maxSalary DESC limit 1")
-                maxsal = ds.Tables("querytable").Rows(0)(2) + 0.01
+                Dim command As New MySqlCommand("SELECT COUNT(*) FROM tblTaxMonthly", connection)
+                Dim count As Integer = Convert.ToInt32(command.ExecuteScalar())
+                If count > 0 Then
+                    RunQuery("Select * from tblTaxMonthly order by maxSalary DESC limit 1")
+                    maxsal = ds.Tables("querytable").Rows(0)(2) + 0.01
+                Else
+                    maxsal = 0
+                End If
             End If
             Return maxsal
 
