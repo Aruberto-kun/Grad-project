@@ -1,4 +1,24 @@
-﻿Public Class FrmPayroll
+﻿Imports MySql.Data.MySqlClient
+Imports Guna.UI2.WinForms
+Public Class FrmPayroll
+    Private Sub ClearFields()
+        TxtOvertime.Clear()
+        TxtAllowance.Clear()
+        TxtNightDifferential.Clear()
+        TxtIncentives.Clear()
+        TxtTotalIncrease.Clear()
+        TxtLate.Clear()
+        TxtUndertime.Clear()
+        TxtMandatory.Clear()
+        TxtVoluntaryContributions.Clear()
+        TxtTotalDeduc.Clear()
+        TxtSSS.Clear()
+        TxtPhilHealth.Clear()
+        TxtPagIbig.Clear()
+        TxtTax.Clear()
+        TxtGrossPay.Clear()
+        TxtNetPay.Clear()
+    End Sub
     Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
         Me.Close()
     End Sub
@@ -12,6 +32,7 @@
         ClassPayrollCalculation.LoadIncentive(DGIncentive)
         ClassPayrollCalculation.LoadAllowance(TxtAllowance)
         ClassPayrollCalculation.LoadVoluntary(DGVoluntary)
+        ClearFields()
     End Sub
 
     Private Sub Guna2Button3_Click(sender As Object, e As EventArgs) Handles Guna2Button3.Click
@@ -69,7 +90,7 @@
     Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
         Try
             If MsgBox("Verify salary calculation", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
-                ClassPayrollCalculation.SaveSalary(TxtOvertime, TxtAllowance, TxtIncentives, TxtNightDifferential, TxtLate, TxtUndertime, TxtVoluntaryContributions, TxtSSS, TxtPhilHealth, TxtPagIbig, TxtTax, TxtMandatory, TxtTotalIncrease, TxtTotalDeduc, TxtGrossPay, TxtNetPay)
+                ClassPayrollCalculation.CalculateSalaryFinal()
             End If
         Catch ex As Exception
 

@@ -8,6 +8,7 @@ Module MdlConnections
     Public adp As New MySqlDataAdapter
     Public dt As New DataTable
     Public ds As New DataSet
+    Public ds1 As New DataSet
     Public Sub OpenServerConnection()
         Try
             If conn.State = ConnectionState.Closed Then
@@ -21,6 +22,15 @@ Module MdlConnections
             adp = New MySqlDataAdapter(querystatement, conn)
             ds = New DataSet
             adp.Fill(ds, "querytable")
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+    Public Sub RunQuery1(ByVal querystatement As String)
+        Try
+            adp = New MySqlDataAdapter(querystatement, conn)
+            ds1 = New DataSet
+            adp.Fill(ds1, "querytable")
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try

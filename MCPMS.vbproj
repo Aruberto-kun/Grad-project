@@ -91,6 +91,7 @@
   <ItemGroup>
     <Compile Include="Class\ClassAssociates.vb" />
     <Compile Include="Class\ClassAuditTrail.vb" />
+    <Compile Include="Class\ClassCalculation.vb" />
     <Compile Include="Class\ClassDepartment.vb" />
     <Compile Include="Class\ClassDepartmentHeadControls.vb" />
     <Compile Include="Class\ClassEmployee.vb" />
