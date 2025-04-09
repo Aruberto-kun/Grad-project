@@ -8,15 +8,6 @@ Public Class FrmPayrollCalculation
         ClassPayrollCalculation.GetRates()
         ClassPayrollCalculation.LoadPayrollPeriod(DGPayrollPeriod)
         RBYes.Checked = True
-
-        ' Add this in the Form Designer
-        Dim contextMenu As New ContextMenuStrip()
-        Dim deleteMenuItem As New ToolStripMenuItem("Delete")
-
-        ' Add the delete menu item to the context menu
-        contextMenu.Items.Add(deleteMenuItem)
-        DGPayrollPeriod.ContextMenuStrip = contextMenu
-
     End Sub
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
         Try
@@ -132,19 +123,42 @@ Public Class FrmPayrollCalculation
             End If
         End If
     End Sub
+    Private Sub DGPayrollPeriod_MouseDown(sender As Object, e As MouseEventArgs) Handles DGPayrollPeriod.MouseDown
+        Try
+            ' Check if the right mouse button is clicked
+            If e.Button = MouseButtons.Right Then
+                ' Check if any row is selected
+                If DGPayrollPeriod.SelectedRows.Count > 0 Then
+                    If FrmMain.LblPos.Text.Trim = "Admin" Then
+                        ' Show the ContextMenuStrip at the mouse click location
+                        ContextMenuStrip1.Show(DGPayrollPeriod, e.Location)
+                    End If
+                End If
+            End If
+        Catch ex As Exception
 
-    Private Sub deleteMenuItem_Click(sender As Object, e As EventArgs) Handles deleteMenuItem.Click
-        Dim selectedRowIndex As Integer = DGPayrollPeriod.SelectedCells(0).RowIndex
-        Dim confirm As DialogResult = MessageBox.Show("Are you sure you want to delete this record?", "Confirm Delete", MessageBoxButtons.YesNo)
-
-        If confirm = DialogResult.Yes Then
-            Dim payrollPeriodID As Integer = DGPayrollPeriod.Rows(selectedRowIndex).Cells("ColPayrollPeriodID").Value
-            DGPayrollPeriod.Rows.RemoveAt(selectedRowIndex)
-            DeletePeriod(payrollPeriodID)
-            ClassPayrollCalculation.LoadPayrollPeriod(DGPayrollPeriod)
-        End If
+        End Try
     End Sub
+    Private Sub DeletePayrollPeriodToolStripMenuItem_Click_1(sender As Object, e As EventArgs) Handles DeletePayrollPeriodToolStripMenuItem.Click
 
+        Try
 
+            Dim selectedRow As DataGridViewRow = DGPayrollPeriod.SelectedRows(0)
 
+            ' Retrieve the userID of the selected row (assuming userID is at index 0)
+            Dim payrollperiodID As Integer = selectedRow.Cells("colPayrollPeriodID").Value
+
+            If MsgBox("Are you sure you want to delete this payroll period?", MsgBoxStyle.YesNo) = MsgBoxResult.Yes Then
+                RunCommand("Delete from tblpayroll where payrollperiodID = '" & payrollperiodID & "'")
+                com.ExecuteNonQuery()
+                RunCommand("Delete from tblpayrollperiod where payrollperiodID = '" & payrollperiodID & "'")
+                com.ExecuteNonQuery()
+                MsgBox("Payroll period deleted", MsgBoxStyle.OkOnly)
+                ClassPayrollCalculation.LoadPayrollPeriod(DGPayrollPeriod)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        Exit Sub
+        End Try
+    End Sub
 End Class

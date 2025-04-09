@@ -64,7 +64,8 @@ Partial Class FrmPayrollCalculation
         Me.TxtPayrollPeriod = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Guna2Button1 = New Guna.UI2.WinForms.Guna2Button()
-        Me.deleteMenuItem = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.DeletePayrollPeriodToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.TCEmployee.SuspendLayout()
         Me.TPPayrollPeriod.SuspendLayout()
         CType(Me.DGPayrollPeriod, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -73,6 +74,7 @@ Partial Class FrmPayrollCalculation
         Me.TPPayrollCalculation.SuspendLayout()
         CType(Me.DGVEmployeeList, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel3.SuspendLayout()
+        Me.ContextMenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TCEmployee
@@ -139,7 +141,6 @@ Partial Class FrmPayrollCalculation
         Me.DGPayrollPeriod.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DGPayrollPeriod.ColumnHeadersHeight = 40
         Me.DGPayrollPeriod.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colPayrollPeriodID, Me.colPayrollPeriodName, Me.colDateFrom, Me.colDateTo, Me.colPayout, Me.colReleased})
-        Me.DGPayrollPeriod.ContextMenuStrip = Me.deleteMenuItem
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
         DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -157,7 +158,6 @@ Partial Class FrmPayrollCalculation
         Me.DGPayrollPeriod.RowHeadersVisible = False
         Me.DGPayrollPeriod.RowHeadersWidth = 62
         Me.DGPayrollPeriod.RowTemplate.Height = 28
-        Me.DGPayrollPeriod.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect
         Me.DGPayrollPeriod.Size = New System.Drawing.Size(1262, 472)
         Me.DGPayrollPeriod.TabIndex = 9
         Me.DGPayrollPeriod.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
@@ -401,7 +401,7 @@ Partial Class FrmPayrollCalculation
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(1262, 36)
         Me.Label1.TabIndex = 7
-        Me.Label1.Text = "Personal Information"
+        Me.Label1.Text = "Payroll Period Information"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
         'BtnSave
@@ -617,11 +617,17 @@ Partial Class FrmPayrollCalculation
         Me.Guna2Button1.TabIndex = 25
         Me.Guna2Button1.Text = "Change Payroll Period"
         '
-        'deleteMenuItem
+        'ContextMenuStrip1
         '
-        Me.deleteMenuItem.Name = "ContextMenuStrip1"
-        Me.deleteMenuItem.Size = New System.Drawing.Size(61, 4)
-        Me.deleteMenuItem.Text = "Delete"
+        Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.DeletePayrollPeriodToolStripMenuItem})
+        Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(184, 26)
+        '
+        'DeletePayrollPeriodToolStripMenuItem
+        '
+        Me.DeletePayrollPeriodToolStripMenuItem.Name = "DeletePayrollPeriodToolStripMenuItem"
+        Me.DeletePayrollPeriodToolStripMenuItem.Size = New System.Drawing.Size(183, 22)
+        Me.DeletePayrollPeriodToolStripMenuItem.Text = "&Delete Payroll Period"
         '
         'FrmPayrollCalculation
         '
@@ -642,6 +648,7 @@ Partial Class FrmPayrollCalculation
         Me.TPPayrollCalculation.ResumeLayout(False)
         CType(Me.DGVEmployeeList, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel3.ResumeLayout(False)
+        Me.ContextMenuStrip1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -681,5 +688,6 @@ Partial Class FrmPayrollCalculation
     Friend WithEvents Column12 As DataGridViewTextBoxColumn
     Friend WithEvents Column13 As DataGridViewTextBoxColumn
     Friend WithEvents Column14 As DataGridViewTextBoxColumn
-    Friend WithEvents deleteMenuItem As ContextMenuStrip
+    Friend WithEvents ContextMenuStrip1 As ContextMenuStrip
+    Friend WithEvents DeletePayrollPeriodToolStripMenuItem As ToolStripMenuItem
 End Class
