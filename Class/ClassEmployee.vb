@@ -515,8 +515,7 @@ Public Class ClassEmployee
                             .Parameters.AddWithValue("@employeeID", employeeID)
 
                         End With
-
-                        MessageBox.Show("Seven")
+                        MsgBox("Updated Successfully", MsgBoxStyle.OkOnly)
                     End If
                 Else
                     'Magpapalit pero hindi department head
@@ -577,7 +576,7 @@ Public Class ClassEmployee
                         .ExecuteNonQuery()
                         .Parameters.Clear()
                     End With
-                    MessageBox.Show("Eight")
+                    MsgBox("Updated Successfully", MsgBoxStyle.OkOnly)
                 End If
             End If
         Catch ex As Exception
@@ -682,7 +681,7 @@ Public Class ClassEmployee
                         SaveAllowance(empID, txtallowance)
                         SaveSalaryHistory(empID, txtsalary)
                     End If
-                    MessageBox.Show("One")
+                    MessageBox.Show("Saved")
                 End If
 
             Else
@@ -740,9 +739,10 @@ Public Class ClassEmployee
                     SaveLeaveAllocation(empID)
                     SaveAllowance(empID, txtallowance)
                     SaveSalaryHistory(empID, txtsalary)
+                    MessageBox.Show("Saved")
                 End If
             End If
-            MessageBox.Show("Two")
+
         Catch ex As Exception
 
         End Try

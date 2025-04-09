@@ -91,7 +91,7 @@ Public Class ClassPayrollCalculation
                 lblname.Text = $"Employee Name: {dg.SelectedRows(0).Cells(2).Value}"
                 lbldept.Text = $"Department: {dg.SelectedRows(0).Cells(3).Value}"
                 lblpos.Text = $"Position: {dg.SelectedRows(0).Cells(4).Value}"
-                FrmPayroll.Show()
+                FrmPayroll.ShowDialog()
             End If
         Catch ex As Exception
 
@@ -529,7 +529,11 @@ Public Class ClassPayrollCalculation
                 End If
             Next
             txtovertime.Clear()
-            txtovertime.Text = totalot
+            If totalot > 0 Then
+                txtovertime.Text = Math.Round(totalot, 8).ToString
+            Else
+                txtovertime.Text = "0"
+            End If
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -580,7 +584,11 @@ Public Class ClassPayrollCalculation
                 totallate += late
             Next
             txtlate.Clear()
-            txtlate.Text = totallate * minuterate
+            If totallate > 0 Then
+                txtlate.Text = Math.Round(totallate * minuterate, 8).ToString()
+            Else
+                txtlate.Text = "0"
+            End If
         Catch ex As Exception
 
         End Try
@@ -604,8 +612,11 @@ Public Class ClassPayrollCalculation
                 totalundertime += undertime
             Next
             txtundertime.Clear()
-            txtundertime.Text = totalundertime * minuterate
-
+            If totalundertime > 0 Then
+                txtundertime.Text = Math.Round(totalundertime * minuterate, 8).ToString
+            Else
+                txtundertime.Text = "0"
+            End If
         Catch ex As Exception
 
         End Try
@@ -630,7 +641,11 @@ Public Class ClassPayrollCalculation
             Next
 
             txtnightdifferential.Clear()
-            txtnightdifferential.Text = (hourlyrate * NightDiffRate) * nightdiffcount
+            If nightdiffcount > 0 Then
+                txtnightdifferential.Text = Math.Round((hourlyrate * NightDiffRate) * nightdiffcount, 8).ToString
+            Else
+                txtnightdifferential.Text = "0"
+            End If
 
         Catch ex As Exception
 
@@ -1038,7 +1053,9 @@ Public Class ClassPayrollCalculation
 
                 Dim adjusted As Decimal = Val(FrmPayroll.TxtGrossPay.Text) - (Val(FrmPayroll.TxtSSS.Text) + Val(FrmPayroll.TxtPhilHealth.Text) + Val(FrmPayroll.TxtPagIbig.Text))
                 Dim dailytaxable As Decimal = adjusted / compensateddays
-
+                MsgBox(adjusted)
+                MsgBox(compensateddays)
+                MsgBox(dailytaxable)
                 ds.Clear()
                 RunQuery("Select * from tbltaxdaily WHERE minSalary <= '" & dailytaxable & "' and maxSalary >= '" & dailytaxable & "'")
                 If ds.Tables("querytable") IsNot Nothing AndAlso ds.Tables("querytable").Rows.Count > 0 Then
@@ -1059,9 +1076,7 @@ Public Class ClassPayrollCalculation
             Else
                 '''''MONTHLYYYYYYYYYYYYYYYYYYYYYY'''''''''''
                 FrmPayroll.colDailyPay.Visible = False
-                MsgBox(salary)
                 Dim totalpay As Decimal = salary / 2
-                MsgBox(totalpay)
                 For Each row As DataGridViewRow In FrmPayroll.DGAttendance.Rows
                     Dim dayclass As String = row.Cells("colClassification").Value
                     Dim holiday As String = row.Cells("colHoliday").Value
@@ -1155,7 +1170,6 @@ Public Class ClassPayrollCalculation
                     Dim total As Decimal = fixedamounts + taxpercents
                     FrmPayroll.TxtTax.Text = total
                 Else
-                    MsgBox("WALA")
                     FrmPayroll.TxtTax.Text = "0"
                 End If
 
