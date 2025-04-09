@@ -314,7 +314,7 @@ Partial Class FrmPayrollCalculation
         Me.DTPTo.Name = "DTPTo"
         Me.DTPTo.Size = New System.Drawing.Size(573, 41)
         Me.DTPTo.TabIndex = 16
-        Me.DTPTo.Value = New Date(2024, 11, 12, 3, 39, 26, 865)
+        Me.DTPTo.Value = New Date(2025, 4, 9, 0, 0, 0, 0)
         '
         'Label4
         '
@@ -343,7 +343,7 @@ Partial Class FrmPayrollCalculation
         Me.DTPFrom.Name = "DTPFrom"
         Me.DTPFrom.Size = New System.Drawing.Size(573, 41)
         Me.DTPFrom.TabIndex = 14
-        Me.DTPFrom.Value = New Date(2024, 11, 12, 3, 39, 26, 865)
+        Me.DTPFrom.Value = New Date(2025, 4, 9, 0, 0, 0, 0)
         '
         'Label3
         '

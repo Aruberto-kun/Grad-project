@@ -26,6 +26,9 @@ Partial Class FrmDepartmentHeadControls
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -38,9 +41,12 @@ Partial Class FrmDepartmentHeadControls
         Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle24 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle25 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle26 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle27 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -51,15 +57,15 @@ Partial Class FrmDepartmentHeadControls
         Dim DataGridViewCellStyle32 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle33 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FrmDepartmentHeadControls))
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle22 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle23 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TC = New Guna.UI2.WinForms.Guna2TabControl()
         Me.TPDepartment = New System.Windows.Forms.TabPage()
         Me.DGAttendance = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LblDeptName = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.TPSchedule = New System.Windows.Forms.TabPage()
@@ -82,6 +88,11 @@ Partial Class FrmDepartmentHeadControls
         Me.DGFiledLeave = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.TPFTIO = New System.Windows.Forms.TabPage()
         Me.DGFTIOFiled = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.TxtFTIOReason = New Guna.UI2.WinForms.Guna2TextBox()
@@ -95,6 +106,11 @@ Partial Class FrmDepartmentHeadControls
         Me.Label11 = New System.Windows.Forms.Label()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.DGLeaveFiled = New Guna.UI2.WinForms.Guna2DataGridView()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.DGLeaveCount = New Guna.UI2.WinForms.Guna2DataGridView()
         Me.manageLeaveID = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -137,22 +153,6 @@ Partial Class FrmDepartmentHeadControls
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
-        Me.Column6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TC.SuspendLayout()
         Me.TPDepartment.SuspendLayout()
         CType(Me.DGAttendance, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -196,7 +196,7 @@ Partial Class FrmDepartmentHeadControls
         Me.TC.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TC.ItemSize = New System.Drawing.Size(180, 40)
         Me.TC.Location = New System.Drawing.Point(0, 167)
-        Me.TC.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TC.Margin = New System.Windows.Forms.Padding(2)
         Me.TC.Name = "TC"
         Me.TC.SelectedIndex = 0
         Me.TC.Size = New System.Drawing.Size(1173, 491)
@@ -225,9 +225,9 @@ Partial Class FrmDepartmentHeadControls
         Me.TPDepartment.Controls.Add(Me.LblDeptName)
         Me.TPDepartment.Controls.Add(Me.Label5)
         Me.TPDepartment.Location = New System.Drawing.Point(184, 4)
-        Me.TPDepartment.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TPDepartment.Margin = New System.Windows.Forms.Padding(2)
         Me.TPDepartment.Name = "TPDepartment"
-        Me.TPDepartment.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TPDepartment.Padding = New System.Windows.Forms.Padding(2)
         Me.TPDepartment.Size = New System.Drawing.Size(985, 483)
         Me.TPDepartment.TabIndex = 0
         Me.TPDepartment.Text = "Attendance"
@@ -262,7 +262,7 @@ Partial Class FrmDepartmentHeadControls
         Me.DGAttendance.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGAttendance.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DGAttendance.Location = New System.Drawing.Point(2, 70)
-        Me.DGAttendance.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DGAttendance.Margin = New System.Windows.Forms.Padding(2)
         Me.DGAttendance.Name = "DGAttendance"
         Me.DGAttendance.ReadOnly = True
         Me.DGAttendance.RowHeadersVisible = False
@@ -291,6 +291,62 @@ Partial Class FrmDepartmentHeadControls
         Me.DGAttendance.ThemeStyle.RowsStyle.Height = 28
         Me.DGAttendance.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DGAttendance.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        '
+        'Column6
+        '
+        Me.Column6.DataPropertyName = "attendanceID"
+        Me.Column6.HeaderText = "Attendance ID"
+        Me.Column6.MinimumWidth = 6
+        Me.Column6.Name = "Column6"
+        Me.Column6.ReadOnly = True
+        Me.Column6.Visible = False
+        '
+        'Column1
+        '
+        Me.Column1.DataPropertyName = "employeeNumber"
+        Me.Column1.HeaderText = "Associate Number"
+        Me.Column1.MinimumWidth = 8
+        Me.Column1.Name = "Column1"
+        Me.Column1.ReadOnly = True
+        '
+        'Column2
+        '
+        Me.Column2.DataPropertyName = "fullname"
+        Me.Column2.HeaderText = "Full Name"
+        Me.Column2.MinimumWidth = 8
+        Me.Column2.Name = "Column2"
+        Me.Column2.ReadOnly = True
+        '
+        'Column3
+        '
+        Me.Column3.DataPropertyName = "date"
+        DataGridViewCellStyle3.Format = "D"
+        DataGridViewCellStyle3.NullValue = Nothing
+        Me.Column3.DefaultCellStyle = DataGridViewCellStyle3
+        Me.Column3.HeaderText = "Date"
+        Me.Column3.MinimumWidth = 8
+        Me.Column3.Name = "Column3"
+        Me.Column3.ReadOnly = True
+        '
+        'Column4
+        '
+        Me.Column4.DataPropertyName = "login"
+        DataGridViewCellStyle4.Format = "T"
+        Me.Column4.DefaultCellStyle = DataGridViewCellStyle4
+        Me.Column4.HeaderText = "Time In"
+        Me.Column4.MinimumWidth = 8
+        Me.Column4.Name = "Column4"
+        Me.Column4.ReadOnly = True
+        '
+        'Column5
+        '
+        Me.Column5.DataPropertyName = "logout"
+        DataGridViewCellStyle5.Format = "T"
+        Me.Column5.DefaultCellStyle = DataGridViewCellStyle5
+        Me.Column5.HeaderText = "Time Out"
+        Me.Column5.MinimumWidth = 8
+        Me.Column5.Name = "Column5"
+        Me.Column5.ReadOnly = True
         '
         'LblDeptName
         '
@@ -326,9 +382,9 @@ Partial Class FrmDepartmentHeadControls
         Me.TPSchedule.Controls.Add(Me.Label4)
         Me.TPSchedule.Controls.Add(Me.Label1)
         Me.TPSchedule.Location = New System.Drawing.Point(184, 4)
-        Me.TPSchedule.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TPSchedule.Margin = New System.Windows.Forms.Padding(2)
         Me.TPSchedule.Name = "TPSchedule"
-        Me.TPSchedule.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TPSchedule.Padding = New System.Windows.Forms.Padding(2)
         Me.TPSchedule.Size = New System.Drawing.Size(985, 483)
         Me.TPSchedule.TabIndex = 1
         Me.TPSchedule.Text = "Set Schedule"
@@ -343,7 +399,7 @@ Partial Class FrmDepartmentHeadControls
         Me.Guna2Panel1.Controls.Add(Me.Label2)
         Me.Guna2Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2Panel1.Location = New System.Drawing.Point(363, 121)
-        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2Panel1.Name = "Guna2Panel1"
         Me.Guna2Panel1.Size = New System.Drawing.Size(620, 319)
         Me.Guna2Panel1.TabIndex = 16
@@ -362,7 +418,7 @@ Partial Class FrmDepartmentHeadControls
         '
         Me.MtbTimeOut.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MtbTimeOut.Location = New System.Drawing.Point(8, 171)
-        Me.MtbTimeOut.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MtbTimeOut.Margin = New System.Windows.Forms.Padding(2)
         Me.MtbTimeOut.Mask = "00:00"
         Me.MtbTimeOut.Name = "MtbTimeOut"
         Me.MtbTimeOut.Size = New System.Drawing.Size(181, 26)
@@ -373,7 +429,7 @@ Partial Class FrmDepartmentHeadControls
         '
         Me.MtbTimeIn.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.MtbTimeIn.Location = New System.Drawing.Point(8, 83)
-        Me.MtbTimeIn.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MtbTimeIn.Margin = New System.Windows.Forms.Padding(2)
         Me.MtbTimeIn.Mask = "00:00"
         Me.MtbTimeIn.Name = "MtbTimeIn"
         Me.MtbTimeIn.Size = New System.Drawing.Size(181, 26)
@@ -409,7 +465,7 @@ Partial Class FrmDepartmentHeadControls
         Me.CLBSchedule.FormattingEnabled = True
         Me.CLBSchedule.Items.AddRange(New Object() {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"})
         Me.CLBSchedule.Location = New System.Drawing.Point(2, 121)
-        Me.CLBSchedule.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CLBSchedule.Margin = New System.Windows.Forms.Padding(2)
         Me.CLBSchedule.Name = "CLBSchedule"
         Me.CLBSchedule.Size = New System.Drawing.Size(361, 319)
         Me.CLBSchedule.TabIndex = 15
@@ -425,7 +481,7 @@ Partial Class FrmDepartmentHeadControls
         Me.BtnSave.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSave.ForeColor = System.Drawing.Color.White
         Me.BtnSave.Location = New System.Drawing.Point(2, 440)
-        Me.BtnSave.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnSave.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Size = New System.Drawing.Size(981, 41)
         Me.BtnSave.TabIndex = 14
@@ -447,7 +503,7 @@ Partial Class FrmDepartmentHeadControls
         Me.CbEmployees.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CbEmployees.ItemHeight = 45
         Me.CbEmployees.Location = New System.Drawing.Point(2, 70)
-        Me.CbEmployees.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CbEmployees.Margin = New System.Windows.Forms.Padding(2)
         Me.CbEmployees.Name = "CbEmployees"
         Me.CbEmployees.Size = New System.Drawing.Size(981, 51)
         Me.CbEmployees.TabIndex = 11
@@ -480,9 +536,9 @@ Partial Class FrmDepartmentHeadControls
         '
         Me.TPOvertimeFiling.Controls.Add(Me.DGOvertime)
         Me.TPOvertimeFiling.Location = New System.Drawing.Point(184, 4)
-        Me.TPOvertimeFiling.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TPOvertimeFiling.Margin = New System.Windows.Forms.Padding(2)
         Me.TPOvertimeFiling.Name = "TPOvertimeFiling"
-        Me.TPOvertimeFiling.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TPOvertimeFiling.Padding = New System.Windows.Forms.Padding(2)
         Me.TPOvertimeFiling.Size = New System.Drawing.Size(985, 483)
         Me.TPOvertimeFiling.TabIndex = 2
         Me.TPOvertimeFiling.Text = "Overtime Approval Sheet"
@@ -516,7 +572,7 @@ Partial Class FrmDepartmentHeadControls
         Me.DGOvertime.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGOvertime.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DGOvertime.Location = New System.Drawing.Point(2, 2)
-        Me.DGOvertime.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DGOvertime.Margin = New System.Windows.Forms.Padding(2)
         Me.DGOvertime.Name = "DGOvertime"
         Me.DGOvertime.ReadOnly = True
         Me.DGOvertime.RowHeadersVisible = False
@@ -550,9 +606,9 @@ Partial Class FrmDepartmentHeadControls
         '
         Me.TPFtioFiling.Controls.Add(Me.DGFiledFTIO)
         Me.TPFtioFiling.Location = New System.Drawing.Point(184, 4)
-        Me.TPFtioFiling.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TPFtioFiling.Margin = New System.Windows.Forms.Padding(2)
         Me.TPFtioFiling.Name = "TPFtioFiling"
-        Me.TPFtioFiling.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TPFtioFiling.Padding = New System.Windows.Forms.Padding(2)
         Me.TPFtioFiling.Size = New System.Drawing.Size(985, 483)
         Me.TPFtioFiling.TabIndex = 3
         Me.TPFtioFiling.Text = "FTIO Approval Sheet"
@@ -586,7 +642,7 @@ Partial Class FrmDepartmentHeadControls
         Me.DGFiledFTIO.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGFiledFTIO.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DGFiledFTIO.Location = New System.Drawing.Point(2, 2)
-        Me.DGFiledFTIO.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DGFiledFTIO.Margin = New System.Windows.Forms.Padding(2)
         Me.DGFiledFTIO.Name = "DGFiledFTIO"
         Me.DGFiledFTIO.ReadOnly = True
         Me.DGFiledFTIO.RowHeadersVisible = False
@@ -620,9 +676,9 @@ Partial Class FrmDepartmentHeadControls
         '
         Me.TPLeaveFiling.Controls.Add(Me.DGFiledLeave)
         Me.TPLeaveFiling.Location = New System.Drawing.Point(184, 4)
-        Me.TPLeaveFiling.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TPLeaveFiling.Margin = New System.Windows.Forms.Padding(2)
         Me.TPLeaveFiling.Name = "TPLeaveFiling"
-        Me.TPLeaveFiling.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TPLeaveFiling.Padding = New System.Windows.Forms.Padding(2)
         Me.TPLeaveFiling.Size = New System.Drawing.Size(985, 483)
         Me.TPLeaveFiling.TabIndex = 4
         Me.TPLeaveFiling.Text = "Leave Approval Sheet"
@@ -656,7 +712,7 @@ Partial Class FrmDepartmentHeadControls
         Me.DGFiledLeave.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGFiledLeave.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DGFiledLeave.Location = New System.Drawing.Point(2, 2)
-        Me.DGFiledLeave.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DGFiledLeave.Margin = New System.Windows.Forms.Padding(2)
         Me.DGFiledLeave.Name = "DGFiledLeave"
         Me.DGFiledLeave.ReadOnly = True
         Me.DGFiledLeave.RowHeadersVisible = False
@@ -693,7 +749,7 @@ Partial Class FrmDepartmentHeadControls
         Me.TPFTIO.Controls.Add(Me.Panel3)
         Me.TPFTIO.Location = New System.Drawing.Point(184, 4)
         Me.TPFTIO.Name = "TPFTIO"
-        Me.TPFTIO.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TPFTIO.Padding = New System.Windows.Forms.Padding(3)
         Me.TPFTIO.Size = New System.Drawing.Size(985, 483)
         Me.TPFTIO.TabIndex = 5
         Me.TPFTIO.Text = "FTIO Filing"
@@ -727,7 +783,7 @@ Partial Class FrmDepartmentHeadControls
         Me.DGFTIOFiled.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGFTIOFiled.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DGFTIOFiled.Location = New System.Drawing.Point(253, 38)
-        Me.DGFTIOFiled.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DGFTIOFiled.Margin = New System.Windows.Forms.Padding(2)
         Me.DGFTIOFiled.Name = "DGFTIOFiled"
         Me.DGFTIOFiled.RowHeadersVisible = False
         Me.DGFTIOFiled.RowHeadersWidth = 51
@@ -755,6 +811,45 @@ Partial Class FrmDepartmentHeadControls
         Me.DGFTIOFiled.ThemeStyle.RowsStyle.Height = 24
         Me.DGFTIOFiled.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DGFTIOFiled.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        '
+        'Column7
+        '
+        Me.Column7.DataPropertyName = "ftioID"
+        Me.Column7.HeaderText = "FTIO ID"
+        Me.Column7.MinimumWidth = 6
+        Me.Column7.Name = "Column7"
+        '
+        'Column8
+        '
+        Me.Column8.DataPropertyName = "date"
+        DataGridViewCellStyle18.Format = "D"
+        DataGridViewCellStyle18.NullValue = Nothing
+        Me.Column8.DefaultCellStyle = DataGridViewCellStyle18
+        Me.Column8.HeaderText = "Date"
+        Me.Column8.MinimumWidth = 6
+        Me.Column8.Name = "Column8"
+        '
+        'Column9
+        '
+        Me.Column9.DataPropertyName = "classification"
+        Me.Column9.HeaderText = "Classification"
+        Me.Column9.MinimumWidth = 6
+        Me.Column9.Name = "Column9"
+        '
+        'Column10
+        '
+        Me.Column10.DataPropertyName = "reason"
+        Me.Column10.HeaderText = "Reason"
+        Me.Column10.MinimumWidth = 6
+        Me.Column10.Name = "Column10"
+        '
+        'Column11
+        '
+        Me.Column11.DataPropertyName = "status"
+        Me.Column11.HeaderText = "Status"
+        Me.Column11.MinimumWidth = 6
+        Me.Column11.Name = "Column11"
+        Me.Column11.ReadOnly = True
         '
         'Label14
         '
@@ -826,7 +921,7 @@ Partial Class FrmDepartmentHeadControls
         Me.mtbTime.Dock = System.Windows.Forms.DockStyle.Top
         Me.mtbTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.mtbTime.Location = New System.Drawing.Point(0, 148)
-        Me.mtbTime.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.mtbTime.Margin = New System.Windows.Forms.Padding(2)
         Me.mtbTime.Mask = "00:00"
         Me.mtbTime.Name = "mtbTime"
         Me.mtbTime.Size = New System.Drawing.Size(250, 26)
@@ -855,7 +950,7 @@ Partial Class FrmDepartmentHeadControls
         Me.BtnFTIOSave.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnFTIOSave.ForeColor = System.Drawing.Color.White
         Me.BtnFTIOSave.Location = New System.Drawing.Point(0, 436)
-        Me.BtnFTIOSave.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnFTIOSave.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnFTIOSave.Name = "BtnFTIOSave"
         Me.BtnFTIOSave.Size = New System.Drawing.Size(250, 41)
         Me.BtnFTIOSave.TabIndex = 34
@@ -879,7 +974,7 @@ Partial Class FrmDepartmentHeadControls
         Me.CBFTIOType.ItemHeight = 30
         Me.CBFTIOType.Items.AddRange(New Object() {"Login", "Logout"})
         Me.CBFTIOType.Location = New System.Drawing.Point(0, 87)
-        Me.CBFTIOType.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CBFTIOType.Margin = New System.Windows.Forms.Padding(2)
         Me.CBFTIOType.Name = "CBFTIOType"
         Me.CBFTIOType.Size = New System.Drawing.Size(250, 36)
         Me.CBFTIOType.TabIndex = 31
@@ -904,13 +999,13 @@ Partial Class FrmDepartmentHeadControls
         Me.DTPFTIODate.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.DTPFTIODate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DTPFTIODate.Location = New System.Drawing.Point(0, 25)
-        Me.DTPFTIODate.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DTPFTIODate.Margin = New System.Windows.Forms.Padding(2)
         Me.DTPFTIODate.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.DTPFTIODate.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.DTPFTIODate.Name = "DTPFTIODate"
         Me.DTPFTIODate.Size = New System.Drawing.Size(250, 37)
         Me.DTPFTIODate.TabIndex = 25
-        Me.DTPFTIODate.Value = New Date(2024, 11, 2, 16, 21, 31, 190)
+        Me.DTPFTIODate.Value = New Date(2025, 4, 9, 0, 0, 0, 0)
         '
         'Label11
         '
@@ -932,7 +1027,7 @@ Partial Class FrmDepartmentHeadControls
         Me.TabPage1.Controls.Add(Me.Panel9)
         Me.TabPage1.Location = New System.Drawing.Point(184, 4)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
         Me.TabPage1.Size = New System.Drawing.Size(985, 483)
         Me.TabPage1.TabIndex = 6
         Me.TabPage1.Text = "Leave Filing"
@@ -966,7 +1061,7 @@ Partial Class FrmDepartmentHeadControls
         Me.DGLeaveFiled.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGLeaveFiled.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DGLeaveFiled.Location = New System.Drawing.Point(253, 307)
-        Me.DGLeaveFiled.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DGLeaveFiled.Margin = New System.Windows.Forms.Padding(2)
         Me.DGLeaveFiled.Name = "DGLeaveFiled"
         Me.DGLeaveFiled.RowHeadersVisible = False
         Me.DGLeaveFiled.RowHeadersWidth = 51
@@ -994,6 +1089,46 @@ Partial Class FrmDepartmentHeadControls
         Me.DGLeaveFiled.ThemeStyle.RowsStyle.Height = 24
         Me.DGLeaveFiled.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DGLeaveFiled.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "filedleaveID"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Leave ID"
+        Me.DataGridViewTextBoxColumn5.MinimumWidth = 6
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "leaveType"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "Type of Leave"
+        Me.DataGridViewTextBoxColumn6.MinimumWidth = 6
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "leavefrom"
+        DataGridViewCellStyle22.Format = "D"
+        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle22
+        Me.DataGridViewTextBoxColumn7.HeaderText = "From"
+        Me.DataGridViewTextBoxColumn7.MinimumWidth = 6
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "leaveto"
+        DataGridViewCellStyle23.Format = "D"
+        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle23
+        Me.DataGridViewTextBoxColumn1.HeaderText = "To"
+        Me.DataGridViewTextBoxColumn1.MinimumWidth = 6
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.DataPropertyName = "status"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Status"
+        Me.DataGridViewTextBoxColumn8.MinimumWidth = 6
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
         '
         'Label17
         '
@@ -1033,7 +1168,7 @@ Partial Class FrmDepartmentHeadControls
         Me.DGLeaveCount.Dock = System.Windows.Forms.DockStyle.Top
         Me.DGLeaveCount.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DGLeaveCount.Location = New System.Drawing.Point(253, 38)
-        Me.DGLeaveCount.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DGLeaveCount.Margin = New System.Windows.Forms.Padding(2)
         Me.DGLeaveCount.Name = "DGLeaveCount"
         Me.DGLeaveCount.RowHeadersVisible = False
         Me.DGLeaveCount.RowHeadersWidth = 51
@@ -1129,7 +1264,7 @@ Partial Class FrmDepartmentHeadControls
         Me.BtnLeaveSave.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnLeaveSave.ForeColor = System.Drawing.Color.White
         Me.BtnLeaveSave.Location = New System.Drawing.Point(0, 436)
-        Me.BtnLeaveSave.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnLeaveSave.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnLeaveSave.Name = "BtnLeaveSave"
         Me.BtnLeaveSave.Size = New System.Drawing.Size(245, 41)
         Me.BtnLeaveSave.TabIndex = 41
@@ -1189,7 +1324,7 @@ Partial Class FrmDepartmentHeadControls
         Me.CBLeaveType.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CBLeaveType.ItemHeight = 30
         Me.CBLeaveType.Location = New System.Drawing.Point(0, 149)
-        Me.CBLeaveType.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CBLeaveType.Margin = New System.Windows.Forms.Padding(2)
         Me.CBLeaveType.Name = "CBLeaveType"
         Me.CBLeaveType.Size = New System.Drawing.Size(245, 36)
         Me.CBLeaveType.TabIndex = 38
@@ -1214,13 +1349,13 @@ Partial Class FrmDepartmentHeadControls
         Me.DTPLeaveTo.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.DTPLeaveTo.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DTPLeaveTo.Location = New System.Drawing.Point(0, 87)
-        Me.DTPLeaveTo.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DTPLeaveTo.Margin = New System.Windows.Forms.Padding(2)
         Me.DTPLeaveTo.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.DTPLeaveTo.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.DTPLeaveTo.Name = "DTPLeaveTo"
         Me.DTPLeaveTo.Size = New System.Drawing.Size(245, 37)
         Me.DTPLeaveTo.TabIndex = 36
-        Me.DTPLeaveTo.Value = New Date(2024, 11, 2, 16, 21, 31, 190)
+        Me.DTPLeaveTo.Value = New Date(2025, 4, 9, 0, 0, 0, 0)
         '
         'Label8
         '
@@ -1242,13 +1377,13 @@ Partial Class FrmDepartmentHeadControls
         Me.DTPLeaveFrom.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.DTPLeaveFrom.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DTPLeaveFrom.Location = New System.Drawing.Point(0, 25)
-        Me.DTPLeaveFrom.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DTPLeaveFrom.Margin = New System.Windows.Forms.Padding(2)
         Me.DTPLeaveFrom.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.DTPLeaveFrom.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.DTPLeaveFrom.Name = "DTPLeaveFrom"
         Me.DTPLeaveFrom.Size = New System.Drawing.Size(245, 37)
         Me.DTPLeaveFrom.TabIndex = 34
-        Me.DTPLeaveFrom.Value = New Date(2024, 11, 2, 16, 21, 31, 190)
+        Me.DTPLeaveFrom.Value = New Date(2025, 4, 9, 0, 0, 0, 0)
         '
         'Label16
         '
@@ -1273,7 +1408,7 @@ Partial Class FrmDepartmentHeadControls
         '
         Me.TPOvertime.Controls.Add(Me.DGOTShowing)
         Me.TPOvertime.Location = New System.Drawing.Point(184, 4)
-        Me.TPOvertime.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.TPOvertime.Margin = New System.Windows.Forms.Padding(2)
         Me.TPOvertime.Name = "TPOvertime"
         Me.TPOvertime.Size = New System.Drawing.Size(985, 483)
         Me.TPOvertime.TabIndex = 0
@@ -1309,7 +1444,7 @@ Partial Class FrmDepartmentHeadControls
         Me.DGOTShowing.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGOTShowing.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DGOTShowing.Location = New System.Drawing.Point(0, 0)
-        Me.DGOTShowing.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DGOTShowing.Margin = New System.Windows.Forms.Padding(2)
         Me.DGOTShowing.Name = "DGOTShowing"
         Me.DGOTShowing.ReadOnly = True
         Me.DGOTShowing.RowHeadersVisible = False
@@ -1345,7 +1480,7 @@ Partial Class FrmDepartmentHeadControls
         Me.TPSalaryAndPayslip.Controls.Add(Me.DGSalaryAndPaySlip)
         Me.TPSalaryAndPayslip.Location = New System.Drawing.Point(184, 4)
         Me.TPSalaryAndPayslip.Name = "TPSalaryAndPayslip"
-        Me.TPSalaryAndPayslip.Padding = New System.Windows.Forms.Padding(3, 3, 3, 3)
+        Me.TPSalaryAndPayslip.Padding = New System.Windows.Forms.Padding(3)
         Me.TPSalaryAndPayslip.Size = New System.Drawing.Size(985, 483)
         Me.TPSalaryAndPayslip.TabIndex = 7
         Me.TPSalaryAndPayslip.Text = "Salary and Payslip"
@@ -1379,7 +1514,7 @@ Partial Class FrmDepartmentHeadControls
         Me.DGSalaryAndPaySlip.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DGSalaryAndPaySlip.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DGSalaryAndPaySlip.Location = New System.Drawing.Point(3, 3)
-        Me.DGSalaryAndPaySlip.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DGSalaryAndPaySlip.Margin = New System.Windows.Forms.Padding(2)
         Me.DGSalaryAndPaySlip.Name = "DGSalaryAndPaySlip"
         Me.DGSalaryAndPaySlip.RowHeadersVisible = False
         Me.DGSalaryAndPaySlip.RowHeadersWidth = 51
@@ -1464,7 +1599,7 @@ Partial Class FrmDepartmentHeadControls
         Me.Panel1.Controls.Add(Me.Panel2)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel1.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(1173, 167)
         Me.Panel1.TabIndex = 4
@@ -1516,7 +1651,7 @@ Partial Class FrmDepartmentHeadControls
         Me.Panel8.Controls.Add(Me.DisplayTime)
         Me.Panel8.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel8.Location = New System.Drawing.Point(950, 0)
-        Me.Panel8.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel8.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel8.Name = "Panel8"
         Me.Panel8.Size = New System.Drawing.Size(223, 167)
         Me.Panel8.TabIndex = 1
@@ -1555,7 +1690,7 @@ Partial Class FrmDepartmentHeadControls
         Me.Panel2.Controls.Add(Me.Panel4)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(170, 167)
         Me.Panel2.TabIndex = 0
@@ -1566,7 +1701,7 @@ Partial Class FrmDepartmentHeadControls
         Me.Guna2CirclePictureBox1.Image = CType(resources.GetObject("Guna2CirclePictureBox1.Image"), System.Drawing.Image)
         Me.Guna2CirclePictureBox1.ImageRotate = 0!
         Me.Guna2CirclePictureBox1.Location = New System.Drawing.Point(22, 24)
-        Me.Guna2CirclePictureBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2CirclePictureBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2CirclePictureBox1.Name = "Guna2CirclePictureBox1"
         Me.Guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle
         Me.Guna2CirclePictureBox1.Size = New System.Drawing.Size(126, 119)
@@ -1578,7 +1713,7 @@ Partial Class FrmDepartmentHeadControls
         '
         Me.Panel7.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel7.Location = New System.Drawing.Point(0, 24)
-        Me.Panel7.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel7.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(22, 119)
         Me.Panel7.TabIndex = 3
@@ -1587,7 +1722,7 @@ Partial Class FrmDepartmentHeadControls
         '
         Me.Panel6.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel6.Location = New System.Drawing.Point(148, 24)
-        Me.Panel6.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel6.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(22, 119)
         Me.Panel6.TabIndex = 2
@@ -1596,7 +1731,7 @@ Partial Class FrmDepartmentHeadControls
         '
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel5.Location = New System.Drawing.Point(0, 143)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(170, 24)
         Me.Panel5.TabIndex = 1
@@ -1605,148 +1740,13 @@ Partial Class FrmDepartmentHeadControls
         '
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(170, 24)
         Me.Panel4.TabIndex = 0
         '
         'Timer2
         '
-        '
-        'Column6
-        '
-        Me.Column6.DataPropertyName = "attendanceID"
-        Me.Column6.HeaderText = "Attendance ID"
-        Me.Column6.MinimumWidth = 6
-        Me.Column6.Name = "Column6"
-        Me.Column6.ReadOnly = True
-        Me.Column6.Visible = False
-        '
-        'Column1
-        '
-        Me.Column1.DataPropertyName = "employeeNumber"
-        Me.Column1.HeaderText = "Associate Number"
-        Me.Column1.MinimumWidth = 8
-        Me.Column1.Name = "Column1"
-        Me.Column1.ReadOnly = True
-        '
-        'Column2
-        '
-        Me.Column2.DataPropertyName = "fullname"
-        Me.Column2.HeaderText = "Full Name"
-        Me.Column2.MinimumWidth = 8
-        Me.Column2.Name = "Column2"
-        Me.Column2.ReadOnly = True
-        '
-        'Column3
-        '
-        Me.Column3.DataPropertyName = "date"
-        DataGridViewCellStyle3.Format = "D"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.Column3.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Column3.HeaderText = "Date"
-        Me.Column3.MinimumWidth = 8
-        Me.Column3.Name = "Column3"
-        Me.Column3.ReadOnly = True
-        '
-        'Column4
-        '
-        Me.Column4.DataPropertyName = "login"
-        DataGridViewCellStyle4.Format = "T"
-        Me.Column4.DefaultCellStyle = DataGridViewCellStyle4
-        Me.Column4.HeaderText = "Time In"
-        Me.Column4.MinimumWidth = 8
-        Me.Column4.Name = "Column4"
-        Me.Column4.ReadOnly = True
-        '
-        'Column5
-        '
-        Me.Column5.DataPropertyName = "logout"
-        DataGridViewCellStyle5.Format = "T"
-        Me.Column5.DefaultCellStyle = DataGridViewCellStyle5
-        Me.Column5.HeaderText = "Time Out"
-        Me.Column5.MinimumWidth = 8
-        Me.Column5.Name = "Column5"
-        Me.Column5.ReadOnly = True
-        '
-        'Column7
-        '
-        Me.Column7.DataPropertyName = "ftioID"
-        Me.Column7.HeaderText = "FTIO ID"
-        Me.Column7.MinimumWidth = 6
-        Me.Column7.Name = "Column7"
-        '
-        'Column8
-        '
-        Me.Column8.DataPropertyName = "date"
-        DataGridViewCellStyle18.Format = "D"
-        DataGridViewCellStyle18.NullValue = Nothing
-        Me.Column8.DefaultCellStyle = DataGridViewCellStyle18
-        Me.Column8.HeaderText = "Date"
-        Me.Column8.MinimumWidth = 6
-        Me.Column8.Name = "Column8"
-        '
-        'Column9
-        '
-        Me.Column9.DataPropertyName = "classification"
-        Me.Column9.HeaderText = "Classification"
-        Me.Column9.MinimumWidth = 6
-        Me.Column9.Name = "Column9"
-        '
-        'Column10
-        '
-        Me.Column10.DataPropertyName = "reason"
-        Me.Column10.HeaderText = "Reason"
-        Me.Column10.MinimumWidth = 6
-        Me.Column10.Name = "Column10"
-        '
-        'Column11
-        '
-        Me.Column11.DataPropertyName = "status"
-        Me.Column11.HeaderText = "Status"
-        Me.Column11.MinimumWidth = 6
-        Me.Column11.Name = "Column11"
-        Me.Column11.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "filedleaveID"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Leave ID"
-        Me.DataGridViewTextBoxColumn5.MinimumWidth = 6
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "leaveType"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Type of Leave"
-        Me.DataGridViewTextBoxColumn6.MinimumWidth = 6
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "leavefrom"
-        DataGridViewCellStyle22.Format = "D"
-        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle22
-        Me.DataGridViewTextBoxColumn7.HeaderText = "From"
-        Me.DataGridViewTextBoxColumn7.MinimumWidth = 6
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "leaveto"
-        DataGridViewCellStyle23.Format = "D"
-        Me.DataGridViewTextBoxColumn1.DefaultCellStyle = DataGridViewCellStyle23
-        Me.DataGridViewTextBoxColumn1.HeaderText = "To"
-        Me.DataGridViewTextBoxColumn1.MinimumWidth = 6
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "status"
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Status"
-        Me.DataGridViewTextBoxColumn8.MinimumWidth = 6
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
         '
         'FrmDepartmentHeadControls
         '
@@ -1757,7 +1757,7 @@ Partial Class FrmDepartmentHeadControls
         Me.Controls.Add(Me.TC)
         Me.Controls.Add(Me.Panel1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FrmDepartmentHeadControls"
         Me.TC.ResumeLayout(False)
         Me.TPDepartment.ResumeLayout(False)
