@@ -202,7 +202,7 @@ Partial Class FrmAddEmployee
         Me.CbAssociateStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(112, Byte), Integer))
         Me.CbAssociateStatus.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(45, Byte), Integer), CType(CType(52, Byte), Integer), CType(CType(54, Byte), Integer))
         Me.CbAssociateStatus.ItemHeight = 30
-        Me.CbAssociateStatus.Items.AddRange(New Object() {"Probationary", "Regular", "Resigned"})
+        Me.CbAssociateStatus.Items.AddRange(New Object() {"Probationary", "Regular"})
         Me.CbAssociateStatus.Location = New System.Drawing.Point(929, 207)
         Me.CbAssociateStatus.Name = "CbAssociateStatus"
         Me.CbAssociateStatus.Size = New System.Drawing.Size(917, 36)

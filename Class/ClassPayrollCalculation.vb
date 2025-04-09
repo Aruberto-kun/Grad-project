@@ -812,6 +812,7 @@ Public Class ClassPayrollCalculation
             End With
             MsgBox("Payroll saved!")
             LoadEmployees(FrmPayrollCalculation.DGVEmployeeList)
+            FrmPayroll.Close()
             txtot.Clear()
             txtallowance.Clear()
             txtincentives.Clear()
@@ -1053,9 +1054,6 @@ Public Class ClassPayrollCalculation
 
                 Dim adjusted As Decimal = Val(FrmPayroll.TxtGrossPay.Text) - (Val(FrmPayroll.TxtSSS.Text) + Val(FrmPayroll.TxtPhilHealth.Text) + Val(FrmPayroll.TxtPagIbig.Text))
                 Dim dailytaxable As Decimal = adjusted / compensateddays
-                MsgBox(adjusted)
-                MsgBox(compensateddays)
-                MsgBox(dailytaxable)
                 ds.Clear()
                 RunQuery("Select * from tbltaxdaily WHERE minSalary <= '" & dailytaxable & "' and maxSalary >= '" & dailytaxable & "'")
                 If ds.Tables("querytable") IsNot Nothing AndAlso ds.Tables("querytable").Rows.Count > 0 Then

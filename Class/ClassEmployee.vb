@@ -920,7 +920,7 @@ Public Class ClassEmployee
     End Sub
     Public Shared Sub LoadSalaryHistory(dg As Guna2DataGridView)
         Try
-            RunQuery("Select salary,date from tblsalaryhistory order by date DESC  where employeeID= '" & employeeID & "' ")
+            RunQuery("Select salary,date from tblsalaryhistory where employeeID= '" & employeeID & "' order by date DESC")
             dg.DataSource = ds.Tables("querytable")
         Catch ex As Exception
 
