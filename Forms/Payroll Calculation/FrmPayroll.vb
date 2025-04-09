@@ -61,30 +61,7 @@ Public Class FrmPayroll
                 Exit Sub
             End If
         Next
-
-        'Increase
-        ClassPayrollCalculation.GetOvertime(DGAttendance, TxtOvertime)
-        ClassPayrollCalculation.GetIncentives(DGIncentive, TxtIncentives)
-        ClassPayrollCalculation.GetNightDifferential(DGAttendance, TxtNightDifferential)
-        ClassPayrollCalculation.TotalIncrease(TxtOvertime, TxtAllowance, TxtIncentives, TxtNightDifferential, TxtTotalIncrease)
-
-        'Gross Pay
-        ClassPayrollCalculation.GetGrossPay(DGAttendance, TxtGrossPay)
-
-
-        'Deductions
-        ClassPayrollCalculation.GetLate(DGAttendance, TxtLate)
-        ClassPayrollCalculation.GetUndertime(DGAttendance, TxtUndertime)
-        ClassPayrollCalculation.GetVoluntaryContrib(DGVoluntary, TxtVoluntaryContributions)
-        ClassPayrollCalculation.GetSSS(TxtGrossPay, TxtSSS)
-        ClassPayrollCalculation.GetPhilhealth(TxtGrossPay, TxtPhilHealth)
-        ClassPayrollCalculation.GetPagIbig(TxtPagIbig)
-        ClassPayrollCalculation.TotalDeductions(TxtLate, TxtUndertime, TxtVoluntaryContributions, TxtMandatory, TxtTotalDeduc)
-
-        'ClassPayrollCalculation.GetTax(TxtGrossPay, TxtTax, TxtSSS, TxtPhilHealth, TxtPagIbig)
-        ClassPayrollCalculation.TotalMandatoryContri(TxtSSS, TxtPhilHealth, TxtPagIbig, TxtTax, TxtMandatory)
-
-        ClassPayrollCalculation.GetNetPay(TxtGrossPay, TxtTotalIncrease, TxtTotalDeduc, TxtNetPay)
+        ClassPayrollCalculation.CalculateSalaryFinal()
     End Sub
 
     Private Sub Guna2Button2_Click(sender As Object, e As EventArgs) Handles Guna2Button2.Click
