@@ -23,18 +23,15 @@ Partial Class FrmEmployee
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.LogOffToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.CbEmployeeStatus = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.Panel9 = New System.Windows.Forms.Panel()
         Me.TxtSearchEmployees = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.BtnAddAssociate = New Guna.UI2.WinForms.Guna2Button()
@@ -98,48 +95,6 @@ Partial Class FrmEmployee
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(5, 843)
         Me.Panel3.TabIndex = 11
-        '
-        'Label4
-        '
-        Me.Label4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(505, 4)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(156, 41)
-        Me.Label4.TabIndex = 9
-        Me.Label4.Text = "Status:"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'CbEmployeeStatus
-        '
-        Me.CbEmployeeStatus.BackColor = System.Drawing.Color.Transparent
-        Me.CbEmployeeStatus.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.CbEmployeeStatus.BorderRadius = 5
-        Me.CbEmployeeStatus.Dock = System.Windows.Forms.DockStyle.Right
-        Me.CbEmployeeStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.CbEmployeeStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CbEmployeeStatus.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.CbEmployeeStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.CbEmployeeStatus.FocusedState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.CbEmployeeStatus.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CbEmployeeStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.CbEmployeeStatus.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.CbEmployeeStatus.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.CbEmployeeStatus.ItemHeight = 33
-        Me.CbEmployeeStatus.Items.AddRange(New Object() {"All", "Probationary", "Regular", "Resigned"})
-        Me.CbEmployeeStatus.ItemsAppearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.CbEmployeeStatus.Location = New System.Drawing.Point(661, 4)
-        Me.CbEmployeeStatus.Name = "CbEmployeeStatus"
-        Me.CbEmployeeStatus.Size = New System.Drawing.Size(169, 39)
-        Me.CbEmployeeStatus.TabIndex = 10
-        '
-        'Panel9
-        '
-        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel9.Location = New System.Drawing.Point(830, 4)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(4, 41)
-        Me.Panel9.TabIndex = 8
         '
         'TxtSearchEmployees
         '
@@ -225,9 +180,6 @@ Partial Class FrmEmployee
         '
         'Panel57
         '
-        Me.Panel57.Controls.Add(Me.Label4)
-        Me.Panel57.Controls.Add(Me.CbEmployeeStatus)
-        Me.Panel57.Controls.Add(Me.Panel9)
         Me.Panel57.Controls.Add(Me.TxtSearchEmployees)
         Me.Panel57.Controls.Add(Me.Panel2)
         Me.Panel57.Controls.Add(Me.BtnAddAssociate)
@@ -246,27 +198,27 @@ Partial Class FrmEmployee
         Me.DgEmployee.AllowUserToDeleteRows = False
         Me.DgEmployee.AllowUserToResizeColumns = False
         Me.DgEmployee.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.DgEmployee.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        Me.DgEmployee.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DgEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgEmployee.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgEmployee.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.DgEmployee.ColumnHeadersHeight = 40
         Me.DgEmployee.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column10, Me.Column11, Me.Column9})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgEmployee.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgEmployee.DefaultCellStyle = DataGridViewCellStyle6
         Me.DgEmployee.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgEmployee.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgEmployee.Location = New System.Drawing.Point(5, 49)
@@ -415,9 +367,6 @@ Partial Class FrmEmployee
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents Label4 As Label
-    Friend WithEvents CbEmployeeStatus As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents Panel9 As Panel
     Friend WithEvents TxtSearchEmployees As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents BtnAddAssociate As Guna.UI2.WinForms.Guna2Button

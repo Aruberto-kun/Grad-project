@@ -157,4 +157,16 @@ Public Class FrmEmployee
             Exit Sub
         End Try
     End Sub
+
+    Private Sub TxtSearchEmployees_TextChanged(sender As Object, e As EventArgs) Handles TxtSearchEmployees.TextChanged
+        Try
+            If String.IsNullOrEmpty(TxtSearchEmployees.Text) Then
+                ClassEmployee.LoadEmployee(DgEmployee)
+            Else
+                ClassEmployee.SearchEmployee(DgEmployee, TxtSearchEmployees.Text)
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
 End Class
