@@ -23,17 +23,15 @@ Partial Class FrmEmployee
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.ContextMenuStrip1 = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LogOffToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Panel5 = New System.Windows.Forms.Panel()
         Me.Panel3 = New System.Windows.Forms.Panel()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.CbEmployeeStatus = New Guna.UI2.WinForms.Guna2ComboBox()
-        Me.Panel9 = New System.Windows.Forms.Panel()
         Me.TxtSearchEmployees = New Guna.UI2.WinForms.Guna2TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.BtnAddAssociate = New Guna.UI2.WinForms.Guna2Button()
@@ -54,7 +52,6 @@ Partial Class FrmEmployee
         Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LogOffToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContextMenuStrip1.SuspendLayout()
         Me.Panel57.SuspendLayout()
         CType(Me.DgEmployee, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,76 +66,35 @@ Partial Class FrmEmployee
         Me.ContextMenuStrip1.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.ContextMenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1, Me.LogOffToolStripMenuItem})
         Me.ContextMenuStrip1.Name = "ContextMenuStrip1"
-        Me.ContextMenuStrip1.Size = New System.Drawing.Size(180, 52)
+        Me.ContextMenuStrip1.Size = New System.Drawing.Size(156, 48)
         '
         'ToolStripMenuItem1
         '
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(179, 24)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(155, 22)
         Me.ToolStripMenuItem1.Text = "&Reset Password"
+        '
+        'LogOffToolStripMenuItem
+        '
+        Me.LogOffToolStripMenuItem.Name = "LogOffToolStripMenuItem"
+        Me.LogOffToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
+        Me.LogOffToolStripMenuItem.Text = "&Log Off"
         '
         'Panel5
         '
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel5.Location = New System.Drawing.Point(7, 1092)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel5.Location = New System.Drawing.Point(5, 887)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(1834, 6)
+        Me.Panel5.Size = New System.Drawing.Size(1376, 5)
         Me.Panel5.TabIndex = 13
         '
         'Panel3
         '
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel3.Location = New System.Drawing.Point(1841, 60)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel3.Location = New System.Drawing.Point(1381, 49)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(7, 1038)
+        Me.Panel3.Size = New System.Drawing.Size(5, 843)
         Me.Panel3.TabIndex = 11
-        '
-        'Label4
-        '
-        Me.Label4.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Label4.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(675, 5)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(208, 50)
-        Me.Label4.TabIndex = 9
-        Me.Label4.Text = "Status:"
-        Me.Label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight
-        '
-        'CbEmployeeStatus
-        '
-        Me.CbEmployeeStatus.BackColor = System.Drawing.Color.Transparent
-        Me.CbEmployeeStatus.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.CbEmployeeStatus.BorderRadius = 5
-        Me.CbEmployeeStatus.Dock = System.Windows.Forms.DockStyle.Right
-        Me.CbEmployeeStatus.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed
-        Me.CbEmployeeStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CbEmployeeStatus.FocusedColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.CbEmployeeStatus.FocusedState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.CbEmployeeStatus.FocusedState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.CbEmployeeStatus.Font = New System.Drawing.Font("Segoe UI", 10.0!)
-        Me.CbEmployeeStatus.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.CbEmployeeStatus.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.CbEmployeeStatus.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.CbEmployeeStatus.ItemHeight = 33
-        Me.CbEmployeeStatus.Items.AddRange(New Object() {"All", "Probationary", "Regular", "Resigned"})
-        Me.CbEmployeeStatus.ItemsAppearance.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.CbEmployeeStatus.Location = New System.Drawing.Point(883, 5)
-        Me.CbEmployeeStatus.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.CbEmployeeStatus.Name = "CbEmployeeStatus"
-        Me.CbEmployeeStatus.Size = New System.Drawing.Size(224, 39)
-        Me.CbEmployeeStatus.TabIndex = 10
-        '
-        'Panel9
-        '
-        Me.Panel9.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel9.Location = New System.Drawing.Point(1107, 5)
-        Me.Panel9.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
-        Me.Panel9.Name = "Panel9"
-        Me.Panel9.Size = New System.Drawing.Size(5, 50)
-        Me.Panel9.TabIndex = 8
         '
         'TxtSearchEmployees
         '
@@ -157,22 +113,21 @@ Partial Class FrmEmployee
         Me.TxtSearchEmployees.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
         Me.TxtSearchEmployees.HoverState.BorderColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
         Me.TxtSearchEmployees.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(42, Byte), Integer), CType(CType(57, Byte), Integer))
-        Me.TxtSearchEmployees.Location = New System.Drawing.Point(1112, 5)
-        Me.TxtSearchEmployees.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TxtSearchEmployees.Location = New System.Drawing.Point(834, 4)
+        Me.TxtSearchEmployees.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TxtSearchEmployees.Name = "TxtSearchEmployees"
         Me.TxtSearchEmployees.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtSearchEmployees.PlaceholderText = "Search Employees"
         Me.TxtSearchEmployees.SelectedText = ""
-        Me.TxtSearchEmployees.Size = New System.Drawing.Size(432, 50)
+        Me.TxtSearchEmployees.Size = New System.Drawing.Size(324, 41)
         Me.TxtSearchEmployees.TabIndex = 7
         '
         'Panel2
         '
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel2.Location = New System.Drawing.Point(1544, 5)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel2.Location = New System.Drawing.Point(1158, 4)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(7, 50)
+        Me.Panel2.Size = New System.Drawing.Size(5, 41)
         Me.Panel2.TabIndex = 6
         '
         'BtnAddAssociate
@@ -185,10 +140,9 @@ Partial Class FrmEmployee
         Me.BtnAddAssociate.Dock = System.Windows.Forms.DockStyle.Right
         Me.BtnAddAssociate.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnAddAssociate.ForeColor = System.Drawing.Color.White
-        Me.BtnAddAssociate.Location = New System.Drawing.Point(1551, 5)
-        Me.BtnAddAssociate.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BtnAddAssociate.Location = New System.Drawing.Point(1163, 4)
         Me.BtnAddAssociate.Name = "BtnAddAssociate"
-        Me.BtnAddAssociate.Size = New System.Drawing.Size(292, 50)
+        Me.BtnAddAssociate.Size = New System.Drawing.Size(219, 41)
         Me.BtnAddAssociate.TabIndex = 5
         Me.BtnAddAssociate.Text = "NEW ASSOCIATE"
         '
@@ -196,43 +150,36 @@ Partial Class FrmEmployee
         '
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1843, 5)
+        Me.Panel1.Size = New System.Drawing.Size(1382, 4)
         Me.Panel1.TabIndex = 2
         '
         'Panel61
         '
         Me.Panel61.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel61.Location = New System.Drawing.Point(0, 55)
-        Me.Panel61.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel61.Location = New System.Drawing.Point(0, 45)
         Me.Panel61.Name = "Panel61"
-        Me.Panel61.Size = New System.Drawing.Size(1843, 5)
+        Me.Panel61.Size = New System.Drawing.Size(1382, 4)
         Me.Panel61.TabIndex = 1
         '
         'Panel62
         '
         Me.Panel62.Dock = System.Windows.Forms.DockStyle.Right
-        Me.Panel62.Location = New System.Drawing.Point(1843, 0)
-        Me.Panel62.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel62.Location = New System.Drawing.Point(1382, 0)
         Me.Panel62.Name = "Panel62"
-        Me.Panel62.Size = New System.Drawing.Size(5, 60)
+        Me.Panel62.Size = New System.Drawing.Size(4, 49)
         Me.Panel62.TabIndex = 0
         '
         'Panel4
         '
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel4.Location = New System.Drawing.Point(0, 60)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Panel4.Location = New System.Drawing.Point(0, 49)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(7, 1038)
+        Me.Panel4.Size = New System.Drawing.Size(5, 843)
         Me.Panel4.TabIndex = 12
         '
         'Panel57
         '
-        Me.Panel57.Controls.Add(Me.Label4)
-        Me.Panel57.Controls.Add(Me.CbEmployeeStatus)
-        Me.Panel57.Controls.Add(Me.Panel9)
         Me.Panel57.Controls.Add(Me.TxtSearchEmployees)
         Me.Panel57.Controls.Add(Me.Panel2)
         Me.Panel57.Controls.Add(Me.BtnAddAssociate)
@@ -241,9 +188,8 @@ Partial Class FrmEmployee
         Me.Panel57.Controls.Add(Me.Panel62)
         Me.Panel57.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel57.Location = New System.Drawing.Point(0, 0)
-        Me.Panel57.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Panel57.Name = "Panel57"
-        Me.Panel57.Size = New System.Drawing.Size(1848, 60)
+        Me.Panel57.Size = New System.Drawing.Size(1386, 49)
         Me.Panel57.TabIndex = 9
         '
         'DgEmployee
@@ -252,37 +198,36 @@ Partial Class FrmEmployee
         Me.DgEmployee.AllowUserToDeleteRows = False
         Me.DgEmployee.AllowUserToResizeColumns = False
         Me.DgEmployee.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
-        Me.DgEmployee.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
+        Me.DgEmployee.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DgEmployee.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.White
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DgEmployee.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(88, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.White
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DgEmployee.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.DgEmployee.ColumnHeadersHeight = 40
         Me.DgEmployee.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2, Me.Column3, Me.Column4, Me.Column5, Me.Column6, Me.Column7, Me.Column8, Me.Column10, Me.Column11, Me.Column9})
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.DgEmployee.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(71, Byte), Integer), CType(CType(69, Byte), Integer), CType(CType(94, Byte), Integer))
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.DgEmployee.DefaultCellStyle = DataGridViewCellStyle6
         Me.DgEmployee.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgEmployee.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.DgEmployee.Location = New System.Drawing.Point(7, 60)
-        Me.DgEmployee.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DgEmployee.Location = New System.Drawing.Point(5, 49)
         Me.DgEmployee.MultiSelect = False
         Me.DgEmployee.Name = "DgEmployee"
         Me.DgEmployee.ReadOnly = True
         Me.DgEmployee.RowHeadersVisible = False
         Me.DgEmployee.RowHeadersWidth = 51
-        Me.DgEmployee.Size = New System.Drawing.Size(1834, 1032)
+        Me.DgEmployee.Size = New System.Drawing.Size(1376, 838)
         Me.DgEmployee.TabIndex = 10
         Me.DgEmployee.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.DgEmployee.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -397,17 +342,11 @@ Partial Class FrmEmployee
         Me.Column9.Name = "Column9"
         Me.Column9.ReadOnly = True
         '
-        'LogOffToolStripMenuItem
-        '
-        Me.LogOffToolStripMenuItem.Name = "LogOffToolStripMenuItem"
-        Me.LogOffToolStripMenuItem.Size = New System.Drawing.Size(179, 24)
-        Me.LogOffToolStripMenuItem.Text = "&Log Off"
-        '
         'FrmEmployee
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1848, 1098)
+        Me.ClientSize = New System.Drawing.Size(1386, 892)
         Me.ControlBox = False
         Me.Controls.Add(Me.DgEmployee)
         Me.Controls.Add(Me.Panel5)
@@ -415,7 +354,7 @@ Partial Class FrmEmployee
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel57)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.Name = "FrmEmployee"
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.Panel57.ResumeLayout(False)
@@ -428,9 +367,6 @@ Partial Class FrmEmployee
     Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Panel3 As Panel
-    Friend WithEvents Label4 As Label
-    Friend WithEvents CbEmployeeStatus As Guna.UI2.WinForms.Guna2ComboBox
-    Friend WithEvents Panel9 As Panel
     Friend WithEvents TxtSearchEmployees As Guna.UI2.WinForms.Guna2TextBox
     Friend WithEvents Panel2 As Panel
     Friend WithEvents BtnAddAssociate As Guna.UI2.WinForms.Guna2Button

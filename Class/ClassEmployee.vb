@@ -41,6 +41,34 @@ Public Class ClassEmployee
             MsgBox(ex.Message)
         End Try
     End Sub
+
+    Public Shared Sub SearchEmployee(dg As DataGridView, search As String)
+        Try
+            RunQuery("Select a.employeeID,a.employeeNumber,a.rfidnumber,CONCAT(a.firstname,' ',a.lastname) as fullname,a.firstname,a.lastname,b.departmentName,if(a.positionID=0,NULL,c.positionName) as positionName,d.salary,d.type,a.status from tblemployee a
+                      LEFT JOIN tbldepartment b on b.departmentID = a.departmentID
+                      LEFT JOIN tblposition c on c.positionID = a.positionID
+                      LEFT JOIN tblsalary d on d.employeeID = a.employeeID
+                      WHERE a.firstname LIKE '%" & search & "%' OR a.lastname LIKE '%" & search & "%' OR a.rfidnumber LIKE '%" & search & "%' OR a.employeeNumber LIKE '%" & search & "%' OR a.status LIKE '%" & search & "%'
+                      ORDER by a.employeeID")
+            dg.DataSource = ds.Tables("querytable")
+
+            ' Check if the button column already exists to avoid adding it multiple times
+            If dg.Columns("btnViewSalaryHistory") Is Nothing Then
+                ' Create a new DataGridViewButtonColumn
+                Dim btnColumn As New DataGridViewButtonColumn()
+                btnColumn.HeaderText = "" ' Blank header text
+                btnColumn.Text = "View Salary History" ' Button text
+                btnColumn.Name = "btnViewSalaryHistory" ' Name of the column
+                btnColumn.UseColumnTextForButtonValue = True ' Use the same text for all buttons
+
+                ' Add the button column to the DataGridView
+                dg.Columns.Add(btnColumn)
+            End If
+        Catch ex As Exception
+            MsgBox(ex.Message)
+        End Try
+    End Sub
+
     Public Shared Sub LoadVoluntary(dg As DataGridView)
         Try
             RunQuery("SELECT v.voluntaryID, v.name, COALESCE(ev.amount, 0) AS amount FROM tblvoluntary v LEFT JOIN tblempvoluntary ev ON v.voluntaryID = ev.voluntaryID AND ev.employeeID = '" & employeeID & "'")
