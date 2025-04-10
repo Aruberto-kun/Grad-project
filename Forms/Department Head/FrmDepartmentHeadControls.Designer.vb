@@ -1036,6 +1036,8 @@ Partial Class FrmDepartmentHeadControls
         '
         Me.DGLeaveFiled.AllowUserToAddRows = False
         Me.DGLeaveFiled.AllowUserToDeleteRows = False
+        Me.DGLeaveFiled.AllowUserToResizeColumns = False
+        Me.DGLeaveFiled.AllowUserToResizeRows = False
         DataGridViewCellStyle20.BackColor = System.Drawing.Color.White
         Me.DGLeaveFiled.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle20
         Me.DGLeaveFiled.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -1148,6 +1150,8 @@ Partial Class FrmDepartmentHeadControls
         '
         Me.DGLeaveCount.AllowUserToAddRows = False
         Me.DGLeaveCount.AllowUserToDeleteRows = False
+        Me.DGLeaveCount.AllowUserToResizeColumns = False
+        Me.DGLeaveCount.AllowUserToResizeRows = False
         DataGridViewCellStyle25.BackColor = System.Drawing.Color.White
         Me.DGLeaveCount.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle25
         Me.DGLeaveCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
