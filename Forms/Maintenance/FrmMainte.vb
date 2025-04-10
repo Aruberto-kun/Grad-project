@@ -50,6 +50,10 @@ Public Class FrmMainte
             MessageBox.Show("Invalid user name.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
             TxtUsername.Clear()
             Exit Sub
+        ElseIf Not Regex.IsMatch(TxtUsername.Text, userName) Then
+            MessageBox.Show("Invalid user name.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            TxtUsername.Clear()
+            Exit Sub
         Else
             NewUser(TxtFirstname.Text, TxtLastname.Text, TxtUsername.Text)
             Auditing($"{FrmMain.fullName} created a new user account for {TxtFirstname.Text} {TxtLastname.Text}", "Others")
