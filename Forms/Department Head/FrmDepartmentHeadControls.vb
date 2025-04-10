@@ -46,14 +46,25 @@ Public Class FrmDepartmentHeadControls
             Dim timeIn As TimeSpan = TimeSpan.Parse(MtbTimeIn.Text)
             Dim timeOut As TimeSpan = TimeSpan.Parse(MtbTimeOut.Text)
 
+            If timeIn = timeOut Then
+                MessageBox.Show("Time In and Time Out cannot be the same.")
+                Exit Sub
+            End If
+
             If timeIn >= timeOut Then
                 MessageBox.Show("Time In must be earlier than Time Out.")
                 Exit Sub
             End If
 
             Dim duration As TimeSpan = timeOut - timeIn
+
             If duration.TotalHours <> 5 Then
                 MessageBox.Show("Schedule must be exactly 5 hours.")
+                Exit Sub
+            End If
+
+            If duration.TotalHours > 8 Then
+                MessageBox.Show("Maximum allowed working hours is 8.")
                 Exit Sub
             End If
 
