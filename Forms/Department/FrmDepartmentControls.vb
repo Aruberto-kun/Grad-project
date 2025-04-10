@@ -162,7 +162,7 @@
                       join tblleave c on c.leaveID = a.leaveID
                       where a.status = 'Pending' and a.employeeID in (Select employeeID from tbldepartmenthead)")
             If ds.Tables("querytable").Rows.Count > 0 Then
-                Dim fileleave As Integer = ds.Tables("quertytable").Rows.Count
+                Dim fileleave As Integer = ds.Tables("querytable").Rows.Count
                 If fileleaverowcount <> fileleave Then
                     ClassDepartment.LoadFiledLeave(DGFiledLeave)
                 End If

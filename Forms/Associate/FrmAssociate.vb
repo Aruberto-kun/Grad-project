@@ -49,6 +49,9 @@ Public Class FrmAssociate
     End Sub
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnLeaveSave.Click
+
+
+
         If String.IsNullOrEmpty(CBLeaveType.SelectedIndex = -1) Then
             MsgEmptyField()
             Exit Sub
@@ -62,6 +65,11 @@ Public Class FrmAssociate
             MessageBox.Show("Insufficient leave credits.")
             Exit Sub
         End If
+        Dim selectedDate As DateTime = DTPLeaveFrom.Value
+        Dim leaveFrom As String = selectedDate.ToString("dddd")
+
+
+
 
         ClassAssociates.FileLeave(DTPLeaveFrom, DTPLeaveTo, CBLeaveType, TxtLeaveReason)
         ClassAssociates.LeaveCount(DGLeaveCount)

@@ -305,7 +305,7 @@ Public Class FrmDepartmentHeadControls
 
         ClassDepartmentHeadControls.FileLeave(DTPLeaveFrom, DTPLeaveTo, CBLeaveType, TxtLeaveReason)
         ClassDepartmentHeadControls.LeaveCount(DGLeaveCount)
-        ClassDepartmentHeadControls.LoadFiledLeave(DGLeaveFiled)
+        ClassDepartmentHeadControls.LoadFiledLeave(DGFiledLeave)
         ClassDepartmentHeadControls.LoadMyFiledLeave(DGLeaveFiled)
     End Sub
     Private Sub TPSalaryAndPayslip_Enter(sender As Object, e As EventArgs) Handles TPSalaryAndPayslip.Enter

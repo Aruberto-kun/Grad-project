@@ -374,7 +374,6 @@ Partial Class FrmPayrollCalculation
         Me.TxtPayrollPeriodName.Location = New System.Drawing.Point(0, 39)
         Me.TxtPayrollPeriodName.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TxtPayrollPeriodName.Name = "TxtPayrollPeriodName"
-        Me.TxtPayrollPeriodName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtPayrollPeriodName.PlaceholderText = ""
         Me.TxtPayrollPeriodName.SelectedText = ""
         Me.TxtPayrollPeriodName.Size = New System.Drawing.Size(573, 36)
@@ -452,7 +451,6 @@ Partial Class FrmPayrollCalculation
         DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DGVEmployeeList.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.DGVEmployeeList.ColumnHeadersHeight = 30
-        Me.DGVEmployeeList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.DGVEmployeeList.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column2, Me.Column1, Me.Column12, Me.Column13, Me.Column14})
         DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
@@ -470,6 +468,7 @@ Partial Class FrmPayrollCalculation
         Me.DGVEmployeeList.ReadOnly = True
         Me.DGVEmployeeList.RowHeadersVisible = False
         Me.DGVEmployeeList.RowHeadersWidth = 51
+        Me.DGVEmployeeList.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.DGVEmployeeList.Size = New System.Drawing.Size(1262, 817)
         Me.DGVEmployeeList.TabIndex = 81
         Me.DGVEmployeeList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
@@ -483,7 +482,7 @@ Partial Class FrmPayrollCalculation
         Me.DGVEmployeeList.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.DGVEmployeeList.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DGVEmployeeList.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.DGVEmployeeList.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.DGVEmployeeList.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DGVEmployeeList.ThemeStyle.HeaderStyle.Height = 30
         Me.DGVEmployeeList.ThemeStyle.ReadOnly = True
         Me.DGVEmployeeList.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
@@ -585,7 +584,6 @@ Partial Class FrmPayrollCalculation
         Me.TxtPayrollPeriod.Location = New System.Drawing.Point(838, 0)
         Me.TxtPayrollPeriod.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TxtPayrollPeriod.Name = "TxtPayrollPeriod"
-        Me.TxtPayrollPeriod.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtPayrollPeriod.PlaceholderText = ""
         Me.TxtPayrollPeriod.ReadOnly = True
         Me.TxtPayrollPeriod.SelectedText = ""

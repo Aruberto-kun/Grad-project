@@ -898,7 +898,6 @@ Partial Class FrmDepartmentHeadControls
         Me.TxtFTIOReason.Location = New System.Drawing.Point(0, 199)
         Me.TxtFTIOReason.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtFTIOReason.Name = "TxtFTIOReason"
-        Me.TxtFTIOReason.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtFTIOReason.PlaceholderText = ""
         Me.TxtFTIOReason.SelectedText = ""
         Me.TxtFTIOReason.Size = New System.Drawing.Size(250, 37)
@@ -1063,6 +1062,7 @@ Partial Class FrmDepartmentHeadControls
         Me.DGLeaveFiled.Location = New System.Drawing.Point(253, 307)
         Me.DGLeaveFiled.Margin = New System.Windows.Forms.Padding(2)
         Me.DGLeaveFiled.Name = "DGLeaveFiled"
+        Me.DGLeaveFiled.ReadOnly = True
         Me.DGLeaveFiled.RowHeadersVisible = False
         Me.DGLeaveFiled.RowHeadersWidth = 51
         Me.DGLeaveFiled.RowTemplate.Height = 24
@@ -1081,7 +1081,7 @@ Partial Class FrmDepartmentHeadControls
         Me.DGLeaveFiled.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
         Me.DGLeaveFiled.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DGLeaveFiled.ThemeStyle.HeaderStyle.Height = 40
-        Me.DGLeaveFiled.ThemeStyle.ReadOnly = False
+        Me.DGLeaveFiled.ThemeStyle.ReadOnly = True
         Me.DGLeaveFiled.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
         Me.DGLeaveFiled.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal
         Me.DGLeaveFiled.ThemeStyle.RowsStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -1096,6 +1096,7 @@ Partial Class FrmDepartmentHeadControls
         Me.DataGridViewTextBoxColumn5.HeaderText = "Leave ID"
         Me.DataGridViewTextBoxColumn5.MinimumWidth = 6
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
         '
         'DataGridViewTextBoxColumn6
         '
@@ -1103,6 +1104,7 @@ Partial Class FrmDepartmentHeadControls
         Me.DataGridViewTextBoxColumn6.HeaderText = "Type of Leave"
         Me.DataGridViewTextBoxColumn6.MinimumWidth = 6
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.ReadOnly = True
         '
         'DataGridViewTextBoxColumn7
         '
@@ -1112,6 +1114,7 @@ Partial Class FrmDepartmentHeadControls
         Me.DataGridViewTextBoxColumn7.HeaderText = "From"
         Me.DataGridViewTextBoxColumn7.MinimumWidth = 6
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.ReadOnly = True
         '
         'DataGridViewTextBoxColumn1
         '
@@ -1129,6 +1132,7 @@ Partial Class FrmDepartmentHeadControls
         Me.DataGridViewTextBoxColumn8.HeaderText = "Status"
         Me.DataGridViewTextBoxColumn8.MinimumWidth = 6
         Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.ReadOnly = True
         '
         'Label17
         '
@@ -1290,7 +1294,6 @@ Partial Class FrmDepartmentHeadControls
         Me.TxtLeaveReason.Location = New System.Drawing.Point(0, 210)
         Me.TxtLeaveReason.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtLeaveReason.Name = "TxtLeaveReason"
-        Me.TxtLeaveReason.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtLeaveReason.PlaceholderText = ""
         Me.TxtLeaveReason.SelectedText = ""
         Me.TxtLeaveReason.Size = New System.Drawing.Size(245, 37)

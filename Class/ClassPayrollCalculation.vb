@@ -198,9 +198,7 @@ Public Class ClassPayrollCalculation
                               SELECT p.employeeID
                               FROM tblpayroll p
                               WHERE p.payrollperiodID = '" & payrollperiodID & "')")
-            If ds.Tables.Contains("querytable") AndAlso ds.Tables("querytable").Rows.Count > 0 Then
-                dgv.DataSource = ds.Tables("querytable")
-            End If
+            dgv.DataSource = ds.Tables("querytable")
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
@@ -811,7 +809,6 @@ Public Class ClassPayrollCalculation
                 .Parameters.Clear()
             End With
             MsgBox("Payroll saved!")
-            LoadEmployees(FrmPayrollCalculation.DGVEmployeeList)
             FrmPayroll.Close()
             txtot.Clear()
             txtallowance.Clear()

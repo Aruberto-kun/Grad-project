@@ -158,7 +158,7 @@ Public Class FrmPayrollCalculation
             End If
         Catch ex As Exception
             MsgBox(ex.Message)
-        Exit Sub
+            Exit Sub
         End Try
     End Sub
 End Class

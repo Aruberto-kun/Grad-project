@@ -57,6 +57,9 @@ Public Class FrmAddEmployee
             ElseIf Val(TxtSalary.Text <= 0) Then
                 MessageBox.Show("Invalid amount of salary.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 Exit Sub
+            ElseIf Val(TxtAllowance.Text) > 30000 Then
+                MessageBox.Show("Allowance exceeds the non-taxable amount.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                Exit Sub
             End If
 
             ClassEmployee.NewAssociate(TxtFirstName, TxtLastname, TxtRfidNumber, CbDepartment, CbPosition, TxtSalary, CbCompensationType, CbAssociateStatus, TxtAllowance)
@@ -76,6 +79,9 @@ Public Class FrmAddEmployee
                 MessageBox.Show("Invalid amount.", "Invalid Input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 e.Cancel = True
             ElseIf e.FormattedValue > 100000 Then
+                MessageBox.Show("Invalid amount.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+                e.Cancel = True
+            ElseIf e.FormattedValue > Val(TxtSalary.text) Then
                 MessageBox.Show("Invalid amount.", "Invalid input", MessageBoxButtons.OK, MessageBoxIcon.Warning)
                 e.Cancel = True
             End If
