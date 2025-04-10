@@ -295,7 +295,7 @@ Partial Class FrmMainte
         Me.Guna2TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2TabControl1.ItemSize = New System.Drawing.Size(180, 40)
         Me.Guna2TabControl1.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2TabControl1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2TabControl1.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2TabControl1.Name = "Guna2TabControl1"
         Me.Guna2TabControl1.SelectedIndex = 0
         Me.Guna2TabControl1.Size = New System.Drawing.Size(1445, 716)
@@ -324,7 +324,7 @@ Partial Class FrmMainte
         Me.tabUser.Controls.Add(Me.Panel51)
         Me.tabUser.Controls.Add(Me.Panel37)
         Me.tabUser.Location = New System.Drawing.Point(184, 4)
-        Me.tabUser.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tabUser.Margin = New System.Windows.Forms.Padding(2)
         Me.tabUser.Name = "tabUser"
         Me.tabUser.Size = New System.Drawing.Size(1257, 708)
         Me.tabUser.TabIndex = 10
@@ -361,7 +361,7 @@ Partial Class FrmMainte
         Me.DgUser.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgUser.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgUser.Location = New System.Drawing.Point(265, 0)
-        Me.DgUser.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DgUser.Margin = New System.Windows.Forms.Padding(2)
         Me.DgUser.MultiSelect = False
         Me.DgUser.Name = "DgUser"
         Me.DgUser.ReadOnly = True
@@ -430,7 +430,7 @@ Partial Class FrmMainte
         Me.Panel37.Controls.Add(Me.Panel39)
         Me.Panel37.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel37.Location = New System.Drawing.Point(0, 0)
-        Me.Panel37.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel37.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel37.Name = "Panel37"
         Me.Panel37.Size = New System.Drawing.Size(260, 708)
         Me.Panel37.TabIndex = 2
@@ -461,7 +461,7 @@ Partial Class FrmMainte
         Me.BtnSaveUser.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSaveUser.ForeColor = System.Drawing.Color.White
         Me.BtnSaveUser.Location = New System.Drawing.Point(0, 667)
-        Me.BtnSaveUser.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnSaveUser.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnSaveUser.Name = "BtnSaveUser"
         Me.BtnSaveUser.Size = New System.Drawing.Size(260, 41)
         Me.BtnSaveUser.TabIndex = 22
@@ -488,7 +488,6 @@ Partial Class FrmMainte
         Me.TxtUsername.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtUsername.MaxLength = 40
         Me.TxtUsername.Name = "TxtUsername"
-        Me.TxtUsername.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtUsername.PlaceholderText = ""
         Me.TxtUsername.SelectedText = ""
         Me.TxtUsername.Size = New System.Drawing.Size(260, 37)
@@ -527,7 +526,6 @@ Partial Class FrmMainte
         Me.TxtLastname.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtLastname.MaxLength = 40
         Me.TxtLastname.Name = "TxtLastname"
-        Me.TxtLastname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtLastname.PlaceholderText = ""
         Me.TxtLastname.SelectedText = ""
         Me.TxtLastname.Size = New System.Drawing.Size(260, 37)
@@ -566,7 +564,6 @@ Partial Class FrmMainte
         Me.TxtFirstname.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtFirstname.MaxLength = 40
         Me.TxtFirstname.Name = "TxtFirstname"
-        Me.TxtFirstname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtFirstname.PlaceholderText = ""
         Me.TxtFirstname.SelectedText = ""
         Me.TxtFirstname.Size = New System.Drawing.Size(260, 37)
@@ -590,9 +587,9 @@ Partial Class FrmMainte
         Me.tabDepartment.Controls.Add(Me.Panel38)
         Me.tabDepartment.Controls.Add(Me.Panel6)
         Me.tabDepartment.Location = New System.Drawing.Point(184, 4)
-        Me.tabDepartment.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tabDepartment.Margin = New System.Windows.Forms.Padding(2)
         Me.tabDepartment.Name = "tabDepartment"
-        Me.tabDepartment.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tabDepartment.Padding = New System.Windows.Forms.Padding(2)
         Me.tabDepartment.Size = New System.Drawing.Size(1257, 708)
         Me.tabDepartment.TabIndex = 0
         Me.tabDepartment.Text = "Department"
@@ -628,7 +625,7 @@ Partial Class FrmMainte
         Me.DgDepartment.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgDepartment.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgDepartment.Location = New System.Drawing.Point(217, 2)
-        Me.DgDepartment.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DgDepartment.Margin = New System.Windows.Forms.Padding(2)
         Me.DgDepartment.Name = "DgDepartment"
         Me.DgDepartment.ReadOnly = True
         Me.DgDepartment.RowHeadersVisible = False
@@ -709,7 +706,7 @@ Partial Class FrmMainte
         Me.Panel4.Controls.Add(Me.Label1)
         Me.Panel4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel4.Location = New System.Drawing.Point(0, 0)
-        Me.Panel4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel4.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(210, 704)
         Me.Panel4.TabIndex = 7
@@ -725,7 +722,7 @@ Partial Class FrmMainte
         Me.BtnSaveDepartment.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSaveDepartment.ForeColor = System.Drawing.Color.White
         Me.BtnSaveDepartment.Location = New System.Drawing.Point(0, 663)
-        Me.BtnSaveDepartment.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnSaveDepartment.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnSaveDepartment.Name = "BtnSaveDepartment"
         Me.BtnSaveDepartment.Size = New System.Drawing.Size(210, 41)
         Me.BtnSaveDepartment.TabIndex = 8
@@ -752,7 +749,6 @@ Partial Class FrmMainte
         Me.TxtDepartment.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtDepartment.MaxLength = 40
         Me.TxtDepartment.Name = "TxtDepartment"
-        Me.TxtDepartment.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtDepartment.PlaceholderText = ""
         Me.TxtDepartment.SelectedText = ""
         Me.TxtDepartment.Size = New System.Drawing.Size(210, 37)
@@ -776,7 +772,7 @@ Partial Class FrmMainte
         Me.tabPosition.Controls.Add(Me.Panel41)
         Me.tabPosition.Controls.Add(Me.Panel11)
         Me.tabPosition.Location = New System.Drawing.Point(184, 4)
-        Me.tabPosition.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tabPosition.Margin = New System.Windows.Forms.Padding(2)
         Me.tabPosition.Name = "tabPosition"
         Me.tabPosition.Size = New System.Drawing.Size(1257, 708)
         Me.tabPosition.TabIndex = 2
@@ -813,7 +809,7 @@ Partial Class FrmMainte
         Me.DgPosition.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgPosition.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgPosition.Location = New System.Drawing.Point(265, 0)
-        Me.DgPosition.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DgPosition.Margin = New System.Windows.Forms.Padding(2)
         Me.DgPosition.Name = "DgPosition"
         Me.DgPosition.ReadOnly = True
         Me.DgPosition.RowHeadersVisible = False
@@ -904,7 +900,7 @@ Partial Class FrmMainte
         Me.Panel10.Controls.Add(Me.Label4)
         Me.Panel10.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel10.Location = New System.Drawing.Point(0, 0)
-        Me.Panel10.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel10.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel10.Name = "Panel10"
         Me.Panel10.Size = New System.Drawing.Size(260, 708)
         Me.Panel10.TabIndex = 7
@@ -920,7 +916,7 @@ Partial Class FrmMainte
         Me.BtnSavePosition.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSavePosition.ForeColor = System.Drawing.Color.White
         Me.BtnSavePosition.Location = New System.Drawing.Point(0, 667)
-        Me.BtnSavePosition.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnSavePosition.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnSavePosition.Name = "BtnSavePosition"
         Me.BtnSavePosition.Size = New System.Drawing.Size(260, 41)
         Me.BtnSavePosition.TabIndex = 15
@@ -947,7 +943,6 @@ Partial Class FrmMainte
         Me.TxtPosition.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtPosition.MaxLength = 40
         Me.TxtPosition.Name = "TxtPosition"
-        Me.TxtPosition.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtPosition.PlaceholderText = ""
         Me.TxtPosition.SelectedText = ""
         Me.TxtPosition.Size = New System.Drawing.Size(260, 37)
@@ -982,7 +977,7 @@ Partial Class FrmMainte
         Me.CbDepartment.HoverState.ForeColor = System.Drawing.Color.FromArgb(CType(CType(47, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(64, Byte), Integer))
         Me.CbDepartment.ItemHeight = 30
         Me.CbDepartment.Location = New System.Drawing.Point(0, 34)
-        Me.CbDepartment.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CbDepartment.Margin = New System.Windows.Forms.Padding(2)
         Me.CbDepartment.Name = "CbDepartment"
         Me.CbDepartment.Size = New System.Drawing.Size(260, 36)
         Me.CbDepartment.TabIndex = 12
@@ -1005,9 +1000,9 @@ Partial Class FrmMainte
         Me.tabLeave.Controls.Add(Me.Panel40)
         Me.tabLeave.Controls.Add(Me.Panel8)
         Me.tabLeave.Location = New System.Drawing.Point(184, 4)
-        Me.tabLeave.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tabLeave.Margin = New System.Windows.Forms.Padding(2)
         Me.tabLeave.Name = "tabLeave"
-        Me.tabLeave.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tabLeave.Padding = New System.Windows.Forms.Padding(2)
         Me.tabLeave.Size = New System.Drawing.Size(1257, 708)
         Me.tabLeave.TabIndex = 1
         Me.tabLeave.Text = "Leave"
@@ -1043,7 +1038,7 @@ Partial Class FrmMainte
         Me.dgLeave.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgLeave.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgLeave.Location = New System.Drawing.Point(249, 2)
-        Me.dgLeave.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgLeave.Margin = New System.Windows.Forms.Padding(2)
         Me.dgLeave.Name = "dgLeave"
         Me.dgLeave.ReadOnly = True
         Me.dgLeave.RowHeadersVisible = False
@@ -1124,7 +1119,7 @@ Partial Class FrmMainte
         Me.Panel5.Controls.Add(Me.Label2)
         Me.Panel5.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel5.Location = New System.Drawing.Point(0, 0)
-        Me.Panel5.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(242, 663)
         Me.Panel5.TabIndex = 7
@@ -1150,7 +1145,6 @@ Partial Class FrmMainte
         Me.TxtLeave.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtLeave.MaxLength = 40
         Me.TxtLeave.Name = "TxtLeave"
-        Me.TxtLeave.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtLeave.PlaceholderText = ""
         Me.TxtLeave.SelectedText = ""
         Me.TxtLeave.Size = New System.Drawing.Size(242, 37)
@@ -1179,7 +1173,7 @@ Partial Class FrmMainte
         Me.BtnSaveLeave.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSaveLeave.ForeColor = System.Drawing.Color.White
         Me.BtnSaveLeave.Location = New System.Drawing.Point(0, 663)
-        Me.BtnSaveLeave.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnSaveLeave.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnSaveLeave.Name = "BtnSaveLeave"
         Me.BtnSaveLeave.Size = New System.Drawing.Size(242, 41)
         Me.BtnSaveLeave.TabIndex = 6
@@ -1191,7 +1185,7 @@ Partial Class FrmMainte
         Me.tabIncentives.Controls.Add(Me.Panel43)
         Me.tabIncentives.Controls.Add(Me.Panel17)
         Me.tabIncentives.Location = New System.Drawing.Point(184, 4)
-        Me.tabIncentives.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tabIncentives.Margin = New System.Windows.Forms.Padding(2)
         Me.tabIncentives.Name = "tabIncentives"
         Me.tabIncentives.Size = New System.Drawing.Size(1257, 708)
         Me.tabIncentives.TabIndex = 5
@@ -1228,7 +1222,7 @@ Partial Class FrmMainte
         Me.DgIncentives.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgIncentives.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgIncentives.Location = New System.Drawing.Point(265, 0)
-        Me.DgIncentives.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DgIncentives.Margin = New System.Windows.Forms.Padding(2)
         Me.DgIncentives.Name = "DgIncentives"
         Me.DgIncentives.ReadOnly = True
         Me.DgIncentives.RowHeadersVisible = False
@@ -1299,7 +1293,7 @@ Partial Class FrmMainte
         Me.Panel17.Controls.Add(Me.BtnSaveIncentives)
         Me.Panel17.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel17.Location = New System.Drawing.Point(0, 0)
-        Me.Panel17.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel17.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel17.Name = "Panel17"
         Me.Panel17.Size = New System.Drawing.Size(260, 708)
         Me.Panel17.TabIndex = 4
@@ -1310,7 +1304,7 @@ Partial Class FrmMainte
         Me.Panel20.Controls.Add(Me.Label8)
         Me.Panel20.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel20.Location = New System.Drawing.Point(0, 0)
-        Me.Panel20.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel20.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel20.Name = "Panel20"
         Me.Panel20.Size = New System.Drawing.Size(260, 667)
         Me.Panel20.TabIndex = 6
@@ -1336,7 +1330,6 @@ Partial Class FrmMainte
         Me.TxtIncentives.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtIncentives.MaxLength = 40
         Me.TxtIncentives.Name = "TxtIncentives"
-        Me.TxtIncentives.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtIncentives.PlaceholderText = ""
         Me.TxtIncentives.SelectedText = ""
         Me.TxtIncentives.Size = New System.Drawing.Size(260, 37)
@@ -1365,7 +1358,7 @@ Partial Class FrmMainte
         Me.BtnSaveIncentives.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSaveIncentives.ForeColor = System.Drawing.Color.White
         Me.BtnSaveIncentives.Location = New System.Drawing.Point(0, 667)
-        Me.BtnSaveIncentives.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnSaveIncentives.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnSaveIncentives.Name = "BtnSaveIncentives"
         Me.BtnSaveIncentives.Size = New System.Drawing.Size(260, 41)
         Me.BtnSaveIncentives.TabIndex = 5
@@ -1377,7 +1370,7 @@ Partial Class FrmMainte
         Me.tabHoliday.Controls.Add(Me.Panel44)
         Me.tabHoliday.Controls.Add(Me.Panel22)
         Me.tabHoliday.Location = New System.Drawing.Point(184, 4)
-        Me.tabHoliday.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tabHoliday.Margin = New System.Windows.Forms.Padding(2)
         Me.tabHoliday.Name = "tabHoliday"
         Me.tabHoliday.Size = New System.Drawing.Size(1257, 708)
         Me.tabHoliday.TabIndex = 6
@@ -1414,7 +1407,7 @@ Partial Class FrmMainte
         Me.dgHoliday.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgHoliday.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgHoliday.Location = New System.Drawing.Point(265, 0)
-        Me.dgHoliday.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgHoliday.Margin = New System.Windows.Forms.Padding(2)
         Me.dgHoliday.Name = "dgHoliday"
         Me.dgHoliday.ReadOnly = True
         Me.dgHoliday.RowHeadersVisible = False
@@ -1491,7 +1484,7 @@ Partial Class FrmMainte
         Me.Panel22.Controls.Add(Me.BtnSaveHoliday)
         Me.Panel22.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel22.Location = New System.Drawing.Point(0, 0)
-        Me.Panel22.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel22.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel22.Name = "Panel22"
         Me.Panel22.Size = New System.Drawing.Size(260, 708)
         Me.Panel22.TabIndex = 5
@@ -1506,7 +1499,7 @@ Partial Class FrmMainte
         Me.Panel23.Controls.Add(Me.Label24)
         Me.Panel23.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel23.Location = New System.Drawing.Point(0, 0)
-        Me.Panel23.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel23.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel23.Name = "Panel23"
         Me.Panel23.Size = New System.Drawing.Size(260, 667)
         Me.Panel23.TabIndex = 6
@@ -1529,7 +1522,7 @@ Partial Class FrmMainte
         Me.CbClassification.ItemHeight = 30
         Me.CbClassification.Items.AddRange(New Object() {"Double Holiday", "Special Holiday", "Regular Holiday"})
         Me.CbClassification.Location = New System.Drawing.Point(0, 200)
-        Me.CbClassification.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.CbClassification.Margin = New System.Windows.Forms.Padding(2)
         Me.CbClassification.Name = "CbClassification"
         Me.CbClassification.Size = New System.Drawing.Size(260, 36)
         Me.CbClassification.TabIndex = 16
@@ -1555,7 +1548,7 @@ Partial Class FrmMainte
         Me.DtHoliday.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.DtHoliday.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DtHoliday.Location = New System.Drawing.Point(0, 121)
-        Me.DtHoliday.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DtHoliday.Margin = New System.Windows.Forms.Padding(2)
         Me.DtHoliday.MaxDate = New Date(9998, 12, 31, 0, 0, 0, 0)
         Me.DtHoliday.MinDate = New Date(1753, 1, 1, 0, 0, 0, 0)
         Me.DtHoliday.Name = "DtHoliday"
@@ -1596,7 +1589,6 @@ Partial Class FrmMainte
         Me.TxtHoliday.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtHoliday.MaxLength = 40
         Me.TxtHoliday.Name = "TxtHoliday"
-        Me.TxtHoliday.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtHoliday.PlaceholderText = ""
         Me.TxtHoliday.SelectedText = ""
         Me.TxtHoliday.Size = New System.Drawing.Size(260, 37)
@@ -1625,7 +1617,7 @@ Partial Class FrmMainte
         Me.BtnSaveHoliday.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSaveHoliday.ForeColor = System.Drawing.Color.White
         Me.BtnSaveHoliday.Location = New System.Drawing.Point(0, 667)
-        Me.BtnSaveHoliday.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnSaveHoliday.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnSaveHoliday.Name = "BtnSaveHoliday"
         Me.BtnSaveHoliday.Size = New System.Drawing.Size(260, 41)
         Me.BtnSaveHoliday.TabIndex = 5
@@ -1636,7 +1628,7 @@ Partial Class FrmMainte
         Me.tabRate.Controls.Add(Me.dgRates)
         Me.tabRate.Controls.Add(Me.Panel48)
         Me.tabRate.Location = New System.Drawing.Point(184, 4)
-        Me.tabRate.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tabRate.Margin = New System.Windows.Forms.Padding(2)
         Me.tabRate.Name = "tabRate"
         Me.tabRate.Size = New System.Drawing.Size(1257, 708)
         Me.tabRate.TabIndex = 7
@@ -1673,7 +1665,7 @@ Partial Class FrmMainte
         Me.dgRates.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgRates.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgRates.Location = New System.Drawing.Point(5, 0)
-        Me.dgRates.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgRates.Margin = New System.Windows.Forms.Padding(2)
         Me.dgRates.Name = "dgRates"
         Me.dgRates.ReadOnly = True
         Me.dgRates.RowHeadersVisible = False
@@ -1741,7 +1733,7 @@ Partial Class FrmMainte
         '
         Me.tabContri.Controls.Add(Me.Guna2TabControl2)
         Me.tabContri.Location = New System.Drawing.Point(184, 4)
-        Me.tabContri.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tabContri.Margin = New System.Windows.Forms.Padding(2)
         Me.tabContri.Name = "tabContri"
         Me.tabContri.Size = New System.Drawing.Size(1257, 708)
         Me.tabContri.TabIndex = 8
@@ -1757,7 +1749,7 @@ Partial Class FrmMainte
         Me.Guna2TabControl2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Guna2TabControl2.ItemSize = New System.Drawing.Size(180, 40)
         Me.Guna2TabControl2.Location = New System.Drawing.Point(0, 0)
-        Me.Guna2TabControl2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Guna2TabControl2.Margin = New System.Windows.Forms.Padding(2)
         Me.Guna2TabControl2.Name = "Guna2TabControl2"
         Me.Guna2TabControl2.SelectedIndex = 0
         Me.Guna2TabControl2.Size = New System.Drawing.Size(1257, 708)
@@ -1788,7 +1780,7 @@ Partial Class FrmMainte
         Me.tabTax.Controls.Add(Me.Panel49)
         Me.tabTax.Controls.Add(Me.Panel36)
         Me.tabTax.Location = New System.Drawing.Point(4, 44)
-        Me.tabTax.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tabTax.Margin = New System.Windows.Forms.Padding(2)
         Me.tabTax.Name = "tabTax"
         Me.tabTax.Size = New System.Drawing.Size(1249, 660)
         Me.tabTax.TabIndex = 0
@@ -1825,7 +1817,7 @@ Partial Class FrmMainte
         Me.dgTax.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgTax.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgTax.Location = New System.Drawing.Point(265, 45)
-        Me.dgTax.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgTax.Margin = New System.Windows.Forms.Padding(2)
         Me.dgTax.Name = "dgTax"
         Me.dgTax.ReadOnly = True
         Me.dgTax.RowHeadersVisible = False
@@ -1984,7 +1976,7 @@ Partial Class FrmMainte
         Me.Panel36.Controls.Add(Me.BtnDeleteTax)
         Me.Panel36.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel36.Location = New System.Drawing.Point(0, 0)
-        Me.Panel36.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel36.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel36.Name = "Panel36"
         Me.Panel36.Size = New System.Drawing.Size(260, 660)
         Me.Panel36.TabIndex = 2
@@ -2026,7 +2018,6 @@ Partial Class FrmMainte
         Me.TxtTaxPercentage.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtTaxPercentage.MaxLength = 2
         Me.TxtTaxPercentage.Name = "TxtTaxPercentage"
-        Me.TxtTaxPercentage.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtTaxPercentage.PlaceholderText = ""
         Me.TxtTaxPercentage.SelectedText = ""
         Me.TxtTaxPercentage.Size = New System.Drawing.Size(260, 37)
@@ -2065,7 +2056,6 @@ Partial Class FrmMainte
         Me.TxtTaxFixedAmount.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtTaxFixedAmount.MaxLength = 10
         Me.TxtTaxFixedAmount.Name = "TxtTaxFixedAmount"
-        Me.TxtTaxFixedAmount.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtTaxFixedAmount.PlaceholderText = ""
         Me.TxtTaxFixedAmount.SelectedText = ""
         Me.TxtTaxFixedAmount.Size = New System.Drawing.Size(260, 37)
@@ -2104,7 +2094,6 @@ Partial Class FrmMainte
         Me.TxtTaxMaxSalary.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtTaxMaxSalary.MaxLength = 8
         Me.TxtTaxMaxSalary.Name = "TxtTaxMaxSalary"
-        Me.TxtTaxMaxSalary.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtTaxMaxSalary.PlaceholderText = ""
         Me.TxtTaxMaxSalary.SelectedText = ""
         Me.TxtTaxMaxSalary.Size = New System.Drawing.Size(260, 37)
@@ -2143,7 +2132,6 @@ Partial Class FrmMainte
         Me.TxtTaxMinSalary.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtTaxMinSalary.MaxLength = 40
         Me.TxtTaxMinSalary.Name = "TxtTaxMinSalary"
-        Me.TxtTaxMinSalary.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtTaxMinSalary.PlaceholderText = ""
         Me.TxtTaxMinSalary.ReadOnly = True
         Me.TxtTaxMinSalary.SelectedText = ""
@@ -2173,7 +2161,7 @@ Partial Class FrmMainte
         Me.BtnSaveTax.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSaveTax.ForeColor = System.Drawing.Color.White
         Me.BtnSaveTax.Location = New System.Drawing.Point(0, 573)
-        Me.BtnSaveTax.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnSaveTax.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnSaveTax.Name = "BtnSaveTax"
         Me.BtnSaveTax.Size = New System.Drawing.Size(260, 41)
         Me.BtnSaveTax.TabIndex = 5
@@ -2198,7 +2186,7 @@ Partial Class FrmMainte
         Me.BtnDeleteTax.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnDeleteTax.ForeColor = System.Drawing.Color.White
         Me.BtnDeleteTax.Location = New System.Drawing.Point(0, 619)
-        Me.BtnDeleteTax.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnDeleteTax.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnDeleteTax.Name = "BtnDeleteTax"
         Me.BtnDeleteTax.Size = New System.Drawing.Size(260, 41)
         Me.BtnDeleteTax.TabIndex = 3
@@ -2210,9 +2198,9 @@ Partial Class FrmMainte
         Me.tabSSS.Controls.Add(Me.Panel50)
         Me.tabSSS.Controls.Add(Me.Panel42)
         Me.tabSSS.Location = New System.Drawing.Point(4, 44)
-        Me.tabSSS.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tabSSS.Margin = New System.Windows.Forms.Padding(2)
         Me.tabSSS.Name = "tabSSS"
-        Me.tabSSS.Size = New System.Drawing.Size(1296, 661)
+        Me.tabSSS.Size = New System.Drawing.Size(1249, 660)
         Me.tabSSS.TabIndex = 1
         Me.tabSSS.Text = "SSS"
         Me.tabSSS.UseVisualStyleBackColor = True
@@ -2247,14 +2235,14 @@ Partial Class FrmMainte
         Me.dgSSS.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgSSS.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgSSS.Location = New System.Drawing.Point(265, 0)
-        Me.dgSSS.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgSSS.Margin = New System.Windows.Forms.Padding(2)
         Me.dgSSS.Name = "dgSSS"
         Me.dgSSS.ReadOnly = True
         Me.dgSSS.RowHeadersVisible = False
         Me.dgSSS.RowHeadersWidth = 51
         Me.dgSSS.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dgSSS.RowTemplate.Height = 24
-        Me.dgSSS.Size = New System.Drawing.Size(1031, 661)
+        Me.dgSSS.Size = New System.Drawing.Size(984, 660)
         Me.dgSSS.TabIndex = 8
         Me.dgSSS.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgSSS.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -2324,7 +2312,7 @@ Partial Class FrmMainte
         Me.Panel50.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel50.Location = New System.Drawing.Point(260, 0)
         Me.Panel50.Name = "Panel50"
-        Me.Panel50.Size = New System.Drawing.Size(5, 661)
+        Me.Panel50.Size = New System.Drawing.Size(5, 660)
         Me.Panel50.TabIndex = 7
         '
         'Panel42
@@ -2335,9 +2323,9 @@ Partial Class FrmMainte
         Me.Panel42.Controls.Add(Me.BtnDeleteSSS)
         Me.Panel42.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel42.Location = New System.Drawing.Point(0, 0)
-        Me.Panel42.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel42.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel42.Name = "Panel42"
-        Me.Panel42.Size = New System.Drawing.Size(260, 661)
+        Me.Panel42.Size = New System.Drawing.Size(260, 660)
         Me.Panel42.TabIndex = 3
         '
         'Panel12
@@ -2353,7 +2341,7 @@ Partial Class FrmMainte
         Me.Panel12.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel12.Location = New System.Drawing.Point(0, 0)
         Me.Panel12.Name = "Panel12"
-        Me.Panel12.Size = New System.Drawing.Size(260, 575)
+        Me.Panel12.Size = New System.Drawing.Size(260, 574)
         Me.Panel12.TabIndex = 7
         '
         'TxtSSSER
@@ -2377,7 +2365,6 @@ Partial Class FrmMainte
         Me.TxtSSSER.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtSSSER.MaxLength = 10
         Me.TxtSSSER.Name = "TxtSSSER"
-        Me.TxtSSSER.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtSSSER.PlaceholderText = ""
         Me.TxtSSSER.SelectedText = ""
         Me.TxtSSSER.Size = New System.Drawing.Size(260, 37)
@@ -2416,7 +2403,6 @@ Partial Class FrmMainte
         Me.TxtSSSEE.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtSSSEE.MaxLength = 8
         Me.TxtSSSEE.Name = "TxtSSSEE"
-        Me.TxtSSSEE.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtSSSEE.PlaceholderText = ""
         Me.TxtSSSEE.SelectedText = ""
         Me.TxtSSSEE.Size = New System.Drawing.Size(260, 37)
@@ -2455,7 +2441,6 @@ Partial Class FrmMainte
         Me.TxtSSSMaxSalary.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtSSSMaxSalary.MaxLength = 8
         Me.TxtSSSMaxSalary.Name = "TxtSSSMaxSalary"
-        Me.TxtSSSMaxSalary.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtSSSMaxSalary.PlaceholderText = ""
         Me.TxtSSSMaxSalary.SelectedText = ""
         Me.TxtSSSMaxSalary.Size = New System.Drawing.Size(260, 37)
@@ -2494,7 +2479,6 @@ Partial Class FrmMainte
         Me.TxtSSSMinSalary.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtSSSMinSalary.MaxLength = 25
         Me.TxtSSSMinSalary.Name = "TxtSSSMinSalary"
-        Me.TxtSSSMinSalary.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtSSSMinSalary.PlaceholderText = ""
         Me.TxtSSSMinSalary.ReadOnly = True
         Me.TxtSSSMinSalary.SelectedText = ""
@@ -2523,8 +2507,8 @@ Partial Class FrmMainte
         Me.BtnSaveSSS.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnSaveSSS.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSaveSSS.ForeColor = System.Drawing.Color.White
-        Me.BtnSaveSSS.Location = New System.Drawing.Point(0, 575)
-        Me.BtnSaveSSS.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnSaveSSS.Location = New System.Drawing.Point(0, 574)
+        Me.BtnSaveSSS.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnSaveSSS.Name = "BtnSaveSSS"
         Me.BtnSaveSSS.Size = New System.Drawing.Size(260, 41)
         Me.BtnSaveSSS.TabIndex = 5
@@ -2533,8 +2517,8 @@ Partial Class FrmMainte
         'Panel13
         '
         Me.Panel13.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.Panel13.Location = New System.Drawing.Point(0, 616)
-        Me.Panel13.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel13.Location = New System.Drawing.Point(0, 615)
+        Me.Panel13.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel13.Name = "Panel13"
         Me.Panel13.Size = New System.Drawing.Size(260, 4)
         Me.Panel13.TabIndex = 4
@@ -2549,8 +2533,8 @@ Partial Class FrmMainte
         Me.BtnDeleteSSS.FillColor = System.Drawing.Color.FromArgb(CType(CType(194, Byte), Integer), CType(CType(54, Byte), Integer), CType(CType(22, Byte), Integer))
         Me.BtnDeleteSSS.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnDeleteSSS.ForeColor = System.Drawing.Color.White
-        Me.BtnDeleteSSS.Location = New System.Drawing.Point(0, 620)
-        Me.BtnDeleteSSS.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnDeleteSSS.Location = New System.Drawing.Point(0, 619)
+        Me.BtnDeleteSSS.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnDeleteSSS.Name = "BtnDeleteSSS"
         Me.BtnDeleteSSS.Size = New System.Drawing.Size(260, 41)
         Me.BtnDeleteSSS.TabIndex = 3
@@ -2561,9 +2545,9 @@ Partial Class FrmMainte
         Me.tabPagibig.Controls.Add(Me.dgPagibig)
         Me.tabPagibig.Controls.Add(Me.Panel14)
         Me.tabPagibig.Location = New System.Drawing.Point(4, 44)
-        Me.tabPagibig.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tabPagibig.Margin = New System.Windows.Forms.Padding(2)
         Me.tabPagibig.Name = "tabPagibig"
-        Me.tabPagibig.Size = New System.Drawing.Size(1296, 661)
+        Me.tabPagibig.Size = New System.Drawing.Size(1249, 660)
         Me.tabPagibig.TabIndex = 2
         Me.tabPagibig.Text = "PAG-IBIG"
         Me.tabPagibig.UseVisualStyleBackColor = True
@@ -2598,14 +2582,14 @@ Partial Class FrmMainte
         Me.dgPagibig.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgPagibig.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgPagibig.Location = New System.Drawing.Point(225, 0)
-        Me.dgPagibig.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgPagibig.Margin = New System.Windows.Forms.Padding(2)
         Me.dgPagibig.Name = "dgPagibig"
         Me.dgPagibig.ReadOnly = True
         Me.dgPagibig.RowHeadersVisible = False
         Me.dgPagibig.RowHeadersWidth = 51
         Me.dgPagibig.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.dgPagibig.RowTemplate.Height = 24
-        Me.dgPagibig.Size = New System.Drawing.Size(1071, 661)
+        Me.dgPagibig.Size = New System.Drawing.Size(1024, 660)
         Me.dgPagibig.TabIndex = 7
         Me.dgPagibig.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgPagibig.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -2661,9 +2645,9 @@ Partial Class FrmMainte
         Me.Panel14.Controls.Add(Me.Panel46)
         Me.Panel14.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel14.Location = New System.Drawing.Point(0, 0)
-        Me.Panel14.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel14.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel14.Name = "Panel14"
-        Me.Panel14.Size = New System.Drawing.Size(225, 661)
+        Me.Panel14.Size = New System.Drawing.Size(225, 660)
         Me.Panel14.TabIndex = 4
         '
         'TxtPagibigRate
@@ -2687,7 +2671,6 @@ Partial Class FrmMainte
         Me.TxtPagibigRate.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtPagibigRate.MaxLength = 4
         Me.TxtPagibigRate.Name = "TxtPagibigRate"
-        Me.TxtPagibigRate.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtPagibigRate.PlaceholderText = ""
         Me.TxtPagibigRate.SelectedText = ""
         Me.TxtPagibigRate.Size = New System.Drawing.Size(221, 37)
@@ -2715,8 +2698,8 @@ Partial Class FrmMainte
         Me.BtnSavePagibig.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnSavePagibig.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSavePagibig.ForeColor = System.Drawing.Color.White
-        Me.BtnSavePagibig.Location = New System.Drawing.Point(0, 620)
-        Me.BtnSavePagibig.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnSavePagibig.Location = New System.Drawing.Point(0, 619)
+        Me.BtnSavePagibig.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnSavePagibig.Name = "BtnSavePagibig"
         Me.BtnSavePagibig.Size = New System.Drawing.Size(221, 41)
         Me.BtnSavePagibig.TabIndex = 5
@@ -2726,9 +2709,9 @@ Partial Class FrmMainte
         '
         Me.Panel46.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel46.Location = New System.Drawing.Point(221, 0)
-        Me.Panel46.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel46.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel46.Name = "Panel46"
-        Me.Panel46.Size = New System.Drawing.Size(4, 661)
+        Me.Panel46.Size = New System.Drawing.Size(4, 660)
         Me.Panel46.TabIndex = 1
         '
         'tabPhilHealth
@@ -2736,9 +2719,9 @@ Partial Class FrmMainte
         Me.tabPhilHealth.Controls.Add(Me.dgPhilhealth)
         Me.tabPhilHealth.Controls.Add(Me.Panel47)
         Me.tabPhilHealth.Location = New System.Drawing.Point(4, 44)
-        Me.tabPhilHealth.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tabPhilHealth.Margin = New System.Windows.Forms.Padding(2)
         Me.tabPhilHealth.Name = "tabPhilHealth"
-        Me.tabPhilHealth.Size = New System.Drawing.Size(1296, 661)
+        Me.tabPhilHealth.Size = New System.Drawing.Size(1249, 660)
         Me.tabPhilHealth.TabIndex = 3
         Me.tabPhilHealth.Text = "PhilHealth"
         Me.tabPhilHealth.UseVisualStyleBackColor = True
@@ -2747,6 +2730,8 @@ Partial Class FrmMainte
         '
         Me.dgPhilhealth.AllowUserToAddRows = False
         Me.dgPhilhealth.AllowUserToDeleteRows = False
+        Me.dgPhilhealth.AllowUserToResizeColumns = False
+        Me.dgPhilhealth.AllowUserToResizeRows = False
         DataGridViewCellStyle31.BackColor = System.Drawing.Color.White
         Me.dgPhilhealth.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle31
         Me.dgPhilhealth.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -2771,13 +2756,13 @@ Partial Class FrmMainte
         Me.dgPhilhealth.Dock = System.Windows.Forms.DockStyle.Fill
         Me.dgPhilhealth.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.dgPhilhealth.Location = New System.Drawing.Point(225, 0)
-        Me.dgPhilhealth.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.dgPhilhealth.Margin = New System.Windows.Forms.Padding(2)
         Me.dgPhilhealth.Name = "dgPhilhealth"
         Me.dgPhilhealth.ReadOnly = True
         Me.dgPhilhealth.RowHeadersVisible = False
         Me.dgPhilhealth.RowHeadersWidth = 51
         Me.dgPhilhealth.RowTemplate.Height = 24
-        Me.dgPhilhealth.Size = New System.Drawing.Size(1071, 661)
+        Me.dgPhilhealth.Size = New System.Drawing.Size(1024, 660)
         Me.dgPhilhealth.TabIndex = 8
         Me.dgPhilhealth.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White
         Me.dgPhilhealth.ThemeStyle.AlternatingRowsStyle.Font = Nothing
@@ -2833,9 +2818,9 @@ Partial Class FrmMainte
         Me.Panel47.Controls.Add(Me.Panel15)
         Me.Panel47.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel47.Location = New System.Drawing.Point(0, 0)
-        Me.Panel47.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel47.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel47.Name = "Panel47"
-        Me.Panel47.Size = New System.Drawing.Size(225, 661)
+        Me.Panel47.Size = New System.Drawing.Size(225, 660)
         Me.Panel47.TabIndex = 5
         '
         'txtPhilhealthRate
@@ -2859,7 +2844,6 @@ Partial Class FrmMainte
         Me.txtPhilhealthRate.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.txtPhilhealthRate.MaxLength = 2
         Me.txtPhilhealthRate.Name = "txtPhilhealthRate"
-        Me.txtPhilhealthRate.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.txtPhilhealthRate.PlaceholderText = ""
         Me.txtPhilhealthRate.SelectedText = ""
         Me.txtPhilhealthRate.Size = New System.Drawing.Size(221, 37)
@@ -2887,8 +2871,8 @@ Partial Class FrmMainte
         Me.BtnSavePhilhealth.FillColor = System.Drawing.Color.FromArgb(CType(CType(68, Byte), Integer), CType(CType(189, Byte), Integer), CType(CType(50, Byte), Integer))
         Me.BtnSavePhilhealth.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSavePhilhealth.ForeColor = System.Drawing.Color.White
-        Me.BtnSavePhilhealth.Location = New System.Drawing.Point(0, 620)
-        Me.BtnSavePhilhealth.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnSavePhilhealth.Location = New System.Drawing.Point(0, 619)
+        Me.BtnSavePhilhealth.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnSavePhilhealth.Name = "BtnSavePhilhealth"
         Me.BtnSavePhilhealth.Size = New System.Drawing.Size(221, 41)
         Me.BtnSavePhilhealth.TabIndex = 5
@@ -2898,9 +2882,9 @@ Partial Class FrmMainte
         '
         Me.Panel15.Dock = System.Windows.Forms.DockStyle.Right
         Me.Panel15.Location = New System.Drawing.Point(221, 0)
-        Me.Panel15.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel15.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel15.Name = "Panel15"
-        Me.Panel15.Size = New System.Drawing.Size(4, 661)
+        Me.Panel15.Size = New System.Drawing.Size(4, 660)
         Me.Panel15.TabIndex = 1
         '
         'tabVoluntary
@@ -2909,7 +2893,7 @@ Partial Class FrmMainte
         Me.tabVoluntary.Controls.Add(Me.Panel19)
         Me.tabVoluntary.Controls.Add(Me.Panel2)
         Me.tabVoluntary.Location = New System.Drawing.Point(184, 4)
-        Me.tabVoluntary.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.tabVoluntary.Margin = New System.Windows.Forms.Padding(2)
         Me.tabVoluntary.Name = "tabVoluntary"
         Me.tabVoluntary.Size = New System.Drawing.Size(1257, 708)
         Me.tabVoluntary.TabIndex = 9
@@ -2946,7 +2930,7 @@ Partial Class FrmMainte
         Me.DgVoluntary.Dock = System.Windows.Forms.DockStyle.Fill
         Me.DgVoluntary.GridColor = System.Drawing.Color.FromArgb(CType(CType(231, Byte), Integer), CType(CType(229, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.DgVoluntary.Location = New System.Drawing.Point(265, 0)
-        Me.DgVoluntary.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.DgVoluntary.Margin = New System.Windows.Forms.Padding(2)
         Me.DgVoluntary.Name = "DgVoluntary"
         Me.DgVoluntary.ReadOnly = True
         Me.DgVoluntary.RowHeadersVisible = False
@@ -3017,7 +3001,7 @@ Partial Class FrmMainte
         Me.Panel2.Controls.Add(Me.BtnSaveVoluntary)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Left
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(260, 708)
         Me.Panel2.TabIndex = 2
@@ -3028,7 +3012,7 @@ Partial Class FrmMainte
         Me.Panel3.Controls.Add(Me.Label9)
         Me.Panel3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel3.Location = New System.Drawing.Point(0, 0)
-        Me.Panel3.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(260, 667)
         Me.Panel3.TabIndex = 6
@@ -3054,7 +3038,6 @@ Partial Class FrmMainte
         Me.TxtVoluntary.Margin = New System.Windows.Forms.Padding(2, 3, 2, 3)
         Me.TxtVoluntary.MaxLength = 40
         Me.TxtVoluntary.Name = "TxtVoluntary"
-        Me.TxtVoluntary.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtVoluntary.PlaceholderText = ""
         Me.TxtVoluntary.SelectedText = ""
         Me.TxtVoluntary.Size = New System.Drawing.Size(260, 37)
@@ -3083,7 +3066,7 @@ Partial Class FrmMainte
         Me.BtnSaveVoluntary.Font = New System.Drawing.Font("Segoe UI", 9.0!)
         Me.BtnSaveVoluntary.ForeColor = System.Drawing.Color.White
         Me.BtnSaveVoluntary.Location = New System.Drawing.Point(0, 667)
-        Me.BtnSaveVoluntary.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.BtnSaveVoluntary.Margin = New System.Windows.Forms.Padding(2)
         Me.BtnSaveVoluntary.Name = "BtnSaveVoluntary"
         Me.BtnSaveVoluntary.Size = New System.Drawing.Size(260, 41)
         Me.BtnSaveVoluntary.TabIndex = 5
@@ -3117,7 +3100,7 @@ Partial Class FrmMainte
         Me.ControlBox = False
         Me.Controls.Add(Me.Guna2TabControl1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FrmMainte"
         Me.Guna2TabControl1.ResumeLayout(False)
         Me.tabUser.ResumeLayout(False)

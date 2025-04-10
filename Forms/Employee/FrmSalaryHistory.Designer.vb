@@ -36,6 +36,8 @@ Partial Class FrmSalaryHistory
         '
         Me.DGSalaryHistory.AllowUserToAddRows = False
         Me.DGSalaryHistory.AllowUserToDeleteRows = False
+        Me.DGSalaryHistory.AllowUserToResizeColumns = False
+        Me.DGSalaryHistory.AllowUserToResizeRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
         Me.DGSalaryHistory.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter

@@ -274,6 +274,8 @@ Partial Class FrmPayroll
         '
         Me.DGAttendance.AllowUserToAddRows = False
         Me.DGAttendance.AllowUserToDeleteRows = False
+        Me.DGAttendance.AllowUserToResizeColumns = False
+        Me.DGAttendance.AllowUserToResizeRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
         Me.DGAttendance.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DGAttendance.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -455,6 +457,8 @@ Partial Class FrmPayroll
         '
         Me.DGVoluntary.AllowUserToAddRows = False
         Me.DGVoluntary.AllowUserToDeleteRows = False
+        Me.DGVoluntary.AllowUserToResizeColumns = False
+        Me.DGVoluntary.AllowUserToResizeRows = False
         DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
         Me.DGVoluntary.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DGVoluntary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -547,6 +551,8 @@ Partial Class FrmPayroll
         '
         Me.DGIncentive.AllowUserToAddRows = False
         Me.DGIncentive.AllowUserToDeleteRows = False
+        Me.DGIncentive.AllowUserToResizeColumns = False
+        Me.DGIncentive.AllowUserToResizeRows = False
         DataGridViewCellStyle7.BackColor = System.Drawing.Color.White
         Me.DGIncentive.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle7
         Me.DGIncentive.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -688,7 +694,6 @@ Partial Class FrmPayroll
         Me.TxtNetPay.Location = New System.Drawing.Point(0, 40)
         Me.TxtNetPay.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TxtNetPay.Name = "TxtNetPay"
-        Me.TxtNetPay.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtNetPay.PlaceholderText = ""
         Me.TxtNetPay.ReadOnly = True
         Me.TxtNetPay.SelectedText = ""
@@ -725,7 +730,6 @@ Partial Class FrmPayroll
         Me.TxtGrossPay.Location = New System.Drawing.Point(0, 40)
         Me.TxtGrossPay.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TxtGrossPay.Name = "TxtGrossPay"
-        Me.TxtGrossPay.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtGrossPay.PlaceholderText = ""
         Me.TxtGrossPay.ReadOnly = True
         Me.TxtGrossPay.SelectedText = ""
@@ -784,7 +788,6 @@ Partial Class FrmPayroll
         Me.TxtTax.Location = New System.Drawing.Point(0, 205)
         Me.TxtTax.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TxtTax.Name = "TxtTax"
-        Me.TxtTax.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtTax.PlaceholderText = ""
         Me.TxtTax.ReadOnly = True
         Me.TxtTax.SelectedText = ""
@@ -821,7 +824,6 @@ Partial Class FrmPayroll
         Me.TxtPagIbig.Location = New System.Drawing.Point(0, 145)
         Me.TxtPagIbig.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TxtPagIbig.Name = "TxtPagIbig"
-        Me.TxtPagIbig.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtPagIbig.PlaceholderText = ""
         Me.TxtPagIbig.ReadOnly = True
         Me.TxtPagIbig.SelectedText = ""
@@ -858,7 +860,6 @@ Partial Class FrmPayroll
         Me.TxtPhilHealth.Location = New System.Drawing.Point(0, 85)
         Me.TxtPhilHealth.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TxtPhilHealth.Name = "TxtPhilHealth"
-        Me.TxtPhilHealth.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtPhilHealth.PlaceholderText = ""
         Me.TxtPhilHealth.ReadOnly = True
         Me.TxtPhilHealth.SelectedText = ""
@@ -895,7 +896,6 @@ Partial Class FrmPayroll
         Me.TxtSSS.Location = New System.Drawing.Point(0, 25)
         Me.TxtSSS.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TxtSSS.Name = "TxtSSS"
-        Me.TxtSSS.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtSSS.PlaceholderText = ""
         Me.TxtSSS.ReadOnly = True
         Me.TxtSSS.SelectedText = ""
@@ -960,7 +960,6 @@ Partial Class FrmPayroll
         Me.TxtTotalDeduc.Location = New System.Drawing.Point(0, 265)
         Me.TxtTotalDeduc.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TxtTotalDeduc.Name = "TxtTotalDeduc"
-        Me.TxtTotalDeduc.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtTotalDeduc.PlaceholderText = ""
         Me.TxtTotalDeduc.ReadOnly = True
         Me.TxtTotalDeduc.SelectedText = ""
@@ -997,7 +996,6 @@ Partial Class FrmPayroll
         Me.TxtMandatory.Location = New System.Drawing.Point(0, 205)
         Me.TxtMandatory.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TxtMandatory.Name = "TxtMandatory"
-        Me.TxtMandatory.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtMandatory.PlaceholderText = ""
         Me.TxtMandatory.ReadOnly = True
         Me.TxtMandatory.SelectedText = ""
@@ -1034,7 +1032,6 @@ Partial Class FrmPayroll
         Me.TxtVoluntaryContributions.Location = New System.Drawing.Point(0, 145)
         Me.TxtVoluntaryContributions.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TxtVoluntaryContributions.Name = "TxtVoluntaryContributions"
-        Me.TxtVoluntaryContributions.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtVoluntaryContributions.PlaceholderText = ""
         Me.TxtVoluntaryContributions.ReadOnly = True
         Me.TxtVoluntaryContributions.SelectedText = ""
@@ -1071,7 +1068,6 @@ Partial Class FrmPayroll
         Me.TxtUndertime.Location = New System.Drawing.Point(0, 85)
         Me.TxtUndertime.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TxtUndertime.Name = "TxtUndertime"
-        Me.TxtUndertime.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtUndertime.PlaceholderText = ""
         Me.TxtUndertime.ReadOnly = True
         Me.TxtUndertime.SelectedText = ""
@@ -1108,7 +1104,6 @@ Partial Class FrmPayroll
         Me.TxtLate.Location = New System.Drawing.Point(0, 25)
         Me.TxtLate.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TxtLate.Name = "TxtLate"
-        Me.TxtLate.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtLate.PlaceholderText = ""
         Me.TxtLate.ReadOnly = True
         Me.TxtLate.SelectedText = ""
@@ -1173,7 +1168,6 @@ Partial Class FrmPayroll
         Me.TxtTotalIncrease.Location = New System.Drawing.Point(0, 265)
         Me.TxtTotalIncrease.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TxtTotalIncrease.Name = "TxtTotalIncrease"
-        Me.TxtTotalIncrease.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtTotalIncrease.PlaceholderText = ""
         Me.TxtTotalIncrease.ReadOnly = True
         Me.TxtTotalIncrease.SelectedText = ""
@@ -1210,7 +1204,6 @@ Partial Class FrmPayroll
         Me.TxtNightDifferential.Location = New System.Drawing.Point(0, 205)
         Me.TxtNightDifferential.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TxtNightDifferential.Name = "TxtNightDifferential"
-        Me.TxtNightDifferential.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtNightDifferential.PlaceholderText = ""
         Me.TxtNightDifferential.ReadOnly = True
         Me.TxtNightDifferential.SelectedText = ""
@@ -1247,7 +1240,6 @@ Partial Class FrmPayroll
         Me.TxtIncentives.Location = New System.Drawing.Point(0, 145)
         Me.TxtIncentives.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TxtIncentives.Name = "TxtIncentives"
-        Me.TxtIncentives.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtIncentives.PlaceholderText = ""
         Me.TxtIncentives.ReadOnly = True
         Me.TxtIncentives.SelectedText = ""
@@ -1284,7 +1276,6 @@ Partial Class FrmPayroll
         Me.TxtAllowance.Location = New System.Drawing.Point(0, 85)
         Me.TxtAllowance.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TxtAllowance.Name = "TxtAllowance"
-        Me.TxtAllowance.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtAllowance.PlaceholderText = ""
         Me.TxtAllowance.ReadOnly = True
         Me.TxtAllowance.SelectedText = ""
@@ -1321,7 +1312,6 @@ Partial Class FrmPayroll
         Me.TxtOvertime.Location = New System.Drawing.Point(0, 25)
         Me.TxtOvertime.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TxtOvertime.Name = "TxtOvertime"
-        Me.TxtOvertime.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtOvertime.PlaceholderText = ""
         Me.TxtOvertime.SelectedText = ""
         Me.TxtOvertime.Size = New System.Drawing.Size(262, 35)

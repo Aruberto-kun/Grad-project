@@ -112,7 +112,6 @@ Partial Class FrmAddEmployee
         Me.TxtAllowance.Location = New System.Drawing.Point(929, 288)
         Me.TxtAllowance.MaxLength = 9
         Me.TxtAllowance.Name = "TxtAllowance"
-        Me.TxtAllowance.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtAllowance.PlaceholderText = ""
         Me.TxtAllowance.SelectedText = ""
         Me.TxtAllowance.Size = New System.Drawing.Size(917, 36)
@@ -267,7 +266,6 @@ Partial Class FrmAddEmployee
         Me.TxtSalary.Location = New System.Drawing.Point(929, 45)
         Me.TxtSalary.MaxLength = 9
         Me.TxtSalary.Name = "TxtSalary"
-        Me.TxtSalary.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtSalary.PlaceholderText = ""
         Me.TxtSalary.SelectedText = ""
         Me.TxtSalary.Size = New System.Drawing.Size(917, 36)
@@ -387,7 +385,6 @@ Partial Class FrmAddEmployee
         Me.TxtRfidNumber.Location = New System.Drawing.Point(0, 206)
         Me.TxtRfidNumber.MaxLength = 10
         Me.TxtRfidNumber.Name = "TxtRfidNumber"
-        Me.TxtRfidNumber.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtRfidNumber.PlaceholderText = ""
         Me.TxtRfidNumber.SelectedText = ""
         Me.TxtRfidNumber.Size = New System.Drawing.Size(924, 36)
@@ -421,7 +418,6 @@ Partial Class FrmAddEmployee
         Me.TxtLastname.Location = New System.Drawing.Point(0, 125)
         Me.TxtLastname.MaxLength = 45
         Me.TxtLastname.Name = "TxtLastname"
-        Me.TxtLastname.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtLastname.PlaceholderText = ""
         Me.TxtLastname.SelectedText = ""
         Me.TxtLastname.Size = New System.Drawing.Size(924, 36)
@@ -455,7 +451,6 @@ Partial Class FrmAddEmployee
         Me.TxtFirstName.Location = New System.Drawing.Point(0, 45)
         Me.TxtFirstName.MaxLength = 45
         Me.TxtFirstName.Name = "TxtFirstName"
-        Me.TxtFirstName.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtFirstName.PlaceholderText = ""
         Me.TxtFirstName.SelectedText = ""
         Me.TxtFirstName.Size = New System.Drawing.Size(924, 36)
@@ -486,6 +481,8 @@ Partial Class FrmAddEmployee
         '
         Me.DGVoluntary.AllowUserToAddRows = False
         Me.DGVoluntary.AllowUserToDeleteRows = False
+        Me.DGVoluntary.AllowUserToResizeColumns = False
+        Me.DGVoluntary.AllowUserToResizeRows = False
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.White
         Me.DGVoluntary.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DGVoluntary.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
@@ -588,6 +585,8 @@ Partial Class FrmAddEmployee
         '
         Me.DGLeaveAllocation.AllowUserToAddRows = False
         Me.DGLeaveAllocation.AllowUserToDeleteRows = False
+        Me.DGLeaveAllocation.AllowUserToResizeColumns = False
+        Me.DGLeaveAllocation.AllowUserToResizeRows = False
         DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
         Me.DGLeaveAllocation.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle4
         Me.DGLeaveAllocation.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
