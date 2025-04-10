@@ -87,4 +87,8 @@ Public Class FrmPayroll
             End If
         End If
     End Sub
+
+    Private Sub FrmPayroll_Closed(sender As Object, e As EventArgs) Handles Me.Closed
+        ClassPayrollCalculation.LoadEmployees(FrmPayrollCalculation.DGVEmployeeList)
+    End Sub
 End Class

@@ -53,7 +53,7 @@ Public Class ClassAssociates
                     FROM tblemployeeleave el
                     JOIN tblleave l ON el.leaveID = l.leaveID
                     LEFT JOIN tblfiledleave fl ON el.employeeID = fl.employeeID AND el.leaveID = fl.leaveID
-                    WHERE el.employeeID = '" & employeeID & "'
+                    WHERE el.employeeID = '" & employeeID & "' and l.status = 'Active'
                     GROUP BY el.leaveID, l.leaveType, el.days")
             dg.DataSource = ds.Tables("querytable")
         Catch ex As Exception
@@ -64,14 +64,48 @@ Public Class ClassAssociates
         Try
             Dim count As Integer
             If dtpfrom.Value = dtpto.Value Then
-                count = 0 + 1
+                count = 1
             ElseIf dtpfrom.Value < dtpto.Value Then
-                Dim dtfrom As DateTime = dtpfrom.Value
-                Dim dtto As DateTime = dtpto.Value
-                Dim differenceInDays As TimeSpan = dtto - dtfrom
+                Dim differenceInDays As TimeSpan = dtpto.Value.Date - dtpfrom.Value.Date
                 count = differenceInDays.Days + 1
             End If
-            RunCommand("Insert into tblfiledleave (employeeID,leavefrom,leaveto,leaveID,leavereason,noofdays,status) VALUES (@employeeID,@leavefrom,@leaveto,@leaveID,@leavereason,@noofdays,@status)")
+
+            Dim startDate As Date = dtpfrom.Value.Date
+            Dim endDate As Date = dtpto.Value.Date
+
+            ' Ensure correct order
+            If startDate > endDate Then
+                Dim temp As Date = startDate
+                startDate = endDate
+                endDate = temp
+            End If
+
+            Dim currentDate As Date = startDate
+
+            Do While currentDate <= endDate
+                Dim dayName As String = currentDate.ToString("dddd")
+
+                ' Build query
+                Dim query As String = $"SELECT remark FROM tblschedule WHERE employeeID = {employeeID} AND day = '{dayName}'"
+                RunQuery(query)
+
+                If ds.Tables("querytable").Rows.Count > 0 Then
+                    Dim remark As String = ds.Tables("querytable").Rows(0)("remark").ToString()
+
+                    If remark = "Day Off" Then
+                        MsgBox($"Can't file a leave on your day off ({dayName}).", MsgBoxStyle.Exclamation, "Leave Not Allowed")
+                        Exit Sub
+                    End If
+                Else
+                    MsgBox($"No schedule found for {dayName}.", MsgBoxStyle.Exclamation, "Schedule Missing")
+                    Exit Sub
+                End If
+
+                currentDate = currentDate.AddDays(1)
+            Loop
+
+            RunCommand("INSERT INTO tblfiledleave (employeeID, leavefrom, leaveto, leaveID, leavereason, noofdays, status) " &
+                   "VALUES (@employeeID, @leavefrom, @leaveto, @leaveID, @leavereason, @noofdays, @status)")
             With com
                 .Parameters.AddWithValue("@employeeID", employeeID)
                 .Parameters.AddWithValue("@leavefrom", dtpfrom.Value)
@@ -83,16 +117,18 @@ Public Class ClassAssociates
                 .ExecuteNonQuery()
                 .Parameters.Clear()
             End With
-            MsgBox("Leave filed")
+
+            MsgBox("Leave filed successfully!", MsgBoxStyle.Information)
             dtpfrom.Value = Now
             dtpto.Value = Now
             cb.SelectedIndex = -1
             txtreason.Clear()
-            Auditing($"{FrmAssociate.LblName.Text} filed {cb.Text} from {dtpfrom.Value} to {dtpto.Value}", "Others")
+            Auditing($"{FrmAssociate.LblName.Text} filed {cb.Text} from {dtpfrom.Value.ToShortDateString} to {dtpto.Value.ToShortDateString}", "Others")
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
     End Sub
+
     Public Shared Sub LoadFiledLeave(dg As Guna2DataGridView)
         Try
             RunQuery("Select a.filedleaveID,b.leaveType,a.leavefrom,a.leaveto,a.status from tblfiledleave a

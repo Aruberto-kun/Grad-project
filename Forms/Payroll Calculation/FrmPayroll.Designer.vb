@@ -288,7 +288,6 @@ Partial Class FrmPayroll
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DGAttendance.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DGAttendance.ColumnHeadersHeight = 40
-        Me.DGAttendance.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.DGAttendance.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.colDate, Me.Column1, Me.colTimeIn, Me.colTimeOut, Me.colOvertime, Me.colOtRemarks, Me.colLate, Me.colUndertime, Me.colNightDifferential, Me.colReport, Me.colHoliday, Me.colClassification, Me.colDailyPay})
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.White
@@ -320,7 +319,7 @@ Partial Class FrmPayroll
         Me.DGAttendance.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.DGAttendance.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DGAttendance.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.DGAttendance.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.DGAttendance.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DGAttendance.ThemeStyle.HeaderStyle.Height = 40
         Me.DGAttendance.ThemeStyle.ReadOnly = True
         Me.DGAttendance.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
@@ -471,7 +470,6 @@ Partial Class FrmPayroll
         DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DGVoluntary.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle5
         Me.DGVoluntary.ColumnHeadersHeight = 30
-        Me.DGVoluntary.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.DGVoluntary.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.voluntaryID, Me.voluntaryName, Me.voluntaryAmount})
         DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
@@ -502,7 +500,7 @@ Partial Class FrmPayroll
         Me.DGVoluntary.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.DGVoluntary.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DGVoluntary.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.DGVoluntary.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.DGVoluntary.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DGVoluntary.ThemeStyle.HeaderStyle.Height = 30
         Me.DGVoluntary.ThemeStyle.ReadOnly = False
         Me.DGVoluntary.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
@@ -565,7 +563,6 @@ Partial Class FrmPayroll
         DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DGIncentive.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.DGIncentive.ColumnHeadersHeight = 30
-        Me.DGIncentive.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
         Me.DGIncentive.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.incentiveID, Me.incentiveName, Me.incentiveAmount})
         DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle9.BackColor = System.Drawing.Color.White
@@ -596,7 +593,7 @@ Partial Class FrmPayroll
         Me.DGIncentive.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         Me.DGIncentive.ThemeStyle.HeaderStyle.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DGIncentive.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White
-        Me.DGIncentive.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing
+        Me.DGIncentive.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing
         Me.DGIncentive.ThemeStyle.HeaderStyle.Height = 30
         Me.DGIncentive.ThemeStyle.ReadOnly = False
         Me.DGIncentive.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White
