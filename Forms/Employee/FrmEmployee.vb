@@ -12,6 +12,7 @@ Public Class FrmEmployee
         ClassEmployee.RefreshDepartment(FrmAddEmployee.CbDepartment)
         ClassEmployee.RefreshVoluntary(FrmAddEmployee.DGVoluntary)
         ClassEmployee.RefreshEmployee(DgEmployee)
+
     End Sub
 
     Private Sub DGVoluntary_DataError(sender As Object, e As DataGridViewDataErrorEventArgs)
@@ -169,5 +170,9 @@ Public Class FrmEmployee
         Catch ex As Exception
 
         End Try
+    End Sub
+
+    Private Sub Timer2_Tick(sender As Object, e As EventArgs) Handles Timer2.Tick
+        ClassEmployee.LoadEmployee(DgEmployee)
     End Sub
 End Class

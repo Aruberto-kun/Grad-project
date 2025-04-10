@@ -71,7 +71,7 @@ Public Class ClassEmployee
 
     Public Shared Sub LoadVoluntary(dg As DataGridView)
         Try
-            RunQuery("SELECT v.voluntaryID, v.name, COALESCE(ev.amount, 0) AS amount FROM tblvoluntary v LEFT JOIN tblempvoluntary ev ON v.voluntaryID = ev.voluntaryID AND ev.employeeID = '" & employeeID & "'")
+            RunQuery("SELECT v.voluntaryID, v.name, COALESCE(ev.amount, 0) AS amount FROM tblvoluntary v LEFT JOIN tblempvoluntary ev ON v.voluntaryID = ev.voluntaryID AND ev.employeeID = '" & employeeID & "' WHERE v.status = 'Active'")
             dg.DataSource = ds.Tables("querytable")
         Catch ex As Exception
             MsgBox(ex.Message)
@@ -79,7 +79,7 @@ Public Class ClassEmployee
     End Sub
     Public Shared Sub LoadLeaveAllocation(dg As DataGridView)
         Try
-            RunQuery("Select l.leaveID, l.leaveType, coalesce(el.days,0) as days from tblleave l left join tblemployeeleave el on l.leaveID = el.leaveID and el.employeeID = '" & employeeID & "'")
+            RunQuery("Select l.leaveID, l.leaveType, coalesce(el.days,0) as days from tblleave l left join tblemployeeleave el on l.leaveID = el.leaveID and el.employeeID = '" & employeeID & "' WHERE l.status = 'Active'")
             dg.DataSource = ds.Tables("querytable")
         Catch ex As Exception
             MsgBox(ex.Message)

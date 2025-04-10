@@ -52,6 +52,7 @@ Partial Class FrmEmployee
         Me.Column10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Column9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Timer2 = New System.Windows.Forms.Timer(Me.components)
         Me.ContextMenuStrip1.SuspendLayout()
         Me.Panel57.SuspendLayout()
         CType(Me.DgEmployee, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -116,7 +117,6 @@ Partial Class FrmEmployee
         Me.TxtSearchEmployees.Location = New System.Drawing.Point(834, 4)
         Me.TxtSearchEmployees.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TxtSearchEmployees.Name = "TxtSearchEmployees"
-        Me.TxtSearchEmployees.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
         Me.TxtSearchEmployees.PlaceholderText = "Search Employees"
         Me.TxtSearchEmployees.SelectedText = ""
         Me.TxtSearchEmployees.Size = New System.Drawing.Size(324, 41)
@@ -342,6 +342,11 @@ Partial Class FrmEmployee
         Me.Column9.Name = "Column9"
         Me.Column9.ReadOnly = True
         '
+        'Timer2
+        '
+        Me.Timer2.Enabled = True
+        Me.Timer2.Interval = 5000
+        '
         'FrmEmployee
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -354,7 +359,7 @@ Partial Class FrmEmployee
         Me.Controls.Add(Me.Panel4)
         Me.Controls.Add(Me.Panel57)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "FrmEmployee"
         Me.ContextMenuStrip1.ResumeLayout(False)
         Me.Panel57.ResumeLayout(False)
@@ -388,4 +393,5 @@ Partial Class FrmEmployee
     Friend WithEvents Column10 As DataGridViewTextBoxColumn
     Friend WithEvents Column11 As DataGridViewTextBoxColumn
     Friend WithEvents LogOffToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Timer2 As Timer
 End Class

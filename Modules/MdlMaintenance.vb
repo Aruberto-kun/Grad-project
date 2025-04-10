@@ -334,6 +334,11 @@ Module MdlMaintenance
             Dim command As New MySqlCommand("UPDATE tblLeave SET status = 'Inactive' WHERE leaveID = @leaveID", connection)
             command.Parameters.AddWithValue("@leaveID", leaveID)
             command.ExecuteNonQuery()
+
+            Dim deleteCommand As New MySqlCommand("DELETE FROM tblemployeeleave WHERE leaveID = @leaveID", connection)
+            deleteCommand.Parameters.AddWithValue("@leaveID", leaveID)
+            deleteCommand.ExecuteNonQuery()
+
             MessageBox.Show("Leave deleted successfully.")
         Catch ex As MySqlException
             MessageBox.Show(ex.Message)
@@ -905,6 +910,10 @@ Module MdlMaintenance
             Dim command As New MySqlCommand("UPDATE tblVoluntary SET status = 'Inactive' WHERE voluntaryID = @voluntaryID", connection)
             command.Parameters.AddWithValue("@voluntaryID", voluntaryID)
             command.ExecuteNonQuery()
+
+            Dim deleteCommand As New MySqlCommand("DELETE FROM tblempvoluntary WHERE voluntaryID = @voluntaryID", connection)
+            deleteCommand.Parameters.AddWithValue("@voluntaryID", voluntaryID)
+            deleteCommand.ExecuteNonQuery()
             MessageBox.Show("Update deleted successfully.")
         Catch ex As MySqlException
             MessageBox.Show(ex.Message)

@@ -28,26 +28,39 @@ Public Class FrmDepartmentHeadControls
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
         Try
             If CLBSchedule.CheckedItems.Count = 0 Then
-                MsgBox("Please set schedule atleast 1 day")
+                MsgBox("Please set schedule at least 1 day")
                 Exit Sub
             End If
-
 
             If CbEmployees.SelectedIndex = -1 Then
                 MsgEmptyField()
                 Exit Sub
             ElseIf Not Regex.IsMatch(MtbTimeIn.Text, timePattern) Then
-                MessageBox.Show("Invalid time format.")
+                MessageBox.Show("Invalid time format for Time In.")
                 Exit Sub
             ElseIf Not Regex.IsMatch(MtbTimeOut.Text, timePattern) Then
-                MessageBox.Show("Invalid time format.")
+                MessageBox.Show("Invalid time format for Time Out.")
+                Exit Sub
+            End If
+
+            Dim timeIn As TimeSpan = TimeSpan.Parse(MtbTimeIn.Text)
+            Dim timeOut As TimeSpan = TimeSpan.Parse(MtbTimeOut.Text)
+
+            If timeIn >= timeOut Then
+                MessageBox.Show("Time In must be earlier than Time Out.")
+                Exit Sub
+            End If
+
+            Dim duration As TimeSpan = timeOut - timeIn
+            If duration.TotalHours <> 5 Then
+                MessageBox.Show("Schedule must be exactly 5 hours.")
                 Exit Sub
             End If
 
             ClassDepartmentHeadControls.NewSchedule(CbEmployees, CLBSchedule, MtbTimeIn, MtbTimeOut, "12:00", "1:00")
 
         Catch ex As Exception
-
+            MessageBox.Show("An error occurred: " & ex.Message)
         End Try
     End Sub
 
