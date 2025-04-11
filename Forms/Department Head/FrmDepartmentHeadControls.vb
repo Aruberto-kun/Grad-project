@@ -63,7 +63,7 @@ Public Class FrmDepartmentHeadControls
                 Exit Sub
             End If
 
-            If duration.TotalHours > 8 Then
+            If duration.TotalHours > 9 Then
                 MessageBox.Show("Maximum allowed working hours is 8.")
                 Exit Sub
             End If
