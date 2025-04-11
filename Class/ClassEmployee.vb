@@ -149,9 +149,9 @@ Public Class ClassEmployee
     Public Shared Sub LoadPosition(cbDept As Guna2ComboBox, cbPos As Guna2ComboBox)
         Try
             RunQuery("Select * from tblposition where departmentID = '" & cbDept.SelectedValue & "'")
+            cbPos.DataSource = ds.Tables("querytable")
             cbPos.ValueMember = "positionID"
             cbPos.DisplayMember = "positionName"
-            cbPos.DataSource = ds.Tables("querytable")
             cbPos.SelectedIndex = -1
         Catch ex As Exception
             MsgBox(ex.Message)
