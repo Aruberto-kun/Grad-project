@@ -39,7 +39,8 @@ Public Class ClassDepartmentHeadControls
         Try
             RunQuery("Select a.attendanceID, b.employeeNumber,concat(b.firstname,' ',b.lastname) as fullname, a.date, TIME(a.login) as login, TIME(a.logout) as logout, a.report as report from tblattendance a
                       join tblemployee b on b.employeeID = a.employeeID
-                      WHERE b.departmentID = '" & departmentID & "'")
+                      WHERE b.departmentID = '" & departmentID & "'
+                      order by a.date desc, login desc")
             dg.DataSource = ds.Tables("querytable")
         Catch ex As Exception
             MsgBox(ex.Message)

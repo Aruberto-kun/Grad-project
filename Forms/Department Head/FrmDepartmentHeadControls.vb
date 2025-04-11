@@ -91,8 +91,8 @@ Public Class FrmDepartmentHeadControls
     End Sub
 
     Private Sub DGFiledLeave_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGFiledLeave.CellContentClick
-        'Try
-        If e.RowIndex >= 0 Then
+        Try
+            If e.RowIndex >= 0 Then
                 If e.ColumnIndex = DGFiledLeave.Columns("Approve").Index Then
                     ' Get the Filed Leave ID of the selected row
                     Dim filedLeaveID As Integer = Convert.ToInt32(DGFiledLeave.Rows(e.RowIndex).Cells("Filed Leave ID").Value)
@@ -121,10 +121,10 @@ Public Class FrmDepartmentHeadControls
                 End If
             End If
 
-        'Catch ex As Exception
-        '    MsgBox(ex.Message)
-        '    Exit Sub
-        'End Try
+        Catch ex As Exception
+        MsgBox(ex.Message)
+        Exit Sub
+        End Try
     End Sub
     Private Sub DGFiledFTIO_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGFiledFTIO.CellContentClick
         Try
