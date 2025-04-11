@@ -59,7 +59,7 @@ Public Class FrmDepartmentHeadControls
             Dim duration As TimeSpan = timeOut - timeIn
 
             If duration.TotalHours <> 5 Then
-                MessageBox.Show("Schedule must be exactly 5 hours.")
+                MessageBox.Show("Schedule must be at least 4 hours.")
                 Exit Sub
             End If
 
