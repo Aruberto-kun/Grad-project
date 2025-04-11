@@ -19,7 +19,6 @@ Public Class FrmDepartmentInfo
         Else
             UpdateDepartment(MdlMaintenance.departmentID, TxtDepartment.Text)
             Auditing($"{FrmMain.fullName} updated the department from {department} to {TxtDepartment.Text}", "Others")
-            Me.Close()
             FrmMainte.DgDepartment.DataSource = DisplayDepartment()
 
             FrmMainte.DgPosition.DataSource = DisplayPosition()
@@ -32,7 +31,7 @@ Public Class FrmDepartmentInfo
             FrmAddEmployee.CbDepartment.DisplayMember = "departmentName"
             FrmAddEmployee.CbDepartment.ValueMember = "departmentID"
 
-
+            Me.Close()
         End If
     End Sub
 

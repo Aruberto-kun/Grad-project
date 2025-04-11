@@ -148,11 +148,19 @@ Public Class ClassEmployee
 
     Public Shared Sub LoadPosition(cbDept As Guna2ComboBox, cbPos As Guna2ComboBox)
         Try
-            RunQuery("Select * from tblposition where departmentID = '" & cbDept.SelectedValue & "'")
-            cbPos.DataSource = ds.Tables("querytable")
-            cbPos.ValueMember = "positionID"
+            Dim command As New MySqlCommand("SELECT * FROM tblPosition WHERE departmentID = @departmentID", conn)
+            command.Parameters.AddWithValue("@departmentID", cbDept.SelectedValue)
+            Dim datatable As New DataTable
+            Dim adapter As New MySqlDataAdapter(command)
+            adapter.Fill(datatable)
+            cbPos.DataSource = datatable
             cbPos.DisplayMember = "positionName"
-            cbPos.SelectedIndex = -1
+            cbPos.ValueMember = "positionID"
+            '    RunQuery("Select * from tblposition where departmentID = '" & cbDept.SelectedValue & "'")
+            '    cbPos.DataSource = ds.Tables("querytable")
+            '    cbPos.ValueMember = "positionID"
+            '    cbPos.DisplayMember = "positionName"
+            '    cbPos.SelectedIndex = -1
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
