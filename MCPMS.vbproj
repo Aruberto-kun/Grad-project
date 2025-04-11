@@ -308,12 +308,12 @@
       <DependentUpon>CRPaySlip.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Printing\DataSet\DSPrinting.Designer.vb">
+    <Compile Include="Printing\DataSets\DSPrinting.Designer.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>DSPrinting.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Printing\DataSet\DSPrinting.vb">
+    <Compile Include="Printing\DataSets\DSPrinting.vb">
       <DependentUpon>DSPrinting.xsd</DependentUpon>
     </Compile>
     <Compile Include="Forms\Reports\FrmReport.Designer.vb">
@@ -456,15 +456,15 @@
     </None>
     <None Include="App.config" />
     <None Include="packages.config" />
-    <None Include="Printing\DataSet\DSPrinting.xsc">
+    <None Include="Printing\DataSets\DSPrinting.xsc">
       <DependentUpon>DSPrinting.xsd</DependentUpon>
     </None>
-    <None Include="Printing\DataSet\DSPrinting.xsd">
+    <None Include="Printing\DataSets\DSPrinting.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DSPrinting.Designer.vb</LastGenOutput>
     </None>
-    <None Include="Printing\DataSet\DSPrinting.xss">
+    <None Include="Printing\DataSets\DSPrinting.xss">
       <DependentUpon>DSPrinting.xsd</DependentUpon>
     </None>
   </ItemGroup>
