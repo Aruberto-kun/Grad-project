@@ -118,10 +118,10 @@ Public Class FrmAddEmployee
         ClassEmployee.LoadPosition(CbDepartment, CbPosition)
     End Sub
     Private Sub FrmAddEmployee_Load(sender As Object, e As EventArgs) Handles Me.Load
-
         Try
-            ClassEmployee.LoadVoluntary(DGVoluntary)
-            ClassEmployee.LoadLeaveAllocation(DGLeaveAllocation)
+            OpenServerConnection()
+            ClassEmployee.LoadVoluntaryNew(DGVoluntary)
+            ClassEmployee.LoadLeaveNew(DGLeaveAllocation)
             ClassEmployee.ClearFields(TxtFirstName, TxtLastname, TxtRfidNumber, CbDepartment, CbPosition, TxtSalary, CbCompensationType, CbAssociateStatus, TxtAllowance)
         Catch ex As Exception
 
