@@ -68,7 +68,14 @@ Public Class ClassEmployee
             MsgBox(ex.Message)
         End Try
     End Sub
+    Public Shared Sub LoadVoluntaryNew(dg As DataGridView)
+        Try
+            RunQuery("Select voluntaryID,name,'0' as amount from tblvoluntary where status='Active'")
+            dg.DataSource = ds.Tables("querytable")
+        Catch ex As Exception
 
+        End Try
+    End Sub
     Public Shared Sub LoadVoluntary(dg As DataGridView)
         Try
             RunQuery("SELECT v.voluntaryID, v.name, COALESCE(ev.amount, 0) AS amount FROM tblvoluntary v LEFT JOIN tblempvoluntary ev ON v.voluntaryID = ev.voluntaryID AND ev.employeeID = '" & employeeID & "' WHERE v.status = 'Active'")
@@ -83,6 +90,14 @@ Public Class ClassEmployee
             dg.DataSource = ds.Tables("querytable")
         Catch ex As Exception
             MsgBox(ex.Message)
+        End Try
+    End Sub
+    Public Shared Sub LoadLeaveNew(dg As DataGridView)
+        Try
+            RunQuery("Select leaveID,leaveType,'0' as days from tblleave where status='Active'")
+            dg.DataSource = ds.Tables("querytable")
+        Catch ex As Exception
+
         End Try
     End Sub
     Public Shared Sub LoadDepartment(cb As Guna2ComboBox)
